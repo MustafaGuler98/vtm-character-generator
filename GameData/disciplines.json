@@ -1,0 +1,87 @@
+[
+  {
+    "id": "animalism",
+    "name": "Animalism",
+    "description": "The ability to communicate with and control the beasts of the world, tapping into the Beast within both animal and Kindred."
+  },
+  {
+    "id": "auspex",
+    "name": "Auspex",
+    "description": "Supernatural perception that pierces lies, senses emotions, and can even project consciousness beyond the physical form."
+  },
+  {
+    "id": "celerity",
+    "name": "Celerity",
+    "description": "Unearthly speed and reflexes, allowing a vampire to move faster than the mortal eye can follow."
+  },
+  {
+    "id": "chimerstry",
+    "name": "Chimerstry",
+    "description": "The power to conjure illusions and phantoms so real they can deceive all senses and even cause physical harm."
+  },
+  {
+    "id": "dementation",
+    "name": "Dementation",
+    "description": "The ability to channel madness, shattering the minds of others and inflicting derangements with but a word or a glance."
+  },
+  {
+    "id": "dominate",
+    "name": "Dominate",
+    "description": "The power to subjugate the will of others, commanding them with irresistible mental force and altering their memories."
+  },
+  {
+    "id": "fortitude",
+    "name": "Fortitude",
+    "description": "Supernatural resilience and toughness, allowing a vampire to endure injuries that would destroy a mortal body."
+  },
+  {
+    "id": "necromancy",
+    "name": "Necromancy",
+    "description": "The dark art of communing with and commanding the spirits of the dead, and wielding the very essence of the Underworld."
+  },
+  {
+    "id": "obfuscate",
+    "name": "Obfuscate",
+    "description": "The ability to cloud the minds of others, becoming unseen and unheard while standing in plain sight."
+  },
+  {
+    "id": "obtenebration",
+    "name": "Obtenebration",
+    "description": "The mastery over shadows and darkness, shaping them into tangible, animate forms and weapons of chilling abyss."
+  },
+  {
+    "id": "potence",
+    "name": "Potence",
+    "description": "The unholy might of the vampiric curse, granting physical strength far beyond mortal limits."
+  },
+  {
+    "id": "presence",
+    "name": "Presence",
+    "description": "An aura of supernatural charisma and emotional magnetism that can inspire awe, terror, or slavish devotion in others."
+  },
+  {
+    "id": "protean",
+    "name": "Protean",
+    "description": "The power of metamorphosis, allowing a vampire to change their form, grow bestial claws, or even meld into the very earth."
+  },
+  {
+    "id": "quietus",
+    "name": "Quietus",
+    "description": "The silent art of the kill, using accursed blood to silence sounds, poison victims, and inflict agonizing death."
+  },
+  {
+    "id": "serpentis",
+    "name": "Serpentis",
+    "description": "A discipline that channels the corrupting influence of the serpent, allowing for hypnotic gazes, scaly skin, and a venomous bite."
+  },
+  {
+    "id": "thaumaturgy",
+    "name": "Thaumaturgy",
+    "description": "The arcane practice of blood magic, manipulating the power of Vitae to create a wide variety of devastating and subtle effects."
+  },
+  {
+    "id": "vicissitude",
+    "name": "Vicissitude",
+    "description": "The unnatural art of fleshcrafting, allowing the user to warp and reshape bone and tissue—both their own and that of others."
+  }
+]
