@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VtmCharacterGenerator.Core"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VtmCharacterGenerator.ConsoleHost", "VtmCharacterGenerator.ConsoleHost\VtmCharacterGenerator.ConsoleHost.csproj", "{B39D39ED-E91B-4F7C-9033-2EEEAC4331A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VtmCharacterGenerator.WebApp", "VtmCharacterGenerator.WebApp\VtmCharacterGenerator.WebApp.csproj", "{C6BDAD92-8A73-4F9F-9E3F-4B37BD2F2362}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B39D39ED-E91B-4F7C-9033-2EEEAC4331A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B39D39ED-E91B-4F7C-9033-2EEEAC4331A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B39D39ED-E91B-4F7C-9033-2EEEAC4331A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BDAD92-8A73-4F9F-9E3F-4B37BD2F2362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BDAD92-8A73-4F9F-9E3F-4B37BD2F2362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BDAD92-8A73-4F9F-9E3F-4B37BD2F2362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BDAD92-8A73-4F9F-9E3F-4B37BD2F2362}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

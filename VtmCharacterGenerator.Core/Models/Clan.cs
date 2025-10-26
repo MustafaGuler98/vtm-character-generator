@@ -13,9 +13,6 @@ namespace VtmCharacterGenerator.Core.Models
         [JsonPropertyName("nickname")]
         public string Nickname { get; set; }
 
-        [JsonPropertyName("description")]
-        public string Description { get; set; }
-
         [JsonPropertyName("disciplines")]
         public List<string> Disciplines { get; set; }
 

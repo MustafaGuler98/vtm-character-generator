@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elysium</title>
+    <style>
+        
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Elysium</h1>
+
+    <button id="generateButton">Generate Character</button>
+
+    <div id="result">
+        <!-- Character data will be displayed here -->
+    </div>
+
+    <script>
+    // JavaScript code
+        const generateButton = document.getElementById('generateButton');
+        const resultDiv = document.getElementById('result');
+
+        generateButton.addEventListener('click', () => {
+
+            resultDiv.innerHTML = 'Generating...';
+
+            fetch('/api/character/generate')
+                .then(response => response.json()) // Convert the response to JSON
+                .then(characterData => {
+                    const clan = characterData.clan;
+                    resultDiv.innerHTML = `
+                                <h2>${clan.name}</h2>
+                                <p><em>"${clan.nickname}"</em></p>
+                            `;
+                })
+                .catch(error => {
+                    console.error('Error fetching character:', error);
+                    resultDiv.innerHTML = 'Failed to generate character. See console for details.';
+                });
+        });
+    </script>
+</body>
+</html>

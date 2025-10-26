@@ -1,0 +1,6 @@
+@VtmCharacterGenerator.WebApp_HostAddress = http://localhost:5267
+
+GET {{VtmCharacterGenerator.WebApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
