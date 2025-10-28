@@ -1,0 +1,1842 @@
+[
+    {
+        "id": "activist",
+        "name": "Activist",
+        "description": "Protestor, union leader, environmentalist, social justice warrior, revolutionary.",
+        "tags": [ "Concept:Activist", "Social", "Mental", "Talents", "Leadership", "Influence", "Politics" ],
+        "affinities": [
+            {
+                "tag": "Concept:Activist",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Physical",
+                "value": -15
+            },
+            {
+                "tag": "Talents",
+                "value": 30
+            },
+            {
+                "tag": "Knowledges",
+                "value": 15
+            },
+            {
+                "tag": "Skills",
+                "value": -10
+            },
+            {
+                "tag": "Leadership",
+                "value": 25
+            },
+            {
+                "tag": "Expression",
+                "value": 20
+            },
+            {
+                "tag": "Influence",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "archivist",
+        "name": "Archivist",
+        "description": "Librarian, historian, data clerk, museum curator, genealogist.",
+        "tags": [ "Concept:Archivist", "Mental", "Knowledges", "Scholar", "Information", "Bureaucracy" ],
+        "affinities": [
+            {
+                "tag": "Concept:Archivist",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 50
+            },
+            {
+                "tag": "Physical",
+                "value": -30
+            },
+            {
+                "tag": "Social",
+                "value": -10
+            },
+            {
+                "tag": "Knowledges",
+                "value": 40
+            },
+            {
+                "tag": "Talents",
+                "value": -15
+            },
+            {
+                "tag": "Scholar",
+                "value": 30
+            },
+            {
+                "tag": "Investigation",
+                "value": 20
+            },
+            {
+                "tag": "Information",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "artist",
+        "name": "Artist",
+        "description": "Painter, sculptor, poet, avant-garde performer, photographer.",
+        "tags": [ "Concept:Artist", "Social", "Mental", "Talents", "Performance", "Expression", "HighSociety" ],
+        "affinities": [
+            {
+                "tag": "Concept:Artist",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Physical",
+                "value": -10
+            },
+            {
+                "tag": "Talents",
+                "value": 35
+            },
+            {
+                "tag": "Knowledges",
+                "value": -20
+            },
+            {
+                "tag": "Performance",
+                "value": 30
+            },
+            {
+                "tag": "Expression",
+                "value": 25
+            },
+            {
+                "tag": "Appearance",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 45
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "corporate_raider",
+        "name": "Corporate Raider",
+        "description": "Executive, stockbroker, analyst, corporate spy, department head.",
+        "tags": [ "Concept:CorporateRaider", "Social", "Mental", "Knowledges", "Skills", "Influence", "Resources", "Deception", "Bureaucracy" ],
+        "affinities": [
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Physical",
+                "value": -20
+            },
+            {
+                "tag": "Knowledges",
+                "value": 25
+            },
+            {
+                "tag": "Skills",
+                "value": 20
+            },
+            {
+                "tag": "Influence",
+                "value": 30
+            },
+            {
+                "tag": "Resources",
+                "value": 25
+            },
+            {
+                "tag": "Deception",
+                "value": 20
+            },
+            {
+                "tag": "Morality",
+                "value": -10
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Giovanni",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "criminal",
+        "name": "Criminal",
+        "description": "Jailbird, Mafioso, drug dealer, pimp, carjacker, thug, thief, fence.",
+        "tags": [ "Concept:Criminal", "Physical", "Social", "Skills", "Talents", "Underworld", "Streetwise", "Deception" ],
+        "affinities": [
+            {
+                "tag": "Concept:Criminal",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Mental",
+                "value": -15
+            },
+            {
+                "tag": "Skills",
+                "value": 35
+            },
+            {
+                "tag": "Talents",
+                "value": 25
+            },
+            {
+                "tag": "Knowledges",
+                "value": -30
+            },
+            {
+                "tag": "Underworld",
+                "value": 30
+            },
+            {
+                "tag": "Streetwise",
+                "value": 25
+            },
+            {
+                "tag": "Brawling",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "cultist",
+        "name": "Cultist",
+        "description": "True believer, initiate, charismatic leader, brainwashed follower, occult researcher.",
+        "tags": [ "Concept:Cultist", "Social", "Mental", "Talents", "Knowledges", "Leadership", "Intimidation", "Arcane" ],
+        "affinities": [
+            {
+                "tag": "Concept:Cultist",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Talents",
+                "value": 25
+            },
+            {
+                "tag": "Knowledges",
+                "value": 20
+            },
+            {
+                "tag": "Arcane",
+                "value": 35
+            },
+            {
+                "tag": "Leadership",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": -15
+            },
+            {
+                "tag": "Morality",
+                "value": -20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 45
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "drifter",
+        "name": "Drifter",
+        "description": "Bum, smuggler, prostitute, junkie, pilgrim, biker, gambler.",
+        "tags": [ "Concept:Drifter", "Physical", "Social", "Talents", "Skills", "Survival", "Streetwise", "Underworld" ],
+        "affinities": [
+            {
+                "tag": "Concept:Drifter",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 30
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Mental",
+                "value": -20
+            },
+            {
+                "tag": "Talents",
+                "value": 40
+            },
+            {
+                "tag": "Skills",
+                "value": 20
+            },
+            {
+                "tag": "Knowledges",
+                "value": -40
+            },
+            {
+                "tag": "Survival",
+                "value": 30
+            },
+            {
+                "tag": "Streetwise",
+                "value": 25
+            },
+            {
+                "tag": "Stamina",
+                "value": 15
+            },
+            {
+                "tag": "Resources",
+                "value": -20
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -35
+            }
+        ]
+    },
+    {
+        "id": "entertainer",
+        "name": "Entertainer",
+        "description": "Musician, film star, comedian, club kid, model, web celebrity.",
+        "tags": [ "Concept:Entertainer", "Social", "Talents", "Performance", "Expression", "HighSociety", "Appearance" ],
+        "affinities": [
+            {
+                "tag": "Concept:Entertainer",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 50
+            },
+            {
+                "tag": "Mental",
+                "value": -15
+            },
+            {
+                "tag": "Talents",
+                "value": 35
+            },
+            {
+                "tag": "Skills",
+                "value": -10
+            },
+            {
+                "tag": "Performance",
+                "value": 30
+            },
+            {
+                "tag": "Expression",
+                "value": 25
+            },
+            {
+                "tag": "Appearance",
+                "value": 20
+            },
+            {
+                "tag": "HighSociety",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 50
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 15
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "explorer",
+        "name": "Explorer",
+        "description": "Urban spelunker, cartographer, storm chaser, travel blogger, relic hunter.",
+        "tags": [ "Concept:Explorer", "Physical", "Mental", "Talents", "Skills", "Survival", "Investigation", "Athleticism" ],
+        "affinities": [
+            {
+                "tag": "Concept:Explorer",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            },
+            {
+                "tag": "Talents",
+                "value": 30
+            },
+            {
+                "tag": "Skills",
+                "value": 25
+            },
+            {
+                "tag": "Survival",
+                "value": 35
+            },
+            {
+                "tag": "Athleticism",
+                "value": 20
+            },
+            {
+                "tag": "Perception",
+                "value": 15
+            },
+            {
+                "tag": "Arcane",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "fallen_idol",
+        "name": "Fallen Idol",
+        "description": "Disgraced celebrity, defrocked priest, disbarred lawyer, ruined politician.",
+        "tags": [ "Concept:FallenIdol", "Social", "Mental", "Talents", "Deception", "Streetwise", "Influence" ],
+        "affinities": [
+            {
+                "tag": "Concept:FallenIdol",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Physical",
+                "value": -15
+            },
+            {
+                "tag": "Talents",
+                "value": 30
+            },
+            {
+                "tag": "Influence",
+                "value": -20
+            },
+            {
+                "tag": "Resources",
+                "value": -15
+            },
+            {
+                "tag": "Allies",
+                "value": -25
+            },
+            {
+                "tag": "Streetwise",
+                "value": 20
+            },
+            {
+                "tag": "Manipulation",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "guardian",
+        "name": "Guardian",
+        "description": "Caretaker, security guard, warden, park ranger, neighborhood watch captain.",
+        "tags": [ "Concept:Guardian", "Physical", "Mental", "Talents", "Skills", "Stamina", "Perception", "Investigation" ],
+        "affinities": [
+            {
+                "tag": "Concept:Guardian",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Social",
+                "value": -10
+            },
+            {
+                "tag": "Talents",
+                "value": 30
+            },
+            {
+                "tag": "Skills",
+                "value": 20
+            },
+            {
+                "tag": "Stamina",
+                "value": 20
+            },
+            {
+                "tag": "Perception",
+                "value": 20
+            },
+            {
+                "tag": "Intimidation",
+                "value": 15
+            },
+            {
+                "tag": "Morality",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "hacker",
+        "name": "Hacker",
+        "description": "Black hat, script kiddie, data miner, hacktivist, security consultant.",
+        "tags": [ "Concept:Hacker", "Mental", "Knowledges", "Technology", "Information", "Deception" ],
+        "affinities": [
+            {
+                "tag": "Concept:Hacker",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 50
+            },
+            {
+                "tag": "Physical",
+                "value": -35
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            },
+            {
+                "tag": "Knowledges",
+                "value": 45
+            },
+            {
+                "tag": "Skills",
+                "value": -10
+            },
+            {
+                "tag": "Technology",
+                "value": 40
+            },
+            {
+                "tag": "Information",
+                "value": 30
+            },
+            {
+                "tag": "Investigation",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "healer",
+        "name": "Healer",
+        "description": "Paramedic, back-alley doctor, psych-ward orderly, therapist, veterinarian.",
+        "tags": [ "Concept:Healer", "Mental", "Social", "Knowledges", "Talents", "Medical", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Concept:Healer",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 40
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Physical",
+                "value": -25
+            },
+            {
+                "tag": "Knowledges",
+                "value": 35
+            },
+            {
+                "tag": "Talents",
+                "value": 20
+            },
+            {
+                "tag": "Medical",
+                "value": 45
+            },
+            {
+                "tag": "Morality",
+                "value": 20
+            },
+            {
+                "tag": "Empathy",
+                "value": 15
+            },
+            {
+                "tag": "Frenzy",
+                "value": -15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Caitiff",
+                "value": 10
+            }
+        ]
+    },
+    {
+        "id": "intellectual",
+        "name": "Intellectual",
+        "description": "Writer, student, scientist, philosopher, social critic.",
+        "tags": [ "Concept:Intellectual", "Mental", "Knowledges", "Scholar", "Information" ],
+        "affinities": [
+            {
+                "tag": "Concept:Intellectual",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 50
+            },
+            {
+                "tag": "Physical",
+                "value": -40
+            },
+            {
+                "tag": "Social",
+                "value": -5
+            },
+            {
+                "tag": "Knowledges",
+                "value": 45
+            },
+            {
+                "tag": "Skills",
+                "value": -20
+            },
+            {
+                "tag": "Scholar",
+                "value": 35
+            },
+            {
+                "tag": "Academics",
+                "value": 25
+            },
+            {
+                "tag": "Intelligence",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "investigator",
+        "name": "Investigator",
+        "description": "Detective, beat cop, government agent, private eye, witch-hunter.",
+        "tags": [ "Concept:Investigator", "Mental", "Physical", "Talents", "Skills", "Investigation", "Information" ],
+        "affinities": [
+            {
+                "tag": "Concept:Investigator",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 40
+            },
+            {
+                "tag": "Physical",
+                "value": 20
+            },
+            {
+                "tag": "Social",
+                "value": -10
+            },
+            {
+                "tag": "Talents",
+                "value": 25
+            },
+            {
+                "tag": "Skills",
+                "value": 20
+            },
+            {
+                "tag": "Investigation",
+                "value": 40
+            },
+            {
+                "tag": "Perception",
+                "value": 25
+            },
+            {
+                "tag": "Streetwise",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "kid",
+        "name": "Kid",
+        "description": "Child, runaway, outcast, urchin, gangbanger.",
+        "tags": [ "Concept:Kid", "Physical", "Social", "Talents", "Stealth", "Streetwise", "Survival" ],
+        "affinities": [
+            {
+                "tag": "Concept:Kid",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Mental",
+                "value": -30
+            },
+            {
+                "tag": "Talents",
+                "value": 40
+            },
+            {
+                "tag": "Knowledges",
+                "value": -50
+            },
+            {
+                "tag": "Stealth",
+                "value": 25
+            },
+            {
+                "tag": "Streetwise",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": -10
+            },
+            {
+                "tag": "Resources",
+                "value": -25
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": -35
+            }
+        ]
+    },
+    {
+        "id": "martial_artist",
+        "name": "Martial Artist",
+        "description": "Dojo master, tournament fighter, street brawler, self-defense instructor.",
+        "tags": [ "Concept:MartialArtist", "Physical", "Mental", "Skills", "Talents", "Combat", "Brawling", "Melee", "Athleticism" ],
+        "affinities": [
+            {
+                "tag": "Concept:MartialArtist",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 50
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Social",
+                "value": -25
+            },
+            {
+                "tag": "Skills",
+                "value": 25
+            },
+            {
+                "tag": "Talents",
+                "value": 25
+            },
+            {
+                "tag": "Combat",
+                "value": 40
+            },
+            {
+                "tag": "Brawling",
+                "value": 35
+            },
+            {
+                "tag": "Dexterity",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 10
+            }
+        ]
+    },
+    {
+        "id": "outsider",
+        "name": "Outsider",
+        "description": "Urban primitive, refugee, minority, conspiracy theorist, survivalist.",
+        "tags": [ "Concept:Outsider", "Physical", "Mental", "Talents", "Survival", "Streetwise", "Stealth" ],
+        "affinities": [
+            {
+                "tag": "Concept:Outsider",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Social",
+                "value": -30
+            },
+            {
+                "tag": "Talents",
+                "value": 40
+            },
+            {
+                "tag": "Knowledges",
+                "value": -20
+            },
+            {
+                "tag": "Survival",
+                "value": 30
+            },
+            {
+                "tag": "Streetwise",
+                "value": 20
+            },
+            {
+                "tag": "Influence",
+                "value": -25
+            },
+            {
+                "tag": "HighSociety",
+                "value": -35
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Caitiff",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "politician",
+        "name": "Politician",
+        "description": "Judge, public official, councilor, aide, speechwriter.",
+        "tags": [ "Concept:Politician", "Social", "Mental", "Knowledges", "Talents", "Influence", "Leadership", "Bureaucracy", "Deception" ],
+        "affinities": [
+            {
+                "tag": "Concept:Politician",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 50
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Physical",
+                "value": -30
+            },
+            {
+                "tag": "Knowledges",
+                "value": 20
+            },
+            {
+                "tag": "Talents",
+                "value": 20
+            },
+            {
+                "tag": "Influence",
+                "value": 40
+            },
+            {
+                "tag": "Leadership",
+                "value": 25
+            },
+            {
+                "tag": "Manipulation",
+                "value": 20
+            },
+            {
+                "tag": "Deception",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 50
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": -35
+            }
+        ]
+    },
+    {
+        "id": "professional",
+        "name": "Professional",
+        "description": "Engineer, doctor, programmer, lawyer, industrialist.",
+        "tags": [ "Concept:Professional", "Mental", "Knowledges", "Skills", "Technology", "Bureaucracy", "Resources" ],
+        "affinities": [
+            {
+                "tag": "Concept:Professional",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 45
+            },
+            {
+                "tag": "Social",
+                "value": -10
+            },
+            {
+                "tag": "Physical",
+                "value": -25
+            },
+            {
+                "tag": "Knowledges",
+                "value": 35
+            },
+            {
+                "tag": "Skills",
+                "value": 25
+            },
+            {
+                "tag": "Technology",
+                "value": 20
+            },
+            {
+                "tag": "Resources",
+                "value": 20
+            },
+            {
+                "tag": "Intelligence",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Giovanni",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "reporter",
+        "name": "Reporter",
+        "description": "Journalist, blogger, paparazzo, talkshow host, media expert.",
+        "tags": [ "Concept:Reporter", "Social", "Mental", "Talents", "Information", "Investigation", "Streetwise" ],
+        "affinities": [
+            {
+                "tag": "Concept:Reporter",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Physical",
+                "value": -20
+            },
+            {
+                "tag": "Talents",
+                "value": 30
+            },
+            {
+                "tag": "Information",
+                "value": 40
+            },
+            {
+                "tag": "Investigation",
+                "value": 25
+            },
+            {
+                "tag": "Streetwise",
+                "value": 20
+            },
+            {
+                "tag": "Wits",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "scenester",
+        "name": "Scenester",
+        "description": "Clubgoer, goth, skinhead, punk, barfly, hipster, substance abuser.",
+        "tags": [ "Concept:Scenester", "Social", "Talents", "Streetwise", "Performance", "Underworld" ],
+        "affinities": [
+            {
+                "tag": "Concept:Scenester",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 45
+            },
+            {
+                "tag": "Physical",
+                "value": 10
+            },
+            {
+                "tag": "Mental",
+                "value": -25
+            },
+            {
+                "tag": "Talents",
+                "value": 35
+            },
+            {
+                "tag": "Knowledges",
+                "value": -30
+            },
+            {
+                "tag": "Streetwise",
+                "value": 30
+            },
+            {
+                "tag": "Performance",
+                "value": 20
+            },
+            {
+                "tag": "Stamina",
+                "value": -10
+            },
+            {
+                "tag": "Willpower",
+                "value": -15
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "scion",
+        "name": "Scion",
+        "description": "Old money heir, trust-fund baby, spoiled brat, family black sheep.",
+        "tags": [ "Concept:Scion", "Social", "Resources", "HighSociety", "Influence" ],
+        "affinities": [
+            {
+                "tag": "Concept:Scion",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": -10
+            },
+            {
+                "tag": "Physical",
+                "value": -20
+            },
+            {
+                "tag": "Resources",
+                "value": 50
+            },
+            {
+                "tag": "HighSociety",
+                "value": 40
+            },
+            {
+                "tag": "Influence",
+                "value": 30
+            },
+            {
+                "tag": "Talents",
+                "value": -15
+            },
+            {
+                "tag": "Skills",
+                "value": -25
+            },
+            {
+                "tag": "Knowledges",
+                "value": -10
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Giovanni",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "servant",
+        "name": "Servant",
+        "description": "Butler, chauffeur, personal assistant, nanny, pool boy.",
+        "tags": [ "Concept:Servant", "Social", "Mental", "Skills", "Stealth", "Bureaucracy" ],
+        "affinities": [
+            {
+                "tag": "Concept:Servant",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Physical",
+                "value": -10
+            },
+            {
+                "tag": "Skills",
+                "value": 30
+            },
+            {
+                "tag": "Talents",
+                "value": 15
+            },
+            {
+                "tag": "Stealth",
+                "value": 25
+            },
+            {
+                "tag": "Perception",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Leadership",
+                "value": -30
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 10
+            }
+        ]
+    },
+    {
+        "id": "socialite",
+        "name": "Socialite",
+        "description": "Dilettante, host, playboy, sycophant, trophy wife.",
+        "tags": [ "Concept:Socialite", "Social", "Talents", "HighSociety", "Influence", "Resources" ],
+        "affinities": [
+            {
+                "tag": "Concept:Socialite",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 50
+            },
+            {
+                "tag": "Physical",
+                "value": -20
+            },
+            {
+                "tag": "Mental",
+                "value": -20
+            },
+            {
+                "tag": "HighSociety",
+                "value": 40
+            },
+            {
+                "tag": "Influence",
+                "value": 25
+            },
+            {
+                "tag": "Resources",
+                "value": 20
+            },
+            {
+                "tag": "Appearance",
+                "value": 20
+            },
+            {
+                "tag": "Skills",
+                "value": -25
+            },
+            {
+                "tag": "Knowledges",
+                "value": -30
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 30
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -45
+            }
+        ]
+    },
+    {
+        "id": "soldier",
+        "name": "Soldier",
+        "description": "Bodyguard, enforcer, soldier of fortune, killer-for-hire.",
+        "tags": [ "Concept:Soldier", "Physical", "Mental", "Skills", "Talents", "Combat", "Firearms", "Brawling", "Survival" ],
+        "affinities": [
+            {
+                "tag": "Concept:Soldier",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 50
+            },
+            {
+                "tag": "Mental",
+                "value": 10
+            },
+            {
+                "tag": "Social",
+                "value": -25
+            },
+            {
+                "tag": "Skills",
+                "value": 30
+            },
+            {
+                "tag": "Talents",
+                "value": 20
+            },
+            {
+                "tag": "Combat",
+                "value": 45
+            },
+            {
+                "tag": "Firearms",
+                "value": 30
+            },
+            {
+                "tag": "Brawling",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "survivor",
+        "name": "Survivor",
+        "description": "Accident victim, abuse survivor, former POW, witness protection member.",
+        "tags": [ "Concept:Survivor", "Physical", "Mental", "Talents", "Survival", "Stealth", "Willpower" ],
+        "affinities": [
+            {
+                "tag": "Concept:Survivor",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            },
+            {
+                "tag": "Talents",
+                "value": 45
+            },
+            {
+                "tag": "Skills",
+                "value": -10
+            },
+            {
+                "tag": "Knowledges",
+                "value": -20
+            },
+            {
+                "tag": "Survival",
+                "value": 40
+            },
+            {
+                "tag": "Stamina",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Caitiff",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "technician",
+        "name": "Technician",
+        "description": "Mechanic, lab assistant, IT support, sound engineer, roadie.",
+        "tags": [ "Concept:Technician", "Mental", "Physical", "Skills", "Technology", "Investigation" ],
+        "affinities": [
+            {
+                "tag": "Concept:Technician",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 35
+            },
+            {
+                "tag": "Physical",
+                "value": 15
+            },
+            {
+                "tag": "Social",
+                "value": -25
+            },
+            {
+                "tag": "Skills",
+                "value": 45
+            },
+            {
+                "tag": "Knowledges",
+                "value": 20
+            },
+            {
+                "tag": "Technology",
+                "value": 35
+            },
+            {
+                "tag": "Crafts",
+                "value": 30
+            },
+            {
+                "tag": "Dexterity",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 10
+            }
+        ]
+    },
+    {
+        "id": "worker",
+        "name": "Worker",
+        "description": "Trucker, farmer, wage earner, manservant, construction laborer.",
+        "tags": [ "Concept:Worker", "Physical", "Skills", "Talents", "Stamina", "Strength" ],
+        "affinities": [
+            {
+                "tag": "Concept:Worker",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 50
+            },
+            {
+                "tag": "Mental",
+                "value": -20
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            },
+            {
+                "tag": "Skills",
+                "value": 30
+            },
+            {
+                "tag": "Talents",
+                "value": 20
+            },
+            {
+                "tag": "Stamina",
+                "value": 30
+            },
+            {
+                "tag": "Strength",
+                "value": 25
+            },
+            {
+                "tag": "Drive",
+                "value": 20
+            },
+            {
+                "tag": "Resources",
+                "value": -10
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "zealot",
+        "name": "Zealot",
+        "description": "Crusader, inquisitor, true believer, cult enforcer, fire-and-brimstone preacher.",
+        "tags": [ "Concept:Zealot", "Physical", "Social", "Talents", "Intimidation", "Willpower", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Concept:Zealot",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": -15
+            },
+            {
+                "tag": "Talents",
+                "value": 30
+            },
+            {
+                "tag": "Intimidation",
+                "value": 30
+            },
+            {
+                "tag": "Willpower",
+                "value": 25
+            },
+            {
+                "tag": "Morality",
+                "value": -25
+            },
+            {
+                "tag": "Investigation",
+                "value": -20
+            },
+            {
+                "tag": "Frenzy",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 25
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 15
+            }
+        ]
+    }
+]

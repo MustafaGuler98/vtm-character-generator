@@ -35,22 +35,22 @@
     </div>
 
     <script>
-    // JavaScript code
         const generateButton = document.getElementById('generateButton');
         const resultDiv = document.getElementById('result');
 
         generateButton.addEventListener('click', () => {
-
             resultDiv.innerHTML = 'Generating...';
 
             fetch('/api/character/generate')
-                .then(response => response.json()) // Convert the response to JSON
-                .then(characterData => {
-                    const clan = characterData.clan;
+                .then(response => response.json())
+                .then(personaData => {
+             
                     resultDiv.innerHTML = `
-                                <h2>${clan.name}</h2>
-                                <p><em>"${clan.nickname}"</em></p>
-                            `;
+                        <h2>Concept: ${personaData.concept.name}</h2>
+                        <h3>Clan: ${personaData.clan.name}</h3>
+                        <p><strong>Nature:</strong> ${personaData.nature.name}</p>
+                        <p><strong>Demeanor:</strong> ${personaData.demeanor.name}</p>
+                    `;
                 })
                 .catch(error => {
                     console.error('Error fetching character:', error);

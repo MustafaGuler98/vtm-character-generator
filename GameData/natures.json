@@ -1,0 +1,4382 @@
+[
+    {
+        "id": "architect",
+        "name": "Architect",
+        "description": "You build something of lasting value.",
+        "tags": [ "Nature:Architect", "Mental", "Knowledges", "Skills", "Willpower", "Scholar", "Bureaucracy" ],
+        "affinities": [
+            {
+                "tag": "Nature:Architect",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Physical",
+                "value": -15
+            },
+            {
+                "tag": "Knowledges",
+                "value": 25
+            },
+            {
+                "tag": "Skills",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Scholar",
+                "value": 20
+            },
+            {
+                "tag": "Frenzy",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "autocrat",
+        "name": "Autocrat",
+        "description": "You need control.",
+        "tags": [ "Nature:Autocrat", "Social", "Mental", "Leadership", "Control", "Willpower", "Intimidation" ],
+        "affinities": [
+            {
+                "tag": "Nature:Autocrat",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Leadership",
+                "value": 35
+            },
+            {
+                "tag": "Control",
+                "value": 30
+            },
+            {
+                "tag": "Willpower",
+                "value": 20
+            },
+            {
+                "tag": "Influence",
+                "value": 15
+            },
+            {
+                "tag": "Morality",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 25
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "bon_vivant",
+        "name": "Bon Vivant",
+        "description": "Unlife is for pleasure.",
+        "tags": [ "Nature:BonVivant", "Social", "Talents", "HighSociety", "Performance", "Resources" ],
+        "affinities": [
+            {
+                "tag": "Nature:BonVivant",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": -20
+            },
+            {
+                "tag": "Appearance",
+                "value": 25
+            },
+            {
+                "tag": "HighSociety",
+                "value": 30
+            },
+            {
+                "tag": "Resources",
+                "value": 20
+            },
+            {
+                "tag": "Performance",
+                "value": 15
+            },
+            {
+                "tag": "Willpower",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 40
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -35
+            }
+        ]
+    },
+    {
+        "id": "bravo",
+        "name": "Bravo",
+        "description": "Might makes right.",
+        "tags": [ "Nature:Bravo", "Physical", "Talents", "Combat", "Brawling", "Intimidation", "Frenzy" ],
+        "affinities": [
+            {
+                "tag": "Nature:Bravo",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": -25
+            },
+            {
+                "tag": "Social",
+                "value": -10
+            },
+            {
+                "tag": "Strength",
+                "value": 25
+            },
+            {
+                "tag": "Stamina",
+                "value": 20
+            },
+            {
+                "tag": "Combat",
+                "value": 35
+            },
+            {
+                "tag": "Intimidation",
+                "value": 30
+            },
+            {
+                "tag": "Frenzy",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "capitalist",
+        "name": "Capitalist",
+        "description": "Why give it away for free when you can sell it?",
+        "tags": [ "Nature:Capitalist", "Social", "Mental", "Knowledges", "Resources", "Influence", "Deception" ],
+        "affinities": [
+            {
+                "tag": "Nature:Capitalist",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Resources",
+                "value": 40
+            },
+            {
+                "tag": "Influence",
+                "value": 30
+            },
+            {
+                "tag": "Bureaucracy",
+                "value": 20
+            },
+            {
+                "tag": "Morality",
+                "value": -15
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 35
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Giovanni",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 30
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "caregiver",
+        "name": "Caregiver",
+        "description": "Everyone needs nurturing.",
+        "tags": [ "Nature:Caregiver", "Social", "Mental", "Talents", "Medical", "Morality", "Allies" ],
+        "affinities": [
+            {
+                "tag": "Nature:Caregiver",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Physical",
+                "value": -20
+            },
+            {
+                "tag": "Charisma",
+                "value": 25
+            },
+            {
+                "tag": "Medical",
+                "value": 20
+            },
+            {
+                "tag": "Morality",
+                "value": 25
+            },
+            {
+                "tag": "Frenzy",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Healer",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Guardian",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Salubri",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "celebrant",
+        "name": "Celebrant",
+        "description": "Your cause brings you joy.",
+        "tags": [ "Nature:Celebrant", "Social", "Mental", "Talents", "Willpower", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Celebrant",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": 25
+            },
+            {
+                "tag": "Morality",
+                "value": 15
+            },
+            {
+                "tag": "Charisma",
+                "value": 20
+            },
+            {
+                "tag": "Leadership",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Activist",
+                "value": 20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 10
+            }
+        ]
+    },
+    {
+        "id": "chameleon",
+        "name": "Chameleon",
+        "description": "You manage to blend into any situation.",
+        "tags": [ "Nature:Chameleon", "Social", "Mental", "Talents", "Stealth", "Deception", "Streetwise" ],
+        "affinities": [
+            {
+                "tag": "Nature:Chameleon",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Manipulation",
+                "value": 25
+            },
+            {
+                "tag": "Wits",
+                "value": 15
+            },
+            {
+                "tag": "Stealth",
+                "value": 25
+            },
+            {
+                "tag": "Deception",
+                "value": 30
+            },
+            {
+                "tag": "Survival",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "child",
+        "name": "Child",
+        "description": "Won't somebody be there for you?",
+        "tags": [ "Nature:Child", "Social", "Talents", "Manipulation", "Deception", "Allies" ],
+        "affinities": [
+            {
+                "tag": "Nature:Child",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Physical",
+                "value": -25
+            },
+            {
+                "tag": "Mental",
+                "value": -15
+            },
+            {
+                "tag": "Manipulation",
+                "value": 30
+            },
+            {
+                "tag": "Allies",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": -20
+            },
+            {
+                "tag": "Leadership",
+                "value": -30
+            },
+            {
+                "tag": "Concept:Kid",
+                "value": 35
+            },
+            {
+                "tag": "Concept:Scion",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "competitor",
+        "name": "Competitor",
+        "description": "You must be the best.",
+        "tags": [ "Nature:Competitor", "Physical", "Mental", "Social", "Willpower", "Combat" ],
+        "affinities": [
+            {
+                "tag": "Nature:Competitor",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Social",
+                "value": 15
+            },
+            {
+                "tag": "Willpower",
+                "value": 25
+            },
+            {
+                "tag": "Strength",
+                "value": 15
+            },
+            {
+                "tag": "Wits",
+                "value": 15
+            },
+            {
+                "tag": "Leadership",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 20
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 20
+            },
+            {
+                "tag": "Concept:MartialArtist",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "conformist",
+        "name": "Conformist",
+        "description": "You follow and assist.",
+        "tags": [ "Nature:Conformist", "Social", "Talents", "Bureaucracy", "Allies" ],
+        "affinities": [
+            {
+                "tag": "Nature:Conformist",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": 10
+            },
+            {
+                "tag": "Physical",
+                "value": -10
+            },
+            {
+                "tag": "Leadership",
+                "value": -35
+            },
+            {
+                "tag": "Willpower",
+                "value": -15
+            },
+            {
+                "tag": "Bureaucracy",
+                "value": 25
+            },
+            {
+                "tag": "Allies",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Servant",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Worker",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "conniver",
+        "name": "Conniver",
+        "description": "Others exist for your benefit.",
+        "tags": [ "Nature:Conniver", "Social", "Mental", "Deception", "Manipulation", "Underworld", "Streetwise" ],
+        "affinities": [
+            {
+                "tag": "Nature:Conniver",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Manipulation",
+                "value": 35
+            },
+            {
+                "tag": "Deception",
+                "value": 30
+            },
+            {
+                "tag": "Morality",
+                "value": -25
+            },
+            {
+                "tag": "Resources",
+                "value": 15
+            },
+            {
+                "tag": "Allies",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 25
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 15
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "creep_show",
+        "name": "Creep Show",
+        "description": "Disgusting the straights makes you smile.",
+        "tags": [ "Nature:CreepShow", "Social", "Physical", "Intimidation", "Performance", "Underworld", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:CreepShow",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Physical",
+                "value": 15
+            },
+            {
+                "tag": "Intimidation",
+                "value": 35
+            },
+            {
+                "tag": "Performance",
+                "value": 20
+            },
+            {
+                "tag": "Morality",
+                "value": -30
+            },
+            {
+                "tag": "HighSociety",
+                "value": -25
+            },
+            {
+                "tag": "Concept:Outsider",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Artist",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "curmudgeon",
+        "name": "Curmudgeon",
+        "description": "Everything has its flaws.",
+        "tags": [ "Nature:Curmudgeon", "Mental", "Talents", "Investigation", "Scholar" ],
+        "affinities": [
+            {
+                "tag": "Nature:Curmudgeon",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 35
+            },
+            {
+                "tag": "Social",
+                "value": -25
+            },
+            {
+                "tag": "Perception",
+                "value": 25
+            },
+            {
+                "tag": "Wits",
+                "value": 20
+            },
+            {
+                "tag": "Investigation",
+                "value": 20
+            },
+            {
+                "tag": "Charisma",
+                "value": -30
+            },
+            {
+                "tag": "Leadership",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "dabbler",
+        "name": "Dabbler",
+        "description": "It’s always about the next big thing.",
+        "tags": [ "Nature:Dabbler", "Social", "Mental", "Talents", "Skills" ],
+        "affinities": [
+            {
+                "tag": "Nature:Dabbler",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Wits",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": -25
+            },
+            {
+                "tag": "BloodMagic",
+                "value": -20
+            },
+            {
+                "tag": "Scholar",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Scenester",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Artist",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": -35
+            }
+        ]
+    },
+    {
+        "id": "deviant",
+        "name": "Deviant",
+        "description": "The status quo is for sheep.",
+        "tags": [ "Nature:Deviant", "Social", "Mental", "Morality", "Underworld" ],
+        "affinities": [
+            {
+                "tag": "Nature:Deviant",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Morality",
+                "value": -35
+            },
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Bureaucracy",
+                "value": -30
+            },
+            {
+                "tag": "HighSociety",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Rebel",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "director",
+        "name": "Director",
+        "description": "You oversee what must be done.",
+        "tags": [ "Nature:Director", "Mental", "Social", "Leadership", "Influence", "Bureaucracy" ],
+        "affinities": [
+            {
+                "tag": "Nature:Director",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Social",
+                "value": 30
+            },
+            {
+                "tag": "Leadership",
+                "value": 35
+            },
+            {
+                "tag": "Influence",
+                "value": 25
+            },
+            {
+                "tag": "Intelligence",
+                "value": 20
+            },
+            {
+                "tag": "Combat",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 25
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "enigma",
+        "name": "Enigma",
+        "description": "Just when people think they’ve figured you out, you change the game.",
+        "tags": [ "Nature:Enigma", "Mental", "Social", "Deception", "Stealth", "Arcane" ],
+        "affinities": [
+            {
+                "tag": "Nature:Enigma",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 35
+            },
+            {
+                "tag": "Social",
+                "value": 15
+            },
+            {
+                "tag": "Deception",
+                "value": 30
+            },
+            {
+                "tag": "Stealth",
+                "value": 20
+            },
+            {
+                "tag": "Investigation",
+                "value": 15
+            },
+            {
+                "tag": "Leadership",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Hacker",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "eye_of_the_storm",
+        "name": "Eye of the Storm",
+        "description": "Chaos and havoc follow you, but it never gets to you.",
+        "tags": [ "Nature:EyeOfTheStorm", "Mental", "Physical", "Willpower", "Survival" ],
+        "affinities": [
+            {
+                "tag": "Nature:EyeOfTheStorm",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Physical",
+                "value": 15
+            },
+            {
+                "tag": "Willpower",
+                "value": 40
+            },
+            {
+                "tag": "Wits",
+                "value": 25
+            },
+            {
+                "tag": "Frenzy",
+                "value": -30
+            },
+            {
+                "tag": "Survival",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "fanatic",
+        "name": "Fanatic",
+        "description": "The cause is all that matters.",
+        "tags": [ "Nature:Fanatic", "Social", "Mental", "Willpower", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Fanatic",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Mental",
+                "value": 10
+            },
+            {
+                "tag": "Willpower",
+                "value": 35
+            },
+            {
+                "tag": "Morality",
+                "value": -20
+            },
+            {
+                "tag": "Frenzy",
+                "value": 15
+            },
+            {
+                "tag": "Investigation",
+                "value": -25
+            },
+            {
+                "tag": "Concept:Zealot",
+                "value": 35
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 25
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "gallant",
+        "name": "Gallant",
+        "description": "You’re not the showstopper: you’re the show!",
+        "tags": [ "Nature:Gallant", "Social", "Physical", "Performance", "Appearance", "HighSociety" ],
+        "affinities": [
+            {
+                "tag": "Nature:Gallant",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Physical",
+                "value": 15
+            },
+            {
+                "tag": "Mental",
+                "value": -20
+            },
+            {
+                "tag": "Appearance",
+                "value": 30
+            },
+            {
+                "tag": "Charisma",
+                "value": 25
+            },
+            {
+                "tag": "Performance",
+                "value": 20
+            },
+            {
+                "tag": "Stealth",
+                "value": -25
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 45
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -50
+            }
+        ]
+    },
+    {
+        "id": "guru",
+        "name": "Guru",
+        "description": "People find you spiritually compelling.",
+        "tags": [ "Nature:Guru", "Social", "Mental", "Leadership", "Arcane", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Guru",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Leadership",
+                "value": 30
+            },
+            {
+                "tag": "Charisma",
+                "value": 25
+            },
+            {
+                "tag": "Arcane",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 25
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "idealist",
+        "name": "Idealist",
+        "description": "You believe in something greater.",
+        "tags": [ "Nature:Idealist", "Mental", "Social", "Willpower", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Idealist",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": 30
+            },
+            {
+                "tag": "Morality",
+                "value": 25
+            },
+            {
+                "tag": "Streetwise",
+                "value": -20
+            },
+            {
+                "tag": "Deception",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Activist",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Healer",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "judge",
+        "name": "Judge",
+        "description": "Your judgment will improve things.",
+        "tags": [ "Nature:Judge", "Mental", "Social", "Investigation", "Morality", "Leadership" ],
+        "affinities": [
+            {
+                "tag": "Nature:Judge",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 35
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Perception",
+                "value": 25
+            },
+            {
+                "tag": "Intelligence",
+                "value": 20
+            },
+            {
+                "tag": "Investigation",
+                "value": 25
+            },
+            {
+                "tag": "Morality",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "loner",
+        "name": "Loner",
+        "description": "You make your own way.",
+        "tags": [ "Nature:Loner", "Physical", "Mental", "Talents", "Survival", "Streetwise", "Stealth" ],
+        "affinities": [
+            {
+                "tag": "Nature:Loner",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Social",
+                "value": -40
+            },
+            {
+                "tag": "Survival",
+                "value": 30
+            },
+            {
+                "tag": "Allies",
+                "value": -35
+            },
+            {
+                "tag": "Leadership",
+                "value": -30
+            },
+            {
+                "tag": "Willpower",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Outsider",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "martyr",
+        "name": "Martyr",
+        "description": "You suffer for the greater good.",
+        "tags": [ "Nature:Martyr", "Social", "Mental", "Willpower", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Martyr",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Willpower",
+                "value": 40
+            },
+            {
+                "tag": "Stamina",
+                "value": 15
+            },
+            {
+                "tag": "Morality",
+                "value": 30
+            },
+            {
+                "tag": "Survival",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Zealot",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Guardian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Salubri",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "masochist",
+        "name": "Masochist",
+        "description": "Pain reminds you that you still exist.",
+        "tags": [ "Nature:Masochist", "Physical", "Mental", "Willpower", "Stamina", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Masochist",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 20
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Willpower",
+                "value": 30
+            },
+            {
+                "tag": "Stamina",
+                "value": 25
+            },
+            {
+                "tag": "Morality",
+                "value": -25
+            },
+            {
+                "tag": "Frenzy",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 10
+            }
+        ]
+    },
+    {
+        "id": "monster",
+        "name": "Monster",
+        "description": "You’re Damned, so act like it!",
+        "tags": [ "Nature:Monster", "Physical", "Social", "Intimidation", "Frenzy", "Primal", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Monster",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 30
+            },
+            {
+                "tag": "Social",
+                "value": 10
+            },
+            {
+                "tag": "Mental",
+                "value": -20
+            },
+            {
+                "tag": "Intimidation",
+                "value": 35
+            },
+            {
+                "tag": "Frenzy",
+                "value": 30
+            },
+            {
+                "tag": "Primal",
+                "value": 25
+            },
+            {
+                "tag": "Morality",
+                "value": -50
+            },
+            {
+                "tag": "Humanity",
+                "value": -40
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Zealot",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "pedagogue",
+        "name": "Pedagogue",
+        "description": "You save others through knowledge.",
+        "tags": [ "Nature:Pedagogue", "Mental", "Social", "Knowledges", "Scholar", "Leadership" ],
+        "affinities": [
+            {
+                "tag": "Nature:Pedagogue",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 40
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Physical",
+                "value": -30
+            },
+            {
+                "tag": "Knowledges",
+                "value": 35
+            },
+            {
+                "tag": "Scholar",
+                "value": 30
+            },
+            {
+                "tag": "Leadership",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "penitent",
+        "name": "Penitent",
+        "description": "Unlife is a curse, and you must atone for it.",
+        "tags": [ "Nature:Penitent", "Mental", "Willpower", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Penitent",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Social",
+                "value": -15
+            },
+            {
+                "tag": "Willpower",
+                "value": 35
+            },
+            {
+                "tag": "Morality",
+                "value": 40
+            },
+            {
+                "tag": "Frenzy",
+                "value": -25
+            },
+            {
+                "tag": "Humanity",
+                "value": 30
+            },
+            {
+                "tag": "Deception",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Healer",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Salubri",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "perfectionist",
+        "name": "Perfectionist",
+        "description": "You strive for an unattainable goal.",
+        "tags": [ "Nature:Perfectionist", "Mental", "Skills", "Knowledges", "Willpower" ],
+        "affinities": [
+            {
+                "tag": "Nature:Perfectionist",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 35
+            },
+            {
+                "tag": "Physical",
+                "value": -10
+            },
+            {
+                "tag": "Willpower",
+                "value": 30
+            },
+            {
+                "tag": "Wits",
+                "value": -20
+            },
+            {
+                "tag": "Scholar",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Artist",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "rebel",
+        "name": "Rebel",
+        "description": "You follow no one’s rules.",
+        "tags": [ "Nature:Rebel", "Physical", "Social", "Talents", "Streetwise", "Survival" ],
+        "affinities": [
+            {
+                "tag": "Nature:Rebel",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Mental",
+                "value": -15
+            },
+            {
+                "tag": "Willpower",
+                "value": 20
+            },
+            {
+                "tag": "Leadership",
+                "value": -30
+            },
+            {
+                "tag": "Bureaucracy",
+                "value": -40
+            },
+            {
+                "tag": "Frenzy",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Activist",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Outsider",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 45
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Anarch",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -45
+            }
+        ]
+    },
+    {
+        "id": "rogue",
+        "name": "Rogue",
+        "description": "It’s all about you.",
+        "tags": [ "Nature:Rogue", "Physical", "Social", "Talents", "Deception", "Streetwise" ],
+        "affinities": [
+            {
+                "tag": "Nature:Rogue",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 20
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Dexterity",
+                "value": 20
+            },
+            {
+                "tag": "Manipulation",
+                "value": 20
+            },
+            {
+                "tag": "Deception",
+                "value": 25
+            },
+            {
+                "tag": "Allies",
+                "value": -25
+            },
+            {
+                "tag": "Morality",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "sadist",
+        "name": "Sadist",
+        "description": "You live to cause pain.",
+        "tags": [ "Nature:Sadist", "Social", "Mental", "Intimidation", "Deception", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Sadist",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Manipulation",
+                "value": 30
+            },
+            {
+                "tag": "Intimidation",
+                "value": 25
+            },
+            {
+                "tag": "Morality",
+                "value": -45
+            },
+            {
+                "tag": "Humanity",
+                "value": -35
+            },
+            {
+                "tag": "Medical",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 25
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": -35
+            }
+        ]
+    },
+    {
+        "id": "scientist",
+        "name": "Scientist",
+        "description": "Everything is a puzzle to solve.",
+        "tags": [ "Nature:Scientist", "Mental", "Knowledges", "Skills", "Investigation", "Technology" ],
+        "affinities": [
+            {
+                "tag": "Nature:Scientist",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 45
+            },
+            {
+                "tag": "Physical",
+                "value": -30
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            },
+            {
+                "tag": "Knowledges",
+                "value": 35
+            },
+            {
+                "tag": "Investigation",
+                "value": 30
+            },
+            {
+                "tag": "Technology",
+                "value": 25
+            },
+            {
+                "tag": "Arcane",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "sociopath",
+        "name": "Sociopath",
+        "description": "The inferior must be destroyed.",
+        "tags": [ "Nature:Sociopath", "Social", "Mental", "Deception", "Intimidation", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Sociopath",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Manipulation",
+                "value": 35
+            },
+            {
+                "tag": "Deception",
+                "value": 25
+            },
+            {
+                "tag": "Intimidation",
+                "value": 20
+            },
+            {
+                "tag": "Morality",
+                "value": -50
+            },
+            {
+                "tag": "Humanity",
+                "value": -40
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Giovanni",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Salubri",
+                "value": -50
+            }
+        ]
+    },
+    {
+        "id": "soldier",
+        "name": "Soldier",
+        "description": "You follow orders, but in your own way.",
+        "tags": [ "Nature:Soldier", "Physical", "Mental", "Skills", "Combat", "Survival", "Willpower" ],
+        "affinities": [
+            {
+                "tag": "Nature:Soldier",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            },
+            {
+                "tag": "Combat",
+                "value": 30
+            },
+            {
+                "tag": "Willpower",
+                "value": 25
+            },
+            {
+                "tag": "Leadership",
+                "value": -15
+            },
+            {
+                "tag": "Bureaucracy",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 40
+            },
+            {
+                "tag": "Concept:Guardian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "survivor",
+        "name": "Survivor",
+        "description": "Nothing can keep you down.",
+        "tags": [ "Nature:Survivor", "Physical", "Mental", "Talents", "Survival", "Stamina", "Willpower" ],
+        "affinities": [
+            {
+                "tag": "Nature:Survivor",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Social",
+                "value": -15
+            },
+            {
+                "tag": "Survival",
+                "value": 40
+            },
+            {
+                "tag": "Stamina",
+                "value": 30
+            },
+            {
+                "tag": "Willpower",
+                "value": 35
+            },
+            {
+                "tag": "Allies",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 40
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "thrill_seeker",
+        "name": "Thrill-Seeker",
+        "description": "The rush is all that matters.",
+        "tags": [ "Nature:ThrillSeeker", "Physical", "Talents", "Athleticism", "Streetwise", "Frenzy" ],
+        "affinities": [
+            {
+                "tag": "Nature:ThrillSeeker",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": -25
+            },
+            {
+                "tag": "Dexterity",
+                "value": 25
+            },
+            {
+                "tag": "Wits",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": -20
+            },
+            {
+                "tag": "Frenzy",
+                "value": 20
+            },
+            {
+                "tag": "Scholar",
+                "value": -30
+            },
+            {
+                "tag": "Concept:Explorer",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "traditionalist",
+        "name": "Traditionalist",
+        "description": "As it has always been, so it must be.",
+        "tags": [ "Nature:Traditionalist", "Mental", "Social", "Knowledges", "Bureaucracy", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Traditionalist",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Knowledges",
+                "value": 25
+            },
+            {
+                "tag": "Bureaucracy",
+                "value": 35
+            },
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Frenzy",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Archivist",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -45
+            }
+        ]
+    },
+    {
+        "id": "trickster",
+        "name": "Trickster",
+        "description": "Laughter dims the pain.",
+        "tags": [ "Nature:Trickster", "Social", "Mental", "Talents", "Deception", "Performance", "Streetwise" ],
+        "affinities": [
+            {
+                "tag": "Nature:Trickster",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Physical",
+                "value": -10
+            },
+            {
+                "tag": "Manipulation",
+                "value": 30
+            },
+            {
+                "tag": "Wits",
+                "value": 25
+            },
+            {
+                "tag": "Deception",
+                "value": 25
+            },
+            {
+                "tag": "Performance",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 30
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "visionary",
+        "name": "Visionary",
+        "description": "Something exists beyond all this.",
+        "tags": [ "Nature:Visionary", "Mental", "Social", "Arcane", "Leadership", "Willpower" ],
+        "affinities": [
+            {
+                "tag": "Nature:Visionary",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 40
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Physical",
+                "value": -25
+            },
+            {
+                "tag": "Intelligence",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": 25
+            },
+            {
+                "tag": "Leadership",
+                "value": 20
+            },
+            {
+                "tag": "Streetwise",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "acolyte",
+        "name": "Acolyte",
+        "description": "You are devoted to a person or ideal that guides your every action.",
+        "tags": [ "Nature:Acolyte", "Social", "Mental", "Willpower", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Acolyte",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Willpower",
+                "value": 35
+            },
+            {
+                "tag": "Leadership",
+                "value": -25
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Servant",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 30
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "aesthete",
+        "name": "Aesthete",
+        "description": "Beauty is the only thing of worth.",
+        "tags": [ "Nature:Aesthete", "Social", "Mental", "Performance", "HighSociety", "Appearance" ],
+        "affinities": [
+            {
+                "tag": "Nature:Aesthete",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Physical",
+                "value": -20
+            },
+            {
+                "tag": "Appearance",
+                "value": 30
+            },
+            {
+                "tag": "Performance",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Artist",
+                "value": 35
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 50
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -50
+            }
+        ]
+    },
+    {
+        "id": "advocate",
+        "name": "Advocate",
+        "description": "You stand up for the weak and downtrodden.",
+        "tags": [ "Nature:Advocate", "Social", "Mental", "Leadership", "Morality", "Influence" ],
+        "affinities": [
+            {
+                "tag": "Nature:Advocate",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Charisma",
+                "value": 25
+            },
+            {
+                "tag": "Morality",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Activist",
+                "value": 35
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": -25
+            }
+        ]
+    },
+    {
+        "id": "arbitrator",
+        "name": "Arbitrator",
+        "description": "You are a natural peacemaker and mediator of disputes.",
+        "tags": [ "Nature:Arbitrator", "Social", "Mental", "Talents", "Leadership", "Bureaucracy" ],
+        "affinities": [
+            {
+                "tag": "Nature:Arbitrator",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Manipulation",
+                "value": 20
+            },
+            {
+                "tag": "Perception",
+                "value": 20
+            },
+            {
+                "tag": "Combat",
+                "value": -30
+            },
+            {
+                "tag": "Frenzy",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -35
+            }
+        ]
+    },
+    {
+        "id": "ascetic",
+        "name": "Ascetic",
+        "description": "You deny yourself worldly pleasures to achieve a higher state of being.",
+        "tags": [ "Nature:Ascetic", "Mental", "Physical", "Willpower", "Morality", "Survival" ],
+        "affinities": [
+            {
+                "tag": "Nature:Ascetic",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Physical",
+                "value": 15
+            },
+            {
+                "tag": "Social",
+                "value": -30
+            },
+            {
+                "tag": "Willpower",
+                "value": 40
+            },
+            {
+                "tag": "Stamina",
+                "value": 20
+            },
+            {
+                "tag": "Resources",
+                "value": -40
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "bureaucrat",
+        "name": "Bureaucrat",
+        "description": "The system must be respected and upheld for the good of all.",
+        "tags": [ "Nature:Bureaucrat", "Mental", "Social", "Knowledges", "Bureaucracy", "Influence" ],
+        "affinities": [
+            {
+                "tag": "Nature:Bureaucrat",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 35
+            },
+            {
+                "tag": "Social",
+                "value": 15
+            },
+            {
+                "tag": "Physical",
+                "value": -25
+            },
+            {
+                "tag": "Bureaucracy",
+                "value": 45
+            },
+            {
+                "tag": "Knowledges",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Archivist",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -50
+            }
+        ]
+    },
+    {
+        "id": "coward",
+        "name": "Coward",
+        "description": "Your first priority is always self-preservation, no matter the cost to others.",
+        "tags": [ "Nature:Coward", "Mental", "Talents", "Survival", "Stealth", "Deception" ],
+        "affinities": [
+            {
+                "tag": "Nature:Coward",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Physical",
+                "value": -15
+            },
+            {
+                "tag": "Social",
+                "value": -10
+            },
+            {
+                "tag": "Willpower",
+                "value": -35
+            },
+            {
+                "tag": "Combat",
+                "value": -40
+            },
+            {
+                "tag": "Survival",
+                "value": 30
+            },
+            {
+                "tag": "Stealth",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "critic",
+        "name": "Critic",
+        "description": "You find truth by deconstructing and analyzing everything and everyone.",
+        "tags": [ "Nature:Critic", "Mental", "Social", "Investigation", "Scholar", "Performance" ],
+        "affinities": [
+            {
+                "tag": "Nature:Critic",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 40
+            },
+            {
+                "tag": "Social",
+                "value": 10
+            },
+            {
+                "tag": "Physical",
+                "value": -20
+            },
+            {
+                "tag": "Perception",
+                "value": 30
+            },
+            {
+                "tag": "Investigation",
+                "value": 25
+            },
+            {
+                "tag": "Charisma",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Reporter",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "defender",
+        "name": "Defender",
+        "description": "You stand as a shield to protect others from harm.",
+        "tags": [ "Nature:Defender", "Physical", "Mental", "Talents", "Stamina", "Willpower", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Defender",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Social",
+                "value": -10
+            },
+            {
+                "tag": "Stamina",
+                "value": 30
+            },
+            {
+                "tag": "Willpower",
+                "value": 25
+            },
+            {
+                "tag": "Morality",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Guardian",
+                "value": 35
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "egotist",
+        "name": "Egotist",
+        "description": "You are the most important person you know.",
+        "tags": [ "Nature:Egotist", "Social", "Mental", "Leadership", "Influence" ],
+        "affinities": [
+            {
+                "tag": "Nature:Egotist",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Leadership",
+                "value": 25
+            },
+            {
+                "tag": "Allies",
+                "value": -30
+            },
+            {
+                "tag": "Morality",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 20
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "explorer",
+        "name": "Explorer",
+        "description": "The greatest rewards lie in uncharted territory.",
+        "tags": [ "Nature:Explorer", "Physical", "Mental", "Talents", "Survival", "Investigation" ],
+        "affinities": [
+            {
+                "tag": "Nature:Explorer",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            },
+            {
+                "tag": "Survival",
+                "value": 35
+            },
+            {
+                "tag": "Investigation",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Explorer",
+                "value": 40
+            },
+            {
+                "tag": "Concept:Outsider",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -35
+            }
+        ]
+    },
+    {
+        "id": "fatalist",
+        "name": "Fatalist",
+        "description": "Your fate is sealed; you only play the part you were given.",
+        "tags": [ "Nature:Fatalist", "Mental", "Knowledges", "Willpower" ],
+        "affinities": [
+            {
+                "tag": "Nature:Fatalist",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Social",
+                "value": -15
+            },
+            {
+                "tag": "Willpower",
+                "value": -30
+            },
+            {
+                "tag": "Leadership",
+                "value": -25
+            },
+            {
+                "tag": "Frenzy",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "gambler",
+        "name": "Gambler",
+        "description": "You live for the thrill of taking a chance.",
+        "tags": [ "Nature:Gambler", "Social", "Mental", "Talents", "Streetwise", "Deception" ],
+        "affinities": [
+            {
+                "tag": "Nature:Gambler",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Wits",
+                "value": 30
+            },
+            {
+                "tag": "Willpower",
+                "value": -25
+            },
+            {
+                "tag": "Resources",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 30
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "guardian",
+        "name": "Guardian",
+        "description": "You are the steadfast protector of a person, place, or thing.",
+        "tags": [ "Nature:Guardian", "Physical", "Mental", "Talents", "Willpower", "Survival" ],
+        "affinities": [
+            {
+                "tag": "Nature:Guardian",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": 35
+            },
+            {
+                "tag": "Stamina",
+                "value": 20
+            },
+            {
+                "tag": "Perception",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Guardian",
+                "value": 45
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "honorable",
+        "name": "Honorable",
+        "description": "Your word is your bond, even to your own detriment.",
+        "tags": [ "Nature:Honorable", "Social", "Mental", "Willpower", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Honorable",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Willpower",
+                "value": 30
+            },
+            {
+                "tag": "Morality",
+                "value": 25
+            },
+            {
+                "tag": "Deception",
+                "value": -40
+            },
+            {
+                "tag": "Manipulation",
+                "value": -25
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Guardian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "hunter",
+        "name": "Hunter",
+        "description": "The thrill of the chase is your life's blood.",
+        "tags": [ "Nature:Hunter", "Physical", "Mental", "Talents", "Survival", "Stealth", "Investigation" ],
+        "affinities": [
+            {
+                "tag": "Nature:Hunter",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            },
+            {
+                "tag": "Survival",
+                "value": 30
+            },
+            {
+                "tag": "Stealth",
+                "value": 25
+            },
+            {
+                "tag": "Perception",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "jester",
+        "name": "Jester",
+        "description": "You use humor and satire to expose uncomfortable truths.",
+        "tags": [ "Nature:Jester", "Social", "Mental", "Talents", "Performance", "Deception" ],
+        "affinities": [
+            {
+                "tag": "Nature:Jester",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Performance",
+                "value": 30
+            },
+            {
+                "tag": "Manipulation",
+                "value": 25
+            },
+            {
+                "tag": "Intimidation",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Artist",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 40
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -35
+            }
+        ]
+    },
+    {
+        "id": "manipulator",
+        "name": "Manipulator",
+        "description": "You see others as puppets and take delight in pulling their strings.",
+        "tags": [ "Nature:Manipulator", "Social", "Mental", "Deception", "Manipulation", "Control" ],
+        "affinities": [
+            {
+                "tag": "Nature:Manipulator",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Manipulation",
+                "value": 45
+            },
+            {
+                "tag": "Deception",
+                "value": 30
+            },
+            {
+                "tag": "Morality",
+                "value": -25
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 25
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "mastermind",
+        "name": "Mastermind",
+        "description": "All the world's a chessboard, and you are ten moves ahead.",
+        "tags": [ "Nature:Mastermind", "Mental", "Social", "Knowledges", "Leadership", "Control" ],
+        "affinities": [
+            {
+                "tag": "Nature:Mastermind",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 45
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Physical",
+                "value": -30
+            },
+            {
+                "tag": "Intelligence",
+                "value": 35
+            },
+            {
+                "tag": "Leadership",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "mediator",
+        "name": "Mediator",
+        "description": "You seek harmony and resolve conflict.",
+        "tags": [ "Nature:Mediator", "Social", "Mental", "Talents", "Leadership" ],
+        "affinities": [
+            {
+                "tag": "Nature:Mediator",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Charisma",
+                "value": 30
+            },
+            {
+                "tag": "Manipulation",
+                "value": 25
+            },
+            {
+                "tag": "Combat",
+                "value": -35
+            },
+            {
+                "tag": "Intimidation",
+                "value": -25
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "mentor",
+        "name": "Mentor",
+        "description": "You guide and empower others to reach their full potential.",
+        "tags": [ "Nature:Mentor", "Social", "Mental", "Knowledges", "Leadership", "Allies" ],
+        "affinities": [
+            {
+                "tag": "Nature:Mentor",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Leadership",
+                "value": 35
+            },
+            {
+                "tag": "Charisma",
+                "value": 25
+            },
+            {
+                "tag": "Allies",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "observer",
+        "name": "Observer",
+        "description": "You learn by watching from the sidelines, unseen and unheard.",
+        "tags": [ "Nature:Observer", "Mental", "Talents", "Perception", "Stealth", "Investigation" ],
+        "affinities": [
+            {
+                "tag": "Nature:Observer",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 40
+            },
+            {
+                "tag": "Social",
+                "value": -30
+            },
+            {
+                "tag": "Physical",
+                "value": -10
+            },
+            {
+                "tag": "Perception",
+                "value": 35
+            },
+            {
+                "tag": "Stealth",
+                "value": 30
+            },
+            {
+                "tag": "Investigation",
+                "value": 25
+            },
+            {
+                "tag": "Leadership",
+                "value": -40
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Archivist",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 45
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -35
+            }
+        ]
+    },
+    {
+        "id": "optimist",
+        "name": "Optimist",
+        "description": "The glass is always half full, even when it's full of blood.",
+        "tags": [ "Nature:Optimist", "Social", "Mental", "Talents", "Willpower", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Optimist",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Willpower",
+                "value": 20
+            },
+            {
+                "tag": "Morality",
+                "value": 15
+            },
+            {
+                "tag": "Frenzy",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Activist",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "parasite",
+        "name": "Parasite",
+        "description": "You thrive by feeding off the resources and successes of others.",
+        "tags": [ "Nature:Parasite", "Social", "Talents", "Deception", "Streetwise", "Resources" ],
+        "affinities": [
+            {
+                "tag": "Nature:Parasite",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": -15
+            },
+            {
+                "tag": "Manipulation",
+                "value": 25
+            },
+            {
+                "tag": "Deception",
+                "value": 20
+            },
+            {
+                "tag": "Resources",
+                "value": 25
+            },
+            {
+                "tag": "Morality",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "pessimist",
+        "name": "Pessimist",
+        "description": "You always expect the worst, and are rarely disappointed.",
+        "tags": [ "Nature:Pessimist", "Mental", "Talents", "Survival", "Investigation" ],
+        "affinities": [
+            {
+                "tag": "Nature:Pessimist",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Social",
+                "value": -25
+            },
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Perception",
+                "value": 20
+            },
+            {
+                "tag": "Frenzy",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "provocateur",
+        "name": "Provocateur",
+        "description": "You incite action and reaction just to see what happens.",
+        "tags": [ "Nature:Provocateur", "Social", "Mental", "Manipulation", "Deception", "Frenzy" ],
+        "affinities": [
+            {
+                "tag": "Nature:Provocateur",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Manipulation",
+                "value": 35
+            },
+            {
+                "tag": "Frenzy",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Activist",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Scenester",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 35
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -30
+            }
+        ]
+    },
+    {
+        "id": "questioner",
+        "name": "Questioner",
+        "description": "You cannot accept anything without dissecting it first.",
+        "tags": [ "Nature:Questioner", "Mental", "Knowledges", "Investigation", "Scholar" ],
+        "affinities": [
+            {
+                "tag": "Nature:Questioner",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 40
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            },
+            {
+                "tag": "Investigation",
+                "value": 35
+            },
+            {
+                "tag": "Perception",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "rationalist",
+        "name": "Rationalist",
+        "description": "Emotion is a weakness; logic is the only tool that can be trusted.",
+        "tags": [ "Nature:Rationalist", "Mental", "Knowledges", "Investigation", "Willpower" ],
+        "affinities": [
+            {
+                "tag": "Nature:Rationalist",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 45
+            },
+            {
+                "tag": "Social",
+                "value": -35
+            },
+            {
+                "tag": "Intelligence",
+                "value": 30
+            },
+            {
+                "tag": "Willpower",
+                "value": 25
+            },
+            {
+                "tag": "Frenzy",
+                "value": -30
+            },
+            {
+                "tag": "Arcane",
+                "value": -25
+            },
+            {
+                "tag": "Concept:Scientist",
+                "value": 35
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -35
+            }
+        ]
+    },
+    {
+        "id": "romantic",
+        "name": "Romantic",
+        "description": "You are endlessly searching for the sublime and the beautiful in a dead world.",
+        "tags": [ "Nature:Romantic", "Social", "Mental", "Talents", "Performance", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Romantic",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Physical",
+                "value": -20
+            },
+            {
+                "tag": "Charisma",
+                "value": 25
+            },
+            {
+                "tag": "Performance",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Artist",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 45
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -40
+            }
+        ]
+    },
+    {
+        "id": "stoic",
+        "name": "Stoic",
+        "description": "You endure all things without complaint or outward emotion.",
+        "tags": [ "Nature:Stoic", "Mental", "Physical", "Willpower", "Stamina" ],
+        "affinities": [
+            {
+                "tag": "Nature:Stoic",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 25
+            },
+            {
+                "tag": "Physical",
+                "value": 20
+            },
+            {
+                "tag": "Social",
+                "value": -30
+            },
+            {
+                "tag": "Willpower",
+                "value": 45
+            },
+            {
+                "tag": "Stamina",
+                "value": 25
+            },
+            {
+                "tag": "Frenzy",
+                "value": -40
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "sycophant",
+        "name": "Sycophant",
+        "description": "Your path to power is through flattery and serving the influential.",
+        "tags": [ "Nature:Sycophant", "Social", "Talents", "Deception", "Streetwise", "HighSociety" ],
+        "affinities": [
+            {
+                "tag": "Nature:Sycophant",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": 10
+            },
+            {
+                "tag": "Physical",
+                "value": -20
+            },
+            {
+                "tag": "Manipulation",
+                "value": 30
+            },
+            {
+                "tag": "Deception",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": -25
+            },
+            {
+                "tag": "Leadership",
+                "value": -30
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Servant",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 25
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "vindicator",
+        "name": "Vindicator",
+        "description": "Wrongs must be punished, and you are the instrument of that justice.",
+        "tags": [ "Nature:Vindicator", "Physical", "Mental", "Combat", "Intimidation", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Nature:Vindicator",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Willpower",
+                "value": 25
+            },
+            {
+                "tag": "Combat",
+                "value": 20
+            },
+            {
+                "tag": "Intimidation",
+                "value": 20
+            },
+            {
+                "tag": "Morality",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 35
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 25
+            }
+        ]
+    },
+    {
+        "id": "zealot",
+        "name": "Zealot",
+        "description": "Your belief is absolute, and you will enforce it upon the world.",
+        "tags": [ "Nature:Zealot", "Social", "Mental", "Willpower", "Intimidation", "Frenzy" ],
+        "affinities": [
+            {
+                "tag": "Nature:Zealot",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 20
+            },
+            {
+                "tag": "Mental",
+                "value": 10
+            },
+            {
+                "tag": "Willpower",
+                "value": 40
+            },
+            {
+                "tag": "Intimidation",
+                "value": 30
+            },
+            {
+                "tag": "Frenzy",
+                "value": 25
+            },
+            {
+                "tag": "Investigation",
+                "value": -30
+            },
+            {
+                "tag": "Concept:Zealot",
+                "value": 45
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 30
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 20
+            }
+        ]
+    }
+]
+
+
+
+        

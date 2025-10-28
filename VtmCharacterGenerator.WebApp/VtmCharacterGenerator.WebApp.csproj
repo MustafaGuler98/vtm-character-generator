@@ -14,4 +14,9 @@
     <ProjectReference Include="..\VtmCharacterGenerator.Core\VtmCharacterGenerator.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+		<!-- This ensures that the wwwroot folder and its content are copied to the output directory on build -->
+		<Content Update="wwwroot\**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>

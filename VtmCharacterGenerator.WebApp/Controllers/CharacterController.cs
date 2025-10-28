@@ -1,31 +1,32 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using VtmCharacterGenerator.Core.Services;
 using VtmCharacterGenerator.Core.Models;
+using VtmCharacterGenerator.Core.Services;
 
 namespace VtmCharacterGenerator.WebApp.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")] // This will result in a URL like /api/character
+    [Route("api/[controller]")]
     public class CharacterController : ControllerBase
     {
-        private readonly CharacterGeneratorService _generatorService;
+        private readonly PersonaService _personaService;
 
-        public CharacterController(CharacterGeneratorService generatorService)
+        public CharacterController(PersonaService personaService)
         {
-            _generatorService = generatorService;
+            _personaService = personaService;
         }
 
-        [HttpGet("generate")] // This maps to a GET request at /api/character/generate
-        public ActionResult<Character> GenerateNewCharacter()
+        [HttpGet("generate")]
+        public ActionResult<Persona> GenerateNewPersona()
         {
             try
             {
-                var newCharacter = _generatorService.GenerateCharacter();
-                return Ok(newCharacter); 
+                
+                var inputPersona = new Persona();
+                var finalPersona = _personaService.CompletePersona(inputPersona);
+                return Ok(finalPersona); 
             }
             catch (Exception ex)
             {
-              
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }

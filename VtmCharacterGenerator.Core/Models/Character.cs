@@ -5,6 +5,11 @@
         // public string Name { get; set; }
         public Clan Clan { get; set; }
 
-        // for attributes, abilities, backgrounds etc.
+        public Dictionary<string, int> Attributes { get; set; }
+
+        public Character()
+        {
+            Attributes = new Dictionary<string, int>();
+        }
     }
 }

@@ -1,0 +1,47 @@
+[
+    {
+        "id": "strength",
+        "name": "Strength",
+        "category": "Physical"
+    },
+    {
+        "id": "dexterity",
+        "name": "Dexterity",
+        "category": "Physical"
+    },
+    {
+        "id": "stamina",
+        "name": "Stamina",
+        "category": "Physical"
+    },
+    {
+        "id": "charisma",
+        "name": "Charisma",
+        "category": "Social"
+    },
+    {
+        "id": "manipulation",
+        "name": "Manipulation",
+        "category": "Social"
+    },
+    {
+        "id": "appearance",
+        "name": "Appearance",
+        "category": "Social"
+    },
+    {
+        "id": "perception",
+        "name": "Perception",
+        "category": "Mental"
+    },
+    {
+        "id": "intelligence",
+        "name": "Intelligence",
+        "category": "Mental"
+    },
+    {
+        "id": "wits",
+        "name": "Wits",
+        "category": "Mental"
+    }
+]

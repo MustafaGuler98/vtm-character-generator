@@ -3,7 +3,7 @@ using VtmCharacterGenerator.Core.Models;
 
 namespace VtmCharacterGenerator.Core.Models
 {
-    public class Clan : IHasTags
+    public class VtMAttribute : IHasTags
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -11,14 +11,8 @@ namespace VtmCharacterGenerator.Core.Models
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonPropertyName("nickname")]
-        public string Nickname { get; set; }
-
-        [JsonPropertyName("disciplines")]
-        public List<string> Disciplines { get; set; }
-
-        [JsonPropertyName("weakness")]
-        public string Weakness { get; set; }
+        [JsonPropertyName("category")]
+        public string Category { get; set; }
 
         [JsonPropertyName("tags")]
         public List<string> Tags { get; set; } = new List<string>();

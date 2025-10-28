@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using VtmCharacterGenerator.Core.Models;
 
 namespace VtmCharacterGenerator.Core.Models
 {

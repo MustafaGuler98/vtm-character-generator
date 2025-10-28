@@ -1,0 +1,305 @@
+{
+    "description": "This is the master list of all universal tags used in the VTM Character Generator. All data files (concepts, clans, disciplines, etc.) must use the 'id' from this list for their tag and affinity definitions.",
+    "tags": [
+        {
+            "id": "physical",
+            "name": "Physical",
+            "category": "Core Stat",
+            "description": "Represents the primary category for physical Attributes (Strength, Dexterity, Stamina) and related physical challenges."
+        },
+        {
+            "id": "social",
+            "name": "Social",
+            "category": "Core Stat",
+            "description": "Represents the primary category for social Attributes (Charisma, Manipulation, Appearance) and social interactions."
+        },
+        {
+            "id": "mental",
+            "name": "Mental",
+            "category": "Core Stat",
+            "description": "Represents the primary category for mental Attributes (Perception, Intelligence, Wits) and intellectual challenges."
+        },
+        {
+            "id": "strength",
+            "name": "Strength",
+            "category": "Core Stat",
+            "description": "Directly relates to the Strength attribute, representing raw physical power."
+        },
+        {
+            "id": "dexterity",
+            "name": "Dexterity",
+            "category": "Core Stat",
+            "description": "Directly relates to the Dexterity attribute, representing agility, speed, and precision."
+        },
+        {
+            "id": "stamina",
+            "name": "Stamina",
+            "category": "Core Stat",
+            "description": "Directly relates to the Stamina attribute, representing health, toughness, and resilience."
+        },
+        {
+            "id": "charisma",
+            "name": "Charisma",
+            "category": "Core Stat",
+            "description": "Directly relates to the Charisma attribute, representing charm, leadership, and likability."
+        },
+        {
+            "id": "manipulation",
+            "name": "Manipulation",
+            "category": "Core Stat",
+            "description": "Directly relates to the Manipulation attribute, representing the ability to influence or trick others."
+        },
+        {
+            "id": "appearance",
+            "name": "Appearance",
+            "category": "Core Stat",
+            "description": "Directly relates to the Appearance attribute, representing physical attractiveness and presence."
+        },
+        {
+            "id": "perception",
+            "name": "Perception",
+            "category": "Core Stat",
+            "description": "Directly relates to the Perception attribute, representing awareness and sensory acuity."
+        },
+        {
+            "id": "intelligence",
+            "name": "Intelligence",
+            "category": "Core Stat",
+            "description": "Directly relates to the Intelligence attribute, representing memory, reason, and analytical thought."
+        },
+        {
+            "id": "wits",
+            "name": "Wits",
+            "category": "Core Stat",
+            "description": "Directly relates to the Wits attribute, representing quick thinking and improvisation."
+        },
+        {
+            "id": "talents",
+            "name": "Talents",
+            "category": "Core Stat",
+            "description": "Represents the category for innate, instinctual Abilities."
+        },
+        {
+            "id": "skills",
+            "name": "Skills",
+            "category": "Core Stat",
+            "description": "Represents the category for trained, practical Abilities."
+        },
+        {
+            "id": "knowledges",
+            "name": "Knowledges",
+            "category": "Core Stat",
+            "description": "Represents the category for learned, academic Abilities."
+        },
+        {
+            "id": "combat",
+            "name": "Combat",
+            "category": "Action & Approach",
+            "description": "Encompasses all forms of physical conflict and fighting."
+        },
+        {
+            "id": "brawling",
+            "name": "Brawling",
+            "category": "Action & Approach",
+            "description": "Relates to unarmed, raw, and often brutal combat."
+        },
+        {
+            "id": "melee",
+            "name": "Melee",
+            "category": "Action & Approach",
+            "description": "Relates to combat using handheld weapons like knives or swords."
+        },
+        {
+            "id": "firearms",
+            "name": "Firearms",
+            "category": "Action & Approach",
+            "description": "Relates to the use of ranged, projectile weapons."
+        },
+        {
+            "id": "athleticism",
+            "name": "Athleticism",
+            "category": "Action & Approach",
+            "description": "Involves physical movement like running, jumping, and climbing."
+        },
+        {
+            "id": "deception",
+            "name": "Deception",
+            "category": "Action & Approach",
+            "description": "Encompasses acts of lying, subterfuge, disguise, and misleading others."
+        },
+        {
+            "id": "intimidation",
+            "name": "Intimidation",
+            "category": "Action & Approach",
+            "description": "Involves inspiring fear through threats or sheer presence."
+        },
+        {
+            "id": "leadership",
+            "name": "Leadership",
+            "category": "Action & Approach",
+            "description": "Relates to commanding, inspiring, and directing others."
+        },
+        {
+            "id": "investigation",
+            "name": "Investigation",
+            "category": "Action & Approach",
+            "description": "Involves gathering clues, solving puzzles, and uncovering secrets."
+        },
+        {
+            "id": "stealth",
+            "name": "Stealth",
+            "category": "Action & Approach",
+            "description": "Involves moving unseen, hiding, and acting without being noticed."
+        },
+        {
+            "id": "survival",
+            "name": "Survival",
+            "category": "Action & Approach",
+            "description": "Relates to enduring harsh environments and living off the land."
+        },
+        {
+            "id": "technology",
+            "name": "Technology",
+            "category": "Action & Approach",
+            "description": "Involves using and manipulating computers and modern electronics."
+        },
+        {
+            "id": "medical",
+            "name": "Medical",
+            "category": "Action & Approach",
+            "description": "Relates to healing, anatomy, and diagnosing illnesses or injuries."
+        },
+        {
+            "id": "scholar",
+            "name": "Scholar",
+            "category": "Action & Approach",
+            "description": "Involves academic research, deep knowledge, and intellectual pursuits."
+        },
+        {
+            "id": "performance",
+            "name": "Performance",
+            "category": "Action & Approach",
+            "description": "Encompasses acting, singing, public speaking, or any form of artistic expression."
+        },
+        {
+            "id": "control",
+            "name": "Control",
+            "category": "Thematic & Supernatural",
+            "description": "Represents abilities that control the minds or actions of others, like Dominate."
+        },
+        {
+            "id": "illusion",
+            "name": "Illusion",
+            "category": "Thematic & Supernatural",
+            "description": "Represents abilities that manipulate reality or create false perceptions, like Chimerstry."
+        },
+        {
+            "id": "shapeshifting",
+            "name": "Shapeshifting",
+            "category": "Thematic & Supernatural",
+            "description": "Represents abilities that alter the user's physical form, like Protean or Vicissitude."
+        },
+        {
+            "id": "supernatural_perception",
+            "name": "Supernatural Perception",
+            "category": "Thematic & Supernatural",
+            "description": "Represents heightened or unnatural senses, like Auspex."
+        },
+        {
+            "id": "blood_magic",
+            "name": "Blood Magic",
+            "category": "Thematic & Supernatural",
+            "description": "Represents the arcane art of blood sorcery, primarily Thaumaturgy."
+        },
+        {
+            "id": "necromancy",
+            "name": "Necromancy",
+            "category": "Thematic & Supernatural",
+            "description": "Represents power over the dead, souls, and the underworld."
+        },
+        {
+            "id": "primal",
+            "name": "Primal",
+            "category": "Thematic & Supernatural",
+            "description": "Relates to the animalistic, instinctual, and savage nature of the Beast."
+        },
+        {
+            "id": "arcane",
+            "name": "Arcane",
+            "category": "Thematic & Supernatural",
+            "description": "Relates to occult knowledge, esoteric lore, and magical secrets."
+        },
+        {
+            "id": "frenzy",
+            "name": "Frenzy",
+            "category": "Thematic & Supernatural",
+            "description": "Relates to the Beast taking over and losing control."
+        },
+        {
+            "id": "morality",
+            "name": "Morality",
+            "category": "Thematic & Supernatural",
+            "description": "Concerns Humanity, Paths of Enlightenment, and the struggle against the Beast."
+        },
+        {
+            "id": "willpower",
+            "name": "Willpower",
+            "category": "Thematic & Supernatural",
+            "description": "Represents mental fortitude, determination, and focus."
+        },
+        {
+            "id": "blood",
+            "name": "Blood",
+            "category": "Thematic & Supernatural",
+            "description": "Relates to vitae, feeding, blood bonds, and the core of vampiric power."
+        },
+        {
+            "id": "high_society",
+            "name": "High Society",
+            "category": "Social & Environmental",
+            "description": "Involves the world of the wealthy, influential, and powerful mortals."
+        },
+        {
+            "id": "underworld",
+            "name": "Underworld",
+            "category": "Social & Environmental",
+            "description": "Concerns the criminal element, street life, and illegal activities."
+        },
+        {
+            "id": "influence",
+            "name": "Influence",
+            "category": "Social & Environmental",
+            "description": "Represents a character's pull in mortal society (political, financial, etc.)."
+        },
+        {
+            "id": "resources",
+            "name": "Resources",
+            "category": "Social & Environmental",
+            "description": "Represents a character's material wealth and assets."
+        },
+        {
+            "id": "information",
+            "name": "Information",
+            "category": "Social & Environmental",
+            "description": "Involves networks of spies, secrets, and access to knowledge."
+        },
+        {
+            "id": "allies",
+            "name": "Allies",
+            "category": "Social & Environmental",
+            "description": "Represents loyal friends, companions, and helpers."
+        },
+        {
+            "id": "streetwise",
+            "name": "Streetwise",
+            "category": "Social & Environmental",
+            "description": "Represents knowledge of the streets, its people, and its unspoken rules."
+        },
+        {
+            "id": "bureaucracy",
+            "name": "Bureaucracy",
+            "category": "Social & Environmental",
+            "description": "Involves navigating institutions, corporations, and official channels."
+        }
+    ]
+}

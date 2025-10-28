@@ -1,93 +1,660 @@
 [
-  {
-    "id": "assamite",
-    "name": "Assamite",
-    "nickname": "The Assassins",
-    "disciplines": [ "celerity", "obfuscate", "quietus" ],
-    "weakness": "Assamites develop an addiction to the vitae of other Kindred, forcing them to take a tithe from any Kindred they feed upon."
-  },
-  {
-    "id": "brujah",
-    "name": "Brujah",
-    "nickname": "The Rabble",
-    "disciplines": [ "celerity", "potence", "presence" ],
-    "weakness": "The passions of the Brujah are close to the surface. The difficulties for rolls to resist or control frenzy are two higher than normal."
-  },
-  {
-    "id": "followers_of_set",
-    "name": "Followers of Set",
-    "nickname": "The Serpents",
-    "disciplines": [ "obfuscate", "presence", "serpentis" ],
-    "weakness": "Setites suffer a severe allergy to bright light and sunlight, taking double the normal damage from it."
-  },
-  {
-    "id": "gangrel",
-    "name": "Gangrel",
-    "nickname": "The Outlanders",
-    "disciplines": [ "animalism", "fortitude", "protean" ],
-    "weakness": "Each time a Gangrel frenzies, they gain a permanent animalistic feature, such as fur, cat-like eyes, or bestial mannerisms."
-  },
-  {
-    "id": "giovanni",
-    "name": "Giovanni",
-    "nickname": "The Necromancers",
-    "disciplines": [ "dominate", "necromancy", "potence" ],
-    "weakness": "The Kiss of a Giovanni causes excruciating pain to mortals. Any mortal fed upon by a Giovanni is likely to die from the shock."
-  },
-  {
-    "id": "lasombra",
-    "name": "Lasombra",
-    "nickname": "The Keepers",
-    "disciplines": [ "dominate", "obtenebration", "potence" ],
-    "weakness": "Lasombra have no reflection. They cannot be seen in mirrors, pools of water, reflective windows, or any other polished surface."
-  },
-  {
-    "id": "malkavian",
-    "name": "Malkavian",
-    "nickname": "The Lunatics",
-    "disciplines": [ "auspex", "dementation", "obfuscate" ],
-    "weakness": "Every Malkavian is incurably insane, suffering from at least one permanent derangement that they can never overcome."
-  },
-  {
-    "id": "nosferatu",
-    "name": "Nosferatu",
-    "nickname": "The Sewer Rats",
-    "disciplines": [ "animalism", "obfuscate", "potence" ],
-    "weakness": "All Nosferatu are hideously deformed and monstrous in appearance. Their Appearance attribute is permanently zero."
-  },
-  {
-    "id": "ravnos",
-    "name": "Ravnos",
-    "nickname": "The Deceivers",
-    "disciplines": [ "animalism", "chimerstry", "fortitude" ],
-    "weakness": "Each Ravnos has a specific vice, such as lying or theft, to which they are addicted and must indulge whenever the opportunity arises."
-  },
-  {
-    "id": "toreador",
-    "name": "Toreador",
-    "nickname": "The Degenerates",
-    "disciplines": [ "auspex", "celerity", "presence" ],
-    "weakness": "Toreador can become entranced by beauty, becoming fixated on a beautiful object or person and unable to act for a scene."
-  },
-  {
-    "id": "tremere",
-    "name": "Tremere",
-    "nickname": "The Warlocks",
-    "disciplines": [ "auspex", "dominate", "thaumaturgy" ],
-    "weakness": "All Tremere are one step toward being fully blood bound to the seven elders of their clan, making them highly susceptible to the will of their superiors."
-  },
-  {
-    "id": "tzimisce",
-    "name": "Tzimisce",
-    "nickname": "The Fiends",
-    "disciplines": [ "animalism", "auspex", "vicissitude" ],
-    "weakness": "Tzimisce are deeply connected to their lands and must rest in the proximity of at least two handfuls of soil from a place important to them in their mortal life."
-  },
-  {
-    "id": "ventrue",
-    "name": "Ventrue",
-    "nickname": "The Blue Bloods",
-    "disciplines": [ "dominate", "fortitude", "presence" ],
-    "weakness": "Ventrue have a rare and specific taste. Each Ventrue can only feed from a certain type of mortal blood and will vomit any other."
-  }
+    {
+        "id": "assamite",
+        "name": "Assamite",
+        "nickname": "The Assassins",
+        "disciplines": [ "celerity", "obfuscate", "quietus" ],
+        "weakness": "Assamites develop an addiction to the vitae of other Kindred, forcing them to take a tithe from any Kindred they feed upon.",
+        "tags": [ "Clan:Assamite", "Physical", "Mental", "Stealth", "Combat", "Blood" ],
+        "affinities": [
+            {
+                "tag": "Clan:Assamite",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            },
+            {
+                "tag": "Stealth",
+                "value": 25
+            },
+            {
+                "tag": "Combat",
+                "value": 20
+            },
+            {
+                "tag": "BloodMagic",
+                "value": 10
+            },
+            {
+                "tag": "Morality",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 20
+            },
+            {
+                "tag": "Concept:MartialArtist",
+                "value": 25
+            }
+        ]
+    },
+    {
+        "id": "brujah",
+        "name": "Brujah",
+        "nickname": "The Rabble",
+        "disciplines": [ "celerity", "potence", "presence" ],
+        "weakness": "The passions of the Brujah are close to the surface. The difficulties for rolls to resist or control frenzy are two higher than normal.",
+        "tags": [ "Clan:Brujah", "Physical", "Social", "Combat", "Brawling", "Leadership", "Frenzy" ],
+        "affinities": [
+            {
+                "tag": "Clan:Brujah",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 35
+            },
+            {
+                "tag": "Social",
+                "value": 15
+            },
+            {
+                "tag": "Mental",
+                "value": -15
+            },
+            {
+                "tag": "Combat",
+                "value": 25
+            },
+            {
+                "tag": "Brawling",
+                "value": 20
+            },
+            {
+                "tag": "Frenzy",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Activist",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "followers_of_set",
+        "name": "Followers of Set",
+        "nickname": "The Serpents",
+        "disciplines": [ "obfuscate", "presence", "serpentis" ],
+        "weakness": "Setites suffer a severe allergy to bright light and sunlight, taking double the normal damage from it.",
+        "tags": [ "Clan:FollowerOfSet", "Social", "Mental", "Deception", "Stealth", "Arcane", "Underworld" ],
+        "affinities": [
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 30
+            },
+            {
+                "tag": "Mental",
+                "value": 15
+            },
+            {
+                "tag": "Physical",
+                "value": -10
+            },
+            {
+                "tag": "Deception",
+                "value": 35
+            },
+            {
+                "tag": "Stealth",
+                "value": 20
+            },
+            {
+                "tag": "Arcane",
+                "value": 15
+            },
+            {
+                "tag": "Morality",
+                "value": -25
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "gangrel",
+        "name": "Gangrel",
+        "nickname": "The Outlanders",
+        "disciplines": [ "animalism", "fortitude", "protean" ],
+        "weakness": "Each time a Gangrel frenzies, they gain a permanent animalistic feature, such as fur, cat-like eyes, or bestial mannerisms.",
+        "tags": [ "Clan:Gangrel", "Physical", "Talents", "Survival", "Primal", "Shapeshifting" ],
+        "affinities": [
+            {
+                "tag": "Clan:Gangrel",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 35
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            },
+            {
+                "tag": "Talents",
+                "value": 25
+            },
+            {
+                "tag": "Survival",
+                "value": 30
+            },
+            {
+                "tag": "Primal",
+                "value": 25
+            },
+            {
+                "tag": "Frenzy",
+                "value": 15
+            },
+            {
+                "tag": "HighSociety",
+                "value": -30
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Outsider",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "giovanni",
+        "name": "Giovanni",
+        "nickname": "The Necromancers",
+        "disciplines": [ "dominate", "necromancy", "potence" ],
+        "weakness": "The Kiss of a Giovanni causes excruciating pain to mortals. Any mortal fed upon by a Giovanni is likely to die from the shock.",
+        "tags": [ "Clan:Giovanni", "Mental", "Social", "Knowledges", "Necromancy", "Resources", "Underworld" ],
+        "affinities": [
+            {
+                "tag": "Clan:Giovanni",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Social",
+                "value": 15
+            },
+            {
+                "tag": "Physical",
+                "value": -10
+            },
+            {
+                "tag": "Knowledges",
+                "value": 25
+            },
+            {
+                "tag": "Necromancy",
+                "value": 40
+            },
+            {
+                "tag": "Resources",
+                "value": 30
+            },
+            {
+                "tag": "Underworld",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "lasombra",
+        "name": "Lasombra",
+        "nickname": "The Keepers",
+        "disciplines": [ "dominate", "obtenebration", "potence" ],
+        "weakness": "Lasombra have no reflection. They cannot be seen in mirrors, pools of water, reflective windows, or any other polished surface.",
+        "tags": [ "Clan:Lasombra", "Social", "Mental", "Leadership", "Control", "Influence", "Deception" ],
+        "affinities": [
+            {
+                "tag": "Clan:Lasombra",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 35
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Leadership",
+                "value": 30
+            },
+            {
+                "tag": "Control",
+                "value": 25
+            },
+            {
+                "tag": "Influence",
+                "value": 20
+            },
+            {
+                "tag": "Morality",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 25
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "malkavian",
+        "name": "Malkavian",
+        "nickname": "The Lunatics",
+        "disciplines": [ "auspex", "dementation", "obfuscate" ],
+        "weakness": "Every Malkavian is incurably insane, suffering from at least one permanent derangement that they can never overcome.",
+        "tags": [ "Clan:Malkavian", "Mental", "Social", "SupernaturalPerception", "Deception", "Information" ],
+        "affinities": [
+            {
+                "tag": "Clan:Malkavian",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 35
+            },
+            {
+                "tag": "Social",
+                "value": 15
+            },
+            {
+                "tag": "Physical",
+                "value": -15
+            },
+            {
+                "tag": "SupernaturalPerception",
+                "value": 30
+            },
+            {
+                "tag": "Deception",
+                "value": 20
+            },
+            {
+                "tag": "Information",
+                "value": 15
+            },
+            {
+                "tag": "Willpower",
+                "value": -10
+            },
+            {
+                "tag": "Frenzy",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Artist",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 15
+            }
+        ]
+    },
+    {
+        "id": "nosferatu",
+        "name": "Nosferatu",
+        "nickname": "The Sewer Rats",
+        "disciplines": [ "animalism", "obfuscate", "potence" ],
+        "weakness": "All Nosferatu are hideously deformed and monstrous in appearance. Their Appearance attribute is permanently zero.",
+        "tags": [ "Clan:Nosferatu", "Physical", "Mental", "Stealth", "Survival", "Information", "Underworld" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 100
+            },
+            {
+                "tag": "Physical",
+                "value": 25
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Social",
+                "value": -40
+            },
+            {
+                "tag": "Appearance",
+                "value": -1000
+            },
+            {
+                "tag": "Stealth",
+                "value": 35
+            },
+            {
+                "tag": "Information",
+                "value": 30
+            },
+            {
+                "tag": "Survival",
+                "value": 20
+            },
+            {
+                "tag": "HighSociety",
+                "value": -40
+            },
+            {
+                "tag": "Concept:Hacker",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "ravnos",
+        "name": "Ravnos",
+        "nickname": "The Deceivers",
+        "disciplines": [ "animalism", "chimerstry", "fortitude" ],
+        "weakness": "Each Ravnos has a specific vice, such as lying or theft, to which they are addicted and must indulge whenever the opportunity arises.",
+        "tags": [ "Clan:Ravnos", "Social", "Physical", "Deception", "Illusion", "Survival", "Streetwise" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ravnos",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 25
+            },
+            {
+                "tag": "Physical",
+                "value": 15
+            },
+            {
+                "tag": "Mental",
+                "value": -10
+            },
+            {
+                "tag": "Deception",
+                "value": 30
+            },
+            {
+                "tag": "Illusion",
+                "value": 35
+            },
+            {
+                "tag": "Survival",
+                "value": 20
+            },
+            {
+                "tag": "Morality",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "toreador",
+        "name": "Toreador",
+        "nickname": "The Degenerates",
+        "disciplines": [ "auspex", "celerity", "presence" ],
+        "weakness": "Toreador can become entranced by beauty, becoming fixated on a beautiful object or person and unable to act for a scene.",
+        "tags": [ "Clan:Toreador", "Social", "Mental", "HighSociety", "Performance", "Appearance", "SupernaturalPerception" ],
+        "affinities": [
+            {
+                "tag": "Clan:Toreador",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 45
+            },
+            {
+                "tag": "Mental",
+                "value": 10
+            },
+            {
+                "tag": "Physical",
+                "value": -10
+            },
+            {
+                "tag": "HighSociety",
+                "value": 35
+            },
+            {
+                "tag": "Appearance",
+                "value": 30
+            },
+            {
+                "tag": "Performance",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Artist",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "tremere",
+        "name": "Tremere",
+        "nickname": "The Warlocks",
+        "disciplines": [ "auspex", "dominate", "thaumaturgy" ],
+        "weakness": "All Tremere are one step toward being fully blood bound to the seven elders of their clan, making them highly susceptible to the will of their superiors.",
+        "tags": [ "Clan:Tremere", "Mental", "Knowledges", "BloodMagic", "Arcane", "Control", "Bureaucracy" ],
+        "affinities": [
+            {
+                "tag": "Clan:Tremere",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 45
+            },
+            {
+                "tag": "Social",
+                "value": 10
+            },
+            {
+                "tag": "Physical",
+                "value": -25
+            },
+            {
+                "tag": "Knowledges",
+                "value": 30
+            },
+            {
+                "tag": "BloodMagic",
+                "value": 40
+            },
+            {
+                "tag": "Arcane",
+                "value": 35
+            },
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 30
+            },
+            {
+                "tag": "Concept:Archivist",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "tzimisce",
+        "name": "Tzimisce",
+        "nickname": "The Fiends",
+        "disciplines": [ "animalism", "auspex", "vicissitude" ],
+        "weakness": "Tzimisce are deeply connected to their lands and must rest in the proximity of at least two handfuls of soil from a place important to them in their mortal life.",
+        "tags": [ "Clan:Tzimisce", "Mental", "Physical", "Shapeshifting", "Control", "Arcane", "Morality" ],
+        "affinities": [
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 100
+            },
+            {
+                "tag": "Mental",
+                "value": 30
+            },
+            {
+                "tag": "Physical",
+                "value": 15
+            },
+            {
+                "tag": "Social",
+                "value": -15
+            },
+            {
+                "tag": "Shapeshifting",
+                "value": 45
+            },
+            {
+                "tag": "Control",
+                "value": 20
+            },
+            {
+                "tag": "Morality",
+                "value": -30
+            },
+            {
+                "tag": "Humanity",
+                "value": -25
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 20
+            }
+        ]
+    },
+    {
+        "id": "ventrue",
+        "name": "Ventrue",
+        "nickname": "The Blue Bloods",
+        "disciplines": [ "dominate", "fortitude", "presence" ],
+        "weakness": "Ventrue have a rare and specific taste. Each Ventrue can only feed from a certain type of mortal blood and will vomit any other.",
+        "tags": [ "Clan:Ventrue", "Social", "Mental", "Leadership", "Influence", "Resources", "HighSociety", "Bureaucracy" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ventrue",
+                "value": 100
+            },
+            {
+                "tag": "Social",
+                "value": 40
+            },
+            {
+                "tag": "Mental",
+                "value": 20
+            },
+            {
+                "tag": "Physical",
+                "value": -10
+            },
+            {
+                "tag": "Leadership",
+                "value": 35
+            },
+            {
+                "tag": "Influence",
+                "value": 30
+            },
+            {
+                "tag": "Resources",
+                "value": 25
+            },
+            {
+                "tag": "Willpower",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 35
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 25
+            }
+        ]
+    }
 ]
