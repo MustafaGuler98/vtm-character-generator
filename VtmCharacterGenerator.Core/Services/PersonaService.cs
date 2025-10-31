@@ -15,30 +15,137 @@ namespace VtmCharacterGenerator.Core.Services
             _affinityProcessor = affinityProcessor;
         }
 
-        // Null values in the input persona indicate that we need to generate them.
         public Persona CompletePersona(Persona inputPersona)
         {
-            var finalPersona = new Persona();
+            // Shallow copy so we don't mutate caller object
+            var finalPersona = new Persona
+            {
+                Concept = inputPersona?.Concept,
+                Clan = inputPersona?.Clan,
+                Nature = inputPersona?.Nature,
+                Demeanor = inputPersona?.Demeanor
+            };
 
-            var currentAffinities = new System.Collections.Generic.Dictionary<string, int>();
+            // Helper to merge affinity dictionaries into running profile
+            static void MergeInto(Dictionary<string, int> target, Dictionary<string, int> source)
+            {
+                if (source == null) return;
+                foreach (var kv in source)
+                {
+                    if (!target.ContainsKey(kv.Key)) target[kv.Key] = 0;
+                    target[kv.Key] += kv.Value;
+                }
+            }
 
-            // Generator logic for each persona component
-            finalPersona.Concept = inputPersona.Concept ?? _affinityProcessor.GetWeightedRandom(_dataProvider.Concepts, currentAffinities);
-            currentAffinities = _affinityProcessor.BuildAffinityProfile(new Persona { Concept = finalPersona.Concept });
+            var runningAffinities = new Dictionary<string, int>();
 
-         
-            finalPersona.Clan = inputPersona.Clan ?? _affinityProcessor.GetWeightedRandom(_dataProvider.Clans, currentAffinities);
-            currentAffinities = _affinityProcessor.BuildAffinityProfile(new Persona { Concept = finalPersona.Concept, Clan = finalPersona.Clan });
+            // Pre-add affinities from any user-selected fields. This makes user selections influence every later pick.
+            if (finalPersona.Concept != null)
+            {
+                var a = _affinityProcessor.BuildAffinityProfile(new Persona { Concept = finalPersona.Concept });
+                MergeInto(runningAffinities, a);
+            }
 
-            
-            finalPersona.Nature = inputPersona.Nature ?? _affinityProcessor.GetWeightedRandom(_dataProvider.Natures, currentAffinities);
-            currentAffinities = _affinityProcessor.BuildAffinityProfile(new Persona { Concept = finalPersona.Concept, Clan = finalPersona.Clan, Nature = finalPersona.Nature });
+            if (finalPersona.Clan != null)
+            {
+                var a = _affinityProcessor.BuildAffinityProfile(new Persona { Clan = finalPersona.Clan });
+                MergeInto(runningAffinities, a);
+            }
 
-            
-            var availableDemeanors = _dataProvider.Natures.Where(n => n.Id != finalPersona.Nature.Id).ToList();
-            finalPersona.Demeanor = inputPersona.Demeanor ?? _affinityProcessor.GetWeightedRandom(availableDemeanors, currentAffinities);
+            if (finalPersona.Nature != null)
+            {
+                var a = _affinityProcessor.BuildAffinityProfile(new Persona { Nature = finalPersona.Nature });
+                MergeInto(runningAffinities, a);
+            }
+
+            // Defensive: user-provided Demeanor must not equal Nature
+            if (finalPersona.Demeanor != null && finalPersona.Nature != null && finalPersona.Demeanor.Id == finalPersona.Nature.Id)
+            {
+                finalPersona.Demeanor = null;
+            }
+
+            if (finalPersona.Demeanor != null)
+            {
+                var a = _affinityProcessor.BuildAffinityProfile(new Persona { Demeanor = finalPersona.Demeanor });
+                MergeInto(runningAffinities, a);
+            }
+
+            if (finalPersona.Concept == null)
+            {
+                if (_dataProvider.Concepts != null && _dataProvider.Concepts.Any())
+                {
+                    var chosen = _affinityProcessor.GetWeightedRandom(_dataProvider.Concepts, runningAffinities);
+                    if (chosen != null)
+                    {
+                        finalPersona.Concept = chosen;
+                        // merge affinities from chosen concept into running profile
+                        var a = _affinityProcessor.BuildAffinityProfile(new Persona { Concept = chosen });
+                        MergeInto(runningAffinities, a);
+                    }
+                }
+            }
+
+            if (finalPersona.Clan == null)
+            {
+                if (_dataProvider.Clans != null && _dataProvider.Clans.Any())
+                {
+                    var chosen = _affinityProcessor.GetWeightedRandom(_dataProvider.Clans, runningAffinities);
+                    if (chosen != null)
+                    {
+                        finalPersona.Clan = chosen;
+                        var a = _affinityProcessor.BuildAffinityProfile(new Persona { Clan = chosen });
+                        MergeInto(runningAffinities, a);
+                    }
+                }
+            }
+
+            if (finalPersona.Nature == null)
+            {
+                if (_data_providerAvailable(_dataProvider.Natures))
+                {
+                    var chosen = _affinityProcessor.GetWeightedRandom(_dataProvider.Natures, runningAffinities);
+                    if (chosen != null)
+                    {
+                        finalPersona.Nature = chosen;
+                        var a = _affinityProcessor.BuildAffinityProfile(new Persona { Nature = chosen });
+                        MergeInto(runningAffinities, a);
+                    }
+                }
+            }
+
+            // Enforce rule: Nature and Demeanor cannot be the same
+            if (finalPersona.Demeanor != null && finalPersona.Nature != null && finalPersona.Demeanor.Id == finalPersona.Nature.Id)
+            {
+                finalPersona.Demeanor = null;
+            }
+
+            if (finalPersona.Demeanor == null)
+            {
+                var availableDemeanors = _dataProvider.Natures?
+                    .Where(n => finalPersona.Nature == null || n.Id != finalPersona.Nature.Id)
+                    .ToList() ?? new System.Collections.Generic.List<Nature>();
+
+                if (availableDemeanors.Any())
+                {
+                    var chosen = _affinityProcessor.GetWeightedRandom(availableDemeanors, runningAffinities);
+                    if (chosen != null)
+                    {
+                        finalPersona.Demeanor = chosen;
+                        var a = _affinityProcessor.BuildAffinityProfile(new Persona { Demeanor = chosen });
+                        MergeInto(runningAffinities, a);
+                    }
+                }
+                else
+                {
+                    finalPersona.Demeanor = null;
+                }
+            }
 
             return finalPersona;
         }
+
+        // small helper to avoid repeated null/empty checks
+        private static bool _data_providerAvailable<T>(System.Collections.Generic.List<T> list)
+            => list != null && list.Any();
     }
 }

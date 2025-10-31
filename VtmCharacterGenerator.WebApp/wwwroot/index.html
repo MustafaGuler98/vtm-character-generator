@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Elysium</title>
     <style>
-        
         body {
             background-color: #121212;
             color: white;
@@ -17,11 +16,48 @@
             padding: 1rem 2rem;
             font-size: 1.2rem;
             cursor: pointer;
+            margin: 0.5rem;
         }
 
         #result {
             margin-top: 2rem;
             font-size: 1.5rem;
+        }
+
+        #customOptions {
+            display: none;
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .option-group {
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+            .option-group label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: bold;
+            }
+
+            .option-group select {
+                width: 100%;
+                padding: 0.5rem;
+                font-size: 1rem;
+                background-color: #2a2a2a;
+                color: white;
+                border: 1px solid #444;
+                border-radius: 4px;
+            }
+
+        #createButton {
+            margin-top: 1rem;
         }
     </style>
 </head>
@@ -29,34 +65,215 @@
     <h1>Elysium</h1>
 
     <button id="generateButton">Generate Character</button>
+    <button id="makeButton">Make Character</button>
+
+    <div id="customOptions">
+        <h2>Customize Your Character</h2>
+        <div class="option-group">
+            <label for="conceptSelect">Concept:</label>
+            <select id="conceptSelect">
+                <option value="">Random</option>
+            </select>
+        </div>
+        <div class="option-group">
+            <label for="clanSelect">Clan:</label>
+            <select id="clanSelect">
+                <option value="">Random</option>
+            </select>
+        </div>
+        <div class="option-group">
+            <label for="natureSelect">Nature:</label>
+            <select id="natureSelect">
+                <option value="">Random</option>
+            </select>
+        </div>
+        <div class="option-group">
+            <label for="demeanorSelect">Demeanor:</label>
+            <select id="demeanorSelect">
+                <option value="">Random</option>
+            </select>
+        </div>
+        <button id="createButton">Create Character</button>
+    </div>
 
     <div id="result">
-        <!-- Character data will be displayed here -->
     </div>
 
     <script>
         const generateButton = document.getElementById('generateButton');
+        const makeButton = document.getElementById('makeButton');
+        const createButton = document.getElementById('createButton');
+        const customOptions = document.getElementById('customOptions');
         const resultDiv = document.getElementById('result');
 
+        const conceptSelect = document.getElementById('conceptSelect');
+        const clanSelect = document.getElementById('clanSelect');
+        const natureSelect = document.getElementById('natureSelect');
+        const demeanorSelect = document.getElementById('demeanorSelect');
+
+        // Keep a copy of all natures so we can rebuild lists excluding the selected counterpart
+        let allNatures = [];
+
+        loadOptions();
+
         generateButton.addEventListener('click', () => {
+            customOptions.style.display = 'none';
             resultDiv.innerHTML = 'Generating...';
 
             fetch('/api/character/generate')
                 .then(response => response.json())
                 .then(personaData => {
-             
-                    resultDiv.innerHTML = `
-                        <h2>Concept: ${personaData.concept.name}</h2>
-                        <h3>Clan: ${personaData.clan.name}</h3>
-                        <p><strong>Nature:</strong> ${personaData.nature.name}</p>
-                        <p><strong>Demeanor:</strong> ${personaData.demeanor.name}</p>
-                    `;
+                    displayCharacter(personaData);
                 })
                 .catch(error => {
                     console.error('Error fetching character:', error);
                     resultDiv.innerHTML = 'Failed to generate character. See console for details.';
                 });
         });
+
+        makeButton.addEventListener('click', () => {
+            // ensure both lists reflect current selections when panel opens
+            populateNatureOptions(demeanorSelect.value);
+            populateDemeanorOptions(natureSelect.value);
+            customOptions.style.display = 'block';
+            resultDiv.innerHTML = '';
+        });
+
+        createButton.addEventListener('click', () => {
+            resultDiv.innerHTML = 'Creating...';
+
+            const requestBody = {
+                conceptId: conceptSelect.value,
+                clanId: clanSelect.value,
+                natureId: natureSelect.value,
+                demeanorId: demeanorSelect.value
+            };
+
+            fetch('/api/character/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestBody)
+            })
+                .then(response => response.json())
+                .then(personaData => {
+                    displayCharacter(personaData);
+                })
+                .catch(error => {
+                    console.error('Error creating character:', error);
+                    resultDiv.innerHTML = 'Failed to create character. See console for details.';
+                });
+        });
+
+        function loadOptions() {
+            fetch('/api/character/options')
+                .then(response => response.json())
+                .then(options => {
+                    allNatures = options.natures || [];
+
+                    conceptSelect.innerHTML = '';
+                    const conceptDefault = document.createElement('option');
+                    conceptDefault.value = '';
+                    conceptDefault.textContent = 'Random';
+                    conceptSelect.appendChild(conceptDefault);
+                    (options.concepts || []).forEach(concept => {
+                        const option = document.createElement('option');
+                        option.value = String(concept.id ?? '');
+                        option.textContent = concept.name ?? '';
+                        conceptSelect.appendChild(option);
+                    });
+
+                    clanSelect.innerHTML = '';
+                    const clanDefault = document.createElement('option');
+                    clanDefault.value = '';
+                    clanDefault.textContent = 'Random';
+                    clanSelect.appendChild(clanDefault);
+                    (options.clans || []).forEach(clan => {
+                        const option = document.createElement('option');
+                        option.value = String(clan.id ?? '');
+                        option.textContent = clan.name ?? '';
+                        clanSelect.appendChild(option);
+                    });
+
+                    populateNatureOptions(demeanorSelect.value);
+                    populateDemeanorOptions(natureSelect.value);
+
+                    natureSelect.addEventListener('change', () => {
+                        populateDemeanorOptions(natureSelect.value);
+                    });
+
+                    demeanorSelect.addEventListener('change', () => {
+                        populateNatureOptions(demeanorSelect.value);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading options:', error);
+                });
+        }
+
+        function populateDemeanorOptions(excludeNatureId) {
+            const excludeIdStr = String(excludeNatureId ?? '');
+
+            // remember current value so we can attempt to preserve selection when possible
+            const previous = String(demeanorSelect.value ?? '');
+
+  
+            demeanorSelect.innerHTML = '';
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = 'Random';
+            demeanorSelect.appendChild(defaultOption);
+
+            allNatures.forEach(nature => {
+                const idStr = String(nature.id ?? '');
+                if (idStr === excludeIdStr) return; // skip matching nature
+                const option = document.createElement('option');
+                option.value = idStr;
+                option.textContent = nature.name ?? '';
+                demeanorSelect.appendChild(option);
+            });
+
+        
+            const stillExists = Array.from(demeanorSelect.options).some(opt => String(opt.value) === previous);
+            demeanorSelect.value = stillExists ? previous : '';
+        }
+
+        function populateNatureOptions(excludeDemeanorId) {
+            const excludeIdStr = String(excludeDemeanorId ?? '');
+
+            // remember current value so we can attempt to preserve selection when possible
+            const previous = String(natureSelect.value ?? '');
+
+            // clear nature select and add default
+            natureSelect.innerHTML = '';
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = 'Random';
+            natureSelect.appendChild(defaultOption);
+
+            allNatures.forEach(nature => {
+                const idStr = String(nature.id ?? '');
+                if (idStr === excludeIdStr) return; // skip matching demeanor
+                const option = document.createElement('option');
+                option.value = idStr;
+                option.textContent = nature.name ?? '';
+                natureSelect.appendChild(option);
+            });
+
+            // restore previous selection if still present
+            const stillExists = Array.from(natureSelect.options).some(opt => String(opt.value) === previous);
+            natureSelect.value = stillExists ? previous : '';
+        }
+
+        function displayCharacter(personaData) {
+            resultDiv.innerHTML = `
+                            <h2>Concept: ${personaData.concept?.name ?? '—'}</h2>
+                            <h3>Clan: ${personaData.clan?.name ?? '—'}</h3>
+                            <p><strong>Nature:</strong> ${personaData.nature?.name ?? '—'}</p>
+                            <p><strong>Demeanor:</strong> ${personaData.demeanor?.name ?? '—'}</p>
+                        `;
+        }
     </script>
 </body>
 </html>
