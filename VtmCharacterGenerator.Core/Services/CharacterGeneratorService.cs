@@ -1,27 +1,37 @@
-﻿using VtmCharacterGenerator.Core.Data;
-using VtmCharacterGenerator.Core.Models;
+﻿using VtmCharacterGenerator.Core.Models;
 
 namespace VtmCharacterGenerator.Core.Services
 {
     public class CharacterGeneratorService
     {
-        private readonly GameDataProvider _dataProvider;
-        private readonly Random _random = new Random();
+        private readonly PersonaService _personaService;
+        private readonly AttributeService _attributeService;
+        private readonly AffinityProcessorService _affinityProcessor;
 
-        public CharacterGeneratorService(GameDataProvider dataProvider)
+        public CharacterGeneratorService(PersonaService personaService, AttributeService attributeService, AffinityProcessorService affinityProcessor)
         {
-            _dataProvider = dataProvider;
+            _personaService = personaService;
+            _attributeService = attributeService;
+            _affinityProcessor = affinityProcessor;
         }
 
-        public Character GenerateCharacter()
+        public Character GenerateCharacter(Persona inputPersona)
         {
-            var character = new Character();
+            
+            var finalPersona = _personaService.CompletePersona(inputPersona);
+            var affinityProfile = _affinityProcessor.BuildAffinityProfile(finalPersona);
 
-          
-            int clanIndex = _random.Next(0, _dataProvider.Clans.Count);
-            character.Clan = _dataProvider.Clans[clanIndex];
+            var character = new Character
+            {
+                Concept = finalPersona.Concept,
+                Clan = finalPersona.Clan,
+                Nature = finalPersona.Nature,
+                Demeanor = finalPersona.Demeanor
+            };
 
-            // TODO: Generate other character parts like attributes, abilities etc.
+            character.Attributes = _attributeService.DistributeAttributes(affinityProfile);
+
+            // TODO: Generate other character parts like abilities, disciplines, etc.
 
             return character;
         }

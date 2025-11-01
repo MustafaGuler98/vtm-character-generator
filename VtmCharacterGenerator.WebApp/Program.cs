@@ -25,6 +25,7 @@ builder.Services.AddSingleton<GameDataProvider>(sp =>
 builder.Services.AddScoped<CharacterGeneratorService>();
 builder.Services.AddScoped<AffinityProcessorService>();
 builder.Services.AddScoped<PersonaService>();
+builder.Services.AddScoped<AttributeService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -10,7 +10,7 @@ namespace VtmCharacterGenerator.Core.Data
         
         public List<Clan> Clans { get; }
         public List<Discipline> Disciplines { get; }
-        public List<VtMAttribute> Attributes { get; }
+        public List<AttributeCategory> AttributeCategories { get; }
         public List<Concept> Concepts { get; }
         public List<Nature> Natures { get; }
 
@@ -24,7 +24,7 @@ namespace VtmCharacterGenerator.Core.Data
             Disciplines = JsonSerializer.Deserialize<List<Discipline>>(disciplinesJson);
 
             var attributesJson = File.ReadAllText(Path.Combine(dataFolderPath, "attributes.json"));
-            Attributes = JsonSerializer.Deserialize<List<VtMAttribute>>(attributesJson);
+            AttributeCategories = JsonSerializer.Deserialize<List<AttributeCategory>>(attributesJson);
 
             var conceptsJson = File.ReadAllText(Path.Combine(dataFolderPath, "concepts.json")); 
             Concepts = JsonSerializer.Deserialize<List<Concept>>(conceptsJson);

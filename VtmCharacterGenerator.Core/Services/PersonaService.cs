@@ -32,8 +32,9 @@ namespace VtmCharacterGenerator.Core.Services
                 if (source == null) return;
                 foreach (var kv in source)
                 {
-                    if (!target.ContainsKey(kv.Key)) target[kv.Key] = 0;
-                    target[kv.Key] += kv.Value;
+                    var k = kv.Key?.Trim().ToLowerInvariant() ?? "";
+                    if (!target.ContainsKey(k)) target[k] = 0;
+                    target[k] += kv.Value;
                 }
             }
 

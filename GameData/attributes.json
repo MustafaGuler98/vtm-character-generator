@@ -1,47 +1,502 @@
 [
     {
-        "id": "strength",
-        "name": "Strength",
-        "category": "Physical"
+        "id": "physical",
+        "name": "Physical",
+        "description": "Represents a character's bodily strength, agility, and resilience. Physical Attributes are paramount for combat, feats of endurance, and athletic challenges.",
+        "tags": [ "Category:Physical", "physical" ],
+        "attributes": [
+            {
+                "id": "strength",
+                "name": "Strength",
+                "description": "Governs raw physical power and the ability to lift, carry, and break objects. It is the primary Attribute for dealing brutal, raw damage in close combat.",
+                "tags": [ "Attribute:Strength", "strength", "physical", "combat", "brawling", "melee" ],
+                "affinities": [
+                    {
+                        "tag": "Discipline:Potence",
+                        "value": 20
+                    },
+                    {
+                        "tag": "Ability:Brawl",
+                        "value": 15
+                    },
+                    {
+                        "tag": "Ability:Intimidation",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Ability:Athletics",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Ability:Melee",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Concept:Worker",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Concept:Soldier",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Nature:Bravo",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Clan:Brujah",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Clan:Gangrel",
+                        "value": 6
+                    },
+                    {
+                        "tag": "Discipline:Vicissitude",
+                        "value": 5
+                    }
+                ]
+            },
+            {
+                "id": "dexterity",
+                "name": "Dexterity",
+                "description": "Measures a character's agility, speed, reflexes, and precision. It is crucial for ranged combat, delicate tasks, and avoiding harm.",
+                "tags": [ "Attribute:Dexterity", "dexterity", "physical", "combat", "stealth", "firearms", "melee", "athleticism" ],
+                "affinities": [
+                    {
+                        "tag": "Discipline:Celerity",
+                        "value": 20
+                    },
+                    {
+                        "tag": "Ability:Firearms",
+                        "value": 15
+                    },
+                    {
+                        "tag": "Ability:Stealth",
+                        "value": 14
+                    },
+                    {
+                        "tag": "Ability:Melee",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Ability:Larceny",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Ability:Crafts",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Ability:Drive",
+                        "value": 6
+                    },
+                    {
+                        "tag": "Concept:Criminal",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Concept:MartialArtist",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Clan:Assamite",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Nature:ThrillSeeker",
+                        "value": 6
+                    }
+                ]
+            },
+            {
+                "id": "stamina",
+                "name": "Stamina",
+                "description": "Represents a character's health, toughness, and endurance. It determines how much damage one can withstand and how long they can persevere through physical hardship.",
+                "tags": [ "Attribute:Stamina", "stamina", "physical", "survival", "combat" ],
+                "affinities": [
+                    {
+                        "tag": "Discipline:Fortitude",
+                        "value": 20
+                    },
+                    {
+                        "tag": "Ability:Survival",
+                        "value": 15
+                    },
+                    {
+                        "tag": "Ability:Athletics",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Willpower",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Concept:Survivor",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Concept:Worker",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Nature:Survivor",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Nature:Stoic",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Clan:Gangrel",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Frenzy",
+                        "value": -10
+                    },
+                    {
+                        "tag": "Ability:Brawl",
+                        "value": 5
+                    }
+                ]
+            }
+        ]
     },
     {
-        "id": "dexterity",
-        "name": "Dexterity",
-        "category": "Physical"
+        "id": "social",
+        "name": "Social",
+        "description": "Defines a character's ability to interact with, influence, and command others. Social Attributes are key to negotiation, deception, leadership, and navigating society.",
+        "tags": [ "Category:Social", "social" ],
+        "attributes": [
+            {
+                "id": "charisma",
+                "name": "Charisma",
+                "description": "Measures a character's charm, likability, and ability to inspire others through their personality. It is the force of character that draws people in.",
+                "tags": [ "Attribute:Charisma", "charisma", "social", "leadership", "performance" ],
+                "affinities": [
+                    {
+                        "tag": "Discipline:Presence",
+                        "value": 20
+                    },
+                    {
+                        "tag": "Ability:Leadership",
+                        "value": 15
+                    },
+                    {
+                        "tag": "Ability:Expression",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Ability:Etiquette",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Ability:AnimalKen",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Concept:Politician",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Concept:Entertainer",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Background:Allies",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Background:Mentor",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Clan:Toreador",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Clan:Ventrue",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Nature:Gallant",
+                        "value": 6
+                    }
+                ]
+            },
+            {
+                "id": "manipulation",
+                "name": "Manipulation",
+                "description": "Governs the art of persuasion, deception, and getting others to do what you want, whether they realize it or not. It is the tool of tricksters and puppet masters.",
+                "tags": [ "Attribute:Manipulation", "manipulation", "social", "deception", "control", "leadership" ],
+                "affinities": [
+                    {
+                        "tag": "Discipline:Dominate",
+                        "value": 20
+                    },
+                    {
+                        "tag": "Ability:Subterfuge",
+                        "value": 15
+                    },
+                    {
+                        "tag": "Ability:Intimidation",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Ability:Streetwise",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Ability:Leadership",
+                        "value": 6
+                    },
+                    {
+                        "tag": "Concept:Criminal",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Concept:CorporateRaider",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Nature:Conniver",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Background:Influence",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Clan:FollowerOfSet",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Clan:Lasombra",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Discipline:Chimerstry",
+                        "value": 5
+                    }
+                ]
+            },
+            {
+                "id": "appearance",
+                "name": "Appearance",
+                "description": "Measures a character's physical attractiveness and presence. It influences first impressions and can be a powerful tool in social situations.",
+                "tags": [ "Attribute:Appearance", "appearance", "social", "performance", "high_society" ],
+                "affinities": [
+                    {
+                        "tag": "Discipline:Presence",
+                        "value": 15
+                    },
+                    {
+                        "tag": "Ability:Performance",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Ability:Subterfuge",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Ability:Etiquette",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Concept:Entertainer",
+                        "value": 14
+                    },
+                    {
+                        "tag": "Concept:Socialite",
+                        "value": 14
+                    },
+                    {
+                        "tag": "Background:Fame",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Background:Herd",
+                        "value": 10
+                    },
+                    {
+                        "tag": "HighSociety",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Clan:Toreador",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Clan:Nosferatu",
+                        "value": -1000
+                    }
+                ]
+            }
+        ]
     },
     {
-        "id": "stamina",
-        "name": "Stamina",
-        "category": "Physical"
-    },
-    {
-        "id": "charisma",
-        "name": "Charisma",
-        "category": "Social"
-    },
-    {
-        "id": "manipulation",
-        "name": "Manipulation",
-        "category": "Social"
-    },
-    {
-        "id": "appearance",
-        "name": "Appearance",
-        "category": "Social"
-    },
-    {
-        "id": "perception",
-        "name": "Perception",
-        "category": "Mental"
-    },
-    {
-        "id": "intelligence",
-        "name": "Intelligence",
-        "category": "Mental"
-    },
-    {
-        "id": "wits",
-        "name": "Wits",
-        "category": "Mental"
+        "id": "mental",
+        "name": "Mental",
+        "description": "Encompasses a character's cognitive abilities, including awareness, intelligence, and quick thinking. Mental Attributes are vital for investigation, strategy, and resisting supernatural influence.",
+        "tags": [ "Category:Mental", "mental" ],
+        "attributes": [
+            {
+                "id": "perception",
+                "name": "Perception",
+                "description": "Measures a character's awareness and the acuity of their senses. It is the ability to notice details, spot the unusual, and see through deception.",
+                "tags": [ "Attribute:Perception", "perception", "mental", "investigation", "survival" ],
+                "affinities": [
+                    {
+                        "tag": "Discipline:Auspex",
+                        "value": 20
+                    },
+                    {
+                        "tag": "Ability:Alertness",
+                        "value": 15
+                    },
+                    {
+                        "tag": "Ability:Investigation",
+                        "value": 14
+                    },
+                    {
+                        "tag": "Ability:Empathy",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Ability:Firearms",
+                        "value": 6
+                    },
+                    {
+                        "tag": "Concept:Investigator",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Concept:Reporter",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Nature:Observer",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Nature:Critic",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Clan:Malkavian",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Clan:Nosferatu",
+                        "value": 6
+                    }
+                ]
+            },
+            {
+                "id": "intelligence",
+                "name": "Intelligence",
+                "description": "Represents a character's capacity for logic, reason, memory, and analytical thought. It governs the ability to solve complex problems and recall information.",
+                "tags": [ "Attribute:Intelligence", "intelligence", "mental", "scholar", "investigation", "technology", "medical" ],
+                "affinities": [
+                    {
+                        "tag": "Discipline:Thaumaturgy",
+                        "value": 20
+                    },
+                    {
+                        "tag": "Ability:Academics",
+                        "value": 15
+                    },
+                    {
+                        "tag": "Ability:Science",
+                        "value": 14
+                    },
+                    {
+                        "tag": "Ability:Investigation",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Ability:Occult",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Ability:Medicine",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Ability:Technology",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Concept:Intellectual",
+                        "value": 15
+                    },
+                    {
+                        "tag": "Concept:Professional",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Clan:Tremere",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Nature:Architect",
+                        "value": 8
+                    }
+                ]
+            },
+            {
+                "id": "wits",
+                "name": "Wits",
+                "description": "Governs a character's ability to think quickly, improvise, and react under pressure. It is the key to sharp retorts, battlefield strategy, and spotting ambushes.",
+                "tags": [ "Attribute:Wits", "wits", "mental", "investigation", "combat", "deception" ],
+                "affinities": [
+                    {
+                        "tag": "Ability:Investigation",
+                        "value": 14
+                    },
+                    {
+                        "tag": "Ability:Streetwise",
+                        "value": 12
+                    },
+                    {
+                        "tag": "Ability:Subterfuge",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Ability:Alertness",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Ability:Brawl",
+                        "value": 6
+                    },
+                    {
+                        "tag": "Concept:Investigator",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Concept:Criminal",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Nature:Trickster",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Clan:Malkavian",
+                        "value": 10
+                    },
+                    {
+                        "tag": "Discipline:Auspex",
+                        "value": 8
+                    },
+                    {
+                        "tag": "Discipline:Dementation",
+                        "value": 6
+                    }
+                ]
+            }
+        ]
     }
 ]

@@ -64,6 +64,7 @@ catch (Exception ex)
     Console.WriteLine("Possible cause: Make sure your GameData folder and JSON files exist at the solution level.");
 }
 
+AffinityDistributionTest.Run(iterations: 10000);
 
 Console.WriteLine("\nTest complete. Press any key to exit.");
 Console.ReadKey();

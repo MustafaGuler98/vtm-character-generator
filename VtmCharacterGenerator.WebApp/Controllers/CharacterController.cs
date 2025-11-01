@@ -9,23 +9,23 @@ namespace VtmCharacterGenerator.WebApp.Controllers
     [Route("api/[controller]")]
     public class CharacterController : ControllerBase
     {
-        private readonly PersonaService _personaService;
+        private readonly CharacterGeneratorService _characterGeneratorService;
         private readonly GameDataProvider _dataProvider;
 
-        public CharacterController(PersonaService personaService, GameDataProvider dataProvider)
+        public CharacterController(CharacterGeneratorService characterGeneratorService, GameDataProvider dataProvider)
         {
-            _personaService = personaService;
+            _characterGeneratorService = characterGeneratorService;
             _dataProvider = dataProvider;
         }
 
         [HttpGet("generate")]
-        public ActionResult<Persona> GenerateNewPersona()
+        public ActionResult<Character> GenerateNewCharacter()
         {
             try
             {
-                var inputPersona = new Persona();
-                var finalPersona = _personaService.CompletePersona(inputPersona);
-                return Ok(finalPersona);
+                var inputPersona = new Persona(); 
+                var finalCharacter = _characterGeneratorService.GenerateCharacter(inputPersona);
+                return Ok(finalCharacter);
             }
             catch (Exception ex)
             {
@@ -34,11 +34,10 @@ namespace VtmCharacterGenerator.WebApp.Controllers
         }
 
         [HttpPost("create")]
-        public ActionResult<Persona> CreateCustomPersona([FromBody] PersonaRequest request)
+        public ActionResult<Character> CreateCustomCharacter([FromBody] PersonaRequest request)
         {
             try
             {
-                // Defensive: if client submitted same id for Nature and Demeanor, ignore Demeanor.
                 var demeanorId = string.IsNullOrEmpty(request.DemeanorId) ? null : request.DemeanorId;
                 if (!string.IsNullOrEmpty(request.NatureId) && demeanorId == request.NatureId)
                 {
@@ -53,8 +52,8 @@ namespace VtmCharacterGenerator.WebApp.Controllers
                     Demeanor = string.IsNullOrEmpty(demeanorId) ? null : _dataProvider.Natures.FirstOrDefault(n => n.Id == demeanorId)
                 };
 
-                var finalPersona = _personaService.CompletePersona(inputPersona);
-                return Ok(finalPersona);
+                var finalCharacter = _characterGeneratorService.GenerateCharacter(inputPersona); 
+                return Ok(finalCharacter); 
             }
             catch (Exception ex)
             {

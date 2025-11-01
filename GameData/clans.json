@@ -13,15 +13,11 @@
             },
             {
                 "tag": "Physical",
-                "value": 25
+                "value": 100
             },
             {
                 "tag": "Mental",
-                "value": 15
-            },
-            {
-                "tag": "Social",
-                "value": -20
+                "value": 50
             },
             {
                 "tag": "Stealth",
@@ -63,15 +59,7 @@
             },
             {
                 "tag": "Physical",
-                "value": 35
-            },
-            {
-                "tag": "Social",
-                "value": 15
-            },
-            {
-                "tag": "Mental",
-                "value": -15
+                "value": 100
             },
             {
                 "tag": "Combat",
@@ -113,15 +101,11 @@
             },
             {
                 "tag": "Social",
-                "value": 30
+                "value": 100
             },
             {
                 "tag": "Mental",
-                "value": 15
-            },
-            {
-                "tag": "Physical",
-                "value": -10
+                "value": 100
             },
             {
                 "tag": "Deception",
@@ -163,11 +147,7 @@
             },
             {
                 "tag": "Physical",
-                "value": 35
-            },
-            {
-                "tag": "Social",
-                "value": -20
+                "value": 100
             },
             {
                 "tag": "Talents",
@@ -213,15 +193,15 @@
             },
             {
                 "tag": "Mental",
-                "value": 30
+                "value": 100
             },
             {
                 "tag": "Social",
-                "value": 15
+                "value": 100
             },
             {
                 "tag": "Physical",
-                "value": -10
+                "value": 40
             },
             {
                 "tag": "Knowledges",
@@ -263,11 +243,11 @@
             },
             {
                 "tag": "Social",
-                "value": 35
+                "value": 100
             },
             {
                 "tag": "Mental",
-                "value": 20
+                "value": 100
             },
             {
                 "tag": "Leadership",
@@ -309,15 +289,15 @@
             },
             {
                 "tag": "Mental",
-                "value": 35
+                "value": 100
             },
             {
                 "tag": "Social",
-                "value": 15
+                "value": 25
             },
             {
                 "tag": "Physical",
-                "value": -15
+                "value": 25
             },
             {
                 "tag": "SupernaturalPerception",
@@ -363,15 +343,15 @@
             },
             {
                 "tag": "Physical",
-                "value": 25
+                "value": 100
             },
             {
                 "tag": "Mental",
-                "value": 20
+                "value": 100
             },
             {
                 "tag": "Social",
-                "value": -40
+                "value": -10
             },
             {
                 "tag": "Appearance",
@@ -417,15 +397,11 @@
             },
             {
                 "tag": "Social",
-                "value": 25
+                "value": 100
             },
             {
                 "tag": "Physical",
-                "value": 15
-            },
-            {
-                "tag": "Mental",
-                "value": -10
+                "value": 100
             },
             {
                 "tag": "Deception",
@@ -467,15 +443,11 @@
             },
             {
                 "tag": "Social",
-                "value": 45
+                "value": 100
             },
             {
                 "tag": "Mental",
-                "value": 10
-            },
-            {
-                "tag": "Physical",
-                "value": -10
+                "value": 25
             },
             {
                 "tag": "HighSociety",
@@ -521,15 +493,7 @@
             },
             {
                 "tag": "Mental",
-                "value": 45
-            },
-            {
-                "tag": "Social",
-                "value": 10
-            },
-            {
-                "tag": "Physical",
-                "value": -25
+                "value": 100
             },
             {
                 "tag": "Knowledges",
@@ -571,15 +535,11 @@
             },
             {
                 "tag": "Mental",
-                "value": 30
+                "value": 100
             },
             {
                 "tag": "Physical",
-                "value": 15
-            },
-            {
-                "tag": "Social",
-                "value": -15
+                "value": 100
             },
             {
                 "tag": "Shapeshifting",
@@ -621,15 +581,15 @@
             },
             {
                 "tag": "Social",
-                "value": 40
+                "value": 100
             },
             {
                 "tag": "Mental",
-                "value": 20
+                "value": 100
             },
             {
                 "tag": "Physical",
-                "value": -10
+                "value": 75
             },
             {
                 "tag": "Leadership",

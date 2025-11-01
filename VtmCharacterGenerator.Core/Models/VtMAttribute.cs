@@ -1,5 +1,5 @@
-﻿using System.Text.Json.Serialization;
-using VtmCharacterGenerator.Core.Models;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace VtmCharacterGenerator.Core.Models
 {
@@ -11,8 +11,8 @@ namespace VtmCharacterGenerator.Core.Models
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonPropertyName("category")]
-        public string Category { get; set; }
+        [JsonPropertyName("description")]
+        public string Description { get; set; }
 
         [JsonPropertyName("tags")]
         public List<string> Tags { get; set; } = new List<string>();

@@ -1,10 +1,13 @@
-﻿namespace VtmCharacterGenerator.Core.Models
+﻿using System.Collections.Generic;
+
+namespace VtmCharacterGenerator.Core.Models
 {
     public class Character
     {
-        // public string Name { get; set; }
+        public Concept Concept { get; set; }
         public Clan Clan { get; set; }
-
+        public Nature Nature { get; set; }
+        public Nature Demeanor { get; set; }
         public Dictionary<string, int> Attributes { get; set; }
 
         public Character()

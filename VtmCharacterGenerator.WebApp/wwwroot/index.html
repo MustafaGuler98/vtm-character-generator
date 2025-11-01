@@ -2,41 +2,121 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Elysium</title>
+    <title>Elysium - V:tM Character Generator</title>
     <style>
+        :root {
+            --primary-red: #8c1c1c;
+            --dark-bg: #121212;
+            --medium-bg: #1e1e1e;
+            --light-bg: #2a2a2a;
+            --text-light: #e0e0e0;
+            --text-medium: #b3b3b3;
+            --border-color: #444;
+        }
+
         body {
-            background-color: #121212;
-            color: white;
-            font-family: sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .page-container {
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-content {
+            flex: 2;
+        }
+
+        .sidebar {
+            flex: 1;
+            align-self: flex-start;
+        }
+
+        .header {
             text-align: center;
-            margin-top: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            color: var(--primary-red);
+            margin-top: 0;
         }
 
         button {
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
+            background-color: var(--primary-red);
+            color: white;
+            border: 1px solid #c52525;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.1rem;
             cursor: pointer;
-            margin: 0.5rem;
+            transition: background-color 0.3s;
+            width: 100%;
+            border-radius: 4px;
         }
 
-        #result {
-            margin-top: 2rem;
-            font-size: 1.5rem;
+            button:hover {
+                background-color: #a82222;
+            }
+
+        #characterSheet {
+            transition: all 0.3s ease;
+            min-height: 300px;
+            margin-top: 1rem;
         }
 
-        #customOptions {
-            display: none;
-            margin-top: 2rem;
-            padding: 1rem;
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            #characterSheet.sheet-active {
+                background-color: var(--medium-bg);
+                border: 1px solid var(--border-color);
+                border-radius: 5px;
+                padding: 1.5rem;
+            }
+
+        /* --- SIDEBAR ACCORDION --- */
+        .sidebar-toggle {
+            text-align: left;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .arrow {
+            float: right;
+            font-size: 13px;
+        }
+
+        .sidebar-toggle.active {
+            border-bottom: none;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .sidebar-content {
+            background-color: var(--medium-bg);
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+
+        #createButton {
+            margin: 1.5rem 0;
+            box-shadow: 0 0 10px rgba(200, 40, 40, 0.4);
         }
 
         .option-group {
-            margin: 1rem 0;
+            margin-bottom: 1.2rem;
             text-align: left;
         }
 
@@ -44,236 +124,154 @@
                 display: block;
                 margin-bottom: 0.5rem;
                 font-weight: bold;
+                color: var(--text-medium);
             }
 
             .option-group select {
                 width: 100%;
-                padding: 0.5rem;
+                padding: 0.8rem;
                 font-size: 1rem;
-                background-color: #2a2a2a;
+                background-color: var(--light-bg);
                 color: white;
-                border: 1px solid #444;
+                border: 1px solid var(--border-color);
                 border-radius: 4px;
             }
 
-        #createButton {
-            margin-top: 1rem;
+        .sheet-section {
+            border-bottom: 1px solid #3a3a3a;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem
         }
+
+            .sheet-section:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0
+            }
+
+            .sheet-section h2 {
+                padding-bottom: .5rem;
+                border-bottom: 1px solid #555
+            }
+
+        .persona-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem
+        }
+
+            .persona-grid p {
+                margin: 0
+            }
+
+        .attributes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+            gap: 1.5rem
+        }
+
+        .attribute-category h3 {
+            margin-top: 0;
+            color: #ccc
+        }
+
+        .attribute-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: .5rem
+        }
+
+        .dots-display .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #444;
+            border: 1px solid #666;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 4px
+        }
+
+            .dots-display .dot.filled {
+                background-color: #e0e0e0;
+                border-color: #fff
+            }
     </style>
 </head>
 <body>
-    <h1>Elysium</h1>
 
-    <button id="generateButton">Generate Character</button>
-    <button id="makeButton">Make Character</button>
-
-    <div id="customOptions">
-        <h2>Customize Your Character</h2>
-        <div class="option-group">
-            <label for="conceptSelect">Concept:</label>
-            <select id="conceptSelect">
-                <option value="">Random</option>
-            </select>
-        </div>
-        <div class="option-group">
-            <label for="clanSelect">Clan:</label>
-            <select id="clanSelect">
-                <option value="">Random</option>
-            </select>
-        </div>
-        <div class="option-group">
-            <label for="natureSelect">Nature:</label>
-            <select id="natureSelect">
-                <option value="">Random</option>
-            </select>
-        </div>
-        <div class="option-group">
-            <label for="demeanorSelect">Demeanor:</label>
-            <select id="demeanorSelect">
-                <option value="">Random</option>
-            </select>
-        </div>
-        <button id="createButton">Create Character</button>
+    <div class="header">
+        <h1>Elysium</h1>
+        <p>VtM Character Generator</p>
     </div>
 
-    <div id="result">
+    <div class="page-container">
+        <div class="main-content">
+            <button id="generateButton">Generate Random Character</button>
+            <div id="characterSheet"></div>
+        </div>
+
+        <div class="sidebar">
+            <!-- ADDED a span for the arrow inside the button -->
+            <button class="sidebar-toggle">Customize Persona<span class="arrow">▼</span></button>
+            <div class="sidebar-content">
+                <div class="option-group">
+                    <label for="conceptSelect">Concept:</label>
+                    <select id="conceptSelect"><option value="">Random</option></select>
+                </div>
+                <!-- ... other option groups ... -->
+                <div class="option-group"><label for="clanSelect">Clan:</label><select id="clanSelect"><option value="">Random</option></select></div>
+                <div class="option-group"><label for="natureSelect">Nature:</label><select id="natureSelect"><option value="">Random</option></select></div>
+                <div class="option-group"><label for="demeanorSelect">Demeanor:</label><select id="demeanorSelect"><option value="">Random</option></select></div>
+                <button id="createButton">Create Custom Character</button>
+            </div>
+        </div>
     </div>
 
     <script>
+        // --- DOM Elements ---
         const generateButton = document.getElementById('generateButton');
-        const makeButton = document.getElementById('makeButton');
         const createButton = document.getElementById('createButton');
-        const customOptions = document.getElementById('customOptions');
-        const resultDiv = document.getElementById('result');
-
+        const sheetDiv = document.getElementById('characterSheet');
         const conceptSelect = document.getElementById('conceptSelect');
         const clanSelect = document.getElementById('clanSelect');
         const natureSelect = document.getElementById('natureSelect');
         const demeanorSelect = document.getElementById('demeanorSelect');
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        const sidebarContent = document.querySelector('.sidebar-content');
+        const arrowSpan = document.querySelector('.arrow');
 
-        // Keep a copy of all natures so we can rebuild lists excluding the selected counterpart
+    
         let allNatures = [];
-
+        const ATTRIBUTE_CATEGORIES = { Physical: ["strength", "dexterity", "stamina"], Social: ["charisma", "manipulation", "appearance"], Mental: ["perception", "intelligence", "wits"] };
         loadOptions();
+        generateButton.addEventListener('click', () => { sheetDiv.innerHTML = '<p>Generating...</p>'; fetchAndDisplayCharacter('/api/character/generate'); });
+        createButton.addEventListener('click', () => { sheetDiv.innerHTML = '<p>Creating...</p>'; const e = { conceptId: conceptSelect.value, clanId: clanSelect.value, natureId: natureSelect.value, demeanorId: demeanorSelect.value }; fetchAndDisplayCharacter('/api/character/create', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(e) }); });
 
-        generateButton.addEventListener('click', () => {
-            customOptions.style.display = 'none';
-            resultDiv.innerHTML = 'Generating...';
+        sidebarToggle.addEventListener('click', function () {
+            this.classList.toggle('active');
 
-            fetch('/api/character/generate')
-                .then(response => response.json())
-                .then(personaData => {
-                    displayCharacter(personaData);
-                })
-                .catch(error => {
-                    console.error('Error fetching character:', error);
-                    resultDiv.innerHTML = 'Failed to generate character. See console for details.';
-                });
+            if (this.classList.contains('active')) {
+                arrowSpan.innerHTML = '▲';
+                sidebarContent.style.padding = "1.5rem";
+                sidebarContent.style.maxHeight = sidebarContent.scrollHeight + "px";
+            } else {
+                arrowSpan.innerHTML = '▼'; 
+                sidebarContent.style.maxHeight = null;
+                sidebarContent.style.padding = "0 1.5rem";
+            }
         });
 
-        makeButton.addEventListener('click', () => {
-            // ensure both lists reflect current selections when panel opens
-            populateNatureOptions(demeanorSelect.value);
-            populateDemeanorOptions(natureSelect.value);
-            customOptions.style.display = 'block';
-            resultDiv.innerHTML = '';
-        });
-
-        createButton.addEventListener('click', () => {
-            resultDiv.innerHTML = 'Creating...';
-
-            const requestBody = {
-                conceptId: conceptSelect.value,
-                clanId: clanSelect.value,
-                natureId: natureSelect.value,
-                demeanorId: demeanorSelect.value
-            };
-
-            fetch('/api/character/create', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(requestBody)
-            })
-                .then(response => response.json())
-                .then(personaData => {
-                    displayCharacter(personaData);
-                })
-                .catch(error => {
-                    console.error('Error creating character:', error);
-                    resultDiv.innerHTML = 'Failed to create character. See console for details.';
-                });
-        });
-
-        function loadOptions() {
-            fetch('/api/character/options')
-                .then(response => response.json())
-                .then(options => {
-                    allNatures = options.natures || [];
-
-                    conceptSelect.innerHTML = '';
-                    const conceptDefault = document.createElement('option');
-                    conceptDefault.value = '';
-                    conceptDefault.textContent = 'Random';
-                    conceptSelect.appendChild(conceptDefault);
-                    (options.concepts || []).forEach(concept => {
-                        const option = document.createElement('option');
-                        option.value = String(concept.id ?? '');
-                        option.textContent = concept.name ?? '';
-                        conceptSelect.appendChild(option);
-                    });
-
-                    clanSelect.innerHTML = '';
-                    const clanDefault = document.createElement('option');
-                    clanDefault.value = '';
-                    clanDefault.textContent = 'Random';
-                    clanSelect.appendChild(clanDefault);
-                    (options.clans || []).forEach(clan => {
-                        const option = document.createElement('option');
-                        option.value = String(clan.id ?? '');
-                        option.textContent = clan.name ?? '';
-                        clanSelect.appendChild(option);
-                    });
-
-                    populateNatureOptions(demeanorSelect.value);
-                    populateDemeanorOptions(natureSelect.value);
-
-                    natureSelect.addEventListener('change', () => {
-                        populateDemeanorOptions(natureSelect.value);
-                    });
-
-                    demeanorSelect.addEventListener('change', () => {
-                        populateNatureOptions(demeanorSelect.value);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error loading options:', error);
-                });
-        }
-
-        function populateDemeanorOptions(excludeNatureId) {
-            const excludeIdStr = String(excludeNatureId ?? '');
-
-            // remember current value so we can attempt to preserve selection when possible
-            const previous = String(demeanorSelect.value ?? '');
-
-  
-            demeanorSelect.innerHTML = '';
-            const defaultOption = document.createElement('option');
-            defaultOption.value = '';
-            defaultOption.textContent = 'Random';
-            demeanorSelect.appendChild(defaultOption);
-
-            allNatures.forEach(nature => {
-                const idStr = String(nature.id ?? '');
-                if (idStr === excludeIdStr) return; // skip matching nature
-                const option = document.createElement('option');
-                option.value = idStr;
-                option.textContent = nature.name ?? '';
-                demeanorSelect.appendChild(option);
-            });
-
-        
-            const stillExists = Array.from(demeanorSelect.options).some(opt => String(opt.value) === previous);
-            demeanorSelect.value = stillExists ? previous : '';
-        }
-
-        function populateNatureOptions(excludeDemeanorId) {
-            const excludeIdStr = String(excludeDemeanorId ?? '');
-
-            // remember current value so we can attempt to preserve selection when possible
-            const previous = String(natureSelect.value ?? '');
-
-            // clear nature select and add default
-            natureSelect.innerHTML = '';
-            const defaultOption = document.createElement('option');
-            defaultOption.value = '';
-            defaultOption.textContent = 'Random';
-            natureSelect.appendChild(defaultOption);
-
-            allNatures.forEach(nature => {
-                const idStr = String(nature.id ?? '');
-                if (idStr === excludeIdStr) return; // skip matching demeanor
-                const option = document.createElement('option');
-                option.value = idStr;
-                option.textContent = nature.name ?? '';
-                natureSelect.appendChild(option);
-            });
-
-            // restore previous selection if still present
-            const stillExists = Array.from(natureSelect.options).some(opt => String(opt.value) === previous);
-            natureSelect.value = stillExists ? previous : '';
-        }
-
-        function displayCharacter(personaData) {
-            resultDiv.innerHTML = `
-                            <h2>Concept: ${personaData.concept?.name ?? '—'}</h2>
-                            <h3>Clan: ${personaData.clan?.name ?? '—'}</h3>
-                            <p><strong>Nature:</strong> ${personaData.nature?.name ?? '—'}</p>
-                            <p><strong>Demeanor:</strong> ${personaData.demeanor?.name ?? '—'}</p>
-                        `;
-        }
+    
+        function fetchAndDisplayCharacter(url, options = {}) { fetch(url, options).then(e => { if (!e.ok) throw new Error(`HTTP error! status: ${e.status}`); return e.json() }).then(displayCharacter).catch(e => { console.error("Error fetching character:", e), sheetDiv.classList.add("sheet-active"), sheetDiv.innerHTML = '<p style="color: red;">Failed to generate character. See console for details.</p>' }) }
+        function displayCharacter(e) { sheetDiv.classList.add("sheet-active"), sheetDiv.innerHTML = "", sheetDiv.appendChild(renderPersonaSection(e)), sheetDiv.appendChild(renderAttributesSection(e.attributes)) }
+        function renderPersonaSection(e) { const t = document.createElement("div"); return t.className = "sheet-section", t.innerHTML = `<h2>Persona</h2><div class="persona-grid"><p><strong>Concept:</strong> ${e.concept?.name ?? "—"}</p><p><strong>Clan:</strong> ${e.clan?.name ?? "—"}</p><p><strong>Nature:</strong> ${e.nature?.name ?? "—"}</p><p><strong>Demeanor:</strong> ${e.demeanor?.name ?? "—"}</p></div>`, t }
+        function renderAttributesSection(e) { const t = document.createElement("div"); t.className = "sheet-section", t.innerHTML = "<h2>Attributes</h2>"; const n = document.createElement("div"); n.className = "attributes-grid"; for (const o in ATTRIBUTE_CATEGORIES) { const c = document.createElement("div"); c.className = "attribute-category"; let a = `<h3>${o}</h3>`; ATTRIBUTE_CATEGORIES[o].forEach(t => { const n = e[t] || 0, o = t.charAt(0).toUpperCase() + t.slice(1); a += `<div class="attribute-item"><span>${o}</span><span class="dots-display">${renderDots(n)}</span></div>` }), c.innerHTML = a, n.appendChild(c) } return t.appendChild(n), t }
+        function renderDots(e, t = 5) { let n = ""; for (let o = 1; o <= t; o++)n += `<span class="dot ${o <= e ? "filled" : ""}"></span>`; return n }
+        function loadOptions() { fetch("/api/character/options").then(e => e.json()).then(e => { allNatures = e.natures || [], populateSelect(conceptSelect, e.concepts, "Random"), populateSelect(clanSelect, e.clans, "Random"), populateNatureOptions(), populateDemeanorOptions(), natureSelect.addEventListener("change", () => populateDemeanorOptions(natureSelect.value)), demeanorSelect.addEventListener("change", () => populateNatureOptions(demeanorSelect.value)) }).catch(e => console.error("Error loading options:", e)) }
+        function populateSelect(e, t, n) { e.innerHTML = `<option value="">${n}</option>`; (t || []).forEach(t => { const n = document.createElement("option"); n.value = String(t.id ?? ""), n.textContent = t.name ?? "", e.appendChild(n) }) }
+        function populateDemeanorOptions(e = "") { const t = demeanorSelect.value; populateSelect(demeanorSelect, allNatures.filter(t => String(t.id) !== String(e)), "Random"); const n = Array.from(demeanorSelect.options).some(e => e.value === t); demeanorSelect.value = n ? t : "" }
+        function populateNatureOptions(e = "") { const t = natureSelect.value; populateSelect(natureSelect, allNatures.filter(t => String(t.id) !== String(e)), "Random"); const n = Array.from(natureSelect.options).some(e => e.value === t); natureSelect.value = n ? t : "" }
     </script>
 </body>
 </html>
