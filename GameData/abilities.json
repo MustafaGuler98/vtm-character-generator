@@ -1,0 +1,722 @@
+[
+    {
+        "id": "alertness",
+        "name": "Alertness",
+        "category": "Talents",
+        "tags": [ "Ability:Alertness", "mental", "perception", "survival", "investigation" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Perception",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Investigation",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 5
+            },
+            {
+                "tag": "Nature:Survivor",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "id": "athletics",
+        "name": "Athletics",
+        "category": "Talents",
+        "tags": [ "Ability:Athletics", "physical", "athleticism", "dexterity", "strength" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Stamina",
+                "value": 8
+            },
+            {
+                "tag": "Attribute:Dexterity",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 5
+            },
+            {
+                "tag": "Nature:ThrillSeeker",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "id": "awareness",
+        "name": "Awareness",
+        "category": "Talents",
+        "tags": [ "Ability:Awareness", "mental", "supernatural_perception", "arcane", "perception" ],
+        "affinities": [
+            {
+                "tag": "Discipline:Auspex",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Guru",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "id": "brawl",
+        "name": "Brawl",
+        "category": "Talents",
+        "tags": [ "Ability:Brawl", "physical", "combat", "brawling", "strength" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Strength",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Bravo",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "empathy",
+        "name": "Empathy",
+        "category": "Talents",
+        "tags": [ "Ability:Empathy", "social", "mental", "perception", "morality" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Perception",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": 8
+            },
+            {
+                "tag": "Virtue:Conscience",
+                "value": 5
+            },
+            {
+                "tag": "Humanity",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "expression",
+        "name": "Expression",
+        "category": "Talents",
+        "tags": [ "Ability:Expression", "social", "performance", "charisma", "manipulation" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Charisma",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Artist",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "intimidation",
+        "name": "Intimidation",
+        "category": "Talents",
+        "tags": [ "Ability:Intimidation", "social", "intimidation", "strength", "manipulation" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Autocrat",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "leadership",
+        "name": "Leadership",
+        "category": "Talents",
+        "tags": [ "Ability:Leadership", "social", "leadership", "influence", "charisma" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Charisma",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 6
+            },
+            {
+                "tag": "Background:Influence",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "streetwise",
+        "name": "Streetwise",
+        "category": "Talents",
+        "tags": [ "Ability:Streetwise", "social", "streetwise", "underworld", "survival", "wits" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Wits",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 6
+            },
+            {
+                "tag": "Background:Contacts",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "subterfuge",
+        "name": "Subterfuge",
+        "category": "Talents",
+        "tags": [ "Ability:Subterfuge", "social", "deception", "manipulation", "wits" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Conniver",
+                "value": 6
+            },
+            {
+                "tag": "Discipline:Obfuscate",
+                "value": 5
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "animal_ken",
+        "name": "Animal Ken",
+        "category": "Skills",
+        "tags": [ "Ability:AnimalKen", "social", "primal", "survival", "manipulation" ],
+        "affinities": [
+            {
+                "tag": "Discipline:Animalism",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": 5
+            },
+            {
+                "tag": "Background:Retainers",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "id": "crafts",
+        "name": "Crafts",
+        "category": "Skills",
+        "tags": [ "Ability:Crafts", "mental", "physical", "skills", "dexterity", "intelligence" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Dexterity",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Technician",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 5
+            },
+            {
+                "tag": "Discipline:Vicissitude",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "id": "drive",
+        "name": "Drive",
+        "category": "Skills",
+        "tags": [ "Ability:Drive", "physical", "technology", "dexterity", "wits" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Wits",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Worker",
+                "value": 5
+            },
+            {
+                "tag": "Nature:ThrillSeeker",
+                "value": 5
+            },
+            {
+                "tag": "Background:Resources",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "id": "etiquette",
+        "name": "Etiquette",
+        "category": "Skills",
+        "tags": [ "Ability:Etiquette", "social", "high_society", "bureaucracy", "charisma" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Charisma",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": 8
+            },
+            {
+                "tag": "Background:Status",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "firearms",
+        "name": "Firearms",
+        "category": "Skills",
+        "tags": [ "Ability:Firearms", "physical", "combat", "firearms", "dexterity" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Dexterity",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Soldier",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "id": "larceny",
+        "name": "Larceny",
+        "category": "Skills",
+        "tags": [ "Ability:Larceny", "physical", "underworld", "stealth", "dexterity" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Dexterity",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Rogue",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "melee",
+        "name": "Melee",
+        "category": "Skills",
+        "tags": [ "Ability:Melee", "physical", "combat", "melee", "dexterity", "strength" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Dexterity",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Strength",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "performance",
+        "name": "Performance",
+        "category": "Skills",
+        "tags": [ "Ability:Performance", "social", "performance", "high_society", "charisma" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Appearance",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 8
+            },
+            {
+                "tag": "Background:Fame",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "stealth",
+        "name": "Stealth",
+        "category": "Skills",
+        "tags": [ "Ability:Stealth", "physical", "stealth", "survival", "dexterity", "wits" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Dexterity",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Obfuscate",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "survival",
+        "name": "Survival",
+        "category": "Skills",
+        "tags": [ "Ability:Survival", "physical", "mental", "survival", "stamina", "wits" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Stamina",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "academics",
+        "name": "Academics",
+        "category": "Knowledges",
+        "tags": [ "Ability:Academics", "mental", "scholar", "knowledges", "intelligence" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Architect",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "computer",
+        "name": "Computer",
+        "category": "Knowledges",
+        "tags": [ "Ability:Computer", "mental", "technology", "scholar", "intelligence" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Hacker",
+                "value": 8
+            },
+            {
+                "tag": "Background:Resources",
+                "value": 4
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "finance",
+        "name": "Finance",
+        "category": "Knowledges",
+        "tags": [ "Ability:Finance", "mental", "resources", "bureaucracy", "intelligence" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 8
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 8
+            },
+            {
+                "tag": "Background:Resources",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "investigation",
+        "name": "Investigation",
+        "category": "Knowledges",
+        "tags": [ "Ability:Investigation", "mental", "investigation", "perception", "intelligence" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Perception",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Questioner",
+                "value": 6
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "law",
+        "name": "Law",
+        "category": "Knowledges",
+        "tags": [ "Ability:Law", "mental", "bureaucracy", "politics", "intelligence" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 6
+            },
+            {
+                "tag": "Background:Influence",
+                "value": 4
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "medicine",
+        "name": "Medicine",
+        "category": "Knowledges",
+        "tags": [ "Ability:Medicine", "mental", "medical", "scholar", "intelligence" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Healer",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": 5
+            },
+            {
+                "tag": "Discipline:Vicissitude",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "id": "occult",
+        "name": "Occult",
+        "category": "Knowledges",
+        "tags": [ "Ability:Occult", "mental", "arcane", "scholar", "investigation", "intelligence" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Thaumaturgy",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "politics",
+        "name": "Politics",
+        "category": "Knowledges",
+        "tags": [ "Ability:Politics", "mental", "social", "influence", "intelligence", "manipulation" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 8
+            },
+            {
+                "tag": "Background:Influence",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "science",
+        "name": "Science",
+        "category": "Knowledges",
+        "tags": [ "Ability:Science", "mental", "scholar", "technology", "intelligence" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Scientist",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "id": "technology",
+        "name": "Technology",
+        "category": "Knowledges",
+        "tags": [ "Ability:Technology", "mental", "technology", "scholar", "intelligence", "skills" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Hacker",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Technician",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 5
+            }
+        ]
+    }
+]

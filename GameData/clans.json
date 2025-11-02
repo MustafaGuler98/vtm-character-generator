@@ -42,6 +42,18 @@
             {
                 "tag": "Concept:MartialArtist",
                 "value": 25
+            },
+            {
+                "tag": "talents",
+                "value": 15
+            },
+            {
+                "tag": "skills",
+                "value": 15
+            },
+            {
+                "tag": "knowledges",
+                "value": 5
             }
         ]
     },
@@ -84,6 +96,18 @@
             {
                 "tag": "Concept:Soldier",
                 "value": 15
+            },
+            {
+                "tag": "talents",
+                "value": 20
+            },
+            {
+                "tag": "skills",
+                "value": 20
+            },
+            {
+                "tag": "knowledges",
+                "value": 10
             }
         ]
     },
@@ -130,6 +154,18 @@
             {
                 "tag": "Concept:Criminal",
                 "value": 15
+            },
+            {
+                "tag": "knowledges",
+                "value": 25
+            },
+            {
+                "tag": "talents",
+                "value": 15
+            },
+            {
+                "tag": "skills",
+                "value": 0
             }
         ]
     },
@@ -176,6 +212,18 @@
             {
                 "tag": "Concept:Outsider",
                 "value": 20
+            },
+            {
+                "tag": "talents",
+                "value": 25
+            },
+            {
+                "tag": "skills",
+                "value": 5
+            },
+            {
+                "tag": "knowledges",
+                "value": 5
             }
         ]
     },
@@ -226,6 +274,14 @@
             {
                 "tag": "Concept:Criminal",
                 "value": 15
+            },
+            {
+                "tag": "talents",
+                "value": 20
+            },
+            {
+                "tag": "skills",
+                "value": -10
             }
         ]
     },
@@ -326,6 +382,18 @@
             {
                 "tag": "Concept:Intellectual",
                 "value": 15
+            },
+            {
+                "tag": "talents",
+                "value": 20
+            },
+            {
+                "tag": "knowledges",
+                "value": 20
+            },
+            {
+                "tag": "skills",
+                "value": -5
             }
         ]
     },
@@ -426,6 +494,18 @@
             {
                 "tag": "Concept:Criminal",
                 "value": 20
+            },
+            {
+                "tag": "talents",
+                "value": 20
+            },
+            {
+                "tag": "skills",
+                "value": 20
+            },
+            {
+                "tag": "knowledges",
+                "value": -15
             }
         ]
     },
@@ -518,6 +598,14 @@
             {
                 "tag": "Concept:Archivist",
                 "value": 20
+            },
+            {
+                "tag": "talents",
+                "value": -10
+            },
+            {
+                "tag": "skills",
+                "value": -15
             }
         ]
     },
@@ -564,6 +652,18 @@
             {
                 "tag": "Concept:Cultist",
                 "value": 20
+            },
+            {
+                "tag": "knowledges",
+                "value": 20
+            },
+            {
+                "tag": "skills",
+                "value": 10
+            },
+            {
+                "tag": "talents",
+                "value": -10
             }
         ]
     },

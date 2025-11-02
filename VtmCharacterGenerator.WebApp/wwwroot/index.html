@@ -182,6 +182,10 @@
             margin-bottom: .5rem
         }
 
+        .attribute-item .label.muted {
+            color: var(--text-medium);
+        }
+
         .dots-display .dot {
             height: 12px;
             width: 12px;
@@ -241,12 +245,38 @@
         const sidebarContent = document.querySelector('.sidebar-content');
         const arrowSpan = document.querySelector('.arrow');
 
-    
         let allNatures = [];
-        const ATTRIBUTE_CATEGORIES = { Physical: ["strength", "dexterity", "stamina"], Social: ["charisma", "manipulation", "appearance"], Mental: ["perception", "intelligence", "wits"] };
-        loadOptions();
-        generateButton.addEventListener('click', () => { sheetDiv.innerHTML = '<p>Generating...</p>'; fetchAndDisplayCharacter('/api/character/generate'); });
-        createButton.addEventListener('click', () => { sheetDiv.innerHTML = '<p>Creating...</p>'; const e = { conceptId: conceptSelect.value, clanId: clanSelect.value, natureId: natureSelect.value, demeanorId: demeanorSelect.value }; fetchAndDisplayCharacter('/api/character/create', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(e) }); });
+        const ATTRIBUTE_CATEGORIES = {
+            Physical: ["strength", "dexterity", "stamina"],
+            Social: ["charisma", "manipulation", "appearance"],
+            Mental: ["perception", "intelligence", "wits"]
+        };
+        const ABILITY_CATEGORIES = {
+            Talents: ["alertness", "athletics", "awareness", "brawl", "empathy", "expression", "intimidation", "leadership", "streetwise", "subterfuge"],
+            Skills: ["animal_ken", "crafts", "drive", "etiquette", "firearms", "larceny", "melee", "performance", "stealth", "survival"],
+            Knowledges: ["academics", "computer", "finance", "investigation", "law", "medicine", "occult", "politics", "science", "technology"]
+        };
+
+        // wire buttons
+        generateButton.addEventListener('click', () => {
+            sheetDiv.innerHTML = '<p>Generating...</p>';
+            fetchAndDisplayCharacter('/api/character/generate');
+        });
+
+        createButton.addEventListener('click', () => {
+            sheetDiv.innerHTML = '<p>Creating...</p>';
+            const payload = {
+                conceptId: conceptSelect.value,
+                clanId: clanSelect.value,
+                natureId: natureSelect.value,
+                demeanorId: demeanorSelect.value
+            };
+            fetchAndDisplayCharacter('/api/character/create', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+        });
 
         sidebarToggle.addEventListener('click', function () {
             this.classList.toggle('active');
@@ -256,22 +286,163 @@
                 sidebarContent.style.padding = "1.5rem";
                 sidebarContent.style.maxHeight = sidebarContent.scrollHeight + "px";
             } else {
-                arrowSpan.innerHTML = '▼'; 
+                arrowSpan.innerHTML = '▼';
                 sidebarContent.style.maxHeight = null;
                 sidebarContent.style.padding = "0 1.5rem";
             }
         });
 
-    
-        function fetchAndDisplayCharacter(url, options = {}) { fetch(url, options).then(e => { if (!e.ok) throw new Error(`HTTP error! status: ${e.status}`); return e.json() }).then(displayCharacter).catch(e => { console.error("Error fetching character:", e), sheetDiv.classList.add("sheet-active"), sheetDiv.innerHTML = '<p style="color: red;">Failed to generate character. See console for details.</p>' }) }
-        function displayCharacter(e) { sheetDiv.classList.add("sheet-active"), sheetDiv.innerHTML = "", sheetDiv.appendChild(renderPersonaSection(e)), sheetDiv.appendChild(renderAttributesSection(e.attributes)) }
-        function renderPersonaSection(e) { const t = document.createElement("div"); return t.className = "sheet-section", t.innerHTML = `<h2>Persona</h2><div class="persona-grid"><p><strong>Concept:</strong> ${e.concept?.name ?? "—"}</p><p><strong>Clan:</strong> ${e.clan?.name ?? "—"}</p><p><strong>Nature:</strong> ${e.nature?.name ?? "—"}</p><p><strong>Demeanor:</strong> ${e.demeanor?.name ?? "—"}</p></div>`, t }
-        function renderAttributesSection(e) { const t = document.createElement("div"); t.className = "sheet-section", t.innerHTML = "<h2>Attributes</h2>"; const n = document.createElement("div"); n.className = "attributes-grid"; for (const o in ATTRIBUTE_CATEGORIES) { const c = document.createElement("div"); c.className = "attribute-category"; let a = `<h3>${o}</h3>`; ATTRIBUTE_CATEGORIES[o].forEach(t => { const n = e[t] || 0, o = t.charAt(0).toUpperCase() + t.slice(1); a += `<div class="attribute-item"><span>${o}</span><span class="dots-display">${renderDots(n)}</span></div>` }), c.innerHTML = a, n.appendChild(c) } return t.appendChild(n), t }
-        function renderDots(e, t = 5) { let n = ""; for (let o = 1; o <= t; o++)n += `<span class="dot ${o <= e ? "filled" : ""}"></span>`; return n }
-        function loadOptions() { fetch("/api/character/options").then(e => e.json()).then(e => { allNatures = e.natures || [], populateSelect(conceptSelect, e.concepts, "Random"), populateSelect(clanSelect, e.clans, "Random"), populateNatureOptions(), populateDemeanorOptions(), natureSelect.addEventListener("change", () => populateDemeanorOptions(natureSelect.value)), demeanorSelect.addEventListener("change", () => populateNatureOptions(demeanorSelect.value)) }).catch(e => console.error("Error loading options:", e)) }
-        function populateSelect(e, t, n) { e.innerHTML = `<option value="">${n}</option>`; (t || []).forEach(t => { const n = document.createElement("option"); n.value = String(t.id ?? ""), n.textContent = t.name ?? "", e.appendChild(n) }) }
-        function populateDemeanorOptions(e = "") { const t = demeanorSelect.value; populateSelect(demeanorSelect, allNatures.filter(t => String(t.id) !== String(e)), "Random"); const n = Array.from(demeanorSelect.options).some(e => e.value === t); demeanorSelect.value = n ? t : "" }
-        function populateNatureOptions(e = "") { const t = natureSelect.value; populateSelect(natureSelect, allNatures.filter(t => String(t.id) !== String(e)), "Random"); const n = Array.from(natureSelect.options).some(e => e.value === t); natureSelect.value = n ? t : "" }
+        function fetchAndDisplayCharacter(url, options = {}) {
+            fetch(url, options)
+                .then(res => {
+                    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                    return res.json();
+                })
+                .then(displayCharacter)
+                .catch(err => {
+                    console.error("Error fetching character:", err);
+                    sheetDiv.classList.add("sheet-active");
+                    sheetDiv.innerHTML = '<p style="color: red;">Failed to generate character. See console for details.</p>';
+                });
+        }
+
+        function displayCharacter(characterData) {
+            sheetDiv.classList.add("sheet-active");
+            sheetDiv.innerHTML = "";
+            sheetDiv.appendChild(renderPersonaSection(characterData));
+            sheetDiv.appendChild(renderAttributesSection(characterData.attributes || {}));
+            // always pass a valid object for abilities
+            sheetDiv.appendChild(renderAbilitiesSection(characterData.abilities || {}));
+        }
+
+        function renderPersonaSection(data) {
+            const container = document.createElement("div");
+            container.className = "sheet-section";
+            container.innerHTML = `<h2>Persona</h2>
+                    <div class="persona-grid">
+                        <p><strong>Concept:</strong> ${data.concept?.name ?? "—"}</p>
+                        <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
+                        <p><strong>Nature:</strong> ${data.nature?.name ?? "—"}</p>
+                        <p><strong>Demeanor:</strong> ${data.demeanor?.name ?? "—"}</p>
+                    </div>`;
+            return container;
+        }
+
+        function renderAttributesSection(attrs) {
+            attrs = attrs || {};
+            const section = document.createElement("div");
+            section.className = "sheet-section";
+            section.innerHTML = "<h2>Attributes</h2>";
+            const grid = document.createElement("div");
+            grid.className = "attributes-grid";
+
+            for (const category in ATTRIBUTE_CATEGORIES) {
+                const catDiv = document.createElement("div");
+                catDiv.className = "attribute-category";
+                let html = `<h3>${category}</h3>`;
+
+                ATTRIBUTE_CATEGORIES[category].forEach(key => {
+                    const value = attrs[key] || 0;
+                    const label = key.charAt(0).toUpperCase() + key.slice(1);
+                    html += `<div class="attribute-item"><span>${label}</span><span class="dots-display">${renderDots(value)}</span></div>`;
+                });
+
+                catDiv.innerHTML = html;
+                grid.appendChild(catDiv);
+            }
+
+            section.appendChild(grid);
+            return section;
+        }
+
+        // helper: title-case a phrase and replace underscores
+        function titleCaseAndClean(id) {
+            if (!id) return "";
+            return id.replace(/_/g, ' ')
+                     .split(' ')
+                     .map(w => w.length ? (w.charAt(0).toUpperCase() + w.slice(1)) : '')
+                     .join(' ');
+        }
+
+        function renderAbilitiesSection(abilities) {
+            abilities = abilities || {};
+            const section = document.createElement('div');
+            section.className = 'sheet-section';
+            section.innerHTML = '<h2>Abilities</h2>';
+
+            const grid = document.createElement('div');
+            grid.className = 'attributes-grid';
+
+            // Always render full lists in the fixed order from ABILITY_CATEGORIES.
+            for (const categoryName in ABILITY_CATEGORIES) {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'attribute-category';
+
+                let categoryHtml = `<h3>${categoryName}</h3>`;
+                ABILITY_CATEGORIES[categoryName].forEach(abilityId => {
+                    const score = Number(abilities[abilityId] || 0);
+                    const displayName = titleCaseAndClean(abilityId);
+                    const labelClass = score === 0 ? 'label muted' : 'label';
+                    categoryHtml += `<div class="attribute-item"><span class="${labelClass}">${displayName}</span><span class="dots-display">${renderDots(score, 5)}</span></div>`;
+                });
+
+                categoryDiv.innerHTML = categoryHtml;
+                grid.appendChild(categoryDiv);
+            }
+
+            section.appendChild(grid);
+            return section;
+        }
+
+        function renderDots(count, max = 5) {
+            let out = "";
+            for (let i = 1; i <= max; i++) {
+                out += `<span class="dot ${i <= count ? "filled" : ""}"></span>`;
+            }
+            return out;
+        }
+
+        function loadOptions() {
+            fetch("/api/character/options")
+                .then(res => res.json())
+                .then(data => {
+                    allNatures = data.natures || [];
+                    populateSelect(conceptSelect, data.concepts, "Random");
+                    populateSelect(clanSelect, data.clans, "Random");
+                    populateNatureOptions();
+                    populateDemeanorOptions();
+                    natureSelect.addEventListener("change", () => populateDemeanorOptions(natureSelect.value));
+                    demeanorSelect.addEventListener("change", () => populateNatureOptions(demeanorSelect.value));
+                })
+                .catch(err => console.error("Error loading options:", err));
+        }
+
+        function populateSelect(el, items, placeholder) {
+            el.innerHTML = `<option value="">${placeholder}</option>`;
+            (items || []).forEach(item => {
+                const opt = document.createElement("option");
+                opt.value = String(item.id ?? "");
+                opt.textContent = item.name ?? "";
+                el.appendChild(opt);
+            });
+        }
+
+        function populateDemeanorOptions(excludeId = "") {
+            const previous = demeanorSelect.value;
+            populateSelect(demeanorSelect, allNatures.filter(n => String(n.id) !== String(excludeId)), "Random");
+            const exists = Array.from(demeanorSelect.options).some(o => o.value === previous);
+            demeanorSelect.value = exists ? previous : "";
+        }
+
+        function populateNatureOptions(excludeId = "") {
+            const previous = natureSelect.value;
+            populateSelect(natureSelect, allNatures.filter(n => String(n.id) !== String(excludeId)), "Random");
+            const exists = Array.from(natureSelect.options).some(o => o.value === previous);
+            natureSelect.value = exists ? previous : "";
+        }
+
+        // initial load
+        loadOptions();
     </script>
 </body>
 </html>

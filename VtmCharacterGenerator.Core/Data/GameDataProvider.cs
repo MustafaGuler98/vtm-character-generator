@@ -13,6 +13,7 @@ namespace VtmCharacterGenerator.Core.Data
         public List<AttributeCategory> AttributeCategories { get; }
         public List<Concept> Concepts { get; }
         public List<Nature> Natures { get; }
+        public List<Ability> Abilities { get; }
 
 
         public GameDataProvider(string dataFolderPath)
@@ -31,6 +32,9 @@ namespace VtmCharacterGenerator.Core.Data
 
             var naturesJson = File.ReadAllText(Path.Combine(dataFolderPath, "natures.json"));
             Natures = JsonSerializer.Deserialize<List<Nature>>(naturesJson);
+
+            var abilitiesJson = File.ReadAllText(Path.Combine(dataFolderPath, "abilities.json"));
+            Abilities = JsonSerializer.Deserialize<List<Ability>>(abilitiesJson);
         }
     }
 }

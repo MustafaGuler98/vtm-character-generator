@@ -32,7 +32,7 @@ namespace VtmCharacterGenerator.Core.Services
             return profile;
         }
 
-        private void ProcessAffinities(Dictionary<string, int> profile, List<Affinity> affinities)
+        public void ProcessAffinities(Dictionary<string, int> profile, List<Affinity> affinities)
         {
             if (affinities == null) return;
 
