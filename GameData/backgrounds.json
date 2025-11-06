@@ -1,0 +1,338 @@
+[
+    {
+        "id": "allies",
+        "name": "Allies",
+        "description": "Loyal mortal friends and companions who provide aid and support out of genuine friendship and trust.",
+        "tags": [ "Background:Allies", "social", "influence", "allies", "resources", "information" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Charisma",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 5
+            },
+            {
+                "tag": "Ability:Leadership",
+                "value": 5
+            },
+            {
+                "tag": "Morality",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "id": "alternate_identity",
+        "name": "Alternate Identity",
+        "description": "A well-established false identity, complete with legal documents and a believable history, allowing for discreet operations.",
+        "tags": [ "Background:AlternateIdentity", "social", "mental", "deception", "stealth", "bureaucracy" ],
+        "affinities": [
+            {
+                "tag": "Ability:Subterfuge",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "contacts",
+        "name": "Contacts",
+        "description": "A network of information sources in various fields. These individuals provide knowledge and secrets but are not necessarily loyal friends.",
+        "tags": [ "Background:Contacts", "social", "mental", "information", "investigation", "streetwise" ],
+        "affinities": [
+            {
+                "tag": "Ability:Streetwise",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Reporter",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Wits",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "id": "domain",
+        "name": "Domain",
+        "description": "A specific territory that the vampire considers their personal feeding ground and haven, recognized by other Kindred.",
+        "tags": [ "Background:Domain", "social", "physical", "influence", "resources", "survival" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ventrue",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 8
+            },
+            {
+                "tag": "Background:Status",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Intimidation",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Guardian",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "fame",
+        "name": "Fame",
+        "description": "Recognition among mortals. This provides easy access and influence but makes maintaining the Masquerade a constant challenge.",
+        "tags": [ "Background:Fame", "social", "influence", "high_society", "performance", "resources" ],
+        "affinities": [
+            {
+                "tag": "Clan:Toreador",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Performance",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "herd",
+        "name": "Herd",
+        "description": "A group of mortals from whom the vampire can feed safely without arousing suspicion. A reliable and secure source of vitae.",
+        "tags": [ "Background:Herd", "social", "resources", "blood", "survival", "influence" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ventrue",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": -8
+            }
+        ]
+    },
+    {
+        "id": "influence",
+        "name": "Influence",
+        "description": "Pull within mortal society, manipulating politics, media, law enforcement, or other bureaucratic structures.",
+        "tags": [ "Background:Influence", "social", "influence", "resources", "bureaucracy", "leadership" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ventrue",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Politics",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Law",
+                "value": 5
+            },
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "mentor",
+        "name": "Mentor",
+        "description": "An elder Kindred who provides guidance, protection, and occasional aid. This relationship often comes with a price.",
+        "tags": [ "Background:Mentor", "social", "mental", "allies", "influence", "information" ],
+        "affinities": [
+            {
+                "tag": "Clan:Tremere",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Kid",
+                "value": 5
+            },
+            {
+                "tag": "Ability:Etiquette",
+                "value": 4
+            },
+            {
+                "tag": "Ability:Survival",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "resources",
+        "name": "Resources",
+        "description": "Material wealth and assets, including cash, property, and investments. This determines financial standing.",
+        "tags": [ "Background:Resources", "social", "resources", "influence", "high_society", "bureaucracy" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ventrue",
+                "value": 10
+            },
+            {
+                "tag": "Concept:CorporateRaider",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Scion",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Finance",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "retainers",
+        "name": "Retainers",
+        "description": "Loyal servants or ghouls bound by loyalty, blood, or payment, and are expected to obey commands.",
+        "tags": [ "Background:Retainers", "social", "physical", "allies", "influence", "blood" ],
+        "affinities": [
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Dominate",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Leadership",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Servant",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "rituals",
+        "name": "Rituals",
+        "description": "Knowledge of and access to specific Thaumaturgical or Necromantic rituals. Only available to characters who can practice Blood Magic.",
+        "tags": [ "Background:Rituals", "mental", "arcane", "blood_magic", "necromancy", "scholar" ],
+        "affinities": [
+            {
+                "tag": "Discipline:Thaumaturgy",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 15
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Giovanni",
+                "value": 8
+            },
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "status",
+        "name": "Status",
+        "description": "Standing and reputation within Kindred society. Reflects recognized authority, honor, and respect.",
+        "tags": [ "Background:Status", "social", "influence", "leadership", "high_society", "bureaucracy" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ventrue",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Etiquette",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Leadership",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Outsider",
+                "value": -15
+            }
+        ]
+    }
+]

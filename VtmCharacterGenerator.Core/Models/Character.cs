@@ -10,11 +10,13 @@ namespace VtmCharacterGenerator.Core.Models
         public Nature Demeanor { get; set; }
         public Dictionary<string, int> Attributes { get; set; }
         public Dictionary<string, int> Abilities { get; set; }
+        public Dictionary<string, int> Backgrounds { get; set; }
 
         public Character()
         {
             Attributes = new Dictionary<string, int>();
             Abilities = new Dictionary<string, int>();
+            Backgrounds = new Dictionary<string, int>();
         }
     }
 }

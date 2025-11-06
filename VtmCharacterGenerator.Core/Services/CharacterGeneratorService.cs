@@ -8,13 +8,20 @@ namespace VtmCharacterGenerator.Core.Services
         private readonly AttributeService _attributeService;
         private readonly AbilityDistributionService _abilityDistributionService;
         private readonly AffinityProcessorService _affinityProcessor;
+        private readonly BackgroundDistributionService _backgroundDistributionService;
 
-        public CharacterGeneratorService(PersonaService personaService, AttributeService attributeService, AbilityDistributionService abilityDistributionService, AffinityProcessorService affinityProcessor)
+        public CharacterGeneratorService(PersonaService personaService, 
+               AttributeService attributeService, 
+               AbilityDistributionService abilityDistributionService, 
+               AffinityProcessorService affinityProcessor,
+               BackgroundDistributionService backgroundDistributionService)
+
         {
             _personaService = personaService;
             _attributeService = attributeService;
             _abilityDistributionService = abilityDistributionService;
             _affinityProcessor = affinityProcessor;
+            _backgroundDistributionService = backgroundDistributionService;
         }
 
         public Character GenerateCharacter(Persona inputPersona)
@@ -34,6 +41,7 @@ namespace VtmCharacterGenerator.Core.Services
             // I tried differen approaches for distributing attributes and abilities.
             character.Attributes = _attributeService.DistributeAttributes(affinityProfile);
             _abilityDistributionService.DistributeAbilities(character, affinityProfile);
+            _backgroundDistributionService.DistributeBackgrounds(character, affinityProfile);
 
             // TODO: Generate other character parts like abilities, disciplines, etc.
 

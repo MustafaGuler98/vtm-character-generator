@@ -311,20 +311,20 @@
             sheetDiv.innerHTML = "";
             sheetDiv.appendChild(renderPersonaSection(characterData));
             sheetDiv.appendChild(renderAttributesSection(characterData.attributes || {}));
-            // always pass a valid object for abilities
             sheetDiv.appendChild(renderAbilitiesSection(characterData.abilities || {}));
+            sheetDiv.appendChild(renderBackgroundsSection(characterData.backgrounds || {}));
         }
 
         function renderPersonaSection(data) {
             const container = document.createElement("div");
             container.className = "sheet-section";
             container.innerHTML = `<h2>Persona</h2>
-                    <div class="persona-grid">
-                        <p><strong>Concept:</strong> ${data.concept?.name ?? "—"}</p>
-                        <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
-                        <p><strong>Nature:</strong> ${data.nature?.name ?? "—"}</p>
-                        <p><strong>Demeanor:</strong> ${data.demeanor?.name ?? "—"}</p>
-                    </div>`;
+                        <div class="persona-grid">
+                            <p><strong>Concept:</strong> ${data.concept?.name ?? "—"}</p>
+                            <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
+                            <p><strong>Nature:</strong> ${data.nature?.name ?? "—"}</p>
+                            <p><strong>Demeanor:</strong> ${data.demeanor?.name ?? "—"}</p>
+                        </div>`;
             return container;
         }
 
@@ -359,9 +359,9 @@
         function titleCaseAndClean(id) {
             if (!id) return "";
             return id.replace(/_/g, ' ')
-                     .split(' ')
-                     .map(w => w.length ? (w.charAt(0).toUpperCase() + w.slice(1)) : '')
-                     .join(' ');
+                .split(' ')
+                .map(w => w.length ? (w.charAt(0).toUpperCase() + w.slice(1)) : '')
+                .join(' ');
         }
 
         function renderAbilitiesSection(abilities) {
@@ -389,6 +389,38 @@
                 categoryDiv.innerHTML = categoryHtml;
                 grid.appendChild(categoryDiv);
             }
+
+            section.appendChild(grid);
+            return section;
+        }
+
+        function renderBackgroundsSection(backgrounds) {
+            backgrounds = backgrounds || {};
+            const section = document.createElement('div');
+            section.className = 'sheet-section';
+            section.innerHTML = '<h2>Backgrounds</h2>';
+
+            const grid = document.createElement('div');
+            grid.className = 'attributes-grid';
+
+
+            const backgroundEntries = Object.keys(backgrounds)
+                .filter(id => backgrounds[id] > 0)
+                .sort(); // alphabetical order
+
+           
+            backgroundEntries.forEach(backgroundId => {
+                const score = backgrounds[backgroundId] || 0;
+                const displayName = titleCaseAndClean(backgroundId);
+
+                const itemHtml = `
+                <div class="attribute-item">
+                    <span>${displayName}</span>
+                    <span class="dots-display">${renderDots(score, 5)}</span>
+                </div>
+            `;
+                grid.innerHTML += itemHtml;
+            });
 
             section.appendChild(grid);
             return section;

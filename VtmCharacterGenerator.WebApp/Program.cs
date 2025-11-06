@@ -27,6 +27,7 @@ builder.Services.AddScoped<AffinityProcessorService>();
 builder.Services.AddScoped<PersonaService>();
 builder.Services.AddScoped<AttributeService>();
 builder.Services.AddScoped<AbilityDistributionService>();
+builder.Services.AddScoped<BackgroundDistributionService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
