@@ -64,6 +64,7 @@ namespace VtmCharacterGenerator.Core.Services
                     if (chosenAttribute != null)
                     {
                         attributes[chosenAttribute.Id]++;
+                        _affinityProcessor.ProcessAffinities(affinityProfile, chosenAttribute.Affinities);
                     }
                 }
             }
