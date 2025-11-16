@@ -12,6 +12,7 @@ namespace VtmCharacterGenerator.Core.Models
         public Dictionary<string, int> Abilities { get; set; }
         public Dictionary<string, int> Backgrounds { get; set; }
         public Dictionary<string, int> Virtues { get; set; }
+        public Dictionary<string, int> Disciplines { get; set; }
 
         public Character()
         {
@@ -19,6 +20,7 @@ namespace VtmCharacterGenerator.Core.Models
             Abilities = new Dictionary<string, int>();
             Backgrounds = new Dictionary<string, int>();
             Virtues = new Dictionary<string, int>();
+            Disciplines = new Dictionary<string, int>();
         }
     }
 }

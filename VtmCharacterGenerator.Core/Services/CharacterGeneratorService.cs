@@ -10,13 +10,15 @@ namespace VtmCharacterGenerator.Core.Services
         private readonly AffinityProcessorService _affinityProcessor;
         private readonly BackgroundDistributionService _backgroundDistributionService;
         private readonly VirtueDistributionService _virtueDistributionService;
+        private readonly DisciplineDistributionService _disciplineDistributionService;
 
         public CharacterGeneratorService(PersonaService personaService, 
                AttributeService attributeService, 
                AbilityDistributionService abilityDistributionService, 
                AffinityProcessorService affinityProcessor,
                BackgroundDistributionService backgroundDistributionService,
-               VirtueDistributionService virtueDistributionService)
+               VirtueDistributionService virtueDistributionService,
+               DisciplineDistributionService disciplineDistributionService)
 
         {
             _personaService = personaService;
@@ -25,6 +27,7 @@ namespace VtmCharacterGenerator.Core.Services
             _affinityProcessor = affinityProcessor;
             _backgroundDistributionService = backgroundDistributionService;
             _virtueDistributionService = virtueDistributionService;
+            _disciplineDistributionService = disciplineDistributionService;
 
         }
 
@@ -42,13 +45,14 @@ namespace VtmCharacterGenerator.Core.Services
                 Demeanor = finalPersona.Demeanor
             };
 
-            // I tried differen approaches for distributing attributes and abilities.
+            // I tried different approach for distributing attributes to see what works best
             character.Attributes = _attributeService.DistributeAttributes(affinityProfile);
             _abilityDistributionService.DistributeAbilities(character, affinityProfile);
             _backgroundDistributionService.DistributeBackgrounds(character, affinityProfile);
             _virtueDistributionService.DistributeVirtues(character, affinityProfile);
+            _disciplineDistributionService.DistributeDisciplines(character, affinityProfile);
 
-            // TODO: Generate other character parts like abilities, disciplines, etc.
+            // TODO: Generate other character parts
 
             return character;
         }

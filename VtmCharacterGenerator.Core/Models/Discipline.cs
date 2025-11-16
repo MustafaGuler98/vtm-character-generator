@@ -1,9 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using VtmCharacterGenerator.Core.Models;
 
 namespace VtmCharacterGenerator.Core.Models
 {
-    public class Discipline
+    public class Discipline : IHasTags
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -14,5 +15,10 @@ namespace VtmCharacterGenerator.Core.Models
         [JsonPropertyName("description")]
         public string Description { get; set; }
 
+        [JsonPropertyName("tags")]
+        public List<string> Tags { get; set; } = new List<string>();
+
+        [JsonPropertyName("affinities")]
+        public List<Affinity> Affinities { get; set; } = new List<Affinity>();
     }
 }

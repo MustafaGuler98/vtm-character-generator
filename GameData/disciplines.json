@@ -1,87 +1,482 @@
 [
-  {
-    "id": "animalism",
-    "name": "Animalism",
-    "description": "The ability to communicate with and control the beasts of the world, tapping into the Beast within both animal and Kindred."
-  },
-  {
-    "id": "auspex",
-    "name": "Auspex",
-    "description": "Supernatural perception that pierces lies, senses emotions, and can even project consciousness beyond the physical form."
-  },
-  {
-    "id": "celerity",
-    "name": "Celerity",
-    "description": "Unearthly speed and reflexes, allowing a vampire to move faster than the mortal eye can follow."
-  },
-  {
-    "id": "chimerstry",
-    "name": "Chimerstry",
-    "description": "The power to conjure illusions and phantoms so real they can deceive all senses and even cause physical harm."
-  },
-  {
-    "id": "dementation",
-    "name": "Dementation",
-    "description": "The ability to channel madness, shattering the minds of others and inflicting derangements with but a word or a glance."
-  },
-  {
-    "id": "dominate",
-    "name": "Dominate",
-    "description": "The power to subjugate the will of others, commanding them with irresistible mental force and altering their memories."
-  },
-  {
-    "id": "fortitude",
-    "name": "Fortitude",
-    "description": "Supernatural resilience and toughness, allowing a vampire to endure injuries that would destroy a mortal body."
-  },
-  {
-    "id": "necromancy",
-    "name": "Necromancy",
-    "description": "The dark art of communing with and commanding the spirits of the dead, and wielding the very essence of the Underworld."
-  },
-  {
-    "id": "obfuscate",
-    "name": "Obfuscate",
-    "description": "The ability to cloud the minds of others, becoming unseen and unheard while standing in plain sight."
-  },
-  {
-    "id": "obtenebration",
-    "name": "Obtenebration",
-    "description": "The mastery over shadows and darkness, shaping them into tangible, animate forms and weapons of chilling abyss."
-  },
-  {
-    "id": "potence",
-    "name": "Potence",
-    "description": "The unholy might of the vampiric curse, granting physical strength far beyond mortal limits."
-  },
-  {
-    "id": "presence",
-    "name": "Presence",
-    "description": "An aura of supernatural charisma and emotional magnetism that can inspire awe, terror, or slavish devotion in others."
-  },
-  {
-    "id": "protean",
-    "name": "Protean",
-    "description": "The power of metamorphosis, allowing a vampire to change their form, grow bestial claws, or even meld into the very earth."
-  },
-  {
-    "id": "quietus",
-    "name": "Quietus",
-    "description": "The silent art of the kill, using accursed blood to silence sounds, poison victims, and inflict agonizing death."
-  },
-  {
-    "id": "serpentis",
-    "name": "Serpentis",
-    "description": "A discipline that channels the corrupting influence of the serpent, allowing for hypnotic gazes, scaly skin, and a venomous bite."
-  },
-  {
-    "id": "thaumaturgy",
-    "name": "Thaumaturgy",
-    "description": "The arcane practice of blood magic, manipulating the power of Vitae to create a wide variety of devastating and subtle effects."
-  },
-  {
-    "id": "vicissitude",
-    "name": "Vicissitude",
-    "description": "The unnatural art of fleshcrafting, allowing the user to warp and reshape bone and tissue—both their own and that of others."
-  }
+    {
+        "id": "animalism",
+        "name": "Animalism",
+        "description": "The power to communicate with and control animals, as well as to tap into the primal Beast within oneself and others.",
+        "tags": [ "Discipline:Animalism", "primal", "control", "survival", "social", "beast" ],
+        "affinities": [
+            {
+                "tag": "Ability:AnimalKen",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 15
+            },
+            {
+                "tag": "Discipline:Protean",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Outsider",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": 8
+            },
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Etiquette",
+                "value": -15
+            },
+            {
+                "tag": "HighSociety",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "auspex",
+        "name": "Auspex",
+        "description": "Supernatural senses that allow a vampire to perceive beyond the limitations of mortal ken, read auras, and project their consciousness.",
+        "tags": [ "Discipline:Auspex", "mental", "supernatural_perception", "investigation", "information", "arcane" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Perception",
+                "value": 30
+            },
+            {
+                "tag": "Ability:Awareness",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 18
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 15
+            },
+            {
+                "tag": "Ability:Investigation",
+                "value": 12
+            },
+            {
+                "tag": "Nature:Observer",
+                "value": 10
+            },
+            {
+                "tag": "Discipline:Obfuscate",
+                "value": -25
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "celerity",
+        "name": "Celerity",
+        "description": "Supernatural speed and reflexes, allowing a vampire to move and react with impossible quickness.",
+        "tags": [ "Discipline:Celerity", "physical", "combat", "athleticism", "survival", "dexterity" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Dexterity",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 18
+            },
+            {
+                "tag": "Ability:Athletics",
+                "value": 15
+            },
+            {
+                "tag": "Ability:Dodge",
+                "value": 12
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 10
+            },
+            {
+                "tag": "Nature:ThrillSeeker",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Fortitude",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "dominate",
+        "name": "Dominate",
+        "description": "The power to control the minds and actions of others through direct eye contact and force of will.",
+        "tags": [ "Discipline:Dominate", "mental", "social", "control", "manipulation", "leadership" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 30
+            },
+            {
+                "tag": "Willpower",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 18
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 12
+            },
+            {
+                "tag": "Nature:Autocrat",
+                "value": 10
+            },
+            {
+                "tag": "Background:Influence",
+                "value": 8
+            },
+            {
+                "tag": "Humanity",
+                "value": -25
+            },
+            {
+                "tag": "Virtue:Conscience",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "fortitude",
+        "name": "Fortitude",
+        "description": "Supernatural resilience and toughness, allowing a vampire to ignore wounds that would cripple or kill a mortal.",
+        "tags": [ "Discipline:Fortitude", "physical", "stamina", "survival", "combat", "willpower" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Stamina",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 18
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 15
+            },
+            {
+                "tag": "Nature:Survivor",
+                "value": 12
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 10
+            },
+            {
+                "tag": "Virtue:Courage",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Celerity",
+                "value": -10
+            },
+            {
+                "tag": "Ability:Stealth",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "obfuscate",
+        "name": "Obfuscate",
+        "description": "The ability to remain unseen and unheard, either by hiding in plain sight or by adopting the appearance of another.",
+        "tags": [ "Discipline:Obfuscate", "social", "stealth", "deception", "illusion", "information" ],
+        "affinities": [
+            {
+                "tag": "Ability:Stealth",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 18
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 12
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Rogue",
+                "value": 10
+            },
+            {
+                "tag": "Background:AlternateIdentity",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": -25
+            },
+            {
+                "tag": "Ability:Leadership",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "potence",
+        "name": "Potence",
+        "description": "The Discipline of supernatural physical might, allowing a vampire to exhibit strength far beyond mortal limits.",
+        "tags": [ "Discipline:Potence", "physical", "strength", "combat", "brawling", "intimidation" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Strength",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 18
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 15
+            },
+            {
+                "tag": "Ability:Brawl",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 12
+            },
+            {
+                "tag": "Nature:Bravo",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Intimidation",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "presence",
+        "name": "Presence",
+        "description": "The power of supernatural charm and emotional projection, allowing a vampire to attract, sway, and terrify others.",
+        "tags": [ "Discipline:Presence", "social", "charisma", "manipulation", "leadership", "intimidation" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Charisma",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 18
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 12
+            },
+            {
+                "tag": "Ability:Leadership",
+                "value": 10
+            },
+            {
+                "tag": "Background:Fame",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -25
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "thaumaturgy",
+        "name": "Thaumaturgy",
+        "description": "The highly structured and demanding practice of blood magic, allowing for a wide range of potent rituals and effects.",
+        "tags": [ "Discipline:Thaumaturgy", "mental", "blood_magic", "arcane", "scholar", "control", "willpower" ],
+        "affinities": [
+            {
+                "tag": "Ability:Occult",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 30
+            },
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 20
+            },
+            {
+                "tag": "Willpower",
+                "value": 18
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 15
+            },
+            {
+                "tag": "Nature:Architect",
+                "value": 12
+            },
+            {
+                "tag": "Background:Rituals",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Academics",
+                "value": 8
+            },
+            {
+                "tag": "Physical",
+                "value": -20
+            },
+            {
+                "tag": "Primal",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "protean",
+        "name": "Protean",
+        "description": "A Discipline that allows a vampire to manipulate their physical form, from growing bestial claws to transforming into an animal or mist.",
+        "tags": [ "Discipline:Protean", "physical", "shapeshifting", "primal", "survival", "combat", "stealth" ],
+        "affinities": [
+            {
+                "tag": "Shapeshifting",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 25
+            },
+            {
+                "tag": "Ability:Survival",
+                "value": 20
+            },
+            {
+                "tag": "Discipline:Animalism",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 12
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": 10
+            },
+            {
+                "tag": "Primal",
+                "value": 15
+            },
+            {
+                "tag": "Ability:Brawl",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Etiquette",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": -25
+            }
+        ]
+    }
 ]

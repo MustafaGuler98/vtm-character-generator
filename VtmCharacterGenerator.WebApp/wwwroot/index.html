@@ -314,6 +314,7 @@
             sheetDiv.appendChild(renderAbilitiesSection(characterData.abilities || {}));
             sheetDiv.appendChild(renderBackgroundsSection(characterData.backgrounds || {}));
             sheetDiv.appendChild(renderVirtuesSection(characterData.virtues || {})); 
+            sheetDiv.appendChild(renderDisciplinesSection(characterData.disciplines || {}));
         }
 
         function renderPersonaSection(data) {
@@ -453,6 +454,40 @@
             `;
                 grid.innerHTML += itemHtml;
             });
+
+            section.appendChild(grid);
+            return section;
+        }
+
+        function renderDisciplinesSection(disciplines) {
+            disciplines = disciplines || {};
+            const section = document.createElement('div');
+            section.className = 'sheet-section';
+            section.innerHTML = '<h2>Disciplines</h2>';
+
+            const grid = document.createElement('div');
+            grid.className = 'attributes-grid';
+
+            const disciplineEntries = Object.keys(disciplines)
+                .filter(id => disciplines[id] > 0)
+                .sort();
+
+            disciplineEntries.forEach(disciplineId => {
+                const score = disciplines[disciplineId] || 0;
+                const displayName = titleCaseAndClean(disciplineId);
+
+                const itemHtml = `
+            <div class="attribute-item">
+                <span>${displayName}</span>
+                <span class="dots-display">${renderDots(score, 5)}</span>
+            </div>
+        `;
+                grid.innerHTML += itemHtml;
+            });
+
+            if (disciplineEntries.length === 0) {
+                grid.innerHTML = '<p>No disciplines assigned.</p>';
+            }
 
             section.appendChild(grid);
             return section;
