@@ -313,18 +313,19 @@
             sheetDiv.appendChild(renderAttributesSection(characterData.attributes || {}));
             sheetDiv.appendChild(renderAbilitiesSection(characterData.abilities || {}));
             sheetDiv.appendChild(renderBackgroundsSection(characterData.backgrounds || {}));
+            sheetDiv.appendChild(renderVirtuesSection(characterData.virtues || {})); 
         }
 
         function renderPersonaSection(data) {
             const container = document.createElement("div");
             container.className = "sheet-section";
             container.innerHTML = `<h2>Persona</h2>
-                        <div class="persona-grid">
-                            <p><strong>Concept:</strong> ${data.concept?.name ?? "—"}</p>
-                            <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
-                            <p><strong>Nature:</strong> ${data.nature?.name ?? "—"}</p>
-                            <p><strong>Demeanor:</strong> ${data.demeanor?.name ?? "—"}</p>
-                        </div>`;
+                            <div class="persona-grid">
+                                <p><strong>Concept:</strong> ${data.concept?.name ?? "—"}</p>
+                                <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
+                                <p><strong>Nature:</strong> ${data.nature?.name ?? "—"}</p>
+                                <p><strong>Demeanor:</strong> ${data.demeanor?.name ?? "—"}</p>
+                            </div>`;
             return container;
         }
 
@@ -408,10 +409,41 @@
                 .filter(id => backgrounds[id] > 0)
                 .sort(); // alphabetical order
 
-           
+
             backgroundEntries.forEach(backgroundId => {
                 const score = backgrounds[backgroundId] || 0;
                 const displayName = titleCaseAndClean(backgroundId);
+
+                const itemHtml = `
+                    <div class="attribute-item">
+                        <span>${displayName}</span>
+                        <span class="dots-display">${renderDots(score, 5)}</span>
+                    </div>
+                `;
+                grid.innerHTML += itemHtml;
+            });
+
+            section.appendChild(grid);
+            return section;
+        }
+
+        function renderVirtuesSection(virtues) {
+            virtues = virtues || {};
+            const section = document.createElement('div');
+            section.className = 'sheet-section';
+            section.innerHTML = '<h2>Virtues</h2>';
+
+            const grid = document.createElement('div');
+            grid.className = 'attributes-grid';
+
+            // Order is fixed.
+            const virtueOrder = ["conscience", "self_control", "courage"];
+
+            virtueOrder.forEach(virtueId => {
+                if (virtues[virtueId] === undefined) return;
+
+                const score = virtues[virtueId] || 0;
+                const displayName = titleCaseAndClean(virtueId);
 
                 const itemHtml = `
                 <div class="attribute-item">

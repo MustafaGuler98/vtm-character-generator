@@ -1,0 +1,266 @@
+[
+    {
+        "id": "conscience",
+        "name": "Conscience",
+        "description": "Represents a character's sense of morality and empathy. It governs the ability to resist committing actions that violate one's personal ethics and is the cornerstone of maintaining Humanity.",
+        "tags": [ "Virtue:Conscience", "mental", "social", "morality", "willpower", "humanity" ],
+        "affinities": [
+            {
+                "tag": "Humanity",
+                "value": 30
+            },
+            {
+                "tag": "Ability:Empathy",
+                "value": 25
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Healer",
+                "value": 12
+            },
+            {
+                "tag": "Morality",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Judge",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Guardian",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Perception",
+                "value": 5
+            },
+            {
+                "tag": "Virtue:SelfControl",
+                "value": 5
+            },
+            {
+                "tag": "Deception",
+                "value": -15
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": -12
+            },
+            {
+                "tag": "Ability:Intimidation",
+                "value": -10
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": -20
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": -18
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": -12
+            },
+            {
+                "tag": "Concept:Zealot",
+                "value": -10
+            },
+            {
+                "tag": "Discipline:Dominate",
+                "value": -15
+            },
+            {
+                "tag": "Nature:Conniver",
+                "value": -12
+            }
+        ]
+    },
+    {
+        "id": "self_control",
+        "name": "Self-Control",
+        "description": "Measures a character's discipline and ability to suppress the Beast within. It is the primary Virtue for resisting frenzy caused by anger, hunger, or provocation.",
+        "tags": [ "Virtue:SelfControl", "mental", "willpower", "frenzy", "primal", "survival" ],
+        "affinities": [
+            {
+                "tag": "Frenzy",
+                "value": -30
+            },
+            {
+                "tag": "Willpower",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 18
+            },
+            {
+                "tag": "Nature:Stoic",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 12
+            },
+            {
+                "tag": "Nature:Director",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Etiquette",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Fortitude",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 6
+            },
+            {
+                "tag": "Bureaucracy",
+                "value": 5
+            },
+            {
+                "tag": "Primal",
+                "value": -20
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -25
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": -15
+            },
+            {
+                "tag": "Nature:Rebel",
+                "value": -12
+            },
+            {
+                "tag": "Nature:ThrillSeeker",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Scenester",
+                "value": -8
+            },
+            {
+                "tag": "Ability:Brawl",
+                "value": -6
+            },
+            {
+                "tag": "Discipline:Protean",
+                "value": -10
+            },
+            {
+                "tag": "Virtue:Conscience",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "courage",
+        "name": "Courage",
+        "description": "Represents a character's bravery and ability to stand firm in the face of fear. It is the essential Virtue for resisting Rötschreck (the Red Fear) triggered by fire, sunlight, or overwhelming supernatural threats.",
+        "tags": [ "Virtue:Courage", "mental", "willpower", "frenzy", "combat", "survival" ],
+        "affinities": [
+            {
+                "tag": "Frenzy",
+                "value": -25
+            },
+            {
+                "tag": "Willpower",
+                "value": 20
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 18
+            },
+            {
+                "tag": "Combat",
+                "value": 15
+            },
+            {
+                "tag": "Nature:Bravo",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Leadership",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Gallant",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Explorer",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Intimidation",
+                "value": 6
+            },
+            {
+                "tag": "Survival",
+                "value": 5
+            },
+            {
+                "tag": "Stealth",
+                "value": -10
+            },
+            {
+                "tag": "Ability:Stealth",
+                "value": -12
+            },
+            {
+                "tag": "Discipline:Obfuscate",
+                "value": -10
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": -8
+            },
+            {
+                "tag": "Nature:Conformist",
+                "value": -8
+            },
+            {
+                "tag": "Concept:Servant",
+                "value": -6
+            },
+            {
+                "tag": "Concept:Archivist",
+                "value": -6
+            },
+            {
+                "tag": "Bureaucracy",
+                "value": -5
+            }
+        ]
+    }
+]
