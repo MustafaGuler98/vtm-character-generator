@@ -170,6 +170,16 @@
             gap: 1.5rem
         }
 
+        .items-column-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0 1.5rem;
+        }
+
+        .items-column {
+            padding-right: 1rem;
+        }
+
         .attribute-category h3 {
             margin-top: 0;
             color: #ccc
@@ -315,6 +325,7 @@
             sheetDiv.appendChild(renderBackgroundsSection(characterData.backgrounds || {}));
             sheetDiv.appendChild(renderVirtuesSection(characterData.virtues || {})); 
             sheetDiv.appendChild(renderDisciplinesSection(characterData.disciplines || {}));
+            sheetDiv.appendChild(renderCoreStatsSection(characterData));
         }
 
         function renderPersonaSection(data) {
@@ -326,6 +337,7 @@
                                 <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
                                 <p><strong>Nature:</strong> ${data.nature?.name ?? "—"}</p>
                                 <p><strong>Demeanor:</strong> ${data.demeanor?.name ?? "—"}</p>
+                                <p><strong>Generation:</strong> ${data.generation ?? "—"}</p> 
                             </div>`;
             return container;
         }
@@ -402,8 +414,8 @@
             section.className = 'sheet-section';
             section.innerHTML = '<h2>Backgrounds</h2>';
 
-            const grid = document.createElement('div');
-            grid.className = 'attributes-grid';
+            const container = document.createElement('div');
+            container.className = 'items-column-container';
 
 
             const backgroundEntries = Object.keys(backgrounds)
@@ -411,20 +423,33 @@
                 .sort(); // alphabetical order
 
 
-            backgroundEntries.forEach(backgroundId => {
-                const score = backgrounds[backgroundId] || 0;
-                const displayName = titleCaseAndClean(backgroundId);
+            const totalItems = backgroundEntries.length;
+            const itemsPerColumn = Math.ceil(totalItems / 3);
 
-                const itemHtml = `
-                    <div class="attribute-item">
-                        <span>${displayName}</span>
-                        <span class="dots-display">${renderDots(score, 5)}</span>
-                    </div>
-                `;
-                grid.innerHTML += itemHtml;
-            });
+            const column1Entries = backgroundEntries.slice(0, itemsPerColumn);
+            const column2Entries = backgroundEntries.slice(itemsPerColumn, itemsPerColumn * 2);
+            const column3Entries = backgroundEntries.slice(itemsPerColumn * 2);
 
-            section.appendChild(grid);
+            const createColumn = (entries) => {
+                const column = document.createElement('div');
+                column.className = 'items-column';
+                entries.forEach(id => {
+                    const score = backgrounds[id] || 0;
+                    const displayName = titleCaseAndClean(id);
+                    column.innerHTML += `
+                <div class="attribute-item">
+                    <span>${displayName}</span>
+                    <span class="dots-display">${renderDots(score, 5)}</span>
+                </div>`;
+                });
+                return column;
+            };
+
+            container.appendChild(createColumn(column1Entries));
+            container.appendChild(createColumn(column2Entries));
+            container.appendChild(createColumn(column3Entries));
+
+            section.appendChild(container);
             return section;
         }
 
@@ -488,6 +513,26 @@
             if (disciplineEntries.length === 0) {
                 grid.innerHTML = '<p>No disciplines assigned.</p>';
             }
+
+            section.appendChild(grid);
+            return section;
+        }
+
+        function renderCoreStatsSection(data) {
+            const section = document.createElement('div');
+            section.className = 'sheet-section';
+            section.innerHTML = '<h2>Core Stats</h2>';
+
+            const grid = document.createElement('div');
+            grid.className = 'persona-grid';
+
+            grid.innerHTML = `
+        <p><strong>Humanity:</strong> ${data.humanity ?? "—"}</p>
+        <p><strong>Willpower:</strong> ${data.willpower ?? "—"}</p>
+        <p><strong>Max Trait Rating:</strong> ${data.maxTraitRating ?? "—"}</p>
+        <p><strong>Max Blood Pool:</strong> ${data.maximumBloodPool ?? "—"}</p>
+        <p><strong>Blood Per Turn:</strong> ${data.bloodPointsPerTurn ?? "—"}</p>
+    `;
 
             section.appendChild(grid);
             return section;

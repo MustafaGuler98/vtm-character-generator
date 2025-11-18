@@ -13,6 +13,12 @@ namespace VtmCharacterGenerator.Core.Models
         public Dictionary<string, int> Backgrounds { get; set; }
         public Dictionary<string, int> Virtues { get; set; }
         public Dictionary<string, int> Disciplines { get; set; }
+        public int Generation { get; set; }
+        public int MaxTraitRating { get; set; }
+        public int MaximumBloodPool { get; set; }
+        public int BloodPointsPerTurn { get; set; }
+        public int Humanity { get; set; }
+        public int Willpower { get; set; }
 
         public Character()
         {

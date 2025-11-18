@@ -30,6 +30,7 @@ builder.Services.AddScoped<AbilityDistributionService>();
 builder.Services.AddScoped<BackgroundDistributionService>();
 builder.Services.AddScoped<VirtueDistributionService>();
 builder.Services.AddScoped<DisciplineDistributionService>();
+builder.Services.AddScoped<CoreStatsService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
