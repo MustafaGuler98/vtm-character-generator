@@ -239,8 +239,16 @@
                 <div class="option-group"><label for="demeanorSelect">Demeanor:</label><select id="demeanorSelect"><option value="">Random</option></select></div>
                 <button id="createButton">Create Custom Character</button>
             </div>
+            <button class="sidebar-toggle" id="debugToggle" style="margin-top: 1rem; background-color: #444; border-color: #555;">
+                Debug / Spending Log <span class="arrow" id="debugArrow">▼</span>
+            </button>
+
+            <div class="sidebar-content" id="debugContent">
+                <ul id="debugList" style="list-style: none; padding: 0; margin: 1rem 0; font-family: 'Courier New', monospace; font-size: 0.85rem; color: #ccc;">
+                    <li>Waiting for generation...</li>
+                </ul>
+            </div>
         </div>
-    </div>
 
     <script>
         // --- DOM Elements ---
@@ -254,6 +262,10 @@
         const sidebarToggle = document.querySelector('.sidebar-toggle');
         const sidebarContent = document.querySelector('.sidebar-content');
         const arrowSpan = document.querySelector('.arrow');
+        const debugToggle = document.getElementById('debugToggle');
+        const debugContent = document.getElementById('debugContent');
+        const debugList = document.getElementById('debugList');
+        const debugArrow = document.getElementById('debugArrow');
 
         let allNatures = [];
         const ATTRIBUTE_CATEGORIES = {
@@ -301,6 +313,19 @@
                 sidebarContent.style.padding = "0 1.5rem";
             }
         });
+        debugToggle.addEventListener('click', function () {
+            this.classList.toggle('active');
+            if (this.classList.contains('active')) {
+                debugArrow.innerHTML = '▲';
+                debugContent.style.padding = "1rem";
+                debugContent.style.maxHeight = "500px"; // Scrollable if needed
+                debugContent.style.overflowY = "auto";
+            } else {
+                debugArrow.innerHTML = '▼';
+                debugContent.style.maxHeight = null;
+                debugContent.style.padding = "0 1.5rem";
+            }
+        });
 
         function fetchAndDisplayCharacter(url, options = {}) {
             fetch(url, options)
@@ -323,22 +348,40 @@
             sheetDiv.appendChild(renderAttributesSection(characterData.attributes || {}));
             sheetDiv.appendChild(renderAbilitiesSection(characterData.abilities || {}));
             sheetDiv.appendChild(renderBackgroundsSection(characterData.backgrounds || {}));
-            sheetDiv.appendChild(renderVirtuesSection(characterData.virtues || {})); 
+            sheetDiv.appendChild(renderVirtuesSection(characterData.virtues || {}));
             sheetDiv.appendChild(renderDisciplinesSection(characterData.disciplines || {}));
+            sheetDiv.appendChild(renderMeritsAndFlawsSection(characterData.merits, characterData.flaws));
             sheetDiv.appendChild(renderCoreStatsSection(characterData));
+
+            debugList.innerHTML = '';
+            if (characterData.debugLog && characterData.debugLog.length > 0) {
+                characterData.debugLog.forEach(logItem => {
+                    const li = document.createElement('li');
+                    li.textContent = logItem;
+                    li.style.borderBottom = "1px solid #333";
+                    li.style.padding = "4px 0";
+
+                    if (logItem.includes("[Flaw]")) li.style.color = "#ff6b6b"; 
+                    if (logItem.includes("[Merit]")) li.style.color = "#51cf66";
+
+                    debugList.appendChild(li);
+                });
+            } else {
+                debugList.innerHTML = '<li>No logs available.</li>';
+            }
         }
 
         function renderPersonaSection(data) {
             const container = document.createElement("div");
             container.className = "sheet-section";
             container.innerHTML = `<h2>Persona</h2>
-                            <div class="persona-grid">
-                                <p><strong>Concept:</strong> ${data.concept?.name ?? "—"}</p>
-                                <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
-                                <p><strong>Nature:</strong> ${data.nature?.name ?? "—"}</p>
-                                <p><strong>Demeanor:</strong> ${data.demeanor?.name ?? "—"}</p>
-                                <p><strong>Generation:</strong> ${data.generation ?? "—"}</p> 
-                            </div>`;
+                                <div class="persona-grid">
+                                    <p><strong>Concept:</strong> ${data.concept?.name ?? "—"}</p>
+                                    <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
+                                    <p><strong>Nature:</strong> ${data.nature?.name ?? "—"}</p>
+                                    <p><strong>Demeanor:</strong> ${data.demeanor?.name ?? "—"}</p>
+                                    <p><strong>Generation:</strong> ${data.generation ?? "—"}</p>
+                                </div>`;
             return container;
         }
 
@@ -437,10 +480,10 @@
                     const score = backgrounds[id] || 0;
                     const displayName = titleCaseAndClean(id);
                     column.innerHTML += `
-                <div class="attribute-item">
-                    <span>${displayName}</span>
-                    <span class="dots-display">${renderDots(score, 5)}</span>
-                </div>`;
+                    <div class="attribute-item">
+                        <span>${displayName}</span>
+                        <span class="dots-display">${renderDots(score, 5)}</span>
+                    </div>`;
                 });
                 return column;
             };
@@ -472,11 +515,11 @@
                 const displayName = titleCaseAndClean(virtueId);
 
                 const itemHtml = `
-                <div class="attribute-item">
-                    <span>${displayName}</span>
-                    <span class="dots-display">${renderDots(score, 5)}</span>
-                </div>
-            `;
+                    <div class="attribute-item">
+                        <span>${displayName}</span>
+                        <span class="dots-display">${renderDots(score, 5)}</span>
+                    </div>
+                `;
                 grid.innerHTML += itemHtml;
             });
 
@@ -502,11 +545,11 @@
                 const displayName = titleCaseAndClean(disciplineId);
 
                 const itemHtml = `
-            <div class="attribute-item">
-                <span>${displayName}</span>
-                <span class="dots-display">${renderDots(score, 5)}</span>
-            </div>
-        `;
+                <div class="attribute-item">
+                    <span>${displayName}</span>
+                    <span class="dots-display">${renderDots(score, 5)}</span>
+                </div>
+            `;
                 grid.innerHTML += itemHtml;
             });
 
@@ -515,6 +558,55 @@
             }
 
             section.appendChild(grid);
+            return section;
+        }
+
+        function renderMeritsAndFlawsSection(merits, flaws) {
+            merits = merits || [];
+            flaws = flaws || [];
+
+            const section = document.createElement('div');
+            section.className = 'sheet-section';
+            section.innerHTML = '<h2>Merits & Flaws</h2>';
+
+            const grid = document.createElement('div');
+            grid.className = 'persona-grid';
+
+            const meritsDiv = document.createElement('div');
+            meritsDiv.innerHTML = '<h3 style="color: #b3b3b3; border-bottom: 1px solid #444; padding-bottom: 5px;">Merits</h3>';
+
+            if (merits.length === 0) {
+                meritsDiv.innerHTML += '<p style="color: #666; font-style: italic;">None</p>';
+            } else {
+                merits.forEach(m => {
+                    // Name and xp cost
+                    meritsDiv.innerHTML += `
+                    <div class="attribute-item">
+                        <span>${m.name}</span>
+                        <span style="color: #888; font-size: 0.9em;">(${m.cost} pts)</span>
+                    </div>`;
+                });
+            }
+
+            const flawsDiv = document.createElement('div');
+            flawsDiv.innerHTML = '<h3 style="color: #b3b3b3; border-bottom: 1px solid #444; padding-bottom: 5px;">Flaws</h3>';
+
+            if (flaws.length === 0) {
+                flawsDiv.innerHTML += '<p style="color: #666; font-style: italic;">None</p>';
+            } else {
+                flaws.forEach(f => {
+                    flawsDiv.innerHTML += `
+                    <div class="attribute-item">
+                        <span>${f.name}</span>
+                        <span style="color: #8c1c1c; font-size: 0.9em;">(+${f.cost} pts)</span>
+                    </div>`;
+                });
+            }
+
+            grid.appendChild(meritsDiv);
+            grid.appendChild(flawsDiv);
+            section.appendChild(grid);
+
             return section;
         }
 
@@ -527,12 +619,12 @@
             grid.className = 'persona-grid';
 
             grid.innerHTML = `
-        <p><strong>Humanity:</strong> ${data.humanity ?? "—"}</p>
-        <p><strong>Willpower:</strong> ${data.willpower ?? "—"}</p>
-        <p><strong>Max Trait Rating:</strong> ${data.maxTraitRating ?? "—"}</p>
-        <p><strong>Max Blood Pool:</strong> ${data.maximumBloodPool ?? "—"}</p>
-        <p><strong>Blood Per Turn:</strong> ${data.bloodPointsPerTurn ?? "—"}</p>
-    `;
+            <p><strong>Humanity:</strong> ${data.humanity ?? "—"}</p>
+            <p><strong>Willpower:</strong> ${data.willpower ?? "—"}</p>
+            <p><strong>Max Trait Rating:</strong> ${data.maxTraitRating ?? "—"}</p>
+            <p><strong>Max Blood Pool:</strong> ${data.maximumBloodPool ?? "—"}</p>
+            <p><strong>Blood Per Turn:</strong> ${data.bloodPointsPerTurn ?? "—"}</p>
+        `;
 
             section.appendChild(grid);
             return section;

@@ -1,5 +1,6 @@
 using VtmCharacterGenerator.Core.Data; 
-using VtmCharacterGenerator.Core.Services; 
+using VtmCharacterGenerator.Core.Services;
+using VtmCharacterGenerator.Core.Services.Strategies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +32,9 @@ builder.Services.AddScoped<BackgroundDistributionService>();
 builder.Services.AddScoped<VirtueDistributionService>();
 builder.Services.AddScoped<DisciplineDistributionService>();
 builder.Services.AddScoped<CoreStatsService>();
+builder.Services.AddScoped<ITraitCostStrategy, FreebiePointCostStrategy>();
+builder.Services.AddScoped<TraitManagerService>();
+builder.Services.AddScoped<FreebieSpendingService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

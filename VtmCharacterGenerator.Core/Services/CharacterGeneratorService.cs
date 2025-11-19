@@ -12,6 +12,7 @@ namespace VtmCharacterGenerator.Core.Services
         private readonly VirtueDistributionService _virtueDistributionService;
         private readonly DisciplineDistributionService _disciplineDistributionService;
         private readonly CoreStatsService _coreStatsService;
+        private readonly FreebieSpendingService _freebieSpendingService;
 
         public CharacterGeneratorService(PersonaService personaService, 
                AttributeService attributeService, 
@@ -20,7 +21,8 @@ namespace VtmCharacterGenerator.Core.Services
                BackgroundDistributionService backgroundDistributionService,
                VirtueDistributionService virtueDistributionService,
                DisciplineDistributionService disciplineDistributionService,
-               CoreStatsService coreStatsService)
+               CoreStatsService coreStatsService,
+               FreebieSpendingService freebieSpendingService)
 
         {
             _personaService = personaService;
@@ -31,6 +33,7 @@ namespace VtmCharacterGenerator.Core.Services
             _virtueDistributionService = virtueDistributionService;
             _disciplineDistributionService = disciplineDistributionService;
             _coreStatsService = coreStatsService;
+            _freebieSpendingService = freebieSpendingService;
 
         }
 
@@ -54,6 +57,7 @@ namespace VtmCharacterGenerator.Core.Services
             _backgroundDistributionService.DistributeBackgrounds(character, affinityProfile);
             _virtueDistributionService.DistributeVirtues(character, affinityProfile);
             _disciplineDistributionService.DistributeDisciplines(character, affinityProfile);
+            _freebieSpendingService.DistributeFreebiePoints(character, affinityProfile);
             _coreStatsService.CalculateCoreStats(character);
 
             // TODO: Generate other character parts

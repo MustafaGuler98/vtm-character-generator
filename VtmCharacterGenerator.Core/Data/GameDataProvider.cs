@@ -17,6 +17,8 @@ namespace VtmCharacterGenerator.Core.Data
         public List<Background> Backgrounds { get; }
         public List<Virtue> Virtues { get; }
         public List<GenerationData> Generations { get; }
+        public List<Merit> Merits { get; }
+        public List<Flaw> Flaws { get; }
 
 
         public GameDataProvider(string dataFolderPath)
@@ -47,6 +49,12 @@ namespace VtmCharacterGenerator.Core.Data
 
             var generationsJson = File.ReadAllText(Path.Combine(dataFolderPath, "generations.json"));
             Generations = JsonSerializer.Deserialize<List<GenerationData>>(generationsJson) ?? new List<GenerationData>();
+
+            var meritsJson = File.ReadAllText(Path.Combine(dataFolderPath, "merits.json"));
+            Merits = JsonSerializer.Deserialize<List<Merit>>(meritsJson) ?? new List<Merit>();
+
+            var flawsJson = File.ReadAllText(Path.Combine(dataFolderPath, "flaws.json"));
+            Flaws = JsonSerializer.Deserialize<List<Flaw>>(flawsJson) ?? new List<Flaw>();
         }
     }
 }

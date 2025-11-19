@@ -1,0 +1,2391 @@
+[
+    {
+        "id": "hard_of_hearing",
+        "name": "Hard of Hearing",
+        "cost": 1,
+        "rarity": 4,
+        "description": "Your hearing is defective. The difficulties of any rolls involving the use of hearing are increased by two.",
+        "tags": [ "flaw", "physical", "perception", "senses", "disability" ],
+        "conflictingTraits": [ "acute_sense", "deaf" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Perception",
+                "value": -5
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": -5
+            },
+            {
+                "tag": "Ability:Alertness",
+                "value": -5
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Elder",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "short",
+        "name": "Short",
+        "cost": 1,
+        "rarity": 4,
+        "description": "You are well below average height (4.5 ft / 1.5m or less). Running speed is half of average. Reach is limited.",
+        "tags": [ "flaw", "physical", "stature", "movement", "athleticism" ],
+        "conflictingTraits": [ "huge_size" ],
+        "affinities": [
+            {
+                "tag": "Concept:Kid",
+                "value": 20
+            },
+            {
+                "tag": "Ability:Intimidation",
+                "value": -5
+            },
+            {
+                "tag": "Ability:Athletics",
+                "value": -5
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 5
+            },
+            {
+                "tag": "Attribute:Strength",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "smell_of_the_grave",
+        "name": "Smell of the Grave",
+        "cost": 1,
+        "rarity": 2,
+        "description": "You exude an odor of dampness and newly turned earth. Difficulties of all Social rolls to affect mortals increase by one.",
+        "tags": [ "flaw", "physical", "social", "masquerade", "odor" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Samedi",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Giovanni",
+                "value": 10
+            },
+            {
+                "tag": "HighSociety",
+                "value": -15
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "tic_twitch",
+        "name": "Tic/Twitch",
+        "cost": 1,
+        "rarity": 4,
+        "description": "You have a repetitive motion in times of stress (cough, wringing hands). It costs one Willpower to refrain from it.",
+        "tags": [ "flaw", "physical", "social", "compulsion", "stress" ],
+        "affinities": [
+            {
+                "tag": "Clan:Malkavian",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Stealth",
+                "value": -8
+            },
+            {
+                "tag": "Discipline:Obfuscate",
+                "value": -5
+            },
+            {
+                "tag": "Nature:Conformist",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "bad_sight",
+        "name": "Bad Sight",
+        "cost": 1,
+        "rarity": 5,
+        "description": "Your sight is defective. Difficulties of eyesight rolls increased by two. (1pt cost assumes corrected with glasses/contacts).",
+        "tags": [ "flaw", "physical", "perception", "senses", "vision" ],
+        "conflictingTraits": [ "acute_sense", "blind", "one_eye" ],
+        "affinities": [
+            {
+                "tag": "Ability:Firearms",
+                "value": -10
+            },
+            {
+                "tag": "Ability:Investigation",
+                "value": -6
+            },
+            {
+                "tag": "Attribute:Perception",
+                "value": -5
+            },
+            {
+                "tag": "Concept:Hacker",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "fourteenth_generation",
+        "name": "Fourteenth Generation",
+        "cost": 2,
+        "rarity": 4,
+        "description": "Your blood is thin. 10 blood points, but only 8 usable for healing/disciplines. Max Discipline level 4. Likely Clanless.",
+        "tags": [ "flaw", "physical", "blood", "generation", "weakness" ],
+        "conflictingTraits": [ "fifteenth_generation", "Background:Generation" ],
+        "affinities": [
+            {
+                "tag": "Clan:Caitiff",
+                "value": 25
+            },
+            {
+                "tag": "ThinBlood",
+                "value": 20
+            },
+            {
+                "tag": "Background:Status",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Kid",
+                "value": 10
+            },
+            {
+                "tag": "Background:Influence",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "fifteenth_generation",
+        "name": "Fifteenth Generation",
+        "cost": 4,
+        "rarity": 3,
+        "description": "Your vitae is extremely weak. Cannot bond, sire, or sustain ghouls. Sunlight does lethal damage instead of aggravated.",
+        "tags": [ "flaw", "physical", "blood", "generation", "humanity" ],
+        "conflictingTraits": [ "fourteenth_generation", "Background:Generation" ],
+        "affinities": [
+            {
+                "tag": "Clan:Caitiff",
+                "value": 30
+            },
+            {
+                "tag": "ThinBlood",
+                "value": 25
+            },
+            {
+                "tag": "Background:Status",
+                "value": -25
+            },
+            {
+                "tag": "Daylight",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Outsider",
+                "value": 10
+            }
+        ]
+    },
+    {
+        "id": "disfigured",
+        "name": "Disfigured",
+        "cost": 2,
+        "rarity": 3,
+        "description": "A hideous disfigurement makes your appearance disturbing. Social interaction difficulties increased by two. Max Appearance 2.",
+        "tags": [ "flaw", "physical", "social", "appearance", "scarred" ],
+        "conflictingTraits": [ "beautiful", "friendly_face", "blush_of_health" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Gargoyle",
+                "value": 15
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": -25
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "dulled_bite",
+        "name": "Dulled Bite",
+        "cost": 2,
+        "rarity": 3,
+        "description": "Your fangs never developed properly. You must achieve double successes to make your bite penetrate for feeding.",
+        "tags": [ "flaw", "physical", "feeding", "combat", "teeth" ],
+        "affinities": [
+            {
+                "tag": "Clan:Caitiff",
+                "value": 12
+            },
+            {
+                "tag": "ThinBlood",
+                "value": 10
+            },
+            {
+                "tag": "Attribute:Strength",
+                "value": 5
+            },
+            {
+                "tag": "Combat",
+                "value": -5
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "infectious_bite",
+        "name": "Infectious Bite",
+        "cost": 2,
+        "rarity": 2,
+        "description": "Your bites have a 1 in 5 chance of becoming infected and causing serious illness in mortals.",
+        "tags": [ "flaw", "physical", "disease", "feeding", "masquerade" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Samedi",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Streetwise",
+                "value": 6
+            },
+            {
+                "tag": "HighSociety",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Healer",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "one_eye",
+        "name": "One Eye",
+        "cost": 2,
+        "rarity": 3,
+        "description": "You have only one eye. +2 difficulty on Perception rolls involving sight, +1 on rolls requiring depth perception (ranged combat).",
+        "tags": [ "flaw", "physical", "perception", "combat", "vision" ],
+        "conflictingTraits": [ "bad_sight", "blind" ],
+        "affinities": [
+            {
+                "tag": "Ability:Firearms",
+                "value": -15
+            },
+            {
+                "tag": "Ability:Athletics",
+                "value": -8
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 5
+            },
+            {
+                "tag": "Attribute:Perception",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "vulnerability_to_silver",
+        "name": "Vulnerability to Silver",
+        "cost": 2,
+        "rarity": 1,
+        "description": "Silver causes you aggravated wounds, similar to how it affects werewolves. Mere touch discomfits you.",
+        "tags": [ "flaw", "physical", "combat", "supernatural", "weakness" ],
+        "affinities": [
+            {
+                "tag": "Ability:Occult",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Survivor",
+                "value": -6
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Explorer",
+                "value": 5
+            },
+            {
+                "tag": "Attribute:Stamina",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "open_wound",
+        "name": "Open Wound",
+        "cost": 2,
+        "rarity": 2,
+        "description": "You have a wound that refuses to heal and drips blood, costing 1 extra blood point per night. -1 Social difficulty if visible.",
+        "tags": [ "flaw", "physical", "blood", "appearance", "health" ],
+        "affinities": [
+            {
+                "tag": "Clan:Gangrel",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 8
+            },
+            {
+                "tag": "HighSociety",
+                "value": -12
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": -8
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "addiction",
+        "name": "Addiction",
+        "cost": 3,
+        "rarity": 5,
+        "description": "You suffer from an addiction to a substance (drugs, alcohol, adrenaline) which must be present in the blood you drink.",
+        "tags": [ "flaw", "physical", "mental", "feeding", "substance" ],
+        "affinities": [
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Scenester",
+                "value": 12
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 10
+            },
+            {
+                "tag": "Virtue:SelfControl",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "child",
+        "name": "Child",
+        "cost": 3,
+        "rarity": 2,
+        "description": "You were a small child (5-10 years) at Embrace. Strength/Stamina limit of 2. +2 difficulty to direct/lead adults.",
+        "tags": [ "flaw", "physical", "social", "stature", "age" ],
+        "conflictingTraits": [ "huge_size", "short" ],
+        "affinities": [
+            {
+                "tag": "Concept:Kid",
+                "value": 50
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 10
+            },
+            {
+                "tag": "Attribute:Strength",
+                "value": -15
+            },
+            {
+                "tag": "Ability:Leadership",
+                "value": -15
+            },
+            {
+                "tag": "Background:Status",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "deformity",
+        "name": "Deformity",
+        "cost": 3,
+        "rarity": 3,
+        "description": "You have a misshapen limb, hunchback, or clubfoot. Lowers Dexterity by 2 and increases Social difficulties by 1.",
+        "tags": [ "flaw", "physical", "social", "dexterity", "disability" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 20
+            },
+            {
+                "tag": "Attribute:Dexterity",
+                "value": -15
+            },
+            {
+                "tag": "Ability:Athletics",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Outsider",
+                "value": 8
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "glowing_eyes",
+        "name": "Glowing Eyes",
+        "cost": 3,
+        "rarity": 2,
+        "description": "You have stereotypical glowing eyes. -1 difficulty on Intimidation, but large penalties to Stealth and disguise.",
+        "tags": [ "flaw", "physical", "supernatural", "intimidation", "masquerade" ],
+        "affinities": [
+            {
+                "tag": "Clan:Gangrel",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Stealth",
+                "value": -20
+            },
+            {
+                "tag": "Ability:Intimidation",
+                "value": 10
+            },
+            {
+                "tag": "Masquerade",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "lame",
+        "name": "Lame",
+        "cost": 3,
+        "rarity": 3,
+        "description": "Your legs are damaged. Walking speed is 1/4 normal, running is impossible.",
+        "tags": [ "flaw", "physical", "movement", "disability", "speed" ],
+        "affinities": [
+            {
+                "tag": "Ability:Athletics",
+                "value": -20
+            },
+            {
+                "tag": "Attribute:Dexterity",
+                "value": -10
+            },
+            {
+                "tag": "Combat",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 5
+            },
+            {
+                "tag": "Ability:Drive",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "lazy",
+        "name": "Lazy",
+        "cost": 3,
+        "rarity": 5,
+        "description": "You avoid effort. Spontaneous Physical action difficulties increase by one (including combat unless planned).",
+        "tags": [ "flaw", "physical", "mental", "sloth", "action" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Physical",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Scion",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Conniver",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "monstrous",
+        "name": "Monstrous",
+        "cost": 3,
+        "rarity": 3,
+        "description": "Your physical form reflects the Beast. Appearance is 0. Cannot be taken by Nosferatu (who already have it).",
+        "tags": [ "flaw", "physical", "appearance", "masquerade", "beast" ],
+        "conflictingTraits": [ "appearance", "friendly_face", "blush_of_health", "Clan:Nosferatu" ],
+        "affinities": [
+            {
+                "tag": "Clan:Gangrel",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 15
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": -100
+            },
+            {
+                "tag": "HighSociety",
+                "value": -20
+            },
+            {
+                "tag": "Social",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "permanent_fangs",
+        "name": "Permanent Fangs",
+        "cost": 3,
+        "rarity": 3,
+        "description": "Your fangs do not retract. Max Appearance 3. Masquerade risk.",
+        "tags": [ "flaw", "physical", "appearance", "masquerade", "teeth" ],
+        "affinities": [
+            {
+                "tag": "Clan:Gangrel",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 5
+            },
+            {
+                "tag": "HighSociety",
+                "value": -10
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": -5
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "permanent_wound",
+        "name": "Permanent Wound",
+        "cost": 3,
+        "rarity": 2,
+        "description": "You wake up at the Wounded health level every night due to injuries during the Embrace. Must spend blood to heal.",
+        "tags": [ "flaw", "physical", "health", "blood", "injury" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Stamina",
+                "value": -10
+            },
+            {
+                "tag": "Combat",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": -5
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "slow_healing",
+        "name": "Slow Healing",
+        "cost": 3,
+        "rarity": 3,
+        "description": "Healing wounds costs double blood points. Aggravated damage heals very slowly (1 level every 5 days).",
+        "tags": [ "flaw", "physical", "blood", "health", "regeneration" ],
+        "affinities": [
+            {
+                "tag": "Combat",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": -15
+            },
+            {
+                "tag": "Nature:Survivor",
+                "value": -10
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -5
+            },
+            {
+                "tag": "Attribute:Stamina",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "disease_carrier",
+        "name": "Disease Carrier",
+        "cost": 4,
+        "rarity": 2,
+        "description": "Your blood carries a lethal disease (HIV, Rabies). You must spend extra blood to suppress symptoms. Can infect others.",
+        "tags": [ "flaw", "physical", "disease", "blood", "contagion" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            },
+            {
+                "tag": "HighSociety",
+                "value": -20
+            },
+            {
+                "tag": "Background:Herd",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": -10
+            },
+            {
+                "tag": "Ability:Medicine",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "deaf",
+        "name": "Deaf",
+        "cost": 4,
+        "rarity": 2,
+        "description": "You cannot hear. Perception roll difficulties increased by 3. Resistant to Dominate.",
+        "tags": [ "flaw", "physical", "perception", "senses", "disability" ],
+        "conflictingTraits": [ "acute_sense", "hard_of_hearing" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Perception",
+                "value": -15
+            },
+            {
+                "tag": "Discipline:Dominate",
+                "value": -5
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": -10
+            },
+            {
+                "tag": "Ability:Alertness",
+                "value": -10
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "mute",
+        "name": "Mute",
+        "cost": 4,
+        "rarity": 2,
+        "description": "You cannot speak. You must communicate via sign language or writing.",
+        "tags": [ "flaw", "physical", "social", "communication", "disability" ],
+        "affinities": [
+            {
+                "tag": "Ability:Leadership",
+                "value": -25
+            },
+            {
+                "tag": "Ability:Performance",
+                "value": -20
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Samedi",
+                "value": 10
+            },
+            {
+                "tag": "Discipline:Dominate",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "thin_blood",
+        "name": "Thin Blood",
+        "cost": 4,
+        "rarity": 4,
+        "description": "Blood point costs doubled. Cannot bond or sire easily. Sunlight is lethal, not aggravated.",
+        "tags": [ "flaw", "physical", "blood", "generation", "weakness" ],
+        "affinities": [
+            {
+                "tag": "Clan:Caitiff",
+                "value": 30
+            },
+            {
+                "tag": "FourteenthGeneration",
+                "value": 15
+            },
+            {
+                "tag": "FifteenthGeneration",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Outsider",
+                "value": 10
+            },
+            {
+                "tag": "Background:Status",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "flesh_of_the_corpse",
+        "name": "Flesh of the Corpse",
+        "cost": 5,
+        "rarity": 2,
+        "description": "Your flesh does not regenerate fully; cuts and holes remain visible. Appearance may drop over time.",
+        "tags": [ "flaw", "physical", "appearance", "masquerade", "decay" ],
+        "affinities": [
+            {
+                "tag": "Clan:Samedi",
+                "value": 25
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": -20
+            },
+            {
+                "tag": "HighSociety",
+                "value": -15
+            },
+            {
+                "tag": "Social",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "infertile_vitae",
+        "name": "Infertile Vitae",
+        "cost": 5,
+        "rarity": 2,
+        "description": "You cannot create any childer. Those you try to Embrace die.",
+        "tags": [ "flaw", "physical", "blood", "sire", "curse" ],
+        "affinities": [
+            {
+                "tag": "Clan:Caitiff",
+                "value": 12
+            },
+            {
+                "tag": "ThinBlood",
+                "value": 12
+            },
+            {
+                "tag": "Background:Generation",
+                "value": -5
+            },
+            {
+                "tag": "Concept:Parent",
+                "value": -20
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "blind",
+        "name": "Blind",
+        "cost": 6,
+        "rarity": 1,
+        "description": "You cannot see. +2 difficulty on Dexterity rolls. Auspex 2 still works via other senses.",
+        "tags": [ "flaw", "physical", "perception", "senses", "disability" ],
+        "conflictingTraits": [ "acute_sense", "bad_sight", "one_eye" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Perception",
+                "value": -20
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Firearms",
+                "value": -100
+            },
+            {
+                "tag": "Ability:Drive",
+                "value": -100
+            }
+        ]
+    },
+    {
+        "id": "deep_sleeper",
+        "name": "Deep Sleeper",
+        "cost": 1,
+        "rarity": 4,
+        "description": "When you sleep, it is very difficult for you to awaken. The difficulty of any roll to awaken during the day is increased by two.",
+        "tags": [ "flaw", "mental", "physical", "sleep", "survival" ],
+        "conflictingTraits": [ "light_sleeper", "early_riser" ],
+        "affinities": [
+            {
+                "tag": "Nature:Loner",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 5
+            },
+            {
+                "tag": "Attribute:Stamina",
+                "value": -5
+            },
+            {
+                "tag": "Ability:Alertness",
+                "value": -10
+            },
+            {
+                "tag": "Nature:Survivor",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "impatient",
+        "name": "Impatient",
+        "cost": 1,
+        "rarity": 5,
+        "description": "You have no patience. Every time you are forced to wait, a Self-Control roll is required to see if you go tearing off on your own.",
+        "tags": [ "flaw", "mental", "impulse", "control", "action" ],
+        "affinities": [
+            {
+                "tag": "Clan:Brujah",
+                "value": 15
+            },
+            {
+                "tag": "Nature:ThrillSeeker",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Kid",
+                "value": 8
+            },
+            {
+                "tag": "Virtue:SelfControl",
+                "value": -10
+            },
+            {
+                "tag": "Nature:Stoic",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "nightmares",
+        "name": "Nightmares",
+        "cost": 1,
+        "rarity": 4,
+        "description": "You experience horrendous nightmares every time you sleep. Upon awakening, make a Willpower roll or lose a die on all actions for the night.",
+        "tags": [ "flaw", "mental", "fear", "sleep", "trauma" ],
+        "affinities": [
+            {
+                "tag": "Clan:Malkavian",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": -5
+            },
+            {
+                "tag": "Willpower",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "prey_exclusion",
+        "name": "Prey Exclusion",
+        "cost": 1,
+        "rarity": 3,
+        "description": "You refuse to hunt a certain class of prey (e.g., drug dealers, children). Feeding on them causes frenzy and Humanity loss. Ventrue cannot take this.",
+        "tags": [ "flaw", "mental", "feeding", "morality", "restriction" ],
+        "affinities": [
+            {
+                "tag": "Humanity",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Healer",
+                "value": 8
+            },
+            {
+                "tag": "Virtue:Conscience",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -100
+            }
+        ]
+    },
+    {
+        "id": "shy",
+        "name": "Shy",
+        "cost": 1,
+        "rarity": 4,
+        "description": "You are ill at ease with people. +2 difficulty on Social rolls with strangers. +3 if center of attention.",
+        "tags": [ "flaw", "social", "mental", "interaction", "fear" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 12
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Hacker",
+                "value": 8
+            },
+            {
+                "tag": "Attribute:Charisma",
+                "value": -10
+            },
+            {
+                "tag": "Ability:Performance",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "soft_hearted",
+        "name": "Soft-Hearted",
+        "cost": 1,
+        "rarity": 3,
+        "description": "You cannot stand to watch others suffer. Must make Willpower roll to cause pain. Requires Humanity 7+.",
+        "tags": [ "flaw", "mental", "morality", "humanity", "compassion" ],
+        "affinities": [
+            {
+                "tag": "Humanity",
+                "value": 20
+            },
+            {
+                "tag": "Virtue:Conscience",
+                "value": 15
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "speech_impediment",
+        "name": "Speech Impediment",
+        "cost": 1,
+        "rarity": 3,
+        "description": "You have a stammer or impediment. Verbal communication difficulties increased by two.",
+        "tags": [ "flaw", "social", "communication", "speech" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Samedi",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Leadership",
+                "value": -15
+            },
+            {
+                "tag": "Ability:Expression",
+                "value": -10
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "amnesia",
+        "name": "Amnesia",
+        "cost": 2,
+        "rarity": 1,
+        "description": "You are unable to remember your past, yourself, or your family. Your history is up to the Storyteller.",
+        "tags": [ "flaw", "mental", "memory", "history", "mystery" ],
+        "affinities": [
+            {
+                "tag": "Clan:Malkavian",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Child",
+                "value": 6
+            },
+            {
+                "tag": "Background:Status",
+                "value": -20
+            },
+            {
+                "tag": "Background:Resources",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "lunacy",
+        "name": "Lunacy",
+        "cost": 2,
+        "rarity": 2,
+        "description": "You are affected by the moon phases. Difficulties to avoid frenzy increase as the moon waxes (up to +3 at full moon).",
+        "tags": [ "flaw", "mental", "frenzy", "nature", "moon" ],
+        "affinities": [
+            {
+                "tag": "Clan:Gangrel",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 12
+            },
+            {
+                "tag": "Nature:ThrillSeeker",
+                "value": 6
+            },
+            {
+                "tag": "Virtue:SelfControl",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "phobia",
+        "name": "Phobia",
+        "cost": 2,
+        "rarity": 4,
+        "description": "You have an overpowering fear of something (fire, crowds, etc.). Make a Courage roll or flee.",
+        "tags": [ "flaw", "mental", "fear", "courage", "trauma" ],
+        "affinities": [
+            {
+                "tag": "Clan:Toreador",
+                "value": 8
+            },
+            {
+                "tag": "Virtue:Courage",
+                "value": -15
+            },
+            {
+                "tag": "Nature:Survivor",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Kid",
+                "value": 6
+            },
+            {
+                "tag": "Combat",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "short_fuse",
+        "name": "Short Fuse",
+        "cost": 2,
+        "rarity": 5,
+        "conflictingTraits": [ "calm_heart" ],
+        "description": "You are easily angered. Difficulties to avoid frenzy are two greater. Brujah cannot take this Flaw.",
+        "tags": [ "flaw", "mental", "frenzy", "anger", "control" ],
+        "affinities": [
+            {
+                "tag": "Clan:Gangrel",
+                "value": 12
+            },
+            {
+                "tag": "Nature:Bravo",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Rebel",
+                "value": 8
+            },
+            {
+                "tag": "Virtue:SelfControl",
+                "value": -15
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -100
+            }
+        ]
+    },
+    {
+        "id": "territorial",
+        "name": "Territorial",
+        "cost": 2,
+        "rarity": 3,
+        "description": "You are extremely territorial. If another vampire enters your domain, you must roll to avoid frenzy and attacking.",
+        "tags": [ "flaw", "mental", "domain", "aggression", "nature" ],
+        "affinities": [
+            {
+                "tag": "Clan:Gangrel",
+                "value": 20
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 15
+            },
+            {
+                "tag": "Background:Domain",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Survival",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "vengeful",
+        "name": "Vengeful",
+        "cost": 2,
+        "rarity": 4,
+        "description": "You are obsessed with taking revenge on an individual or group. It is your overriding priority.",
+        "tags": [ "flaw", "mental", "drive", "revenge", "enemy" ],
+        "affinities": [
+            {
+                "tag": "Clan:Assamite",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Fanatic",
+                "value": 8
+            },
+            {
+                "tag": "Willpower",
+                "value": 6
+            },
+            {
+                "tag": "Virtue:Conscience",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "victim_of_the_masquerade",
+        "name": "Victim of the Masquerade",
+        "cost": 2,
+        "rarity": 2,
+        "description": "You refuse to believe you are a vampire. You try to eat food, find a 'cure', and search for logical explanations. Camarilla only.",
+        "tags": [ "flaw", "mental", "delusion", "denial", "humanity" ],
+        "affinities": [
+            {
+                "tag": "Humanity",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Scientist",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Reporter",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "weak_willed",
+        "name": "Weak-Willed",
+        "cost": 3,
+        "rarity": 3,
+        "conflictingTraits": [ "iron_will", "true_faith", "code_of_honor" ],
+        "description": "You are highly susceptible to Dominate and intimidation. Willpower can never rise above 4.",
+        "tags": [ "flaw", "mental", "willpower", "submission", "resistance" ],
+        "affinities": [
+            {
+                "tag": "Willpower",
+                "value": -20
+            },
+            {
+                "tag": "Nature:Conformist",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Servant",
+                "value": 10
+            },
+            {
+                "tag": "Discipline:Dominate",
+                "value": -10
+            },
+            {
+                "tag": "Attribute:Wits",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "conspicuous_consumption",
+        "name": "Conspicuous Consumption",
+        "cost": 4,
+        "rarity": 2,
+        "description": "You must consume your victim's heart, liver, and blood-rich tissue to gain sustenance. Requires killing victims.",
+        "tags": [ "flaw", "mental", "feeding", "gore", "masquerade" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nagaraja",
+                "value": 20
+            },
+            {
+                "tag": "Humanity",
+                "value": -20
+            },
+            {
+                "tag": "Nature:Monster",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Killer",
+                "value": 10
+            },
+            {
+                "tag": "Masquerade",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "guilt_wracked",
+        "name": "Guilt-Wracked",
+        "cost": 4,
+        "rarity": 3,
+        "description": "You suffer horrible guilt every time you feed. Roll Conscience or frenzy. You avoid feeding, leaving you low on blood.",
+        "tags": [ "flaw", "mental", "conscience", "feeding", "remorse" ],
+        "affinities": [
+            {
+                "tag": "Virtue:Conscience",
+                "value": 20
+            },
+            {
+                "tag": "Humanity",
+                "value": 15
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Penitent",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Monster",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "flashbacks",
+        "name": "Flashbacks",
+        "cost": 6,
+        "rarity": 2,
+        "description": "Trauma causes unpredictable behavior. Willpower fluctuates wildly between sessions (roll or drop to 1).",
+        "tags": [ "flaw", "mental", "trauma", "instability", "willpower" ],
+        "affinities": [
+            {
+                "tag": "Concept:Survivor",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": 6
+            },
+            {
+                "tag": "Willpower",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "dark_secret",
+        "name": "Dark Secret",
+        "cost": 1,
+        "rarity": 5,
+        "description": "You have a secret that, if uncovered, would result in immense embarrassment or exile (e.g., murdered an elder, Anarch sympathizer).",
+        "tags": [ "flaw", "social", "secret", "reputation", "scandal" ],
+        "affinities": [
+            {
+                "tag": "Concept:Politician",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Conniver",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "expendable",
+        "name": "Expendable",
+        "cost": 1,
+        "rarity": 3,
+        "description": "Someone in power wants you dead or gone. They maneuver you into dangerous situations 'for the good of the Sect'.",
+        "tags": [ "flaw", "social", "politics", "enemy", "danger" ],
+        "affinities": [
+            {
+                "tag": "Clan:Brujah",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Caitiff",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Rebel",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 6
+            },
+            {
+                "tag": "Background:Status",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "infamous_sire",
+        "name": "Infamous Sire",
+        "cost": 1,
+        "rarity": 3,
+        "description": "Your sire is distrusted and disliked, and so are you by association.",
+        "tags": [ "flaw", "social", "lineage", "reputation", "stigma" ],
+        "affinities": [
+            {
+                "tag": "Background:Status",
+                "value": -10
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Scion",
+                "value": 6
+            },
+            {
+                "tag": "HighSociety",
+                "value": -5
+            },
+            {
+                "tag": "Ability:Etiquette",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "new_arrival",
+        "name": "New Arrival",
+        "cost": 1,
+        "rarity": 4,
+        "description": "You just arrived in the city and know no one. You are ignorant of local politics and history.",
+        "tags": [ "flaw", "social", "outsider", "ignorance", "politics" ],
+        "affinities": [
+            {
+                "tag": "Concept:Drifter",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 10
+            },
+            {
+                "tag": "Knowledge:Politics",
+                "value": -10
+            },
+            {
+                "tag": "Background:Status",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "enemy",
+        "name": "Enemy",
+        "cost": 3,
+        "rarity": 5,
+        "description": "You have an enemy who seeks to harm you. The power depends on points (1-5).",
+        "tags": [ "flaw", "social", "combat", "nemesis", "danger" ],
+        "affinities": [
+            {
+                "tag": "Concept:Criminal",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Rogue",
+                "value": 6
+            },
+            {
+                "tag": "Combat",
+                "value": 5
+            },
+            {
+                "tag": "Ability:Brawl",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "hunted",
+        "name": "Hunted",
+        "cost": 4,
+        "rarity": 2,
+        "description": "You are pursued by a fanatical witch-hunter who believes you are a danger to humanity.",
+        "tags": [ "flaw", "social", "hunter", "survival", "danger" ],
+        "affinities": [
+            {
+                "tag": "Clan:Tremere",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 10
+            },
+            {
+                "tag": "Masquerade",
+                "value": -15
+            },
+            {
+                "tag": "Background:Herd",
+                "value": -5
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "clan_enmity",
+        "name": "Clan Enmity",
+        "cost": 4,
+        "rarity": 2,
+        "description": "One Clan in particular wants you dead. Every member of that Clan is hostile to you.",
+        "tags": [ "flaw", "social", "politics", "war", "enemy" ],
+        "affinities": [
+            {
+                "tag": "Nature:Rebel",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Politics",
+                "value": -10
+            },
+            {
+                "tag": "Background:Status",
+                "value": -5
+            },
+            {
+                "tag": "Social",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "blood_hunted",
+        "name": "Blood Hunted",
+        "cost": 4,
+        "rarity": 1,
+        "description": "You have been made the target of a blood hunt. Returning to your home city is death (4pt) or the entire Camarilla wants you dead (6pt).",
+        "tags": [ "flaw", "social", "death_sentence", "survival", "exile" ],
+        "affinities": [
+            {
+                "tag": "Clan:Caitiff",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Rebel",
+                "value": 10
+            },
+            {
+                "tag": "Background:Status",
+                "value": -100
+            },
+            {
+                "tag": "HighSociety",
+                "value": -100
+            }
+        ]
+    },
+    {
+        "id": "botched_presentation",
+        "name": "Botched Presentation",
+        "cost": 1,
+        "rarity": 4,
+        "description": "You humiliated yourself before the Prince. You must make a Willpower roll to stand before him without making a fool of yourself.",
+        "tags": [ "flaw", "social", "humiliation", "politics", "status" ],
+        "affinities": [
+            {
+                "tag": "Background:Status",
+                "value": -15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": -10
+            },
+            {
+                "tag": "HighSociety",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Scion",
+                "value": -5
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "mistaken_identity",
+        "name": "Mistaken Identity",
+        "cost": 1,
+        "rarity": 3,
+        "description": "You look like another Kindred (who likely has a bad reputation). This causes awkward or dangerous situations.",
+        "tags": [ "flaw", "social", "identity", "confusion", "appearance" ],
+        "affinities": [
+            {
+                "tag": "Background:AlternateIdentity",
+                "value": -10
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 5
+            },
+            {
+                "tag": "Background:Fame",
+                "value": -5
+            },
+            {
+                "tag": "Nature:Rogue",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "sires_resentment",
+        "name": "Sire's Resentment",
+        "cost": 1,
+        "rarity": 3,
+        "description": "Your sire dislikes you and wishes you ill. She will actively seek to harm you when possible.",
+        "tags": [ "flaw", "social", "sire", "enemy", "lineage" ],
+        "affinities": [
+            {
+                "tag": "Background:Mentor",
+                "value": -20
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Childe",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Rebel",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "bound",
+        "name": "Bound",
+        "cost": 2,
+        "rarity": 3,
+        "conflictingTraits": [ "unbondable", "broken_bond" ],
+        "description": "You are blood bound to another vampire. Your will is not your own. Sabbat cannot take this.",
+        "tags": [ "flaw", "social", "blood", "slavery", "willpower" ],
+        "affinities": [
+            {
+                "tag": "Willpower",
+                "value": -15
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 10
+            },
+            {
+                "tag": "Background:Domitor",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Conformist",
+                "value": 8
+            }
+        ]
+    },
+    {
+        "id": "catspaw",
+        "name": "Catspaw",
+        "cost": 2,
+        "rarity": 3,
+        "description": "You've done dirty work for someone high up. Instead of favor, you are now a liability they want to keep quiet or remove.",
+        "tags": [ "flaw", "social", "manipulation", "politics", "expendable" ],
+        "affinities": [
+            {
+                "tag": "Concept:Criminal",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Pawn",
+                "value": 8
+            },
+            {
+                "tag": "Background:Influence",
+                "value": -5
+            },
+            {
+                "tag": "Social",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "masquerade_breaker",
+        "name": "Masquerade Breaker",
+        "cost": 2,
+        "rarity": 4,
+        "description": "You accidentally broke the Masquerade. Someone covered for you but now blackmails you. You live in fear of exposure.",
+        "tags": [ "flaw", "social", "blackmail", "masquerade", "fear" ],
+        "affinities": [
+            {
+                "tag": "Concept:NewArrival",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Caitiff",
+                "value": 8
+            },
+            {
+                "tag": "Background:Status",
+                "value": -15
+            },
+            {
+                "tag": "Nature:Paranoid",
+                "value": 5
+            },
+            {
+                "tag": "Camarilla",
+                "value": 10
+            }
+        ]
+    },
+    {
+        "id": "disgrace_to_the_blood",
+        "name": "Disgrace to the Blood",
+        "cost": 3,
+        "rarity": 2,
+        "description": "Your sire regrets Embracing you and has let everyone know. You are mocked and ignored by your peers.",
+        "tags": [ "flaw", "social", "shame", "status", "reputation" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ventrue",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 12
+            },
+            {
+                "tag": "HighSociety",
+                "value": -20
+            },
+            {
+                "tag": "Background:Status",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Scion",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "former_prince",
+        "name": "Former Prince",
+        "cost": 3,
+        "rarity": 1,
+        "description": "You once held absolute power, but lost it. The current Prince sees you as a threat. Machinery is stacked against you.",
+        "tags": [ "flaw", "social", "politics", "fallen", "threat" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ventrue",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 10
+            },
+            {
+                "tag": "Background:Status",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Elder",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Leadership",
+                "value": 8
+            }
+        ]
+    },
+    {
+        "id": "laughingstock",
+        "name": "Laughingstock",
+        "cost": 5,
+        "rarity": 2,
+        "description": "You have drawn the scorn of the Harpies. +2 difficulty on Social rolls in Elysium. Intimidation/Dominate is harder against those who mock you.",
+        "tags": [ "flaw", "social", "humiliation", "status", "reputation" ],
+        "affinities": [
+            {
+                "tag": "Clan:Toreador",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 10
+            },
+            {
+                "tag": "HighSociety",
+                "value": -25
+            },
+            {
+                "tag": "Background:Status",
+                "value": -20
+            },
+            {
+                "tag": "Ability:Intimidation",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "red_list",
+        "name": "Red List",
+        "cost": 7,
+        "rarity": 1,
+        "description": "You are on the Camarilla's most wanted list. Any Camarilla vampire will attack you on sight or call for help.",
+        "tags": [ "flaw", "social", "hunted", "death_sentence", "camarilla" ],
+        "affinities": [
+            {
+                "tag": "Clan:Assamite",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Baali",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 10
+            },
+            {
+                "tag": "Background:Status",
+                "value": -100
+            },
+            {
+                "tag": "Social",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "cast_no_reflection",
+        "name": "Cast No Reflection",
+        "cost": 1,
+        "rarity": 2,
+        "description": "You cast no reflection. Detrimental for Masquerade. (Lasombra have this automatically, do not take as Flaw).",
+        "tags": [ "flaw", "supernatural", "masquerade", "lasombra", "curse" ],
+        "affinities": [
+            {
+                "tag": "Clan:Lasombra",
+                "value": 20
+            },
+            {
+                "tag": "HighSociety",
+                "value": -10
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Spy",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "repulsed_by_garlic",
+        "name": "Repulsed by Garlic",
+        "cost": 1,
+        "rarity": 4,
+        "description": "You cannot abide garlic. The smell drives you from the room unless you make a Willpower roll.",
+        "tags": [ "flaw", "supernatural", "folkloric", "weakness", "smell" ],
+        "affinities": [
+            {
+                "tag": "Nature:Traditionalist",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 5
+            },
+            {
+                "tag": "Willpower",
+                "value": -5
+            },
+            {
+                "tag": "Concept:Elder",
+                "value": 5
+            },
+            {
+                "tag": "Ability:Survival",
+                "value": -2
+            }
+        ]
+    },
+    {
+        "id": "touch_of_frost",
+        "name": "Touch of Frost",
+        "cost": 1,
+        "rarity": 3,
+        "description": "Plants wither as you approach. Your touch leeches heat from living beings. Reveals nature easily.",
+        "tags": [ "flaw", "supernatural", "death", "cold", "masquerade" ],
+        "affinities": [
+            {
+                "tag": "Clan:Cappadocian",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Samedi",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Giovanni",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Gardener",
+                "value": -100
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "cursed",
+        "name": "Cursed",
+        "cost": 3,
+        "rarity": 2,
+        "conflictingTraits": [ "lucky" ],
+        "description": "You have a specific supernatural curse (e.g., enemies find you, tools break). Strength depends on points (1-5).",
+        "tags": [ "flaw", "supernatural", "curse", "fate", "magic" ],
+        "affinities": [
+            {
+                "tag": "Clan:Tremere",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 5
+            },
+            {
+                "tag": "MagicResistance",
+                "value": -10
+            },
+            {
+                "tag": "Nature:Fatalist",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "beacon_of_the_unholy",
+        "name": "Beacon of the Unholy",
+        "cost": 2,
+        "rarity": 2,
+        "conflictingTraits": [ "true_faith", "sanctity", "innocent" ],
+        "description": "You radiate palpable evil. Clergy and devout mortals react with horror or hostility instinctively.",
+        "tags": [ "flaw", "supernatural", "evil", "aura", "religion" ],
+        "affinities": [
+            {
+                "tag": "Clan:Baali",
+                "value": 20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 15
+            },
+            {
+                "tag": "TrueFaith",
+                "value": -100
+            },
+            {
+                "tag": "Humanity",
+                "value": -15
+            },
+            {
+                "tag": "Nature:Monster",
+                "value": 8
+            }
+        ]
+    },
+    {
+        "id": "eerie_presence",
+        "name": "Eerie Presence",
+        "cost": 2,
+        "rarity": 3,
+        "description": "Mortals unconsciously sense your undead nature. +2 difficulty on social interactions with mortals.",
+        "tags": [ "flaw", "supernatural", "aura", "fear", "social" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": -15
+            },
+            {
+                "tag": "Background:Herd",
+                "value": -10
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": -10
+            },
+            {
+                "tag": "Ability:Intimidation",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "lord_of_the_flies",
+        "name": "Lord of the Flies",
+        "cost": 2,
+        "rarity": 2,
+        "description": "Buzzing flies swirl around you. +1 Social difficulty, +2 Stealth difficulty. Masquerade risk.",
+        "tags": [ "flaw", "supernatural", "insects", "decay", "stealth" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Samedi",
+                "value": 15
+            },
+            {
+                "tag": "Ability:Stealth",
+                "value": -20
+            },
+            {
+                "tag": "HighSociety",
+                "value": -20
+            },
+            {
+                "tag": "Concept:Outsider",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "cant_cross_running_water",
+        "name": "Can't Cross Running Water",
+        "cost": 3,
+        "rarity": 3,
+        "description": "You cannot cross running water unless it is 50ft above it or via a bridge. Folkloric weakness.",
+        "tags": [ "flaw", "supernatural", "folkloric", "restriction", "movement" ],
+        "affinities": [
+            {
+                "tag": "Concept:Elder",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 5
+            },
+            {
+                "tag": "Ability:Drive",
+                "value": -5
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": -10
+            },
+            {
+                "tag": "Nature:Traditionalist",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "haunted",
+        "name": "Haunted",
+        "cost": 3,
+        "rarity": 3,
+        "description": "You are haunted by a tormented spirit (likely a victim). It hinders your actions and feeding.",
+        "tags": [ "flaw", "supernatural", "ghost", "necromancy", "curse" ],
+        "affinities": [
+            {
+                "tag": "Clan:Giovanni",
+                "value": 20
+            },
+            {
+                "tag": "Discipline:Necromancy",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Killer",
+                "value": 10
+            },
+            {
+                "tag": "Medium",
+                "value": 5
+            },
+            {
+                "tag": "Background:Mentor",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "repelled_by_crosses",
+        "name": "Repelled by Crosses",
+        "cost": 3,
+        "rarity": 3,
+        "conflictingTraits": [ "true_faith" ],
+        "description": "You are repelled by holy symbols. Willpower roll to stay, touch causes aggravated damage.",
+        "tags": [ "flaw", "supernatural", "folkloric", "religion", "fear" ],
+        "affinities": [
+            {
+                "tag": "Clan:Lasombra",
+                "value": 10
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 10
+            },
+            {
+                "tag": "TrueFaith",
+                "value": -50
+            },
+            {
+                "tag": "Concept:Elder",
+                "value": 5
+            },
+            {
+                "tag": "Nature:Traditionalist",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "grip_of_the_damned",
+        "name": "Grip of the Damned",
+        "cost": 4,
+        "rarity": 2,
+        "description": "There is no ecstasy in your Embrace, only pain. Victims struggle, making feeding difficult. Humanity roll required.",
+        "tags": [ "flaw", "supernatural", "feeding", "pain", "curse" ],
+        "affinities": [
+            {
+                "tag": "Clan:Giovanni",
+                "value": -100
+            },
+            {
+                "tag": "Humanity",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Rapist",
+                "value": -100
+            },
+            {
+                "tag": "Nature:Monster",
+                "value": 5
+            },
+            {
+                "tag": "Ability:Brawl",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "dark_fate",
+        "name": "Dark Fate",
+        "cost": 5,
+        "rarity": 1,
+        "conflictingTraits": [ "lucky", "nine_lives" ],
+        "description": "You are doomed to experience Final Death or eternal agony. You have visions of it. Lose dice if you don't spend Willpower.",
+        "tags": [ "flaw", "supernatural", "fate", "doom", "prophecy" ],
+        "affinities": [
+            {
+                "tag": "Clan:Malkavian",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Salubri",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 8
+            },
+            {
+                "tag": "OracularAbility",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Seer",
+                "value": 8
+            }
+        ]
+    },
+    {
+        "id": "light_sensitive",
+        "name": "Light-Sensitive",
+        "cost": 5,
+        "rarity": 2,
+        "description": "You are extra sensitive to light. Sunlight causes double damage, moonlight causes lethal. Bright lights hurt.",
+        "tags": [ "flaw", "supernatural", "sunlight", "weakness", "damage" ],
+        "affinities": [
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": -100
+            },
+            {
+                "tag": "Discipline:Serpentis",
+                "value": -20
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 8
+            },
+            {
+                "tag": "Concept:NightOwl",
+                "value": 5
+            },
+            {
+                "tag": "Ability:Survival",
+                "value": -5
+            }
+        ]
+    }
+]

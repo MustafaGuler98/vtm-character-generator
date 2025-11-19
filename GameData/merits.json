@@ -1,0 +1,1931 @@
+[
+    {
+        "id": "acute_sense",
+        "name": "Acute Sense",
+        "cost": 1,
+        "rarity": 4,
+        "conflictingTraits": [ "bad_sight", "hard_of_hearing", "deaf", "blind", "one_eye" ],
+        "description": "One of your senses is exceptionally sharp, be it sight, hearing, smell, touch, or taste. The difficulties for all tasks involving the use of this particular sense are reduced by two.",
+        "tags": [ "merit", "physical", "perception", "sensation", "observation" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Perception",
+                "value": 10
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Alertness",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "ambidextrous",
+        "name": "Ambidextrous",
+        "cost": 1,
+        "rarity": 3,
+        "conflictingTraits": [ "deformity", "lame" ],
+        "description": "You have a high degree of off-hand dexterity and can perform tasks with the 'wrong' hand at no penalty. You do not suffer a difficulty penalty if you use two weapons.",
+        "tags": [ "merit", "physical", "dexterity", "combat", "coordination" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Dexterity",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Melee",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Firearms",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "bruiser",
+        "name": "Bruiser",
+        "cost": 1,
+        "rarity": 4,
+        "description": "Your appearance is sufficiently thug-like to inspire fear or disquiet. All Intimidation rolls against those who have not demonstrated their physical superiority to you are at -1 difficulty.",
+        "tags": [ "merit", "physical", "social", "intimidation", "menace" ],
+        "affinities": [
+            {
+                "tag": "Ability:Intimidation",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 10
+            },
+            {
+                "tag": "Attribute:Strength",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Bravo",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "catlike_balance",
+        "name": "Catlike Balance",
+        "cost": 1,
+        "rarity": 3,
+        "conflictingTraits": [ "lame", "clumsy" ],
+        "description": "You possess an innately perfect sense of balance. Characters with this Merit reduce difficulties of all balance-related rolls by two.",
+        "tags": [ "merit", "physical", "dexterity", "athleticism", "balance" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Dexterity",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Athletics",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 6
+            },
+            {
+                "tag": "Discipline:Celerity",
+                "value": 5
+            },
+            {
+                "tag": "Concept:ThrillSeeker",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "early_riser",
+        "name": "Early Riser",
+        "cost": 1,
+        "rarity": 2,
+        "conflictingTraits": [ "deep_sleeper", "lazy" ],
+        "description": "You seem to have the ability to work on less rest than your fellow vampires. Your Humanity or Path score is considered to be 10 for purposes of deciding when you rise each evening.",
+        "tags": [ "merit", "physical", "survival", "willpower", "efficiency" ],
+        "affinities": [
+            {
+                "tag": "Concept:Professional",
+                "value": 8
+            },
+            {
+                "tag": "Humanity",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Architect",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 5
+            },
+            {
+                "tag": "Background:Resources",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "eat_food",
+        "name": "Eat Food",
+        "cost": 1,
+        "rarity": 2,
+        "description": "You have the capacity to eat food and even savor its taste, though you cannot derive nourishment and must heave it back up later. Useful for masquerading as human.",
+        "tags": [ "merit", "physical", "masquerade", "social", "deception" ],
+        "affinities": [
+            {
+                "tag": "HighSociety",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Performance",
+                "value": 6
+            },
+            {
+                "tag": "ThinBlood",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": 5
+            },
+            {
+                "tag": "Background:Herd",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "friendly_face",
+        "name": "Friendly Face",
+        "cost": 1,
+        "rarity": 3,
+        "description": "You have a face that reminds everyone of someone, leaving you at -1 difficulty on all appropriate Social-based rolls involving strangers (first meeting only).",
+        "tags": [ "merit", "social", "appearance", "manipulation", "charm" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Appearance",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Child",
+                "value": 5
+            },
+            {
+                "tag": "Background:Contacts",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "blush_of_health",
+        "name": "Blush of Health",
+        "cost": 2,
+        "rarity": 3,
+        "description": "You look more hale and healthy in appearance than other vampires. You still retain the color of a living mortal, and your skin feels only slightly cool to the touch.",
+        "tags": [ "merit", "physical", "appearance", "masquerade", "social" ],
+        "affinities": [
+            {
+                "tag": "Humanity",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 8
+            },
+            {
+                "tag": "HighSociety",
+                "value": 6
+            },
+            {
+                "tag": "Background:Fame",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -100
+            }
+        ]
+    },
+    {
+        "id": "enchanting_voice",
+        "name": "Enchanting Voice",
+        "cost": 2,
+        "rarity": 3,
+        "description": "There is something about your voice that others cannot ignore. The difficulties of all rolls involving the use of the voice to persuade, charm, or command are reduced by two.",
+        "tags": [ "merit", "social", "charisma", "performance", "leadership" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Charisma",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Presence",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Dominate",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "daredevil",
+        "name": "Daredevil",
+        "cost": 3,
+        "rarity": 2,
+        "description": "When attempting exceptionally risky non-combat actions, add an additional three dice to your rolls, and negate a single botch die.",
+        "tags": [ "merit", "physical", "athleticism", "willpower", "risk" ],
+        "affinities": [
+            {
+                "tag": "Nature:ThrillSeeker",
+                "value": 15
+            },
+            {
+                "tag": "Attribute:Wits",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Drive",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Scenester",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "efficient_digestion",
+        "name": "Efficient Digestion",
+        "cost": 3,
+        "rarity": 2,
+        "description": "You are able to draw more than the usual amount of nourishment from blood. You gain an additional point to your blood pool for every two points of blood you consume.",
+        "tags": [ "merit", "physical", "blood", "survival", "feeding" ],
+        "affinities": [
+            {
+                "tag": "Concept:Survivor",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 8
+            },
+            {
+                "tag": "Background:Domain",
+                "value": 5
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": 5
+            },
+            {
+                "tag": "Background:Herd",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "huge_size",
+        "name": "Huge Size",
+        "cost": 4,
+        "rarity": 1,
+        "description": "You are abnormally large in size (over 6'10'' / 130 kgs). Bestows an additional Bruised health level. Bonuses to push objects, open barred doors, avoid being knocked down.",
+        "tags": [ "merit", "physical", "combat", "intimidation", "stamina" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Strength",
+                "value": 12
+            },
+            {
+                "tag": "Attribute:Stamina",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Dexterity",
+                "value": -5
+            }
+        ]
+    },
+    {
+        "id": "common_sense",
+        "name": "Common Sense",
+        "cost": 1,
+        "rarity": 5,
+        "description": "You have a significant amount of practical, everyday wisdom. The Storyteller can make suggestions or warnings when you are about to act contrary to common sense.",
+        "tags": [ "merit", "mental", "wisdom", "survival", "judgment" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Wits",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Survivor",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Worker",
+                "value": 5
+            },
+            {
+                "tag": "Ability:Streetwise",
+                "value": 5
+            },
+            {
+                "tag": "Nature:Realist",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "concentration",
+        "name": "Concentration",
+        "cost": 1,
+        "rarity": 3,
+        "description": "You have the ability to focus your mind and shut out any distractions or annoyances. You are unaffected by penalties from distracting circumstances.",
+        "tags": [ "merit", "mental", "willpower", "focus", "discipline" ],
+        "affinities": [
+            {
+                "tag": "Clan:Tremere",
+                "value": 10
+            },
+            {
+                "tag": "Discipline:Thaumaturgy",
+                "value": 10
+            },
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Scholar",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Meditation",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "eidetic_memory",
+        "name": "Eidetic Memory",
+        "cost": 2,
+        "rarity": 2,
+        "description": "You remember, with perfect detail, things you see and hear. Documents, photographs, conversations can be committed to memory with minor concentration.",
+        "tags": [ "merit", "mental", "memory", "intelligence", "scholar" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 12
+            },
+            {
+                "tag": "Concept:Archivist",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Academics",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Investigation",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "code_of_honor",
+        "name": "Code of Honor",
+        "cost": 2,
+        "rarity": 2,
+        "description": "You have a personal code of ethics to which you adhere strictly. Gain two additional dice to all Willpower or Virtue rolls when acting in accordance with your code.",
+        "tags": [ "merit", "mental", "morality", "willpower", "honor" ],
+        "affinities": [
+            {
+                "tag": "Clan:Salubri",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Judge",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Zealot",
+                "value": 6
+            },
+            {
+                "tag": "Virtue:Conscience",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "iron_will",
+        "name": "Iron Will",
+        "cost": 3,
+        "rarity": 2,
+        "conflictingTraits": [ "weak_willed", "probationary_sect_member" ],
+        "description": "When you are determined, nothing can thwart you. Characters using Dominate or other mind-altering magic against you are at +3 difficulty.",
+        "tags": [ "merit", "mental", "willpower", "resistance", "defense" ],
+        "affinities": [
+            {
+                "tag": "Willpower",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Director",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Survivor",
+                "value": 5
+            },
+            {
+                "tag": "Discipline:Fortitude",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "sanctity",
+        "name": "Sanctity",
+        "cost": 2,
+        "rarity": 3,
+        "description": "Everyone considers you pure and innocent. You have a saint-like quality. You are trusted even if untrustworthy, and receive lesser punishments.",
+        "tags": [ "merit", "social", "appearance", "manipulation", "innocence" ],
+        "affinities": [
+            {
+                "tag": "Humanity",
+                "value": 10
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Child",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 5
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "unbondable",
+        "name": "Unbondable",
+        "cost": 5,
+        "rarity": 1,
+        "conflictingTraits": [ "bound" ],
+        "description": "You are immune to being blood bound. Tremere cannot take this Merit.",
+        "tags": [ "merit", "supernatural", "blood", "willpower", "freedom" ],
+        "affinities": [
+            {
+                "tag": "Clan:Brujah",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Rebel",
+                "value": 8
+            },
+            {
+                "tag": "Willpower",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Anarch",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": -100
+            }
+        ]
+    },
+    {
+        "id": "nine_lives",
+        "name": "Nine Lives",
+        "cost": 6,
+        "rarity": 1,
+        "description": "Fate grants you the chance to survive Final Death. When a roll would result in death, it is rerolled. If successful, you live and use one 'life'.",
+        "tags": [ "merit", "supernatural", "fate", "survival", "luck" ],
+        "affinities": [
+            {
+                "tag": "Clan:Malkavian",
+                "value": 8
+            },
+            {
+                "tag": "Nature:ThrillSeeker",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 6
+            },
+            {
+                "tag": "Discipline:Chimerstry",
+                "value": 5
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "coldly_logical",
+        "name": "Coldly Logical",
+        "cost": 1,
+        "rarity": 4,
+        "description": "You have a knack for separating factual reporting from emotional coloration. -1 difficulty on all rolls requiring logic or seeing through emotional clouding.",
+        "tags": [ "merit", "mental", "logic", "perception", "truth" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Investigation",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "computer_aptitude",
+        "name": "Computer Aptitude",
+        "cost": 2,
+        "rarity": 3,
+        "description": "You are familiar with and talented in the uses of computer equipment. All rolls involving computers are at -2 difficulty for you.",
+        "tags": [ "merit", "mental", "technology", "knowledge", "skill" ],
+        "affinities": [
+            {
+                "tag": "Ability:Technology",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 12
+            },
+            {
+                "tag": "Concept:Hacker",
+                "value": 10
+            },
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 6
+            },
+            {
+                "tag": "Background:Information",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "introspection",
+        "name": "Introspection",
+        "cost": 1,
+        "rarity": 3,
+        "description": "You have keen insight into the ulterior motives of all your actions. Add two dice to your Perception dice pool when taking action against someone with the same Nature or Demeanor.",
+        "tags": [ "merit", "mental", "perception", "psychology", "insight" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Perception",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Empathy",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Director",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "calm_heart",
+        "name": "Calm Heart",
+        "cost": 3,
+        "rarity": 2,
+        "conflictingTraits": [ "short_fuse", "impatient", "Clan:Brujah" ],
+        "description": "You are naturally calm and do not easily fly off the handle. You receive two extra dice when attempting to resist a frenzy. Brujah cannot take this Merit.",
+        "tags": [ "merit", "mental", "willpower", "frenzy", "control" ],
+        "affinities": [
+            {
+                "tag": "Virtue:SelfControl",
+                "value": 12
+            },
+            {
+                "tag": "Willpower",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Stoic",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Animalism",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": -100
+            }
+        ]
+    },
+    {
+        "id": "natural_leader",
+        "name": "Natural Leader",
+        "cost": 1,
+        "rarity": 4,
+        "description": "You are gifted with a certain magnetism to which others naturally defer. You receive two extra dice when making Leadership rolls. Requires Charisma 3+.",
+        "tags": [ "merit", "social", "leadership", "charisma", "influence" ],
+        "affinities": [
+            {
+                "tag": "Ability:Leadership",
+                "value": 12
+            },
+            {
+                "tag": "Attribute:Charisma",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "prestigious_sire",
+        "name": "Prestigious Sire",
+        "cost": 1,
+        "rarity": 3,
+        "description": "Your sire has great status in the Sect or Clan. This prestige might aid you greatly in dealings with other vampires.",
+        "tags": [ "merit", "social", "status", "lineage", "background" ],
+        "affinities": [
+            {
+                "tag": "Background:Status",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 8
+            },
+            {
+                "tag": "HighSociety",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Scion",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "natural_linguist",
+        "name": "Natural Linguist",
+        "cost": 2,
+        "rarity": 3,
+        "description": "You have a flair for languages. Add three dice to any dice pool involving languages. Each purchase of the Language Merit gives two languages instead of one.",
+        "tags": [ "merit", "mental", "social", "language", "communication" ],
+        "affinities": [
+            {
+                "tag": "Ability:Academics",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Scholar",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 5
+            },
+            {
+                "tag": "Background:Contacts",
+                "value": 5
+            },
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "light_sleeper",
+        "name": "Light Sleeper",
+        "cost": 2,
+        "rarity": 4,
+        "conflictingTraits": [ "deep_sleeper", "nightmares" ],
+        "description": "You can awaken instantly at any sign of trouble or danger without hesitation. Ignore Humanity caps on dice pools during the day.",
+        "tags": [ "merit", "physical", "mental", "survival", "alertness" ],
+        "affinities": [
+            {
+                "tag": "Concept:Soldier",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Survivor",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Assamite",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Perception",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "medium",
+        "name": "Medium",
+        "cost": 2,
+        "rarity": 2,
+        "description": "You possess the natural affinity to sense and hear spirits, ghosts, and shades. Difficulty reduced by two for Awareness rolls involving spirits.",
+        "tags": [ "merit", "supernatural", "perception", "spirits", "necromancy" ],
+        "affinities": [
+            {
+                "tag": "Clan:Giovanni",
+                "value": 15
+            },
+            {
+                "tag": "Discipline:Necromancy",
+                "value": 12
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Malkavian",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Awareness",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "magic_resistance",
+        "name": "Magic Resistance",
+        "cost": 2,
+        "rarity": 2,
+        "conflictingTraits": [ "Discipline:Thaumaturgy", "Discipline:Necromancy", "Clan:Tremere", "Clan:Giovanni" ],
+        "description": "You have an inherent resistance to magic. The difficulty of all spells (Tremere rituals, etc.) is two higher when directed at you. You may never learn Thaumaturgy.",
+        "tags": [ "merit", "supernatural", "defense", "resistance", "anti-magic" ],
+        "affinities": [
+            {
+                "tag": "Clan:Gangrel",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Skeptic",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Stamina",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": -100
+            }
+        ]
+    },
+    {
+        "id": "lucky",
+        "name": "Lucky",
+        "cost": 3,
+        "rarity": 2,
+        "conflictingTraits": [ "cursed", "dark_fate" ],
+        "description": "You were born lucky. You may repeat any three failed rolls per story, including botches, but you may try only once per failed roll.",
+        "tags": [ "merit", "supernatural", "fate", "luck", "survival" ],
+        "affinities": [
+            {
+                "tag": "Clan:Malkavian",
+                "value": 8
+            },
+            {
+                "tag": "Nature:ThrillSeeker",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Ravnos",
+                "value": 5
+            },
+            {
+                "tag": "Attribute:Wits",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "true_faith",
+        "name": "True Faith",
+        "cost": 7,
+        "rarity": 1,
+        "conflictingTraits": [ "beacon_of_the_unholy", "repelled_by_crosses", "Clan:Baali", "Clan:FollowerOfSet" ],
+        "description": "You have a deep-seated faith in God. Adds one die per point to Willpower/Virtue rolls. Must have Humanity 9+ to start. Repels vampires.",
+        "tags": [ "merit", "supernatural", "faith", "willpower", "holy" ],
+        "affinities": [
+            {
+                "tag": "Humanity",
+                "value": 20
+            },
+            {
+                "tag": "Virtue:Conscience",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Zealot",
+                "value": 10
+            },
+            {
+                "tag": "Willpower",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": -20
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "time_sense",
+        "name": "Time Sense",
+        "cost": 1,
+        "rarity": 4,
+        "description": "You have an innate sense of time and are able to estimate the passage of time accurately without using a watch.",
+        "tags": [ "merit", "mental", "perception", "precision", "timing" ],
+        "affinities": [
+            {
+                "tag": "Clan:Brujah",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 6
+            },
+            {
+                "tag": "Discipline:Celerity",
+                "value": 5
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 5
+            },
+            {
+                "tag": "Attribute:Wits",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "useful_knowledge",
+        "name": "Useful Knowledge",
+        "cost": 1,
+        "rarity": 3,
+        "description": "You have expertise in a specific field that makes your conversation intriguing to an older Kindred. Acts like a 1-dot Mentor.",
+        "tags": [ "merit", "mental", "social", "knowledge", "influence" ],
+        "affinities": [
+            {
+                "tag": "Concept:Scholar",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Academics",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 6
+            },
+            {
+                "tag": "Background:Mentor",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "precocious",
+        "name": "Precocious",
+        "cost": 3,
+        "rarity": 2,
+        "description": "You learn quickly. The time for you to pick up a particular Ability is cut in half, as is the experience cost.",
+        "tags": [ "merit", "mental", "learning", "potential", "skill" ],
+        "affinities": [
+            {
+                "tag": "Clan:Caitiff",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Child",
+                "value": 8
+            },
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Student",
+                "value": 6
+            },
+            {
+                "tag": "Background:Generation",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "elysium_regular",
+        "name": "Elysium Regular",
+        "cost": 1,
+        "rarity": 3,
+        "description": "You spend an unusual amount of time in Elysium. You are known by the movers and shakers.",
+        "tags": [ "merit", "social", "politics", "high_society", "status" ],
+        "affinities": [
+            {
+                "tag": "Clan:Toreador",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 10
+            },
+            {
+                "tag": "HighSociety",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Etiquette",
+                "value": 8
+            },
+            {
+                "tag": "Background:Status",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "former_ghoul",
+        "name": "Former Ghoul",
+        "cost": 1,
+        "rarity": 3,
+        "description": "You were introduced to the Blood long before you were made Kindred. -1 difficulty on Social rolls with neonates and vampiric knowledge.",
+        "tags": [ "merit", "social", "background", "knowledge", "blood" ],
+        "affinities": [
+            {
+                "tag": "Clan:Giovanni",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Servant",
+                "value": 6
+            },
+            {
+                "tag": "Background:Domitor",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "protege",
+        "name": "Protégé",
+        "cost": 1,
+        "rarity": 3,
+        "description": "Your sire spoke glowingly of you. You are at -1 difficulty on Social rolls with those who've heard good things about you.",
+        "tags": [ "merit", "social", "status", "reputation", "lineage" ],
+        "affinities": [
+            {
+                "tag": "Background:Mentor",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 8
+            },
+            {
+                "tag": "HighSociety",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Scion",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "rep",
+        "name": "Rep",
+        "cost": 1,
+        "rarity": 3,
+        "description": "Your fame has exceeded the bounds of your Sect. Everybody knows your name (good or bad).",
+        "tags": [ "merit", "social", "fame", "reputation", "notoriety" ],
+        "affinities": [
+            {
+                "tag": "Background:Fame",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Entertainer",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Gallant",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Charisma",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "sabbat_survivor",
+        "name": "Sabbat Survivor",
+        "cost": 1,
+        "rarity": 3,
+        "description": "You've lived through a Sabbat attack. -1 difficulty on Perception rolls regarding Sabbat matters.",
+        "tags": [ "merit", "social", "mental", "survival", "war" ],
+        "affinities": [
+            {
+                "tag": "Clan:Tremere",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Survivor",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 5
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "open_road",
+        "name": "Open Road",
+        "cost": 2,
+        "rarity": 3,
+        "description": "You like to travel and know safe routes. You can move between cities unimpeded by random encounters.",
+        "tags": [ "merit", "social", "travel", "survival", "freedom" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ravnos",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 12
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Drive",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Loner",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "friend_of_the_underground",
+        "name": "Friend of the Underground",
+        "cost": 3,
+        "rarity": 2,
+        "description": "You know your way around sewers and tunnels. -1 difficulty on subterranean rolls. Nosferatu are not inclined to kill you on sight.",
+        "tags": [ "merit", "social", "survival", "underworld", "sewers" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": -100
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Streetwise",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Gangrel",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Rogue",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "clan_friendship",
+        "name": "Clan Friendship",
+        "cost": 4,
+        "rarity": 2,
+        "description": "One particular Clan (not your own) likes you. -2 difficulty on friendly Social rolls with members of that Clan.",
+        "tags": [ "merit", "social", "politics", "diplomacy", "alliance" ],
+        "affinities": [
+            {
+                "tag": "Ability:Politics",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 8
+            },
+            {
+                "tag": "Attribute:Charisma",
+                "value": 6
+            },
+            {
+                "tag": "Background:Allies",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Mediator",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "deceptive_aura",
+        "name": "Deceptive Aura",
+        "cost": 1,
+        "rarity": 3,
+        "description": "Your aura is unnaturally bright and colorful. You register as a mortal on all attempts to read your aura.",
+        "tags": [ "merit", "supernatural", "deception", "aura", "mask" ],
+        "affinities": [
+            {
+                "tag": "Clan:Malkavian",
+                "value": 8
+            },
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Spy",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Trickster",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "healing_touch",
+        "name": "Healing Touch",
+        "cost": 1,
+        "rarity": 4,
+        "description": "You can seal the wounds you inflict by feeding with just a touch, closing the puncture wounds.",
+        "tags": [ "merit", "supernatural", "blood", "healing", "masquerade" ],
+        "affinities": [
+            {
+                "tag": "Clan:Salubri",
+                "value": 12
+            },
+            {
+                "tag": "Concept:Healer",
+                "value": 10
+            },
+            {
+                "tag": "Humanity",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Medicine",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "inoffensive_to_animals",
+        "name": "Inoffensive to Animals",
+        "cost": 1,
+        "rarity": 3,
+        "description": "Animals do not actively flee from you or despise you, unlike most Kindred.",
+        "tags": [ "merit", "supernatural", "nature", "animals", "aura" ],
+        "affinities": [
+            {
+                "tag": "Clan:Gangrel",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 8
+            },
+            {
+                "tag": "Ability:AnimalKen",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Animalism",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "hidden_diablerie",
+        "name": "Hidden Diablerie",
+        "cost": 3,
+        "rarity": 1,
+        "description": "The tell-tale black streaks of diablerie do not manifest in your aura.",
+        "tags": [ "merit", "supernatural", "deception", "diablerie", "aura" ],
+        "affinities": [
+            {
+                "tag": "Clan:Assamite",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Killer",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Monster",
+                "value": 6
+            },
+            {
+                "tag": "Background:Generation",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "oracular_ability",
+        "name": "Oracular Ability",
+        "cost": 3,
+        "rarity": 1,
+        "description": "You can see and interpret signs and omens regarding the future and present.",
+        "tags": [ "merit", "supernatural", "perception", "prophecy", "omen" ],
+        "affinities": [
+            {
+                "tag": "Clan:Malkavian",
+                "value": 12
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": 8
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Perception",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "spirit_mentor",
+        "name": "Spirit Mentor",
+        "cost": 3,
+        "rarity": 2,
+        "description": "You have a ghostly companion and guide who can be called upon for help.",
+        "tags": [ "merit", "supernatural", "mentor", "spirits", "guide" ],
+        "affinities": [
+            {
+                "tag": "Clan:Giovanni",
+                "value": 15
+            },
+            {
+                "tag": "Discipline:Necromancy",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 6
+            },
+            {
+                "tag": "Background:Mentor",
+                "value": 5
+            },
+            {
+                "tag": "Nature:Traditionalist",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "true_love",
+        "name": "True Love",
+        "cost": 4,
+        "rarity": 1,
+        "description": "You have a true love (mortal) who inspires you. Grants one automatic success on Willpower rolls.",
+        "tags": [ "merit", "social", "supernatural", "humanity", "romance" ],
+        "affinities": [
+            {
+                "tag": "Humanity",
+                "value": 15
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Artist",
+                "value": 5
+            },
+            {
+                "tag": "Willpower",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "additional_discipline",
+        "name": "Additional Discipline",
+        "cost": 5,
+        "rarity": 2,
+        "description": "You can take one additional Discipline as if it were a Clan Discipline.",
+        "tags": [ "merit", "supernatural", "growth", "power", "versatility" ],
+        "affinities": [
+            {
+                "tag": "Clan:Caitiff",
+                "value": -100
+            },
+            {
+                "tag": "Concept:Professional",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 5
+            },
+            {
+                "tag": "Nature:Architect",
+                "value": 5
+            },
+            {
+                "tag": "Background:Generation",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "language",
+        "name": "Language",
+        "cost": 1,
+        "rarity": 5,
+        "description": "You know a language in addition to your native one. You can take this Merit multiple times.",
+        "tags": [ "merit", "mental", "social", "communication", "knowledge" ],
+        "affinities": [
+            {
+                "tag": "Ability:Academics",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Intellectual",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Toreador",
+                "value": 5
+            },
+            {
+                "tag": "Background:Contacts",
+                "value": 5
+            },
+            {
+                "tag": "Nature:Architect",
+                "value": 4
+            }
+        ]
+    },
+    {
+        "id": "harmless",
+        "name": "Harmless",
+        "cost": 1,
+        "rarity": 4,
+        "description": "Everyone knows you're no threat. No one considers you worth their time to kill, which keeps you safe unless you prove otherwise.",
+        "tags": [ "merit", "social", "deception", "survival", "underestimated" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Caitiff",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Kid",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Conformist",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "boon",
+        "name": "Boon",
+        "cost": 1,
+        "rarity": 3,
+        "description": "Someone owes you a favor. The power of the debtor depends on the points spent (1-6). Using it properly is crucial.",
+        "tags": [ "merit", "social", "status", "debt", "influence" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ventrue",
+                "value": 10
+            },
+            {
+                "tag": "Background:Status",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Conniver",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Politics",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "bullyboy",
+        "name": "Bullyboy",
+        "cost": 2,
+        "rarity": 3,
+        "description": "You're part of the brute squad for the Sheriff or Bishop. You get away with minor crimes and gain some status.",
+        "tags": [ "merit", "social", "violence", "enforcer", "status" ],
+        "affinities": [
+            {
+                "tag": "Clan:Brujah",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Intimidation",
+                "value": 6
+            },
+            {
+                "tag": "Ability:Brawl",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Bravo",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "old_pal",
+        "name": "Old Pal",
+        "cost": 2,
+        "rarity": 3,
+        "description": "An acquaintance from your mortal days was also Embraced. You have a loyal friend who remembers the old days.",
+        "tags": [ "merit", "social", "ally", "loyalty", "history" ],
+        "affinities": [
+            {
+                "tag": "Background:Allies",
+                "value": 10
+            },
+            {
+                "tag": "Humanity",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Survivor",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Caregiver",
+                "value": 5
+            },
+            {
+                "tag": "Clan:Brujah",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "lawmans_friend",
+        "name": "Lawman's Friend",
+        "cost": 2,
+        "rarity": 3,
+        "description": "The local Sheriff or Bishop likes you. He overlooks minor trespasses and warns you of crackdowns.",
+        "tags": [ "merit", "social", "protection", "influence", "politics" ],
+        "affinities": [
+            {
+                "tag": "Ability:Etiquette",
+                "value": 8
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Sycophant",
+                "value": 6
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": 6
+            },
+            {
+                "tag": "Background:Status",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "scholar_of_enemies",
+        "name": "Scholar of Enemies",
+        "cost": 2,
+        "rarity": 3,
+        "description": "You specialize in knowing one enemy of your Sect (e.g., Sabbat, Lupines). -2 difficulty on knowledge rolls about them.",
+        "tags": [ "merit", "mental", "knowledge", "tactics", "lore" ],
+        "affinities": [
+            {
+                "tag": "Clan:Tremere",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Scholar",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Academics",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Architect",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "scholar_of_others",
+        "name": "Scholar of Others",
+        "cost": 2,
+        "rarity": 3,
+        "description": "Identical to Scholar of Enemies, but applies to a group not necessarily hostile (e.g., Mages, Wraiths).",
+        "tags": [ "merit", "mental", "knowledge", "diplomacy", "lore" ],
+        "affinities": [
+            {
+                "tag": "Clan:Tremere",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Giovanni",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Diplomat",
+                "value": 6
+            },
+            {
+                "tag": "Attribute:Intelligence",
+                "value": 5
+            }
+        ]
+    },
+    {
+        "id": "mole",
+        "name": "Mole",
+        "cost": 3,
+        "rarity": 2,
+        "description": "You have an informer buried in an enemy organization. You get information, but must protect your source.",
+        "tags": [ "merit", "social", "spy", "information", "espionage" ],
+        "affinities": [
+            {
+                "tag": "Clan:Nosferatu",
+                "value": 12
+            },
+            {
+                "tag": "Concept:Spy",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": 8
+            },
+            {
+                "tag": "Background:Information",
+                "value": 8
+            },
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "rising_star",
+        "name": "Rising Star",
+        "cost": 3,
+        "rarity": 2,
+        "description": "You are an up-and-comer in the city. Everyone wants to know you. -1 difficulty on Social rolls against your Sect members.",
+        "tags": [ "merit", "social", "status", "fame", "ambition" ],
+        "affinities": [
+            {
+                "tag": "Clan:Toreador",
+                "value": 10
+            },
+            {
+                "tag": "Clan:Ventrue",
+                "value": 10
+            },
+            {
+                "tag": "Background:Status",
+                "value": 8
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Gallant",
+                "value": 6
+            }
+        ]
+    },
+    {
+        "id": "broken_bond",
+        "name": "Broken Bond",
+        "cost": 4,
+        "rarity": 1,
+        "description": "You were blood-bound but secretly slipped the leash. Your regnant doesn't know. Sabbat cannot take this.",
+        "tags": [ "merit", "social", "mental", "willpower", "deception" ],
+        "affinities": [
+            {
+                "tag": "Willpower",
+                "value": 12
+            },
+            {
+                "tag": "Nature:Rogue",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": 8
+            },
+            {
+                "tag": "Nature:Rebel",
+                "value": 6
+            },
+            {
+                "tag": "Clan:Tremere",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "primogen_friendship",
+        "name": "Primogen/Bishop Friendship",
+        "cost": 4,
+        "rarity": 2,
+        "description": "The ruling vampires value your opinion. You are called to consult on decisions and wield unofficial power.",
+        "tags": [ "merit", "social", "politics", "influence", "power" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ventrue",
+                "value": 12
+            },
+            {
+                "tag": "Concept:Elder",
+                "value": 8
+            },
+            {
+                "tag": "Background:Status",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Politics",
+                "value": 6
+            },
+            {
+                "tag": "Nature:Director",
+                "value": 6
+            }
+        ]
+    }
+]
