@@ -21,7 +21,7 @@ namespace VtmCharacterGenerator.Core.Services
         {
             { TraitType.Background, 15 },
             { TraitType.Ability, 15 },
-            { TraitType.Willpower, 12 },
+            { TraitType.Willpower, 18 },
             { TraitType.Virtue, 12 },
             { TraitType.Humanity, 12 },
             { TraitType.Attribute, 9 },
