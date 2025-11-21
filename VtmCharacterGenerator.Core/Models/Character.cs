@@ -8,6 +8,10 @@ namespace VtmCharacterGenerator.Core.Models
         public Clan Clan { get; set; }
         public Nature Nature { get; set; }
         public Nature Demeanor { get; set; }
+        public string AgeCategory { get; set; } // Neonate, Ancilla, Elder
+        public int Age { get; set; }
+        public int TotalExperience { get; set; }
+        public int SpentExperience { get; set; }
         public Dictionary<string, int> Attributes { get; set; }
         public Dictionary<string, int> Abilities { get; set; }
         public Dictionary<string, int> Backgrounds { get; set; }
