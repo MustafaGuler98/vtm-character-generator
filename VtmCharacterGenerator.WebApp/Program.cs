@@ -1,6 +1,7 @@
 using VtmCharacterGenerator.Core.Data; 
 using VtmCharacterGenerator.Core.Services;
 using VtmCharacterGenerator.Core.Services.Strategies;
+using VtmCharacterGenerator.Core.Services.XpStrategies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +36,15 @@ builder.Services.AddScoped<CoreStatsService>();
 builder.Services.AddScoped<ITraitCostStrategy, FreebiePointCostStrategy>();
 builder.Services.AddScoped<TraitManagerService>();
 builder.Services.AddScoped<FreebieSpendingService>();
+builder.Services.AddScoped<LifeCycleService>();
+builder.Services.AddScoped<XpSpendingService>();
+builder.Services.AddScoped<ITraitCostStrategy, XpPointCostStrategy>();
+builder.Services.AddScoped<IXpStrategy, XpAttributeStrategy>();
+builder.Services.AddScoped<IXpStrategy, XpAbilityStrategy>();
+builder.Services.AddScoped<IXpStrategy, XpWillpowerStrategy>();
+builder.Services.AddScoped<IXpStrategy, XpVirtueStrategy>();
+builder.Services.AddScoped<IXpStrategy, XpHumanityStrategy>();
+builder.Services.AddScoped<IXpStrategy, XpDisciplineStrategy>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

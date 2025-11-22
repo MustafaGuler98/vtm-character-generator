@@ -4,7 +4,7 @@ namespace VtmCharacterGenerator.Core.Services.Strategies
 {
     public class FreebiePointCostStrategy : ITraitCostStrategy
     {
-        public int GetCost(TraitType type, int currentRating = 0, bool isClanTrait = false)
+        public int GetCost(TraitType type, int currentRating = 0, bool isClanTrait = false, bool isSecondaryPath = false)
         {
             return type switch
             {

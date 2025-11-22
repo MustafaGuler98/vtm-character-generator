@@ -93,5 +93,35 @@ namespace VtmCharacterGenerator.Core.Services
                 return _random.Next(250, 601);
             }
         }
+        public void ApplyHumanityDegeneration(Character character)
+        {
+  
+            // 1. Calculate number of "Decay Cycles"
+            if (character.Age <= 50) return;
+
+            int decayCycles = (character.Age - 50) / 50;
+
+            for (int i = 0; i < decayCycles; i++)
+            {
+                // Safety Floor: Never drop below 3 automatically
+                if (character.Humanity <= 3) break;
+
+                // Dynamic Probability:
+                double chanceToLose = character.Humanity / 10.0;
+
+
+                if (character.AgeCategory == "Elder") chanceToLose += 0.10;
+                if (character.AgeCategory == "Ancilla") chanceToLose += 0.05;
+
+                chanceToLose = Math.Min(chanceToLose, 0.95);
+
+                // Roll
+                if (_random.NextDouble() < chanceToLose)
+                {
+                    character.Humanity--;
+                    character.DebugLog.Add($"[Decay] Humanity eroded to {character.Humanity} (Cycle {i + 1}/{decayCycles})");
+                }
+            }
+        }
     }
 }

@@ -36,6 +36,8 @@
         .sidebar {
             flex: 1;
             align-self: flex-start;
+            position: sticky;
+            top: 2rem;
         }
 
         .header {
@@ -45,11 +47,22 @@
 
         h1 {
             margin: 0;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
 
         h2 {
             color: var(--primary-red);
             margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #555;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #ccc;
+            font-size: 1.1rem;
         }
 
         button {
@@ -78,14 +91,17 @@
                 background-color: var(--medium-bg);
                 border: 1px solid var(--border-color);
                 border-radius: 5px;
-                padding: 1.5rem;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             }
 
-        /* --- SIDEBAR ACCORDION --- */
+        /* --- SIDEBAR & ACCORDION --- */
         .sidebar-toggle {
             text-align: left;
             margin-bottom: 0;
             position: relative;
+            background-color: var(--light-bg);
+            border-color: var(--border-color);
         }
 
         .arrow {
@@ -97,6 +113,7 @@
             border-bottom: none;
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
+            background-color: var(--medium-bg);
         }
 
         .sidebar-content {
@@ -108,11 +125,6 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-        }
-
-        #createButton {
-            margin: 1.5rem 0;
-            box-shadow: 0 0 10px rgba(200, 40, 40, 0.4);
         }
 
         .option-group {
@@ -137,37 +149,52 @@
                 border-radius: 4px;
             }
 
-        .sheet-section {
-            border-bottom: 1px solid #3a3a3a;
-            padding-bottom: 1rem;
-            margin-bottom: 1rem
+        /* --- DEBUG LOG --- */
+        #debugContent {
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-red) var(--light-bg);
         }
 
-            .sheet-section:last-child {
-                border-bottom: none;
-                margin-bottom: 0;
-                padding-bottom: 0
+            #debugContent::-webkit-scrollbar {
+                width: 8px;
             }
 
-            .sheet-section h2 {
-                padding-bottom: .5rem;
-                border-bottom: 1px solid #555
+            #debugContent::-webkit-scrollbar-track {
+                background: var(--light-bg);
             }
+
+            #debugContent::-webkit-scrollbar-thumb {
+                background-color: var(--primary-red);
+                border-radius: 4px;
+            }
+
+        /* --- SHEET SECTIONS --- */
+        .sheet-section {
+            margin-bottom: 2rem;
+        }
 
         .persona-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem
+            gap: 0.8rem;
+            font-size: 0.95rem;
         }
 
             .persona-grid p {
-                margin: 0
+                margin: 0;
+                border-bottom: 1px solid #333;
+                padding-bottom: 4px;
+            }
+
+            .persona-grid strong {
+                color: var(--text-medium);
             }
 
         .attributes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-            gap: 1.5rem
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
         }
 
         .items-column-container {
@@ -176,79 +203,89 @@
             gap: 0 1.5rem;
         }
 
-        .items-column {
-            padding-right: 1rem;
-        }
-
-        .attribute-category h3 {
-            margin-top: 0;
-            color: #ccc
-        }
-
         .attribute-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: .5rem
+            margin-bottom: 0.4rem;
+            height: 24px;
         }
 
-        .attribute-item .label.muted {
-            color: var(--text-medium);
+            .attribute-item .label.muted {
+                color: #555;
+            }
+
+        /* --- DOTS --- */
+        .dots-display {
+            display: flex;
+            gap: 3px;
         }
 
-        .dots-display .dot {
-            height: 12px;
-            width: 12px;
-            background-color: #444;
-            border: 1px solid #666;
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: #333;
+            border: 1px solid #555;
             border-radius: 50%;
             display: inline-block;
-            margin-left: 4px
         }
 
-            .dots-display .dot.filled {
+            /* Standard Fill (White/Grey) */
+            .dot.filled {
                 background-color: #e0e0e0;
-                border-color: #fff
+                border-color: #fff;
+                box-shadow: 0 0 2px rgba(255,255,255,0.5);
+            }
+
+            /* Special Fill (>5 Score) - Blood Red */
+            .dot.filled-special {
+                background-color: #b91c1c;
+                border-color: #ff4d4d;
+                box-shadow: 0 0 4px rgba(255, 0, 0, 0.6);
             }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>Elysium</h1>
-        <p>VtM Character Generator</p>
+        <h1>ELYSIUM</h1>
+        <p style="color: var(--text-medium); font-size: 0.9rem;">V20 Character Generator</p>
     </div>
 
     <div class="page-container">
         <div class="main-content">
             <button id="generateButton">Generate Random Character</button>
-            <div id="characterSheet"></div>
+            <div id="characterSheet">
+                <p style="text-align:center; color: #666; margin-top: 2rem;">Press generate to create a Kindred.</p>
+            </div>
         </div>
 
         <div class="sidebar">
-            <!-- ADDED a span for the arrow inside the button -->
+            <!-- Customization Accordion -->
             <button class="sidebar-toggle">Customize Persona<span class="arrow">▼</span></button>
             <div class="sidebar-content">
                 <div class="option-group">
                     <label for="conceptSelect">Concept:</label>
                     <select id="conceptSelect"><option value="">Random</option></select>
                 </div>
-                <!-- ... other option groups ... -->
                 <div class="option-group"><label for="clanSelect">Clan:</label><select id="clanSelect"><option value="">Random</option></select></div>
                 <div class="option-group"><label for="natureSelect">Nature:</label><select id="natureSelect"><option value="">Random</option></select></div>
                 <div class="option-group"><label for="demeanorSelect">Demeanor:</label><select id="demeanorSelect"><option value="">Random</option></select></div>
                 <button id="createButton">Create Custom Character</button>
+                <div style="height: 1rem;"></div>
             </div>
-            <button class="sidebar-toggle" id="debugToggle" style="margin-top: 1rem; background-color: #444; border-color: #555;">
-                Debug / Spending Log <span class="arrow" id="debugArrow">▼</span>
-            </button>
 
+            <!-- Debug Log Accordion -->
+            <button class="sidebar-toggle" id="debugToggle" style="margin-top: 1rem; background-color: #2c2c2c; border-color: #444;">
+                Spending Log <span class="arrow" id="debugArrow">▼</span>
+            </button>
             <div class="sidebar-content" id="debugContent">
-                <ul id="debugList" style="list-style: none; padding: 0; margin: 1rem 0; font-family: 'Courier New', monospace; font-size: 0.85rem; color: #ccc;">
+                <ul id="debugList" style="list-style: none; padding: 0; margin: 1rem 0; font-family: 'Courier New', monospace; font-size: 0.8rem; color: #bbb;">
                     <li>Waiting for generation...</li>
                 </ul>
             </div>
         </div>
+    </div>
 
     <script>
         // --- DOM Elements ---
@@ -262,6 +299,7 @@
         const sidebarToggle = document.querySelector('.sidebar-toggle');
         const sidebarContent = document.querySelector('.sidebar-content');
         const arrowSpan = document.querySelector('.arrow');
+
         const debugToggle = document.getElementById('debugToggle');
         const debugContent = document.getElementById('debugContent');
         const debugList = document.getElementById('debugList');
@@ -279,14 +317,15 @@
             Knowledges: ["academics", "computer", "finance", "investigation", "law", "medicine", "occult", "politics", "science", "technology"]
         };
 
-        // wire buttons
+        // --- EVENT LISTENERS ---
+
         generateButton.addEventListener('click', () => {
-            sheetDiv.innerHTML = '<p>Generating...</p>';
+            sheetDiv.innerHTML = '<p style="text-align:center; margin-top:2rem;">Invoking the Blood...</p>';
             fetchAndDisplayCharacter('/api/character/generate');
         });
 
         createButton.addEventListener('click', () => {
-            sheetDiv.innerHTML = '<p>Creating...</p>';
+            sheetDiv.innerHTML = '<p style="text-align:center; margin-top:2rem;">Embracing...</p>';
             const payload = {
                 conceptId: conceptSelect.value,
                 clanId: clanSelect.value,
@@ -302,7 +341,6 @@
 
         sidebarToggle.addEventListener('click', function () {
             this.classList.toggle('active');
-
             if (this.classList.contains('active')) {
                 arrowSpan.innerHTML = '▲';
                 sidebarContent.style.padding = "1.5rem";
@@ -313,19 +351,21 @@
                 sidebarContent.style.padding = "0 1.5rem";
             }
         });
+
         debugToggle.addEventListener('click', function () {
             this.classList.toggle('active');
             if (this.classList.contains('active')) {
                 debugArrow.innerHTML = '▲';
                 debugContent.style.padding = "1rem";
-                debugContent.style.maxHeight = "500px"; // Scrollable if needed
-                debugContent.style.overflowY = "auto";
+                debugContent.style.maxHeight = "400px";
             } else {
                 debugArrow.innerHTML = '▼';
                 debugContent.style.maxHeight = null;
                 debugContent.style.padding = "0 1.5rem";
             }
         });
+
+        // --- DATA FETCHING & DISPLAY ---
 
         function fetchAndDisplayCharacter(url, options = {}) {
             fetch(url, options)
@@ -337,51 +377,48 @@
                 .catch(err => {
                     console.error("Error fetching character:", err);
                     sheetDiv.classList.add("sheet-active");
-                    sheetDiv.innerHTML = '<p style="color: red;">Failed to generate character. See console for details.</p>';
+                    sheetDiv.innerHTML = '<p style="color: #ff6b6b; text-align: center;">The Embrace failed. Check console.</p>';
                 });
         }
 
         function displayCharacter(characterData) {
             sheetDiv.classList.add("sheet-active");
             sheetDiv.innerHTML = "";
+
             sheetDiv.appendChild(renderPersonaSection(characterData));
             sheetDiv.appendChild(renderAttributesSection(characterData.attributes || {}));
             sheetDiv.appendChild(renderAbilitiesSection(characterData.abilities || {}));
+            sheetDiv.appendChild(renderDisciplinesSection(characterData.disciplines || {}));
             sheetDiv.appendChild(renderBackgroundsSection(characterData.backgrounds || {}));
             sheetDiv.appendChild(renderVirtuesSection(characterData.virtues || {}));
-            sheetDiv.appendChild(renderDisciplinesSection(characterData.disciplines || {}));
-            sheetDiv.appendChild(renderMeritsAndFlawsSection(characterData.merits, characterData.flaws));
             sheetDiv.appendChild(renderCoreStatsSection(characterData));
+            sheetDiv.appendChild(renderMeritsAndFlawsSection(characterData.merits, characterData.flaws));
 
-            debugList.innerHTML = '';
-            if (characterData.debugLog && characterData.debugLog.length > 0) {
-                characterData.debugLog.forEach(logItem => {
-                    const li = document.createElement('li');
-                    li.textContent = logItem;
-                    li.style.borderBottom = "1px solid #333";
-                    li.style.padding = "4px 0";
-
-                    if (logItem.includes("[Flaw]")) li.style.color = "#ff6b6b"; 
-                    if (logItem.includes("[Merit]")) li.style.color = "#51cf66";
-
-                    debugList.appendChild(li);
-                });
-            } else {
-                debugList.innerHTML = '<li>No logs available.</li>';
-            }
+            updateDebugLog(characterData.debugLog);
         }
+
+        // --- RENDERERS ---
 
         function renderPersonaSection(data) {
             const container = document.createElement("div");
             container.className = "sheet-section";
+
+            const xpDisplay = `${data.spentExperience || 0} / ${data.totalExperience || 0}`;
+
             container.innerHTML = `<h2>Persona</h2>
-                                <div class="persona-grid">
-                                    <p><strong>Concept:</strong> ${data.concept?.name ?? "—"}</p>
-                                    <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
-                                    <p><strong>Nature:</strong> ${data.nature?.name ?? "—"}</p>
-                                    <p><strong>Demeanor:</strong> ${data.demeanor?.name ?? "—"}</p>
-                                    <p><strong>Generation:</strong> ${data.generation ?? "—"}</p>
-                                </div>`;
+                    <div class="persona-grid">
+                        <p><strong>Name:</strong> New Character</p>
+                        <p><strong>Concept:</strong> ${data.concept?.name ?? "—"}</p>
+                        <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
+                        <p><strong>Generation:</strong> ${data.generation ?? "—"}th</p>
+                        <p><strong>Nature:</strong> ${data.nature?.name ?? "—"}</p>
+                        <p><strong>Age Category:</strong> ${data.ageCategory ?? "—"}</p>
+                        <p><strong>Demeanor:</strong> ${data.demeanor?.name ?? "—"}</p>
+                        <p><strong>Age:</strong> ${data.age ?? "0"} years</p>
+                        <p style="grid-column: span 2; border-bottom:none; margin-top:5px;">
+                            <strong>Experience:</strong> ${xpDisplay}
+                        </p>
+                    </div>`;
             return container;
         }
 
@@ -400,25 +437,19 @@
 
                 ATTRIBUTE_CATEGORIES[category].forEach(key => {
                     const value = attrs[key] || 0;
-                    const label = key.charAt(0).toUpperCase() + key.slice(1);
-                    html += `<div class="attribute-item"><span>${label}</span><span class="dots-display">${renderDots(value)}</span></div>`;
+                    const label = titleCaseAndClean(key);
+                    // Elder logic enabled for Attributes
+                    html += `<div class="attribute-item">
+                            <span>${label}</span>
+                            <span class="dots-display">${renderDots(value, 5, true)}</span>
+                        </div>`;
                 });
 
                 catDiv.innerHTML = html;
                 grid.appendChild(catDiv);
             }
-
             section.appendChild(grid);
             return section;
-        }
-
-        // helper: title-case a phrase and replace underscores
-        function titleCaseAndClean(id) {
-            if (!id) return "";
-            return id.replace(/_/g, ' ')
-                .split(' ')
-                .map(w => w.length ? (w.charAt(0).toUpperCase() + w.slice(1)) : '')
-                .join(' ');
         }
 
         function renderAbilitiesSection(abilities) {
@@ -426,25 +457,86 @@
             const section = document.createElement('div');
             section.className = 'sheet-section';
             section.innerHTML = '<h2>Abilities</h2>';
-
             const grid = document.createElement('div');
             grid.className = 'attributes-grid';
 
-            // Always render full lists in the fixed order from ABILITY_CATEGORIES.
             for (const categoryName in ABILITY_CATEGORIES) {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'attribute-category';
-
                 let categoryHtml = `<h3>${categoryName}</h3>`;
+
                 ABILITY_CATEGORIES[categoryName].forEach(abilityId => {
                     const score = Number(abilities[abilityId] || 0);
                     const displayName = titleCaseAndClean(abilityId);
                     const labelClass = score === 0 ? 'label muted' : 'label';
-                    categoryHtml += `<div class="attribute-item"><span class="${labelClass}">${displayName}</span><span class="dots-display">${renderDots(score, 5)}</span></div>`;
+                    // Elder logic enabled for Abilities
+                    categoryHtml += `<div class="attribute-item">
+                            <span class="${labelClass}">${displayName}</span>
+                            <span class="dots-display">${renderDots(score, 5, true)}</span>
+                        </div>`;
                 });
-
                 categoryDiv.innerHTML = categoryHtml;
                 grid.appendChild(categoryDiv);
+            }
+            section.appendChild(grid);
+            return section;
+        }
+
+        function renderDisciplinesSection(disciplines) {
+            disciplines = disciplines || {};
+            const section = document.createElement('div');
+            section.className = 'sheet-section';
+            section.innerHTML = '<h2>Disciplines</h2>';
+
+            const grid = document.createElement('div');
+            grid.className = 'attributes-grid';
+
+            let entries = Object.keys(disciplines)
+                .filter(id => disciplines[id] > 0)
+                .map(id => {
+                    let name = titleCaseAndClean(id);
+                    let order = 100;
+                    let displayName = name;
+
+                    const match = id.match(/(.*)\s*\((\d+)\)/);
+                    if (match) {
+                        const baseName = titleCaseAndClean(match[1]);
+                        const pathNum = parseInt(match[2]);
+
+                        name = baseName;
+                        order = pathNum;
+
+                        if (pathNum === 1) displayName = `${baseName} (Primary Path)`;
+                        else displayName = `${baseName} (Secondary Path)`;
+                    }
+
+                    return {
+                        id: id,
+                        sortName: name,
+                        sortOrder: order,
+                        displayName: displayName,
+                        score: disciplines[id]
+                    };
+                });
+
+            entries.sort((a, b) => {
+                if (a.sortName < b.sortName) return -1;
+                if (a.sortName > b.sortName) return 1;
+                return a.sortOrder - b.sortOrder;
+            });
+
+            if (entries.length === 0) {
+                grid.innerHTML = '<p style="color:#666;">No Disciplines learned.</p>';
+            } else {
+                entries.forEach(entry => {
+                    const itemHtml = `
+                        <div class="attribute-item" style="width:100%;">
+                            <span>${entry.displayName}</span>
+                            <!-- Elder logic enabled for Disciplines -->
+                            <span class="dots-display">${renderDots(entry.score, 5, true)}</span>
+                        </div>`;
+                    grid.innerHTML += itemHtml;
+                });
             }
 
             section.appendChild(grid);
@@ -460,153 +552,43 @@
             const container = document.createElement('div');
             container.className = 'items-column-container';
 
+            const entries = Object.keys(backgrounds).filter(id => backgrounds[id] > 0).sort();
+            const perCol = Math.ceil(entries.length / 3);
+            const cols = [entries.slice(0, perCol), entries.slice(perCol, perCol * 2), entries.slice(perCol * 2)];
 
-            const backgroundEntries = Object.keys(backgrounds)
-                .filter(id => backgrounds[id] > 0)
-                .sort(); // alphabetical order
-
-
-            const totalItems = backgroundEntries.length;
-            const itemsPerColumn = Math.ceil(totalItems / 3);
-
-            const column1Entries = backgroundEntries.slice(0, itemsPerColumn);
-            const column2Entries = backgroundEntries.slice(itemsPerColumn, itemsPerColumn * 2);
-            const column3Entries = backgroundEntries.slice(itemsPerColumn * 2);
-
-            const createColumn = (entries) => {
-                const column = document.createElement('div');
-                column.className = 'items-column';
-                entries.forEach(id => {
-                    const score = backgrounds[id] || 0;
-                    const displayName = titleCaseAndClean(id);
-                    column.innerHTML += `
-                    <div class="attribute-item">
-                        <span>${displayName}</span>
-                        <span class="dots-display">${renderDots(score, 5)}</span>
-                    </div>`;
+            cols.forEach(colEntries => {
+                const colDiv = document.createElement('div');
+                colDiv.className = 'items-column';
+                colEntries.forEach(id => {
+                    colDiv.innerHTML += `<div class="attribute-item">
+                            <span>${titleCaseAndClean(id)}</span>
+                            <!-- Backgrounds typically capped at 5, but standard display -->
+                            <span class="dots-display">${renderDots(backgrounds[id], 5, false)}</span>
+                        </div>`;
                 });
-                return column;
-            };
-
-            container.appendChild(createColumn(column1Entries));
-            container.appendChild(createColumn(column2Entries));
-            container.appendChild(createColumn(column3Entries));
+                container.appendChild(colDiv);
+            });
 
             section.appendChild(container);
             return section;
         }
 
         function renderVirtuesSection(virtues) {
-            virtues = virtues || {};
             const section = document.createElement('div');
             section.className = 'sheet-section';
             section.innerHTML = '<h2>Virtues</h2>';
-
             const grid = document.createElement('div');
             grid.className = 'attributes-grid';
 
-            // Order is fixed.
-            const virtueOrder = ["conscience", "self_control", "courage"];
-
-            virtueOrder.forEach(virtueId => {
-                if (virtues[virtueId] === undefined) return;
-
-                const score = virtues[virtueId] || 0;
-                const displayName = titleCaseAndClean(virtueId);
-
-                const itemHtml = `
-                    <div class="attribute-item">
-                        <span>${displayName}</span>
-                        <span class="dots-display">${renderDots(score, 5)}</span>
-                    </div>
-                `;
-                grid.innerHTML += itemHtml;
-            });
-
-            section.appendChild(grid);
-            return section;
-        }
-
-        function renderDisciplinesSection(disciplines) {
-            disciplines = disciplines || {};
-            const section = document.createElement('div');
-            section.className = 'sheet-section';
-            section.innerHTML = '<h2>Disciplines</h2>';
-
-            const grid = document.createElement('div');
-            grid.className = 'attributes-grid';
-
-            const disciplineEntries = Object.keys(disciplines)
-                .filter(id => disciplines[id] > 0)
-                .sort();
-
-            disciplineEntries.forEach(disciplineId => {
-                const score = disciplines[disciplineId] || 0;
-                const displayName = titleCaseAndClean(disciplineId);
-
-                const itemHtml = `
-                <div class="attribute-item">
-                    <span>${displayName}</span>
-                    <span class="dots-display">${renderDots(score, 5)}</span>
-                </div>
-            `;
-                grid.innerHTML += itemHtml;
-            });
-
-            if (disciplineEntries.length === 0) {
-                grid.innerHTML = '<p>No disciplines assigned.</p>';
-            }
-
-            section.appendChild(grid);
-            return section;
-        }
-
-        function renderMeritsAndFlawsSection(merits, flaws) {
-            merits = merits || [];
-            flaws = flaws || [];
-
-            const section = document.createElement('div');
-            section.className = 'sheet-section';
-            section.innerHTML = '<h2>Merits & Flaws</h2>';
-
-            const grid = document.createElement('div');
-            grid.className = 'persona-grid';
-
-            const meritsDiv = document.createElement('div');
-            meritsDiv.innerHTML = '<h3 style="color: #b3b3b3; border-bottom: 1px solid #444; padding-bottom: 5px;">Merits</h3>';
-
-            if (merits.length === 0) {
-                meritsDiv.innerHTML += '<p style="color: #666; font-style: italic;">None</p>';
-            } else {
-                merits.forEach(m => {
-                    // Name and xp cost
-                    meritsDiv.innerHTML += `
-                    <div class="attribute-item">
-                        <span>${m.name}</span>
-                        <span style="color: #888; font-size: 0.9em;">(${m.cost} pts)</span>
+            ["conscience", "self_control", "courage"].forEach(id => {
+                const val = virtues[id] || 0;
+                grid.innerHTML += `<div class="attribute-item">
+                        <span>${titleCaseAndClean(id)}</span>
+                        <!-- Virtues capped at 5, standard display -->
+                        <span class="dots-display">${renderDots(val, 5, false)}</span>
                     </div>`;
-                });
-            }
-
-            const flawsDiv = document.createElement('div');
-            flawsDiv.innerHTML = '<h3 style="color: #b3b3b3; border-bottom: 1px solid #444; padding-bottom: 5px;">Flaws</h3>';
-
-            if (flaws.length === 0) {
-                flawsDiv.innerHTML += '<p style="color: #666; font-style: italic;">None</p>';
-            } else {
-                flaws.forEach(f => {
-                    flawsDiv.innerHTML += `
-                    <div class="attribute-item">
-                        <span>${f.name}</span>
-                        <span style="color: #8c1c1c; font-size: 0.9em;">(+${f.cost} pts)</span>
-                    </div>`;
-                });
-            }
-
-            grid.appendChild(meritsDiv);
-            grid.appendChild(flawsDiv);
+            });
             section.appendChild(grid);
-
             return section;
         }
 
@@ -615,32 +597,154 @@
             section.className = 'sheet-section';
             section.innerHTML = '<h2>Core Stats</h2>';
 
+            const container = document.createElement('div');
+
+            // Willpower & Humanity -> DISABLED Elder logic (use simple fill up to 10)
+            const statsHtml = `
+                <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+                    <div style="flex:1; margin-right:2rem;">
+                        <div class="attribute-item">
+                            <span>Humanity</span>
+                            <span class="dots-display">${renderDots(data.humanity || 0, 10, false)}</span>
+                        </div>
+                    </div>
+                    <div style="flex:1;">
+                        <div class="attribute-item">
+                            <span>Willpower</span>
+                            <span class="dots-display">${renderDots(data.willpower || 0, 10, false)}</span>
+                        </div>
+                    </div>
+                </div>
+                `;
+
+            const bloodHtml = `
+                <div class="persona-grid" style="border-top:1px solid #444; padding-top:1rem;">
+                    <p><strong>Max Blood Pool:</strong> ${data.maximumBloodPool ?? "—"}</p>
+                    <p><strong>Blood Per Turn:</strong> ${data.bloodPointsPerTurn ?? "—"}</p>
+                    <p><strong>Max Trait Rating:</strong> ${data.maxTraitRating ?? 5}</p>
+                </div>
+                `;
+
+            container.innerHTML = statsHtml + bloodHtml;
+            section.appendChild(container);
+            return section;
+        }
+
+        function renderMeritsAndFlawsSection(merits, flaws) {
+            merits = merits || [];
+            flaws = flaws || [];
+            if (merits.length === 0 && flaws.length === 0) return document.createElement('div');
+
+            const section = document.createElement('div');
+            section.className = 'sheet-section';
+            section.innerHTML = '<h2>Merits & Flaws</h2>';
+
             const grid = document.createElement('div');
             grid.className = 'persona-grid';
 
-            grid.innerHTML = `
-            <p><strong>Humanity:</strong> ${data.humanity ?? "—"}</p>
-            <p><strong>Willpower:</strong> ${data.willpower ?? "—"}</p>
-            <p><strong>Max Trait Rating:</strong> ${data.maxTraitRating ?? "—"}</p>
-            <p><strong>Max Blood Pool:</strong> ${data.maximumBloodPool ?? "—"}</p>
-            <p><strong>Blood Per Turn:</strong> ${data.bloodPointsPerTurn ?? "—"}</p>
-        `;
+            const mCol = document.createElement('div');
+            mCol.innerHTML = '<h3>Merits</h3>';
+            if (merits.length) {
+                merits.forEach(m => {
+                    mCol.innerHTML += `<div class="attribute-item"><span>${m.name}</span><span style="color:#888;">(${m.cost} pts)</span></div>`;
+                });
+            } else { mCol.innerHTML += '<p style="color:#555;">None</p>'; }
 
+            const fCol = document.createElement('div');
+            fCol.innerHTML = '<h3>Flaws</h3>';
+            if (flaws.length) {
+                flaws.forEach(f => {
+                    fCol.innerHTML += `<div class="attribute-item"><span>${f.name}</span><span style="color:#a82222;">(+${f.cost} pts)</span></div>`;
+                });
+            } else { fCol.innerHTML += '<p style="color:#555;">None</p>'; }
+
+            grid.appendChild(mCol);
+            grid.appendChild(fCol);
             section.appendChild(grid);
             return section;
         }
 
-        function renderDots(count, max = 5) {
+        // --- HELPERS ---
+
+        function renderDots(count, maxScale = 5, useElderLogic = true) {
+            // If elder logic is off (Humanity/Willpower), straightforward fill.
+            if (!useElderLogic) {
+                let out = "";
+                for (let i = 1; i <= maxScale; i++) {
+                    const css = i <= count ? "dot filled" : "dot";
+                    out += `<span class="${css}"></span>`;
+                }
+                return out;
+            }
+
+            // Elder Logic: Always show 5 dots max visually.
+            // If score <= 5: White fill.
+            // If score > 5: Wrap around with Red fill.
+            //   Example: Score 6 -> (6-5)=1. First dot Red, rest 4 White.
+            //   Example: Score 7 -> (7-5)=2. First 2 Red, rest 3 White.
+
             let out = "";
-            for (let i = 1; i <= max; i++) {
-                out += `<span class="dot ${i <= count ? "filled" : ""}"></span>`;
+            const visualMax = 5;
+            const redCount = (count > 5) ? (count - 5) : 0;
+
+            for (let i = 1; i <= visualMax; i++) {
+                let css = "dot";
+
+                if (count <= 5) {
+                    // Standard Case
+                    if (i <= count) css += " filled";
+                } else {
+                    // Overflow Case (Score 6+)
+                    // Logic: We always fill all 5 dots because 6 > 5.
+                    // We just decide if it's RED filled or WHITE filled.
+                    if (i <= redCount) {
+                        css += " filled-special"; // Red
+                    } else {
+                        css += " filled"; // White
+                    }
+                }
+                out += `<span class="${css}"></span>`;
             }
             return out;
         }
 
+        function titleCaseAndClean(str) {
+            if (!str) return "";
+            return str.replace(/_/g, ' ')
+                .toLowerCase()
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        }
+
+        function updateDebugLog(logs) {
+            debugList.innerHTML = '';
+            if (logs && logs.length > 0) {
+                logs.forEach(log => {
+                    const li = document.createElement('li');
+                    li.textContent = log;
+                    li.style.borderBottom = "1px solid #333";
+                    li.style.padding = "4px 0";
+
+                    if (log.includes("[Flaw]")) li.style.color = "#ff6b6b";
+                    else if (log.includes("[Merit]")) li.style.color = "#51cf66";
+                    else if (log.includes("[XP]")) li.style.color = "#74c0fc";
+                    else if (log.includes("[Decay]")) li.style.color = "#ff922b";
+
+                    debugList.appendChild(li);
+                });
+            } else {
+                debugList.innerHTML = '<li>No logs generated.</li>';
+            }
+        }
+
+        // --- OPTIONS LOADER ---
         function loadOptions() {
             fetch("/api/character/options")
-                .then(res => res.json())
+                .then(res => {
+                    if (!res.ok) throw new Error("Network response was not ok");
+                    return res.json();
+                })
                 .then(data => {
                     allNatures = data.natures || [];
                     populateSelect(conceptSelect, data.concepts, "Random");
@@ -662,22 +766,17 @@
                 el.appendChild(opt);
             });
         }
-
         function populateDemeanorOptions(excludeId = "") {
             const previous = demeanorSelect.value;
             populateSelect(demeanorSelect, allNatures.filter(n => String(n.id) !== String(excludeId)), "Random");
-            const exists = Array.from(demeanorSelect.options).some(o => o.value === previous);
-            demeanorSelect.value = exists ? previous : "";
+            demeanorSelect.value = previous;
         }
-
         function populateNatureOptions(excludeId = "") {
             const previous = natureSelect.value;
             populateSelect(natureSelect, allNatures.filter(n => String(n.id) !== String(excludeId)), "Random");
-            const exists = Array.from(natureSelect.options).some(o => o.value === previous);
-            natureSelect.value = exists ? previous : "";
+            natureSelect.value = previous;
         }
 
-        // initial load
         loadOptions();
     </script>
 </body>

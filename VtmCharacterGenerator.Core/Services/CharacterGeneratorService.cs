@@ -13,6 +13,8 @@ namespace VtmCharacterGenerator.Core.Services
         private readonly DisciplineDistributionService _disciplineDistributionService;
         private readonly CoreStatsService _coreStatsService;
         private readonly FreebieSpendingService _freebieSpendingService;
+        private readonly LifeCycleService _lifeCycleService;
+        private readonly XpSpendingService _xpSpendingService;
 
         public CharacterGeneratorService(PersonaService personaService, 
                AttributeService attributeService, 
@@ -22,7 +24,9 @@ namespace VtmCharacterGenerator.Core.Services
                VirtueDistributionService virtueDistributionService,
                DisciplineDistributionService disciplineDistributionService,
                CoreStatsService coreStatsService,
-               FreebieSpendingService freebieSpendingService)
+               FreebieSpendingService freebieSpendingService,
+               LifeCycleService lifeCycleService,
+               XpSpendingService xpSpendingService)
 
         {
             _personaService = personaService;
@@ -34,6 +38,8 @@ namespace VtmCharacterGenerator.Core.Services
             _disciplineDistributionService = disciplineDistributionService;
             _coreStatsService = coreStatsService;
             _freebieSpendingService = freebieSpendingService;
+            _lifeCycleService = lifeCycleService;
+            _xpSpendingService = xpSpendingService;
 
         }
 
@@ -59,8 +65,10 @@ namespace VtmCharacterGenerator.Core.Services
             _disciplineDistributionService.DistributeDisciplines(character, affinityProfile);
             _freebieSpendingService.DistributeFreebiePoints(character, affinityProfile);
             _coreStatsService.CalculateCoreStats(character);
+            _lifeCycleService.DetermineLifeCycle(character);
+            _xpSpendingService.DistributeXp(character, affinityProfile);
+            _lifeCycleService.ApplyHumanityDegeneration(character);
 
-            // TODO: Generate other character parts
 
             return character;
         }
