@@ -67,6 +67,7 @@ namespace VtmCharacterGenerator.Core.Services
             _coreStatsService.CalculateCoreStats(character);
             _lifeCycleService.DetermineLifeCycle(character);
             _xpSpendingService.DistributeXp(character, affinityProfile);
+            _lifeCycleService.EvolveBackgrounds(character, affinityProfile);
             _lifeCycleService.ApplyHumanityDegeneration(character);
 
 

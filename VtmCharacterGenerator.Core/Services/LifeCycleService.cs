@@ -1,11 +1,20 @@
 ﻿using System;
+using VtmCharacterGenerator.Core.Data;
 using VtmCharacterGenerator.Core.Models;
 
 namespace VtmCharacterGenerator.Core.Services
 {
     public class LifeCycleService
     {
+        private readonly GameDataProvider _dataProvider;
+        private readonly AffinityProcessorService _affinityProcessor;
         private readonly Random _random = new Random();
+
+        public LifeCycleService(GameDataProvider dataProvider, AffinityProcessorService affinityProcessor)
+        {
+            _dataProvider = dataProvider;
+            _affinityProcessor = affinityProcessor;
+        }
 
         public void DetermineLifeCycle(Character character)
         {
@@ -93,6 +102,78 @@ namespace VtmCharacterGenerator.Core.Services
                 return _random.Next(250, 601);
             }
         }
+
+        public void EvolveBackgrounds(Character character, Dictionary<string, int> affinityProfile)
+        {
+ 
+            if (character.Age <= 50) return;
+
+            int bonusPoints = 0;
+
+            // ---Ages 50 to 100---
+            if (character.Age > 50)
+            {
+                int effectiveAge = Math.Min(character.Age, 100);
+                int checks = (effectiveAge - 50) / 10;
+
+                for (int i = 0; i < checks; i++)
+                {
+                    if (_random.NextDouble() < 0.4) bonusPoints++;
+                }
+            }
+
+            // ---Ages 100 to 400---
+            if (character.Age > 100)
+            {
+                int effectiveAge = Math.Min(character.Age, 400);
+                int checks = (effectiveAge - 100) / 10;
+
+                for (int i = 0; i < checks; i++)
+                {
+                    if (_random.NextDouble() < 0.5) bonusPoints++;
+                }
+            }
+
+            //Ages 400---
+            if (character.Age > 400)
+            {
+                int checks = (character.Age - 400) / 50;
+
+                for (int i = 0; i < checks; i++)
+                {
+                    if (_random.NextDouble() < 0.5) bonusPoints++;
+                }
+            }
+
+            if (bonusPoints == 0) return;
+
+            var allBackgrounds = _dataProvider.Backgrounds;
+
+            while (bonusPoints > 0)
+            {
+                var candidates = allBackgrounds.Where(bg =>
+                    !character.Backgrounds.ContainsKey(bg.Id) ||
+                    character.Backgrounds[bg.Id] < 5
+                ).ToList();
+
+                if (!candidates.Any()) break;
+
+                var selectedBg = _affinityProcessor.GetWeightedRandom(candidates, affinityProfile);
+
+                if (selectedBg == null) break;
+
+                string id = selectedBg.Id;
+                if (!character.Backgrounds.ContainsKey(id)) character.Backgrounds[id] = 0;
+
+                character.Backgrounds[id]++;
+                bonusPoints--;
+
+                _affinityProcessor.ProcessAffinities(affinityProfile, selectedBg.Affinities);
+
+                character.DebugLog.Add($"[Evolution] Gained Background point: {selectedBg.Name} -> {character.Backgrounds[id]} (Age: {character.Age})");
+            }
+        }
+
         public void ApplyHumanityDegeneration(Character character)
         {
   
