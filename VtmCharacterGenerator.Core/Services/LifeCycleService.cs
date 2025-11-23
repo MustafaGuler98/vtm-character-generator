@@ -30,7 +30,7 @@ namespace VtmCharacterGenerator.Core.Services
 
             if (character.TotalExperience == 0)
             {
-                character.TotalExperience = DetermineXp(character.AgeCategory);
+                character.TotalExperience = DetermineXp(character.AgeCategory, character.Age);
             }
 
             character.SpentExperience = 0;
@@ -81,29 +81,44 @@ namespace VtmCharacterGenerator.Core.Services
             };
         }
 
-        private int DetermineXp(string category)
+        private int DetermineXp(string category, int age)
         {
-            int roll = _random.Next(1, 101);
+            // +/- 20% variance.
 
-            if (category == "Neonate")
+            double minAge, maxAge, minXp, maxXp;
+
+            if (category == "Neonate" || age <= 100)
             {
-                if (roll <= 80) return _random.Next(0, 36);
-                return _random.Next(36, 76);
+                // Neonate: 0-100 Age -> 0-75 XP
+                minAge = 0; maxAge = 100;
+                minXp = 0; maxXp = 75;
             }
-            else if (category == "Ancilla")
+            else if (category == "Ancilla" || age <= 200)
             {
-                if (roll <= 10) return _random.Next(35, 75);
-                if (roll <= 90) return _random.Next(75, 221);
-                return _random.Next(221, 251);
+                // Ancilla: 100-200 Age -> 75-250 XP
+                minAge = 100; maxAge = 200;
+                minXp = 75; maxXp = 250;
             }
             else // Elder
             {
-                if (roll <= 10) return _random.Next(220, 250);
-                return _random.Next(250, 601);
+                // Elder: 200-1000 Age -> 250-600 XP
+                minAge = 200; maxAge = 1000;
+                minXp = 250; maxXp = 600;
             }
+
+            double effectiveAge = Math.Min(age, maxAge);
+            double ratio = (effectiveAge - minAge) / (maxAge - minAge);
+
+            double baseXp = minXp + (ratio * (maxXp - minXp));
+
+            double variancePercent = (_random.NextDouble() * 0.4) - 0.2;
+
+            int finalXp = (int)(baseXp * (1.0 + variancePercent));
+            return Math.Max(0, finalXp);
         }
 
-        public void EvolveBackgrounds(Character character, Dictionary<string, int> affinityProfile)
+
+public void EvolveBackgrounds(Character character, Dictionary<string, int> affinityProfile)
         {
  
             if (character.Age <= 50) return;

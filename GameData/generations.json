@@ -4,69 +4,69 @@
         "maxTraitRating": 9,
         "maxBloodPool": 50,
         "bloodPerTurn": 10,
-        "weight": 4
+        "weight": 3
     },
     {
         "generation": 5,
         "maxTraitRating": 8,
         "maxBloodPool": 40,
         "bloodPerTurn": 8,
-        "weight": 5
+        "weight": 4
     },
     {
         "generation": 6,
         "maxTraitRating": 7,
         "maxBloodPool": 30,
         "bloodPerTurn": 6,
-        "weight": 6
+        "weight": 5
     },
     {
         "generation": 7,
         "maxTraitRating": 6,
         "maxBloodPool": 20,
         "bloodPerTurn": 4,
-        "weight": 7
+        "weight": 6
     },
     {
         "generation": 8,
         "maxTraitRating": 5,
         "maxBloodPool": 15,
         "bloodPerTurn": 3,
-        "weight": 8
+        "weight": 7
     },
     {
         "generation": 9,
         "maxTraitRating": 5,
         "maxBloodPool": 14,
         "bloodPerTurn": 2,
-        "weight": 9
+        "weight": 8
     },
     {
         "generation": 10,
         "maxTraitRating": 5,
         "maxBloodPool": 13,
         "bloodPerTurn": 1,
-        "weight": 10
+        "weight": 12
     },
     {
         "generation": 11,
         "maxTraitRating": 5,
         "maxBloodPool": 12,
         "bloodPerTurn": 1,
-        "weight": 11
+        "weight": 14
     },
     {
         "generation": 12,
         "maxTraitRating": 5,
         "maxBloodPool": 11,
         "bloodPerTurn": 1,
-        "weight": 12
+        "weight": 16
     },
     {
         "generation": 13,
         "maxTraitRating": 5,
         "maxBloodPool": 10,
         "bloodPerTurn": 1,
-        "weight": 13
+        "weight": 18
     }
 ]
