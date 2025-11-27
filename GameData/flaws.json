@@ -153,68 +153,6 @@
         ]
     },
     {
-        "id": "fourteenth_generation",
-        "name": "Fourteenth Generation",
-        "cost": 2,
-        "rarity": 4,
-        "description": "Your blood is thin. 10 blood points, but only 8 usable for healing/disciplines. Max Discipline level 4. Likely Clanless.",
-        "tags": [ "flaw", "physical", "blood", "generation", "weakness" ],
-        "conflictingTraits": [ "fifteenth_generation", "Background:Generation" ],
-        "affinities": [
-            {
-                "tag": "Clan:Caitiff",
-                "value": 25
-            },
-            {
-                "tag": "ThinBlood",
-                "value": 20
-            },
-            {
-                "tag": "Background:Status",
-                "value": -15
-            },
-            {
-                "tag": "Concept:Kid",
-                "value": 10
-            },
-            {
-                "tag": "Background:Influence",
-                "value": -10
-            }
-        ]
-    },
-    {
-        "id": "fifteenth_generation",
-        "name": "Fifteenth Generation",
-        "cost": 4,
-        "rarity": 3,
-        "description": "Your vitae is extremely weak. Cannot bond, sire, or sustain ghouls. Sunlight does lethal damage instead of aggravated.",
-        "tags": [ "flaw", "physical", "blood", "generation", "humanity" ],
-        "conflictingTraits": [ "fourteenth_generation", "Background:Generation" ],
-        "affinities": [
-            {
-                "tag": "Clan:Caitiff",
-                "value": 30
-            },
-            {
-                "tag": "ThinBlood",
-                "value": 25
-            },
-            {
-                "tag": "Background:Status",
-                "value": -25
-            },
-            {
-                "tag": "Daylight",
-                "value": 10
-            },
-            {
-                "tag": "Concept:Outsider",
-                "value": 10
-            }
-        ]
-    },
-    {
         "id": "disfigured",
         "name": "Disfigured",
         "cost": 2,
@@ -786,36 +724,6 @@
             {
                 "tag": "Discipline:Dominate",
                 "value": -15
-            }
-        ]
-    },
-    {
-        "id": "thin_blood",
-        "name": "Thin Blood",
-        "cost": 4,
-        "rarity": 4,
-        "description": "Blood point costs doubled. Cannot bond or sire easily. Sunlight is lethal, not aggravated.",
-        "tags": [ "flaw", "physical", "blood", "generation", "weakness" ],
-        "affinities": [
-            {
-                "tag": "Clan:Caitiff",
-                "value": 30
-            },
-            {
-                "tag": "FourteenthGeneration",
-                "value": 15
-            },
-            {
-                "tag": "FifteenthGeneration",
-                "value": 15
-            },
-            {
-                "tag": "Concept:Outsider",
-                "value": 10
-            },
-            {
-                "tag": "Background:Status",
-                "value": -10
             }
         ]
     },
