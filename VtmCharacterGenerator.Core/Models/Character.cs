@@ -9,6 +9,7 @@ namespace VtmCharacterGenerator.Core.Models
         public Nature Nature { get; set; }
         public Nature Demeanor { get; set; }
         public string AgeCategory { get; set; } // Neonate, Ancilla, Elder
+        public string Name { get; set; } = "Unknown";
         public int Age { get; set; }
         public int TotalExperience { get; set; }
         public int SpentExperience { get; set; }

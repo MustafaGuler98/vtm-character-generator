@@ -407,7 +407,7 @@
 
             container.innerHTML = `<h2>Persona</h2>
                     <div class="persona-grid">
-                        <p><strong>Name:</strong> New Character</p>
+                        <p><strong>Name:</strong> ${data.name ?? "Unknown Kindred"}</p>
                         <p><strong>Concept:</strong> ${data.concept?.name ?? "—"}</p>
                         <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
                         <p><strong>Generation:</strong> ${data.generation ?? "—"}th</p>

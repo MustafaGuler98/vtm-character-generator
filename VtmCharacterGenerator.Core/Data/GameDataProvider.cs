@@ -19,6 +19,7 @@ namespace VtmCharacterGenerator.Core.Data
         public List<GenerationData> Generations { get; }
         public List<Merit> Merits { get; }
         public List<Flaw> Flaws { get; }
+        public List<NamePack> NamePacks { get; } = new List<NamePack>();
 
 
         public GameDataProvider(string dataFolderPath)
@@ -55,6 +56,36 @@ namespace VtmCharacterGenerator.Core.Data
 
             var flawsJson = File.ReadAllText(Path.Combine(dataFolderPath, "flaws.json"));
             Flaws = JsonSerializer.Deserialize<List<Flaw>>(flawsJson) ?? new List<Flaw>();
+
+            LoadNamePacks(dataFolderPath);
         }
+        private void LoadNamePacks(string rootDataPath)
+        {
+            var namesFolderPath = Path.Combine(rootDataPath, "Names");
+
+            if (!Directory.Exists(namesFolderPath))
+            {
+                return;
+            }
+
+            var files = Directory.GetFiles(namesFolderPath, "*.json", SearchOption.AllDirectories);
+
+            foreach (var file in files)
+            {
+                try
+                {
+                    var jsonContent = File.ReadAllText(file);
+                    var pack = JsonSerializer.Deserialize<NamePack>(jsonContent);
+                    if (pack != null)
+                    {
+                        NamePacks.Add(pack);
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
+
     }
 }

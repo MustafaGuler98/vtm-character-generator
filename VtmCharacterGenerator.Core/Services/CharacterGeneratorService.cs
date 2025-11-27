@@ -15,6 +15,7 @@ namespace VtmCharacterGenerator.Core.Services
         private readonly FreebieSpendingService _freebieSpendingService;
         private readonly LifeCycleService _lifeCycleService;
         private readonly XpSpendingService _xpSpendingService;
+        private readonly NameGeneratorService _nameGeneratorService;
 
         public CharacterGeneratorService(PersonaService personaService, 
                AttributeService attributeService, 
@@ -26,7 +27,8 @@ namespace VtmCharacterGenerator.Core.Services
                CoreStatsService coreStatsService,
                FreebieSpendingService freebieSpendingService,
                LifeCycleService lifeCycleService,
-               XpSpendingService xpSpendingService)
+               XpSpendingService xpSpendingService,
+               NameGeneratorService nameGeneratorService)
 
         {
             _personaService = personaService;
@@ -40,6 +42,7 @@ namespace VtmCharacterGenerator.Core.Services
             _freebieSpendingService = freebieSpendingService;
             _lifeCycleService = lifeCycleService;
             _xpSpendingService = xpSpendingService;
+            _nameGeneratorService = nameGeneratorService;
 
         }
 
@@ -66,9 +69,11 @@ namespace VtmCharacterGenerator.Core.Services
             _freebieSpendingService.DistributeFreebiePoints(character, affinityProfile);
             _coreStatsService.CalculateCoreStats(character);
             _lifeCycleService.DetermineLifeCycle(character);
+            character.Name = _nameGeneratorService.GenerateName(character, affinityProfile);
             _xpSpendingService.DistributeXp(character, affinityProfile);
             _lifeCycleService.EvolveBackgrounds(character, affinityProfile);
             _lifeCycleService.ApplyHumanityDegeneration(character);
+            
 
 
             return character;

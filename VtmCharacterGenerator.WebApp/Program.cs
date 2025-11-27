@@ -45,6 +45,7 @@ builder.Services.AddScoped<IXpStrategy, XpWillpowerStrategy>();
 builder.Services.AddScoped<IXpStrategy, XpVirtueStrategy>();
 builder.Services.AddScoped<IXpStrategy, XpHumanityStrategy>();
 builder.Services.AddScoped<IXpStrategy, XpDisciplineStrategy>();
+builder.Services.AddScoped<NameGeneratorService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
