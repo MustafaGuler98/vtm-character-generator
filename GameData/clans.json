@@ -52,8 +52,12 @@
                 "value": 15
             },
             {
-                "tag": "knowledges",
-                "value": 5
+            "tag": "knowledges",
+            "value": 5
+            },
+            {
+            "tag": "xpdiscipline",
+            "value": 25
             }
         ]
     },
@@ -166,6 +170,10 @@
             {
                 "tag": "skills",
                 "value": 0
+            },
+            {
+                "tag": "spending:background",
+                "value": 50
             }
         ]
     },
@@ -224,7 +232,16 @@
             {
                 "tag": "knowledges",
                 "value": 5
+            },
+            {
+                "tag": "xpdiscipline",
+                "value": 25
+            },
+            {
+                "tag": "spending:background",
+                "value": -50
             }
+
         ]
     },
     {
@@ -282,6 +299,10 @@
             {
                 "tag": "skills",
                 "value": -10
+            },
+            {
+                "tag": "spending:background",
+                "value": 25
             }
         ]
     },
@@ -556,7 +577,16 @@
             {
                 "tag": "Concept:Socialite",
                 "value": 20
+            },
+            {
+                "tag": "skills",
+                "value": 20
+            },
+            {
+                "tag": "spending:background",
+                "value": 15
             }
+
         ]
     },
     {
