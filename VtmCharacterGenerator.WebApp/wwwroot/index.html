@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Elysium - V:tM Character Generator</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J94RRE4T6P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-J94RRE4T6P');
+    </script>
     <style>
         :root {
             --primary-red: #8c1c1c;
@@ -126,15 +134,17 @@
             overflow: hidden;
             transition: max-height 0.3s ease-out, padding 0.3s ease-out;
         }
+
         .sidebar-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; 
-            gap: 10px; 
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
 
         .full-width {
-            grid-column: span 2; 
+            grid-column: span 2;
         }
+
         .option-group {
             margin-bottom: 1.2rem;
             text-align: left;
