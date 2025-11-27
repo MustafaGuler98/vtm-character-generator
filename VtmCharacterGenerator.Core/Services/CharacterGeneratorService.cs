@@ -43,12 +43,10 @@ namespace VtmCharacterGenerator.Core.Services
             _lifeCycleService = lifeCycleService;
             _xpSpendingService = xpSpendingService;
             _nameGeneratorService = nameGeneratorService;
-
         }
 
         public Character GenerateCharacter(Persona inputPersona)
         {
-            
             var finalPersona = _personaService.CompletePersona(inputPersona);
             var affinityProfile = _affinityProcessor.BuildAffinityProfile(finalPersona);
 
@@ -57,7 +55,11 @@ namespace VtmCharacterGenerator.Core.Services
                 Concept = finalPersona.Concept,
                 Clan = finalPersona.Clan,
                 Nature = finalPersona.Nature,
-                Demeanor = finalPersona.Demeanor
+                Demeanor = finalPersona.Demeanor,
+                Name = finalPersona.Name,
+                Generation = finalPersona.Generation,
+                Age = finalPersona.Age,
+                AgeCategory = finalPersona.AgeCategory
             };
 
             // I tried different approach for distributing attributes to see what works best
@@ -73,8 +75,6 @@ namespace VtmCharacterGenerator.Core.Services
             _xpSpendingService.DistributeXp(character, affinityProfile);
             _lifeCycleService.EvolveBackgrounds(character, affinityProfile);
             _lifeCycleService.ApplyHumanityDegeneration(character);
-            
-
 
             return character;
         }

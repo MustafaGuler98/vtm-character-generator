@@ -126,7 +126,15 @@
             overflow: hidden;
             transition: max-height 0.3s ease-out, padding 0.3s ease-out;
         }
+        .sidebar-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px; 
+        }
 
+        .full-width {
+            grid-column: span 2; 
+        }
         .option-group {
             margin-bottom: 1.2rem;
             text-align: left;
@@ -264,14 +272,53 @@
             <!-- Customization Accordion -->
             <button class="sidebar-toggle">Customize Persona<span class="arrow">▼</span></button>
             <div class="sidebar-content">
-                <div class="option-group">
-                    <label for="conceptSelect">Concept:</label>
-                    <select id="conceptSelect"><option value="">Random</option></select>
+                <div class="sidebar-grid">
+                    <div class="option-group full-width">
+                        <label for="nameInput">Name (Optional):</label>
+                        <input type="text" id="nameInput" placeholder="Enter name or leave empty"
+                               style="width: 100%; padding: 0.8rem; font-size: 1rem; background-color: var(--light-bg); color: white; border: 1px solid var(--border-color); border-radius: 4px; box-sizing: border-box;">
+                    </div>
+
+                    <div class="option-group">
+                        <label for="conceptSelect">Concept:</label>
+                        <select id="conceptSelect"><option value="">Random</option></select>
+                    </div>
+                    <div class="option-group">
+                        <label for="clanSelect">Clan:</label>
+                        <select id="clanSelect"><option value="">Random</option></select>
+                    </div>
+
+                    <div class="option-group">
+                        <label for="natureSelect">Nature:</label>
+                        <select id="natureSelect"><option value="">Random</option></select>
+                    </div>
+                    <div class="option-group">
+                        <label for="demeanorSelect">Demeanor:</label>
+                        <select id="demeanorSelect"><option value="">Random</option></select>
+                    </div>
+
+                    <div class="option-group">
+                        <label for="generationSelect">Generation:</label>
+                        <select id="generationSelect"><option value="">Random</option></select>
+                    </div>
+                    <div class="option-group">
+                        <label for="ageCategorySelect">Age Category:</label>
+                        <select id="ageCategorySelect">
+                            <option value="">Random</option>
+                            <option value="Neonate">Neonate</option>
+                            <option value="Ancilla">Ancilla</option>
+                            <option value="Elder">Elder</option>
+                        </select>
+                    </div>
+
+                    <div class="option-group full-width">
+                        <label for="ageInput">Specific Age:</label>
+                        <input type="number" id="ageInput" placeholder="e.g. 195" min="0" max="2000"
+                               style="width: 100%; padding: 0.8rem; font-size: 1rem; background-color: var(--light-bg); color: white; border: 1px solid var(--border-color); border-radius: 4px; box-sizing: border-box;">
+                    </div>
                 </div>
-                <div class="option-group"><label for="clanSelect">Clan:</label><select id="clanSelect"><option value="">Random</option></select></div>
-                <div class="option-group"><label for="natureSelect">Nature:</label><select id="natureSelect"><option value="">Random</option></select></div>
-                <div class="option-group"><label for="demeanorSelect">Demeanor:</label><select id="demeanorSelect"><option value="">Random</option></select></div>
-                <button id="createButton">Create Custom Character</button>
+
+                <button id="createButton" style="margin-top: 1rem;">Create Custom Character</button>
                 <div style="height: 1rem;"></div>
             </div>
 
@@ -299,6 +346,10 @@
         const sidebarToggle = document.querySelector('.sidebar-toggle');
         const sidebarContent = document.querySelector('.sidebar-content');
         const arrowSpan = document.querySelector('.arrow');
+        const nameInput = document.getElementById('nameInput');
+        const generationSelect = document.getElementById('generationSelect');
+        const ageCategorySelect = document.getElementById('ageCategorySelect');
+        const ageInput = document.getElementById('ageInput');
 
         const debugToggle = document.getElementById('debugToggle');
         const debugContent = document.getElementById('debugContent');
@@ -326,12 +377,21 @@
 
         createButton.addEventListener('click', () => {
             sheetDiv.innerHTML = '<p style="text-align:center; margin-top:2rem;">Embracing...</p>';
+
+            const ageVal = ageInput.value ? parseInt(ageInput.value) : null;
+            const genVal = generationSelect.value ? parseInt(generationSelect.value) : null;
+
             const payload = {
                 conceptId: conceptSelect.value,
                 clanId: clanSelect.value,
                 natureId: natureSelect.value,
-                demeanorId: demeanorSelect.value
+                demeanorId: demeanorSelect.value,
+                name: nameInput.value,
+                generation: genVal,
+                ageCategory: ageCategorySelect.value,
+                age: ageVal
             };
+
             fetchAndDisplayCharacter('/api/character/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -749,8 +809,18 @@
                     allNatures = data.natures || [];
                     populateSelect(conceptSelect, data.concepts, "Random");
                     populateSelect(clanSelect, data.clans, "Random");
+
+                    generationSelect.innerHTML = `<option value="">Random</option>`;
+                    (data.generations || []).forEach(gen => {
+                        const opt = document.createElement("option");
+                        opt.value = gen;
+                        opt.textContent = gen + "th Generation";
+                        generationSelect.appendChild(opt);
+                    });
+
                     populateNatureOptions();
                     populateDemeanorOptions();
+
                     natureSelect.addEventListener("change", () => populateDemeanorOptions(natureSelect.value));
                     demeanorSelect.addEventListener("change", () => populateNatureOptions(demeanorSelect.value));
                 })

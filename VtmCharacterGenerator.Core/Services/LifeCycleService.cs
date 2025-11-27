@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using VtmCharacterGenerator.Core.Data;
 using VtmCharacterGenerator.Core.Models;
 
@@ -18,25 +20,37 @@ namespace VtmCharacterGenerator.Core.Services
 
         public void DetermineLifeCycle(Character character)
         {
-            if (string.IsNullOrEmpty(character.AgeCategory))
+            if (character.Age.HasValue)
             {
-                character.AgeCategory = DetermineCategory(character.Generation);
+                character.AgeCategory = GetCategoryFromAge(character.Age.Value);
             }
-
-            if (character.Age == 0)
+            else if (!string.IsNullOrEmpty(character.AgeCategory))
             {
                 character.Age = DetermineAge(character.AgeCategory);
             }
 
-            if (character.TotalExperience == 0)
+            else
             {
-                character.TotalExperience = DetermineXp(character.AgeCategory, character.Age);
+                // Ensure Generation is set (CoreStatsService runs before this, so it should be).
+                int generation = character.Generation ?? 13;
+                character.AgeCategory = DetermineRandomCategoryByGeneration(generation);
+                character.Age = DetermineAge(character.AgeCategory);
             }
+
+
+            character.TotalExperience = DetermineXp(character.AgeCategory, character.Age ?? 0);
 
             character.SpentExperience = 0;
         }
 
-        private string DetermineCategory(int generation)
+        private string GetCategoryFromAge(int age)
+        {
+            if (age < 100) return "Neonate";
+            if (age < 200) return "Ancilla";
+            return "Elder";
+        }
+
+        private string DetermineRandomCategoryByGeneration(int generation)
         {
             int roll = _random.Next(1, 101);
 
@@ -83,8 +97,6 @@ namespace VtmCharacterGenerator.Core.Services
 
         private int DetermineXp(string category, int age)
         {
-            // +/- 20% variance.
-
             double minAge, maxAge, minXp, maxXp;
 
             if (category == "Neonate" || age <= 100)
@@ -109,26 +121,31 @@ namespace VtmCharacterGenerator.Core.Services
             double effectiveAge = Math.Min(age, maxAge);
             double ratio = (effectiveAge - minAge) / (maxAge - minAge);
 
+            // Avoid division by zero if minAge == maxAge (edge case)
+            if (maxAge == minAge) ratio = 0;
+
             double baseXp = minXp + (ratio * (maxXp - minXp));
 
+            // +/- 20% variance
             double variancePercent = (_random.NextDouble() * 0.4) - 0.2;
 
             int finalXp = (int)(baseXp * (1.0 + variancePercent));
             return Math.Max(0, finalXp);
         }
 
-
-public void EvolveBackgrounds(Character character, Dictionary<string, int> affinityProfile)
+        public void EvolveBackgrounds(Character character, Dictionary<string, int> affinityProfile)
         {
- 
-            if (character.Age <= 50) return;
+            // Age null check (default to 0)
+            int currentAge = character.Age ?? 0;
+
+            if (currentAge <= 50) return;
 
             int bonusPoints = 0;
 
             // ---Ages 50 to 100---
-            if (character.Age > 50)
+            if (currentAge > 50)
             {
-                int effectiveAge = Math.Min(character.Age, 100);
+                int effectiveAge = Math.Min(currentAge, 100);
                 int checks = (effectiveAge - 50) / 10;
 
                 for (int i = 0; i < checks; i++)
@@ -138,9 +155,9 @@ public void EvolveBackgrounds(Character character, Dictionary<string, int> affin
             }
 
             // ---Ages 100 to 400---
-            if (character.Age > 100)
+            if (currentAge > 100)
             {
-                int effectiveAge = Math.Min(character.Age, 400);
+                int effectiveAge = Math.Min(currentAge, 400);
                 int checks = (effectiveAge - 100) / 10;
 
                 for (int i = 0; i < checks; i++)
@@ -149,10 +166,10 @@ public void EvolveBackgrounds(Character character, Dictionary<string, int> affin
                 }
             }
 
-            //Ages 400---
-            if (character.Age > 400)
+            // ---Ages 400+---
+            if (currentAge > 400)
             {
-                int checks = (character.Age - 400) / 50;
+                int checks = (currentAge - 400) / 50;
 
                 for (int i = 0; i < checks; i++)
                 {
@@ -185,33 +202,29 @@ public void EvolveBackgrounds(Character character, Dictionary<string, int> affin
 
                 _affinityProcessor.ProcessAffinities(affinityProfile, selectedBg.Affinities);
 
-                character.DebugLog.Add($"[Evolution] Gained Background point: {selectedBg.Name} -> {character.Backgrounds[id]} (Age: {character.Age})");
+                character.DebugLog.Add($"[Evolution] Gained Background point: {selectedBg.Name} -> {character.Backgrounds[id]} (Age: {currentAge})");
             }
         }
 
         public void ApplyHumanityDegeneration(Character character)
         {
-  
-            // 1. Calculate number of "Decay Cycles"
-            if (character.Age <= 50) return;
+            int currentAge = character.Age ?? 0;
 
-            int decayCycles = (character.Age - 50) / 50;
+            if (currentAge <= 50) return;
+
+            int decayCycles = (currentAge - 50) / 50;
 
             for (int i = 0; i < decayCycles; i++)
             {
-                // Safety Floor: Never drop below 3 automatically
                 if (character.Humanity <= 3) break;
 
-                // Dynamic Probability:
                 double chanceToLose = character.Humanity / 10.0;
-
 
                 if (character.AgeCategory == "Elder") chanceToLose += 0.10;
                 if (character.AgeCategory == "Ancilla") chanceToLose += 0.05;
 
                 chanceToLose = Math.Min(chanceToLose, 0.95);
 
-                // Roll
                 if (_random.NextDouble() < chanceToLose)
                 {
                     character.Humanity--;

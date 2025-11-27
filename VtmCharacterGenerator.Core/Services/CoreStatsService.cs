@@ -17,26 +17,38 @@ namespace VtmCharacterGenerator.Core.Services
 
         public void CalculateCoreStats(Character character)
         {
-            var chosenGenerationData = SelectWeightedGeneration();
+            GenerationData chosenGenerationData = null;
+
+            if (character.Generation.HasValue)
+            {
+                chosenGenerationData = _dataProvider.Generations
+                    .FirstOrDefault(g => g.Generation == character.Generation.Value);
+            }
+
             if (chosenGenerationData == null)
             {
-                // Defensive fallback values
-                character.Generation = 13;
-                character.MaxTraitRating = 5;
-                character.MaximumBloodPool = 10;
-                character.BloodPointsPerTurn = 1;
+                chosenGenerationData = SelectWeightedGeneration();
             }
-            else
+
+            // We use defensive defaults (13th gen) just in case something went wrong with data loading
+            if (chosenGenerationData != null)
             {
                 character.Generation = chosenGenerationData.Generation;
                 character.MaxTraitRating = chosenGenerationData.MaxTraitRating;
                 character.MaximumBloodPool = chosenGenerationData.MaximumBloodPool;
                 character.BloodPointsPerTurn = chosenGenerationData.BloodPointsPerTurn;
             }
+            else
+            {
+                character.Generation = 13;
+                character.MaxTraitRating = 5;
+                character.MaximumBloodPool = 10;
+                character.BloodPointsPerTurn = 1;
+            }
 
-            int conscience = character.Virtues.ContainsKey("conscience") ? character.Virtues["conscience"] : 0;
-            int selfControl = character.Virtues.ContainsKey("self_control") ? character.Virtues["self_control"] : 0;
-            int courage = character.Virtues.ContainsKey("courage") ? character.Virtues["courage"] : 0;
+            int conscience = character.Virtues.ContainsKey("conscience") ? character.Virtues["conscience"] : 1;
+            int selfControl = character.Virtues.ContainsKey("self_control") ? character.Virtues["self_control"] : 1;
+            int courage = character.Virtues.ContainsKey("courage") ? character.Virtues["courage"] : 1;
 
             character.Humanity = conscience + selfControl;
             character.Willpower = courage;
@@ -49,9 +61,7 @@ namespace VtmCharacterGenerator.Core.Services
                 return null;
             }
 
-       
             int totalWeight = _dataProvider.Generations.Sum(g => g.Weight);
-
             int randomNumber = _random.Next(1, totalWeight + 1);
 
             foreach (var genData in _dataProvider.Generations.OrderBy(g => g.Generation))

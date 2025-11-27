@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using VtmCharacterGenerator.Core.Data;
 using VtmCharacterGenerator.Core.Models;
@@ -23,7 +25,11 @@ namespace VtmCharacterGenerator.Core.Services
                 Concept = inputPersona?.Concept,
                 Clan = inputPersona?.Clan,
                 Nature = inputPersona?.Nature,
-                Demeanor = inputPersona?.Demeanor
+                Demeanor = inputPersona?.Demeanor,
+                Name = inputPersona?.Name,
+                Generation = inputPersona?.Generation,
+                Age = inputPersona?.Age,
+                AgeCategory = inputPersona?.AgeCategory
             };
 
             // Helper to merge affinity dictionaries into running profile
@@ -124,7 +130,7 @@ namespace VtmCharacterGenerator.Core.Services
             {
                 var availableDemeanors = _dataProvider.Natures?
                     .Where(n => finalPersona.Nature == null || n.Id != finalPersona.Nature.Id)
-                    .ToList() ?? new System.Collections.Generic.List<Nature>();
+                    .ToList() ?? new List<Nature>();
 
                 if (availableDemeanors.Any())
                 {
@@ -146,7 +152,7 @@ namespace VtmCharacterGenerator.Core.Services
         }
 
         // small helper to avoid repeated null/empty checks
-        private static bool _data_providerAvailable<T>(System.Collections.Generic.List<T> list)
+        private static bool _data_providerAvailable<T>(List<T> list)
             => list != null && list.Any();
     }
 }

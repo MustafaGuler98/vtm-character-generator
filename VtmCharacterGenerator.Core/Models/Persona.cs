@@ -6,5 +6,9 @@ namespace VtmCharacterGenerator.Core.Models
         public Clan Clan { get; set; }
         public Nature Nature { get; set; }
         public Nature Demeanor { get; set; }
+        public string Name { get; set; }      
+        public int? Generation { get; set; }   
+        public int? Age { get; set; }          
+        public string AgeCategory { get; set; } 
     }
 }

@@ -20,9 +20,15 @@ namespace VtmCharacterGenerator.Core.Services
 
         public string GenerateName(Character character, Dictionary<string, int> affinityProfile)
         {
+            // If the character already has a name (assigned from user input), preserve it.
+            if (!string.IsNullOrEmpty(character.Name))
+            {
+                return character.Name;
+            }
+
             if (!_dataProvider.NamePacks.Any()) return "Unknown Kindred";
 
-            string nativeEra = DetermineEraByAge(character.Age);
+            string nativeEra = DetermineEraByAge(character.Age ?? 0);
             string targetEra = SelectTargetEra(nativeEra);
 
             NamePack selectedFirstNamePack = SelectFirstNamePack(targetEra, affinityProfile);
@@ -121,7 +127,7 @@ namespace VtmCharacterGenerator.Core.Services
                 if (linkedPack != null) return linkedPack;
             }
 
-            //Same Era Random (2% or fallback)
+            // Same Era Random (2% or fallback)
             if (roll <= 99)
             {
                 var eraPacks = _dataProvider.NamePacks

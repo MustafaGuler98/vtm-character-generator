@@ -49,7 +49,14 @@ namespace VtmCharacterGenerator.WebApp.Controllers
                     Concept = string.IsNullOrEmpty(request.ConceptId) ? null : _dataProvider.Concepts.FirstOrDefault(c => c.Id == request.ConceptId),
                     Clan = string.IsNullOrEmpty(request.ClanId) ? null : _dataProvider.Clans.FirstOrDefault(c => c.Id == request.ClanId),
                     Nature = string.IsNullOrEmpty(request.NatureId) ? null : _dataProvider.Natures.FirstOrDefault(n => n.Id == request.NatureId),
-                    Demeanor = string.IsNullOrEmpty(demeanorId) ? null : _dataProvider.Natures.FirstOrDefault(n => n.Id == demeanorId)
+                    Demeanor = string.IsNullOrEmpty(demeanorId) ? null : _dataProvider.Natures.FirstOrDefault(n => n.Id == demeanorId),
+                    // Value types (Name, Age, Generation) are passed directly as raw input.
+                    // A null value here explicitly represents "no user preference", which the service layer handles via randomization logic.
+                    // Maybe, in the future we could change these or concept, clan, nature, demeanor for consistency.
+                    Name = request.Name,
+                    Generation = request.Generation,
+                    Age = request.Age,
+                    AgeCategory = request.AgeCategory
                 };
 
                 var finalCharacter = _characterGeneratorService.GenerateCharacter(inputPersona); 
@@ -70,7 +77,8 @@ namespace VtmCharacterGenerator.WebApp.Controllers
                 {
                     Concepts = _dataProvider.Concepts,
                     Clans = _dataProvider.Clans,
-                    Natures = _dataProvider.Natures
+                    Natures = _dataProvider.Natures,
+                    Generations = _dataProvider.Generations.Select(g => g.Generation).OrderByDescending(g => g).ToList()
                 });
             }
             catch (Exception ex)
@@ -82,10 +90,14 @@ namespace VtmCharacterGenerator.WebApp.Controllers
 
     public class PersonaRequest
     {
-        public string ConceptId { get; set; }
-        public string ClanId { get; set; }
-        public string NatureId { get; set; }
-        public string DemeanorId { get; set; }
+        public string? ConceptId { get; set; }
+        public string? ClanId { get; set; }
+        public string? NatureId { get; set; }
+        public string? DemeanorId { get; set; }
+        public string? Name { get; set; }
+        public int? Generation { get; set; }
+        public int? Age { get; set; }
+        public string? AgeCategory { get; set; }
     }
 
     public class PersonaOptions
@@ -93,5 +105,6 @@ namespace VtmCharacterGenerator.WebApp.Controllers
         public List<Concept> Concepts { get; set; }
         public List<Clan> Clans { get; set; }
         public List<Nature> Natures { get; set; }
+        public List<int> Generations { get; set; }
     }
 }

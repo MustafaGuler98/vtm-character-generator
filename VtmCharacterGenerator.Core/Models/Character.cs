@@ -10,7 +10,7 @@ namespace VtmCharacterGenerator.Core.Models
         public Nature Demeanor { get; set; }
         public string AgeCategory { get; set; } // Neonate, Ancilla, Elder
         public string Name { get; set; } = "Unknown";
-        public int Age { get; set; }
+        public int? Age { get; set; }
         public int TotalExperience { get; set; }
         public int SpentExperience { get; set; }
         public Dictionary<string, int> Attributes { get; set; }
@@ -21,7 +21,7 @@ namespace VtmCharacterGenerator.Core.Models
         public List<Merit> Merits { get; set; }
         public List<Flaw> Flaws { get; set; }
         public List<string> DebugLog { get; set; }
-        public int Generation { get; set; }
+        public int? Generation { get; set; }
         public int MaxTraitRating { get; set; }
         public int MaximumBloodPool { get; set; }
         public int BloodPointsPerTurn { get; set; }
