@@ -84,7 +84,7 @@ namespace VtmCharacterGenerator.Core.Services
                 {
                     { TraitType.Discipline, 16 },
                     { TraitType.Attribute, 10 },
-                    { TraitType.Ability, 16 },
+                    { TraitType.Ability, 20 },
                     { TraitType.Willpower, 10 },
                     { TraitType.Virtue, 3 },
                     { TraitType.Humanity, 8 }
@@ -96,7 +96,7 @@ namespace VtmCharacterGenerator.Core.Services
                 {
                     { TraitType.Discipline, 14 },
                     { TraitType.Attribute, 8 },
-                    { TraitType.Ability, 18 },
+                    { TraitType.Ability, 20 },
                     { TraitType.Willpower, 4 },
                     { TraitType.Virtue, 3 },
                     { TraitType.Humanity, 2 }
