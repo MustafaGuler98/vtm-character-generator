@@ -52,12 +52,24 @@
                 "value": 15
             },
             {
-            "tag": "knowledges",
-            "value": 5
+                "tag": "knowledges",
+                "value": 5
             },
             {
-            "tag": "xpdiscipline",
-            "value": 25
+                "tag": "xpdiscipline",
+                "value": 25
+            },
+            {
+                "tag": "Discipline:Celerity",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Obfuscate",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Quietus",
+                "value": 50
             }
         ]
     },
@@ -112,6 +124,18 @@
             {
                 "tag": "knowledges",
                 "value": 10
+            },
+            {
+                "tag": "Discipline:Celerity",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Potence",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Presence",
+                "value": 50
             }
         ]
     },
@@ -173,6 +197,18 @@
             },
             {
                 "tag": "spending:background",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Obfuscate",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Serpentis",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Presence",
                 "value": 50
             }
         ]
@@ -240,6 +276,18 @@
             {
                 "tag": "spending:background",
                 "value": -50
+            },
+            {
+                "tag": "Discipline:Animalism",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Fortitude",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Protean",
+                "value": 50
             }
 
         ]
@@ -303,6 +351,18 @@
             {
                 "tag": "spending:background",
                 "value": 25
+            },
+                        {
+                "tag": "Discipline:Dominate",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Necromancy",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Potence",
+                "value": 50
             }
         ]
     },
@@ -349,6 +409,18 @@
             {
                 "tag": "Concept:CorporateRaider",
                 "value": 20
+            },
+            {
+                "tag": "Discipline:Dominate",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Obtenebration",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Potence",
+                "value": 50
             }
         ]
     },
@@ -415,6 +487,18 @@
             {
                 "tag": "skills",
                 "value": -5
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Dementation",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Obfuscate",
+                "value": 50
             }
         ]
     },
@@ -469,6 +553,18 @@
             {
                 "tag": "Concept:Investigator",
                 "value": 20
+            },
+            {
+                "tag": "Discipline:Animalism",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Obfuscate",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Potence",
+                "value": 50
             }
         ]
     },
@@ -527,6 +623,18 @@
             {
                 "tag": "knowledges",
                 "value": -15
+            },
+                        {
+                "tag": "Discipline:Animalism",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Chimerstry",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Fortitude",
+                "value": 50
             }
         ]
     },
@@ -585,6 +693,18 @@
             {
                 "tag": "spending:background",
                 "value": 15
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Celerity",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Presence",
+                "value": 50
             }
 
         ]
@@ -636,6 +756,18 @@
             {
                 "tag": "skills",
                 "value": -15
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Dominate",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Thaumaturgy",
+                "value": 50
             }
         ]
     },
@@ -694,6 +826,18 @@
             {
                 "tag": "talents",
                 "value": -10
+            },
+            {
+                "tag": "Discipline:Animalism",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Vicissitude",
+                "value": 50
             }
         ]
     },
@@ -744,6 +888,18 @@
             {
                 "tag": "Concept:CorporateRaider",
                 "value": 25
+            },
+            {
+                "tag": "Discipline:Dominate",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Fortitude",
+                "value": 50
+            },
+            {
+                "tag": "Discipline:Presence",
+                "value": 50
             }
         ]
     }
