@@ -3,7 +3,7 @@
         "id": "animalism",
         "name": "Animalism",
         "description": "The power to communicate with and control animals, as well as to tap into the primal Beast within oneself and others.",
-        "tags": [ "Discipline:Animalism", "primal", "control", "survival", "social", "beast" ],
+        "tags": [ "Discipline:Animalism", "primal", "control", "survival", "social", "beast"],
         "affinities": [
             {
                 "tag": "Ability:AnimalKen",
