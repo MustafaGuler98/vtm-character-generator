@@ -14,9 +14,9 @@ namespace VtmCharacterGenerator.Core.Models
 
         // Optional: for targeted affinities (e.g., to a specific clan or ability)
         [JsonPropertyName("targetType")]
-        public string TargetType { get; set; }
+        public string? TargetType { get; set; }
 
         [JsonPropertyName("targetId")]
-        public string TargetId { get; set; }
+        public string? TargetId { get; set; }
     }
 }

@@ -261,6 +261,25 @@
                 border-color: #ff4d4d;
                 box-shadow: 0 0 4px rgba(255, 0, 0, 0.6);
             }
+
+        #progressContainer {
+            display: none;
+            width: 100%;
+            background: #333;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        #progressBar {
+            width: 0%;
+            height: 20px;
+            background: #8c1c1c;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
     </style>
 </head>
 <body>
@@ -273,6 +292,10 @@
     <div class="page-container">
         <div class="main-content">
             <button id="generateButton">Generate Random Character</button>
+            <button id="downloadPdfButton" style="display: none; background-color: #2c3e50; margin-top: 10px; border-color: #34495e;">
+                📄 Download Character Sheet (PDF)
+            </button>
+            <div id="progressContainer"><div id="progressBar">0%</div></div>
             <div id="characterSheet">
                 <p style="text-align:center; color: #666; margin-top: 2rem;">Press generate to create a Kindred.</p>
             </div>
@@ -345,10 +368,16 @@
     </div>
 
     <script>
+        const PDF_SERVICE_URL = "https://vtm-scribe-service.vercel.app/generate-pdf";
+
+        let lastPdfUrl = null;
+        let currentCharacterData = null; // Filled by fetchAndDisplayCharacter
+
         // --- DOM Elements ---
         const generateButton = document.getElementById('generateButton');
         const createButton = document.getElementById('createButton');
         const sheetDiv = document.getElementById('characterSheet');
+        const downloadPdfButton = document.getElementById('downloadPdfButton');
         const conceptSelect = document.getElementById('conceptSelect');
         const clanSelect = document.getElementById('clanSelect');
         const natureSelect = document.getElementById('natureSelect');
@@ -360,6 +389,8 @@
         const generationSelect = document.getElementById('generationSelect');
         const ageCategorySelect = document.getElementById('ageCategorySelect');
         const ageInput = document.getElementById('ageInput');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
 
         const debugToggle = document.getElementById('debugToggle');
         const debugContent = document.getElementById('debugContent');
@@ -435,6 +466,8 @@
             }
         });
 
+        downloadPdfButton.addEventListener('click', downloadPdfWithProgress);
+
         // --- DATA FETCHING & DISPLAY ---
 
         function fetchAndDisplayCharacter(url, options = {}) {
@@ -452,6 +485,10 @@
         }
 
         function displayCharacter(characterData) {
+            currentCharacterData = characterData;
+            downloadPdfButton.style.display = 'block';
+            downloadPdfButton.textContent = "📄 Download Character Sheet (PDF)";
+            downloadPdfButton.disabled = false;
             sheetDiv.classList.add("sheet-active");
             sheetDiv.innerHTML = "";
 
@@ -466,6 +503,109 @@
 
             updateDebugLog(characterData.debugLog);
         }
+
+        async function downloadPdfWithProgress() {
+            if (!currentCharacterData) return;
+
+            const btn = document.getElementById('downloadPdfButton');
+            const pContainer = document.getElementById('progressContainer');
+            const pBar = document.getElementById('progressBar');
+
+            btn.disabled = true;
+            btn.textContent = "⏳ Contacting Scribe...";
+            pContainer.style.display = 'block';
+            pBar.style.width = '0%';
+            pBar.textContent = '0%';
+
+            console.time("PDF Download");
+
+            try {
+                const response = await fetch(PDF_SERVICE_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(currentCharacterData)
+                });
+
+                if (!response.ok) {
+                    const errText = await response.text();
+                    throw new Error(`Server Error (${response.status}): ${errText}`);
+                }
+
+                const reader = response.body.getReader();
+                const contentLengthStr = response.headers.get('Content-Length');
+                const contentLength = contentLengthStr ? parseInt(contentLengthStr, 10) : null;
+
+                let receivedLength = 0;
+                const chunks = [];
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    chunks.push(value);
+                    receivedLength += value.length;
+
+                    if (contentLength) {
+                        const percent = Math.round((receivedLength / contentLength) * 100);
+                        pBar.style.width = `${percent}%`;
+                        pBar.textContent = `${percent}%`;
+                    } else {
+                        pBar.style.width = '100%';
+                        pBar.textContent = `${(receivedLength / 1024).toFixed(0)} KB downloaded...`;
+                    }
+                }
+
+
+                // If there is an old file in memory from a previous click, clear it now.
+                if (lastPdfUrl) {
+                    window.URL.revokeObjectURL(lastPdfUrl);
+                }
+
+                const blob = new Blob(chunks, { type: 'application/pdf' });
+                lastPdfUrl = window.URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = lastPdfUrl;
+
+                const safeName = currentCharacterData.name ? currentCharacterData.name.replace(/\s+/g, '_') : 'Character';
+                a.download = `${safeName}_Sheet.pdf`;
+
+                // Some strict browsers ignore clicks on "display:none" elements. (trying to solve vivaldi problem)
+                a.style.position = 'absolute';
+                a.style.left = '-9999px';
+                a.style.top = '0';
+
+                document.body.appendChild(a);
+
+                // Use setTimeout to push the click to the end of the event loop
+                // This ensures the DOM update is registered by the browser before the click happens.
+                setTimeout(() => {
+                    a.click();
+
+                    // The URL lives in 'lastPdfUrl' global variable.
+                    document.body.removeChild(a);
+
+                    console.timeEnd("PDF Download");
+
+                    // UI Cleanup
+                    btn.disabled = false;
+                    btn.textContent = "✅ Done! Download Again?";
+                    pContainer.style.display = 'none';
+                }, 0);
+
+            } catch (err) {
+                console.timeEnd("PDF Download");
+                console.error("Download failed:", err);
+                btn.textContent = "❌ Error";
+                pBar.style.background = "#c92a2a";
+
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.textContent = "📄 Download Character Sheet (PDF)";
+                    pBar.style.background = "#8c1c1c";
+                }, 3000);
+            }
+        }
+        
 
         // --- RENDERERS ---
 
@@ -727,6 +867,7 @@
                     fCol.innerHTML += `<div class="attribute-item"><span>${f.name}</span><span style="color:#a82222;">(+${f.cost} pts)</span></div>`;
                 });
             } else { fCol.innerHTML += '<p style="color:#555;">None</p>'; }
+
 
             grid.appendChild(mCol);
             grid.appendChild(fCol);

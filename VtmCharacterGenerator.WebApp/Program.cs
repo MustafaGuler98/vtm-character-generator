@@ -49,6 +49,14 @@ builder.Services.AddScoped<NameGeneratorService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient<PdfServiceClient>(client =>
+{
+    client.BaseAddress = new Uri("https://vtm-scribe-service.vercel.app");
+    // Extended timeout to handle Vercel's cold start latency
+    client.Timeout = TimeSpan.FromSeconds(120);
+    client.DefaultRequestVersion = System.Net.HttpVersion.Version11;
+    client.DefaultVersionPolicy = HttpVersionPolicy.RequestVersionOrLower;
+});
 
 
 
