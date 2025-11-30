@@ -478,5 +478,293 @@
                 "value": -25
             }
         ]
+    },
+    {
+        "id": "obtenebration",
+        "name": "Obtenebration",
+        "description": "The ability to manipulate darkness and shadows, summoning the very substance of the Abyss to smother, crush, or terrify.",
+        "tags": [ "Discipline:Obtenebration", "physical", "control", "intimidation", "stealth", "arcane" ],
+        "affinities": [
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 30
+            },
+            {
+                "tag": "Clan:Lasombra",
+                "value": 25
+            },
+            {
+                "tag": "Ability:Intimidation",
+                "value": 20
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 15
+            },
+            {
+                "tag": "Ability:Stealth",
+                "value": 15
+            },
+            {
+                "tag": "Nature:Monster",
+                "value": 12
+            },
+            {
+                "tag": "Concept:Politician",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Leader",
+                "value": 8
+            },
+            {
+                "tag": "Humanity",
+                "value": -20
+            },
+            {
+                "tag": "LightSensitive",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "vicissitude",
+        "name": "Vicissitude",
+        "description": "The signature power of the Tzimisce, allowing the vampire to mold their own flesh and bone—or that of others—like clay.",
+        "tags": [ "Discipline:Vicissitude", "physical", "shapeshifting", "medical", "intimidation", "combat", "control" ],
+        "affinities": [
+            {
+                "tag": "Clan:Tzimisce",
+                "value": 30
+            },
+            {
+                "tag": "Ability:Medicine",
+                "value": 25
+            },
+            {
+                "tag": "Attribute:Dexterity",
+                "value": 20
+            },
+            {
+                "tag": "Shapeshifting",
+                "value": 20
+            },
+            {
+                "tag": "Attribute:Appearance",
+                "value": 15
+            },
+            {
+                "tag": "Nature:Architect",
+                "value": 12
+            },
+            {
+                "tag": "Nature:Monster",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Crafts",
+                "value": 10
+            },
+            {
+                "tag": "Humanity",
+                "value": -25
+            },
+            {
+                "tag": "Concept:Socialite",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "necromancy",
+        "name": "Necromancy",
+        "description": "The dark art of summoning, conversing with, and controlling the spirits of the dead, as well as manipulating the energies of entropy and decay.",
+        "tags": [ "Discipline:Necromancy", "mental", "arcane", "occult", "control", "information" ],
+        "affinities": [
+            {
+                "tag": "Clan:Giovanni",
+                "value": 30
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 25
+            },
+            {
+                "tag": "Merit:Medium",
+                "value": 20
+            },
+            {
+                "tag": "Attribute:Perception",
+                "value": 15
+            },
+            {
+                "tag": "Background:Rituals",
+                "value": 15
+            },
+            {
+                "tag": "Nature:Traditionalist",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Awareness",
+                "value": 10
+            },
+            {
+                "tag": "Concept:Investigator",
+                "value": 8
+            },
+            {
+                "tag": "Humanity",
+                "value": -20
+            },
+            {
+                "tag": "Primal",
+                "value": -15
+            }
+        ]
+    },
+    {
+        "id": "quietus",
+        "name": "Quietus",
+        "description": "The silent death of the Assamites, focusing on supernatural silence, deadly blood poisons, and the use of vitae as a weapon.",
+        "tags": [ "Discipline:Quietus", "physical", "stealth", "combat", "blood", "poison" ],
+        "affinities": [
+            {
+                "tag": "Clan:Assamite",
+                "value": 30
+            },
+            {
+                "tag": "Ability:Stealth",
+                "value": 25
+            },
+            {
+                "tag": "Ability:Melee",
+                "value": 20
+            },
+            {
+                "tag": "Concept:MartialArtist",
+                "value": 15
+            },
+            {
+                "tag": "Discipline:Obfuscate",
+                "value": 12
+            },
+            {
+                "tag": "Discipline:Celerity",
+                "value": 12
+            },
+            {
+                "tag": "Attribute:Dexterity",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Fanatic",
+                "value": 8
+            },
+            {
+                "tag": "Humanity",
+                "value": -15
+            },
+            {
+                "tag": "HighSociety",
+                "value": -20
+            }
+        ]
+    },
+    {
+        "id": "serpentis",
+        "name": "Serpentis",
+        "description": "The legacy of Set, granting the power to adopt the traits of serpents, paralyze victims with a gaze, and even remove one's own heart.",
+        "tags": [ "Discipline:Serpentis", "physical", "social", "control", "shapeshifting", "intimidation", "corruption" ],
+        "affinities": [
+            {
+                "tag": "Clan:FollowerOfSet",
+                "value": 30
+            },
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 25
+            },
+            {
+                "tag": "Concept:Cultist",
+                "value": 20
+            },
+            {
+                "tag": "Discipline:Presence",
+                "value": 15
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": 15
+            },
+            {
+                "tag": "Ability:Intimidation",
+                "value": 10
+            },
+            {
+                "tag": "Shapeshifting",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Occult",
+                "value": 8
+            },
+            {
+                "tag": "Humanity",
+                "value": -20
+            },
+            {
+                "tag": "LightSensitive",
+                "value": -10
+            }
+        ]
+    },
+    {
+        "id": "chimerstry",
+        "name": "Chimerstry",
+        "description": "The power of illusion and hallucination, allowing the vampire to conjure phantasms that fool the senses and even damage the mind.",
+        "tags": [ "Discipline:Chimerstry", "mental", "social", "illusion", "deception", "control" ],
+        "affinities": [
+            {
+                "tag": "Clan:Ravnos",
+                "value": 30
+            },
+            {
+                "tag": "Illusion",
+                "value": 30
+            },
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 25
+            },
+            {
+                "tag": "Ability:Subterfuge",
+                "value": 20
+            },
+            {
+                "tag": "Attribute:Wits",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Criminal",
+                "value": 10
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Rogue",
+                "value": 8
+            },
+            {
+                "tag": "Ability:Streetwise",
+                "value": 8
+            }
+        ]
     }
 ]
