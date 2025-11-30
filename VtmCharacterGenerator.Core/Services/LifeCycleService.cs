@@ -47,7 +47,8 @@ namespace VtmCharacterGenerator.Core.Services
         {
             if (age < 100) return "Neonate";
             if (age < 200) return "Ancilla";
-            return "Elder";
+            if (age < 1000) return "Elder";
+            return "Methuselah";
         }
 
         private string DetermineRandomCategoryByGeneration(int generation)
@@ -57,7 +58,7 @@ namespace VtmCharacterGenerator.Core.Services
             if (generation >= 12)
             {
                 if (roll <= 80) return "Neonate";
-                if (roll <= 95) return "Ancilla";
+                if (roll <= 99) return "Ancilla";
                 return "Elder";
             }
             else if (generation >= 10)
@@ -68,18 +69,21 @@ namespace VtmCharacterGenerator.Core.Services
             }
             else if (generation >= 8)
             {
-                if (roll <= 10) return "Neonate";
-                if (roll <= 35) return "Ancilla";
+                if (roll <= 1) return "Neonate";
+                if (roll <= 15) return "Ancilla";
                 return "Elder";
             }
             else if (generation >= 6)
             {
-                if (roll <= 20) return "Ancilla";
+                if (roll <= 5) return "Ancilla";
                 return "Elder";
             }
-            else
+            else if (generation >= 4)
             {
-                if (roll <= 5) return "Ancilla";
+                return "Methuselah";
+            }
+            else // Defensive
+            {
                 return "Elder";
             }
         }
@@ -91,6 +95,7 @@ namespace VtmCharacterGenerator.Core.Services
                 "Neonate" => _random.Next(0, 100),
                 "Ancilla" => _random.Next(100, 200),
                 "Elder" => _random.Next(200, 1000),
+                "Methuselah" => _random.Next(1000, 3001),
                 _ => 0
             };
         }
@@ -111,11 +116,16 @@ namespace VtmCharacterGenerator.Core.Services
                 minAge = 100; maxAge = 200;
                 minXp = 75; maxXp = 250;
             }
-            else // Elder
+            else if (category == "Elder" || age <= 1000)
             {
                 // Elder: 200-1000 Age -> 250-600 XP
                 minAge = 200; maxAge = 1000;
-                minXp = 250; maxXp = 600;
+                minXp = 250; maxXp = 1000;
+            }
+            else // Methuselah
+            {
+                minAge = 1000; maxAge = 3000;
+                minXp = 1000; maxXp = 2250;
             }
 
             double effectiveAge = Math.Min(age, maxAge);
@@ -176,6 +186,16 @@ namespace VtmCharacterGenerator.Core.Services
                     if (_random.NextDouble() < 0.5) bonusPoints++;
                 }
             }
+            // ---Ages 1000+---
+            if (currentAge > 1000)
+            {
+                int checks = (currentAge - 1000) / 100;
+
+                for (int i = 0; i < checks; i++)
+                {
+                    if (_random.NextDouble() < 0.5) bonusPoints++;
+                }
+            }
 
             if (bonusPoints == 0) return;
 
@@ -221,6 +241,7 @@ namespace VtmCharacterGenerator.Core.Services
                 double chanceToLose = character.Humanity / 10.0;
 
                 if (character.AgeCategory == "Elder") chanceToLose += 0.10;
+                if (character.AgeCategory == "Methuselah") chanceToLose += 0.10;
                 if (character.AgeCategory == "Ancilla") chanceToLose += 0.05;
 
                 chanceToLose = Math.Min(chanceToLose, 0.95);
