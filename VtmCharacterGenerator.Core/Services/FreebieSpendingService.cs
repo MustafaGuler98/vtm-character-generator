@@ -189,7 +189,11 @@ namespace VtmCharacterGenerator.Core.Services
             var allAttributes = _dataProvider.AttributeCategories.SelectMany(c => c.Attributes).ToList();
 
             var candidates = allAttributes
-                .Where(a => !character.Attributes.ContainsKey(a.Id) || character.Attributes[a.Id] < 5)
+                .Where(a =>
+                {
+                    if (character.Clan?.Id == "nosferatu" && a.Id == "appearance") return false;
+                    return !character.Attributes.ContainsKey(a.Id) || character.Attributes[a.Id] < 5;
+                })
                 .ToList();
 
             if (!candidates.Any()) return false;

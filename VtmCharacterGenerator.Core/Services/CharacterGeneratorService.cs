@@ -52,6 +52,7 @@ namespace VtmCharacterGenerator.Core.Services
 
             var character = new Character
             {
+
                 Concept = finalPersona.Concept,
                 Clan = finalPersona.Clan,
                 Nature = finalPersona.Nature,
@@ -63,7 +64,7 @@ namespace VtmCharacterGenerator.Core.Services
             };
 
             // I tried different approach for distributing attributes to see what works best
-            character.Attributes = _attributeService.DistributeAttributes(affinityProfile);
+            character.Attributes = _attributeService.DistributeAttributes(affinityProfile, character.Clan);
             _abilityDistributionService.DistributeAbilities(character, affinityProfile);
             _backgroundDistributionService.DistributeBackgrounds(character, affinityProfile);
             _virtueDistributionService.DistributeVirtues(character, affinityProfile);
