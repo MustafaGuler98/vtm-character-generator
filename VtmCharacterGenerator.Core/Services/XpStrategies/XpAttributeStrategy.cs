@@ -38,6 +38,9 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
 
                 foreach (var attr in category.Attributes)
                 {
+                    // Nosferatu Check
+                    if (character.Clan?.Id == "nosferatu" && attr.Id == "appearance") continue;
+
                     if (!character.Attributes.ContainsKey(attr.Id)) continue;
 
                     int currentRating = character.Attributes[attr.Id];
@@ -52,7 +55,6 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
                         break;
                     }
                 }
-
                 if (categoryHasValidOption)
                 {
                     validCategories.Add(new TaggableItem
@@ -76,6 +78,9 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
 
             foreach (var attr in selectedCategory.Attributes)
             {
+                // Nosferatu Check
+                if (character.Clan?.Id == "nosferatu" && attr.Id == "appearance") continue;
+
                 int currentRating = character.Attributes[attr.Id];
 
                 if (currentRating >= character.MaxTraitRating) continue;
@@ -86,7 +91,6 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
                     validAttributes.Add(attr);
                 }
             }
-
             if (validAttributes.Count == 0) return false;
 
             var finalAttribute = _affinityProcessor.GetWeightedRandom(validAttributes, affinityProfile);

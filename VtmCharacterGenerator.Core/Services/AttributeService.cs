@@ -17,12 +17,25 @@ namespace VtmCharacterGenerator.Core.Services
             _affinityProcessor = affinityProcessor;
         }
 
-        public Dictionary<string, int> DistributeAttributes(Dictionary<string, int> affinityProfile)
+        public Dictionary<string, int> DistributeAttributes(Dictionary<string, int> affinityProfile, Clan clan = null)
         {
-            // Initialize all attributes with a base score of 1.
-            var attributes = _dataProvider.AttributeCategories
+            var attributes = new Dictionary<string, int>();
+            var allAttributes = _dataProvider.AttributeCategories
                 .SelectMany(category => category.Attributes)
-                .ToDictionary(attr => attr.Id, attr => 1);
+                .ToList();
+            foreach (var attr in allAttributes)
+            {
+                // Nosferatu Curse: Appearance is permanently 0
+                if (clan?.Id == "nosferatu" && attr.Id == "appearance")
+                {
+                    attributes[attr.Id] = 0;
+                }
+                else
+                {
+                    // Standard Rule: All attributes start at 1 dot
+                    attributes[attr.Id] = 1;
+                }
+            }
 
             var pointsToDistribute = new List<int> { 7, 5, 3 };
             var assignedCategoryPoints = new Dictionary<string, int>();
@@ -50,8 +63,13 @@ namespace VtmCharacterGenerator.Core.Services
                 // Distribute points one by one to apply the weighting for each point.
                 for (int i = 0; i < points; i++)
                 {
+                    // If Nosferatu, exclude Appearance from being increased.
                     var availableAttributes = category.Attributes
-                        .Where(attr => attributes[attr.Id] < 5)
+                        .Where(attr =>
+                        {
+                            if (clan?.Id == "nosferatu" && attr.Id == "appearance") return false;
+                            return attributes[attr.Id] < 5;
+                        })
                         .ToList();
 
                     // If all attributes in the category are maxed out, we can't distribute more points.
