@@ -20,6 +20,16 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
         public override int MinRequiredXp => 4;
 
         private readonly HashSet<string> _bloodMagicIds = new HashSet<string> { "thaumaturgy", "necromancy" };
+        private readonly HashSet<string> _rareDisciplines = new HashSet<string>
+        {
+            "chimerstry",
+            "dementation",
+            "necromancy",
+            "obtenebration",
+            "serpentis",
+            "thaumaturgy",
+            "vicissitude"
+        };
 
         public XpDisciplineStrategy(
             GameDataProvider dataProvider,
@@ -33,36 +43,72 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
 
         public override bool TrySpendXp(Character character, Dictionary<string, int> affinityProfile, int budget, ref int spentXp)
         {
-            var validCandidates = new List<Discipline>();
+            var upgradeCandidates = new List<Discipline>();
+            var newCandidates = new List<Discipline>();
 
             foreach (var disc in _dataProvider.Disciplines)
             {
-                // 1. If we already have it, we consider upgrading.
-                // 2. If we don't have it, we consider buying new.
-
                 string id = disc.Id;
-
-                // For Blood Magic, the base ID represents the Primary Path.
                 int currentRating = character.Disciplines.ContainsKey(id) ? character.Disciplines[id] : 0;
-
-                if (currentRating >= character.MaxTraitRating) continue;
-
                 bool isClan = character.Clan != null && character.Clan.Disciplines.Contains(id);
-                int estimatedCost = _costStrategy.GetCost(TraitType.Discipline, currentRating, isClan);
 
-                if (estimatedCost <= budget)
+                if (currentRating > 0)
                 {
-                    validCandidates.Add(disc);
+                    if (currentRating >= character.MaxTraitRating) continue;
+
+                    int estimatedCost = _costStrategy.GetCost(TraitType.Discipline, currentRating, isClan);
+                    if (estimatedCost <= budget)
+                    {
+                        upgradeCandidates.Add(disc);
+                    }
+                }
+                else
+                {
+                    int estimatedCost = _costStrategy.GetCost(TraitType.Discipline, 0, isClan);
+                    if (estimatedCost <= budget)
+                    {
+                        // Filter rare non-clan disciplines
+                        if (_rareDisciplines.Contains(id) && !isClan)
+                        {
+                            if (_random.NextDouble() > 0.20) continue;
+                        }
+
+                        newCandidates.Add(disc);
+                    }
                 }
             }
 
-            if (validCandidates.Count == 0)
+            bool preferUpgrade = false;
+
+            if (upgradeCandidates.Count > 0 && newCandidates.Count > 0)
+            {
+                preferUpgrade = _random.NextDouble() < 0.85;
+            }
+            else if (upgradeCandidates.Count > 0)
+            {
+                preferUpgrade = true;
+            }
+            else if (newCandidates.Count > 0)
+            {
+                preferUpgrade = false;
+            }
+            else
             {
                 _isAvailable = false;
                 return false;
             }
 
-            var selectedDiscipline = _affinityProcessor.GetWeightedRandom(validCandidates, affinityProfile);
+            Discipline selectedDiscipline = null;
+
+            if (preferUpgrade)
+            {
+                selectedDiscipline = _affinityProcessor.GetWeightedRandom(upgradeCandidates, affinityProfile);
+            }
+            else
+            {
+                selectedDiscipline = _affinityProcessor.GetWeightedRandom(newCandidates, affinityProfile);
+            }
+
             if (selectedDiscipline == null) return false;
 
             if (_bloodMagicIds.Contains(selectedDiscipline.Id))
@@ -84,7 +130,6 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
             if (cost > budget) return false;
             if (current >= character.MaxTraitRating) return false;
 
-            // Buy
             if (!character.Disciplines.ContainsKey(discId)) character.Disciplines[discId] = 0;
             character.Disciplines[discId]++;
             spentXp += cost;
@@ -95,12 +140,12 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
 
         private bool HandleBloodMagic(Character character, string primaryId, bool isClan, int budget, ref int spentXp)
         {
-
             int primaryRating = character.Disciplines.ContainsKey(primaryId) ? character.Disciplines[primaryId] : 0;
 
             if (primaryRating == 0)
             {
-                int newCost = 10;
+                int newCost = _costStrategy.GetCost(TraitType.Discipline, 0, isClan);
+
                 if (newCost > budget) return false;
 
                 character.Disciplines[primaryId] = 1;
@@ -113,9 +158,8 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
                 .Where(k => k.StartsWith($"{primaryId} ("))
                 .ToList();
 
-            // Determine Action Probabilities
-            // Actions: 0 = Upgrade Primary, 1 = Upgrade Secondary, 2 = New Path
-            var chances = new Dictionary<int, int>(); // Action -> Weight
+            // 0 = Upgrade Primary, 1 = Upgrade Secondary, 2 = New Path
+            var chances = new Dictionary<int, int>();
 
             if (secondaries.Count == 0)
             {
@@ -134,6 +178,7 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
                 else if (primaryRating == 4) { chances[0] = 50; chances[1] = 35; chances[2] = 15; }
                 else { chances[0] = 20; chances[1] = 60; chances[2] = 20; }
             }
+
             var availableActions = chances.Where(x => x.Value > 0).Select(x => x.Key).ToList();
 
             while (availableActions.Count > 0)
@@ -166,7 +211,6 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
             return false;
         }
 
-
         private bool TryUpgradePrimary(Character character, string id, bool isClan, int budget, ref int spentXp)
         {
             int current = character.Disciplines[id];
@@ -180,8 +224,7 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
             spentXp += cost;
             character.DebugLog.Add($"[XP] Upgraded Primary {id} to {character.Disciplines[id]} (Cost: {cost})");
 
-            // RULE: Level 5+ Bonus
-            // If we just went ABOVE 5 (e.g., 5->6), grant free dot.
+            // Level 5+ Bonus
             if (character.Disciplines[id] > 5)
             {
                 ApplyHighLevelBonus(character, id);
@@ -201,7 +244,6 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
                 int current = character.Disciplines[secId];
 
                 if (current >= primaryRating) continue;
-
                 if (current >= 5) continue;
 
                 int cost = _costStrategy.GetCost(TraitType.Discipline, current, false, true);
@@ -219,15 +261,12 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
 
         private bool TryBuyNewPath(Character character, string primaryId, List<string> secondaries, int primaryRating, int budget, ref int spentXp)
         {
-
             if (primaryRating <= 1) return false;
 
-            int cost = 7;
-            int checkCost = _costStrategy.GetCost(TraitType.Discipline, 0, false, true);
-            if (checkCost > budget) return false;
+            int cost = _costStrategy.GetCost(TraitType.Discipline, 0, false, true);
+            if (cost > budget) return false;
 
-            // Determine Name: "thaumaturgy (2)", "thaumaturgy (3)"... For now, we use these instead of actual path names.
-            // We find the first unused index.
+            // Determine Name: "thaumaturgy (2)", "thaumaturgy (3)"...
             int index = 2;
             while (character.Disciplines.ContainsKey($"{primaryId} ({index})"))
             {
