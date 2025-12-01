@@ -766,5 +766,53 @@
                 "value": 8
             }
         ]
+    },
+    {
+        "id": "dementation",
+        "name": "Dementation",
+        "description": "The innate ability of the Malkavians to channel their madness outward, warping the minds and perceptions of others.",
+        "tags": [ "Discipline:Dementation", "mental", "social", "insanity", "chaos", "control" ],
+        "affinities": [
+            {
+                "tag": "Clan:Malkavian",
+                "value": 30
+            },
+            {
+                "tag": "Attribute:Manipulation",
+                "value": 20
+            },
+            {
+                "tag": "Attribute:Wits",
+                "value": 15
+            },
+            {
+                "tag": "Ability:Empathy",
+                "value": 15
+            },
+            {
+                "tag": "Concept:Drifter",
+                "value": 10
+            },
+            {
+                "tag": "Nature:Deviant",
+                "value": 12
+            },
+            {
+                "tag": "Discipline:Auspex",
+                "value": 10
+            },
+            {
+                "tag": "Discipline:Obfuscate",
+                "value": 10
+            },
+            {
+                "tag": "Ability:Etiquette",
+                "value": -15
+            },
+            {
+                "tag": "Concept:Soldier",
+                "value": -20
+            }
+        ]
     }
 ]
