@@ -34,10 +34,12 @@ namespace VtmCharacterGenerator.Core.Data
             AttributeCategories = JsonSerializer.Deserialize<List<AttributeCategory>>(attributesJson);
 
             var conceptsJson = File.ReadAllText(Path.Combine(dataFolderPath, "concepts.json")); 
-            Concepts = JsonSerializer.Deserialize<List<Concept>>(conceptsJson);
+            var rawConcepts = JsonSerializer.Deserialize<List<Concept>>(conceptsJson);
+            Concepts = rawConcepts.OrderBy(n => n.Name).ToList();
 
             var naturesJson = File.ReadAllText(Path.Combine(dataFolderPath, "natures.json"));
-            Natures = JsonSerializer.Deserialize<List<Nature>>(naturesJson);
+            var rawNatures = JsonSerializer.Deserialize<List<Nature>>(naturesJson);
+            Natures = rawNatures.OrderBy(n => n.Name).ToList();
 
             var abilitiesJson = File.ReadAllText(Path.Combine(dataFolderPath, "abilities.json"));
             Abilities = JsonSerializer.Deserialize<List<Ability>>(abilitiesJson);
