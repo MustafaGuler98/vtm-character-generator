@@ -591,11 +591,11 @@
         sidebarToggle.addEventListener('click', function () {
             this.classList.toggle('active');
             if (this.classList.contains('active')) {
-                arrowSpan.innerHTML = '▲';
+                arrowSpan.textContent = '▲';
                 sidebarContent.style.padding = "1.5rem";
                 sidebarContent.style.maxHeight = sidebarContent.scrollHeight + "px";
             } else {
-                arrowSpan.innerHTML = '▼';
+                arrowSpan.textContent = '▼';
                 sidebarContent.style.maxHeight = null;
                 sidebarContent.style.padding = "0 1.5rem";
             }
@@ -604,11 +604,11 @@
         debugToggle.addEventListener('click', function () {
             this.classList.toggle('active');
             if (this.classList.contains('active')) {
-                debugArrow.innerHTML = '▲';
+                debugArrow.textContent = '▲';
                 debugContent.style.padding = "1rem";
                 debugContent.style.maxHeight = "400px";
             } else {
-                debugArrow.innerHTML = '▼';
+                debugArrow.textContent = '▼';
                 debugContent.style.maxHeight = null;
                 debugContent.style.padding = "0 1.5rem";
             }
@@ -621,11 +621,11 @@
         contactToggle.addEventListener('click', function () {
             this.classList.toggle('active');
             if (this.classList.contains('active')) {
-                contactArrow.innerHTML = '▲';
+                contactArrow.textContent = '▲';
                 contactContent.style.padding = "0 1.5rem"; // Padding reset
                 contactContent.style.maxHeight = contactContent.scrollHeight + "px";
             } else {
-                contactArrow.innerHTML = '▼';
+                contactArrow.textContent = '▼';
                 contactContent.style.maxHeight = null;
             }
         });
@@ -654,7 +654,7 @@
             downloadPdfButton.textContent = "📄 Download Character Sheet (PDF)";
             downloadPdfButton.disabled = false;
             sheetDiv.classList.add("sheet-active");
-            sheetDiv.innerHTML = "";
+            sheetDiv.replaceChildren();
 
             sheetDiv.appendChild(renderPersonaSection(characterData));
             sheetDiv.appendChild(renderAttributesSection(characterData.attributes || {}));
@@ -779,20 +779,26 @@
 
             const xpDisplay = `${data.spentExperience || 0} / ${data.totalExperience || 0}`;
 
-            container.innerHTML = `<h2>Persona</h2>
-                        <div class="persona-grid">
-                            <p><strong>Name:</strong> ${data.name ?? "Unknown Kindred"}</p>
-                            <p><strong>Concept:</strong> ${data.concept?.name ?? "—"}</p>
-                            <p><strong>Clan:</strong> ${data.clan?.name ?? "—"}</p>
-                            <p><strong>Generation:</strong> ${data.generation ?? "—"}th</p>
-                            <p><strong>Nature:</strong> ${data.nature?.name ?? "—"}</p>
-                            <p><strong>Age Category:</strong> ${data.ageCategory ?? "—"}</p>
-                            <p><strong>Demeanor:</strong> ${data.demeanor?.name ?? "—"}</p>
-                            <p><strong>Age:</strong> ${data.age ?? "0"} years</p>
-                            <p style="grid-column: span 2; border-bottom:none; margin-top:5px;">
-                                <strong>Experience:</strong> ${xpDisplay}
-                            </p>
-                        </div>`;
+            appendHeading(container, 2, "Persona");
+
+            const grid = document.createElement("div");
+            grid.className = "persona-grid";
+            grid.appendChild(createPersonaField("Name", data.name ?? "Unknown Kindred"));
+            grid.appendChild(createPersonaField("Concept", data.concept?.name ?? "—"));
+            grid.appendChild(createPersonaField("Clan", data.clan?.name ?? "—"));
+            grid.appendChild(createPersonaField("Generation", `${data.generation ?? "—"}th`));
+            grid.appendChild(createPersonaField("Nature", data.nature?.name ?? "—"));
+            grid.appendChild(createPersonaField("Age Category", data.ageCategory ?? "—"));
+            grid.appendChild(createPersonaField("Demeanor", data.demeanor?.name ?? "—"));
+            grid.appendChild(createPersonaField("Age", `${data.age ?? "0"} years`));
+
+            const experienceField = createPersonaField("Experience", xpDisplay);
+            experienceField.style.gridColumn = "span 2";
+            experienceField.style.borderBottom = "none";
+            experienceField.style.marginTop = "5px";
+            grid.appendChild(experienceField);
+            container.appendChild(grid);
+
             return container;
         }
 
@@ -800,26 +806,21 @@
             attrs = attrs || {};
             const section = document.createElement("div");
             section.className = "sheet-section";
-            section.innerHTML = "<h2>Attributes</h2>";
+            appendHeading(section, 2, "Attributes");
             const grid = document.createElement("div");
             grid.className = "attributes-grid";
 
             for (const category in ATTRIBUTE_CATEGORIES) {
                 const catDiv = document.createElement("div");
                 catDiv.className = "attribute-category";
-                let html = `<h3>${category}</h3>`;
+                appendHeading(catDiv, 3, category);
 
                 ATTRIBUTE_CATEGORIES[category].forEach(key => {
                     const value = attrs[key] || 0;
                     const label = titleCaseAndClean(key);
-                    // Elder logic enabled for Attributes
-                    html += `<div class="attribute-item">
-                                <span>${label}</span>
-                                <span class="dots-display">${renderDots(value, 5, true)}</span>
-                            </div>`;
+                    catDiv.appendChild(createTraitItem(label, value, 5, true));
                 });
 
-                catDiv.innerHTML = html;
                 grid.appendChild(catDiv);
             }
             section.appendChild(grid);
@@ -830,26 +831,21 @@
             abilities = abilities || {};
             const section = document.createElement('div');
             section.className = 'sheet-section';
-            section.innerHTML = '<h2>Abilities</h2>';
+            appendHeading(section, 2, 'Abilities');
             const grid = document.createElement('div');
             grid.className = 'attributes-grid';
 
             for (const categoryName in ABILITY_CATEGORIES) {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'attribute-category';
-                let categoryHtml = `<h3>${categoryName}</h3>`;
+                appendHeading(categoryDiv, 3, categoryName);
 
                 ABILITY_CATEGORIES[categoryName].forEach(abilityId => {
                     const score = Number(abilities[abilityId] || 0);
                     const displayName = titleCaseAndClean(abilityId);
                     const labelClass = score === 0 ? 'label muted' : 'label';
-                    // Elder logic enabled for Abilities
-                    categoryHtml += `<div class="attribute-item">
-                                <span class="${labelClass}">${displayName}</span>
-                                <span class="dots-display">${renderDots(score, 5, true)}</span>
-                            </div>`;
+                    categoryDiv.appendChild(createTraitItem(displayName, score, 5, true, labelClass));
                 });
-                categoryDiv.innerHTML = categoryHtml;
                 grid.appendChild(categoryDiv);
             }
             section.appendChild(grid);
@@ -860,7 +856,7 @@
             disciplines = disciplines || {};
             const section = document.createElement('div');
             section.className = 'sheet-section';
-            section.innerHTML = '<h2>Disciplines</h2>';
+            appendHeading(section, 2, 'Disciplines');
 
             const grid = document.createElement('div');
             grid.className = 'attributes-grid';
@@ -900,16 +896,15 @@
             });
 
             if (entries.length === 0) {
-                grid.innerHTML = '<p style="color:#666;">No Disciplines learned.</p>';
+                const emptyMessage = document.createElement('p');
+                emptyMessage.style.color = '#666';
+                emptyMessage.textContent = 'No Disciplines learned.';
+                grid.appendChild(emptyMessage);
             } else {
                 entries.forEach(entry => {
-                    const itemHtml = `
-                            <div class="attribute-item" style="width:100%;">
-                                <span>${entry.displayName}</span>
-                                <!-- Elder logic enabled for Disciplines -->
-                                <span class="dots-display">${renderDots(entry.score, 5, true)}</span>
-                            </div>`;
-                    grid.innerHTML += itemHtml;
+                    const item = createTraitItem(entry.displayName, entry.score, 5, true);
+                    item.style.width = '100%';
+                    grid.appendChild(item);
                 });
             }
 
@@ -921,7 +916,7 @@
             backgrounds = backgrounds || {};
             const section = document.createElement('div');
             section.className = 'sheet-section';
-            section.innerHTML = '<h2>Backgrounds</h2>';
+            appendHeading(section, 2, 'Backgrounds');
 
             const container = document.createElement('div');
             container.className = 'items-column-container';
@@ -934,11 +929,7 @@
                 const colDiv = document.createElement('div');
                 colDiv.className = 'items-column';
                 colEntries.forEach(id => {
-                    colDiv.innerHTML += `<div class="attribute-item">
-                                <span>${titleCaseAndClean(id)}</span>
-                                <!-- Backgrounds typically capped at 5, but standard display -->
-                                <span class="dots-display">${renderDots(backgrounds[id], 5, false)}</span>
-                            </div>`;
+                    colDiv.appendChild(createTraitItem(titleCaseAndClean(id), backgrounds[id], 5, false));
                 });
                 container.appendChild(colDiv);
             });
@@ -950,17 +941,13 @@
         function renderVirtuesSection(virtues) {
             const section = document.createElement('div');
             section.className = 'sheet-section';
-            section.innerHTML = '<h2>Virtues</h2>';
+            appendHeading(section, 2, 'Virtues');
             const grid = document.createElement('div');
             grid.className = 'attributes-grid';
 
             ["conscience", "self_control", "courage"].forEach(id => {
                 const val = virtues[id] || 0;
-                grid.innerHTML += `<div class="attribute-item">
-                            <span>${titleCaseAndClean(id)}</span>
-                            <!-- Virtues capped at 5, standard display -->
-                            <span class="dots-display">${renderDots(val, 5, false)}</span>
-                        </div>`;
+                grid.appendChild(createTraitItem(titleCaseAndClean(id), val, 5, false));
             });
             section.appendChild(grid);
             return section;
@@ -969,37 +956,37 @@
         function renderCoreStatsSection(data) {
             const section = document.createElement('div');
             section.className = 'sheet-section';
-            section.innerHTML = '<h2>Core Stats</h2>';
+            appendHeading(section, 2, 'Core Stats');
 
             const container = document.createElement('div');
 
-            // Willpower & Humanity -> DISABLED Elder logic (use simple fill up to 10)
-            const statsHtml = `
-                    <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
-                        <div style="flex:1; margin-right:2rem;">
-                            <div class="attribute-item">
-                                <span>Humanity</span>
-                                <span class="dots-display">${renderDots(data.humanity || 0, 10, false)}</span>
-                            </div>
-                        </div>
-                        <div style="flex:1;">
-                            <div class="attribute-item">
-                                <span>Willpower</span>
-                                <span class="dots-display">${renderDots(data.willpower || 0, 10, false)}</span>
-                            </div>
-                        </div>
-                    </div>
-                    `;
+            const stats = document.createElement('div');
+            stats.style.display = 'flex';
+            stats.style.justifyContent = 'space-between';
+            stats.style.marginBottom = '1rem';
 
-            const bloodHtml = `
-                    <div class="persona-grid" style="border-top:1px solid #444; padding-top:1rem;">
-                        <p><strong>Max Blood Pool:</strong> ${data.maximumBloodPool ?? "—"}</p>
-                        <p><strong>Blood Per Turn:</strong> ${data.bloodPointsPerTurn ?? "—"}</p>
-                        <p><strong>Max Trait Rating:</strong> ${data.maxTraitRating ?? 5}</p>
-                    </div>
-                    `;
+            const humanityColumn = document.createElement('div');
+            humanityColumn.style.flex = '1';
+            humanityColumn.style.marginRight = '2rem';
+            humanityColumn.appendChild(createTraitItem('Humanity', data.humanity || 0, 10, false));
 
-            container.innerHTML = statsHtml + bloodHtml;
+            const willpowerColumn = document.createElement('div');
+            willpowerColumn.style.flex = '1';
+            willpowerColumn.appendChild(createTraitItem('Willpower', data.willpower || 0, 10, false));
+
+            stats.appendChild(humanityColumn);
+            stats.appendChild(willpowerColumn);
+            container.appendChild(stats);
+
+            const bloodGrid = document.createElement('div');
+            bloodGrid.className = 'persona-grid';
+            bloodGrid.style.borderTop = '1px solid #444';
+            bloodGrid.style.paddingTop = '1rem';
+            bloodGrid.appendChild(createPersonaField('Max Blood Pool', data.maximumBloodPool ?? '—'));
+            bloodGrid.appendChild(createPersonaField('Blood Per Turn', data.bloodPointsPerTurn ?? '—'));
+            bloodGrid.appendChild(createPersonaField('Max Trait Rating', data.maxTraitRating ?? 5));
+            container.appendChild(bloodGrid);
+
             section.appendChild(container);
             return section;
         }
@@ -1011,26 +998,30 @@
 
             const section = document.createElement('div');
             section.className = 'sheet-section';
-            section.innerHTML = '<h2>Merits & Flaws</h2>';
+            appendHeading(section, 2, 'Merits & Flaws');
 
             const grid = document.createElement('div');
             grid.className = 'persona-grid';
 
             const mCol = document.createElement('div');
-            mCol.innerHTML = '<h3>Merits</h3>';
+            appendHeading(mCol, 3, 'Merits');
             if (merits.length) {
                 merits.forEach(m => {
-                    mCol.innerHTML += `<div class="attribute-item"><span>${m.name}</span><span style="color:#888;">(${m.cost} pts)</span></div>`;
+                    mCol.appendChild(createCostItem(m.name, `(${m.cost} pts)`, '#888'));
                 });
-            } else { mCol.innerHTML += '<p style="color:#555;">None</p>'; }
+            } else {
+                mCol.appendChild(createEmptyMessage('None'));
+            }
 
             const fCol = document.createElement('div');
-            fCol.innerHTML = '<h3>Flaws</h3>';
+            appendHeading(fCol, 3, 'Flaws');
             if (flaws.length) {
                 flaws.forEach(f => {
-                    fCol.innerHTML += `<div class="attribute-item"><span>${f.name}</span><span style="color:#a82222;">(+${f.cost} pts)</span></div>`;
+                    fCol.appendChild(createCostItem(f.name, `(+${f.cost} pts)`, '#a82222'));
                 });
-            } else { fCol.innerHTML += '<p style="color:#555;">None</p>'; }
+            } else {
+                fCol.appendChild(createEmptyMessage('None'));
+            }
 
 
             grid.appendChild(mCol);
@@ -1041,15 +1032,73 @@
 
         // --- HELPERS ---
 
+        function appendHeading(parent, level, text) {
+            const heading = document.createElement(`h${level}`);
+            heading.textContent = text;
+            parent.appendChild(heading);
+        }
+
+        function createPersonaField(label, value) {
+            const field = document.createElement('p');
+            const labelElement = document.createElement('strong');
+            labelElement.textContent = `${label}:`;
+            field.appendChild(labelElement);
+            field.appendChild(document.createTextNode(` ${String(value)}`));
+            return field;
+        }
+
+        function createTraitItem(label, count, maxScale = 5, useElderLogic = true, labelClass = '') {
+            const item = document.createElement('div');
+            item.className = 'attribute-item';
+
+            const labelElement = document.createElement('span');
+            labelElement.className = labelClass;
+            labelElement.textContent = label;
+
+            const dots = document.createElement('span');
+            dots.className = 'dots-display';
+            dots.appendChild(renderDots(count, maxScale, useElderLogic));
+
+            item.appendChild(labelElement);
+            item.appendChild(dots);
+            return item;
+        }
+
+        function createCostItem(name, costText, costColor) {
+            const item = document.createElement('div');
+            item.className = 'attribute-item';
+
+            const nameElement = document.createElement('span');
+            nameElement.textContent = name ?? '';
+
+            const costElement = document.createElement('span');
+            costElement.style.color = costColor;
+            costElement.textContent = costText;
+
+            item.appendChild(nameElement);
+            item.appendChild(costElement);
+            return item;
+        }
+
+        function createEmptyMessage(text) {
+            const message = document.createElement('p');
+            message.style.color = '#555';
+            message.textContent = text;
+            return message;
+        }
+
         function renderDots(count, maxScale = 5, useElderLogic = true) {
+            const fragment = document.createDocumentFragment();
+            const numericCount = Number.isFinite(Number(count)) ? Number(count) : 0;
+
             // If elder logic is off (Humanity/Willpower), straightforward fill.
             if (!useElderLogic) {
-                let out = "";
                 for (let i = 1; i <= maxScale; i++) {
-                    const css = i <= count ? "dot filled" : "dot";
-                    out += `<span class="${css}"></span>`;
+                    const dot = document.createElement('span');
+                    dot.className = i <= numericCount ? 'dot filled' : 'dot';
+                    fragment.appendChild(dot);
                 }
-                return out;
+                return fragment;
             }
 
             // Elder Logic: Always show 5 dots max visually.
@@ -1058,16 +1107,15 @@
             //   Example: Score 6 -> (6-5)=1. First dot Red, rest 4 White.
             //   Example: Score 7 -> (7-5)=2. First 2 Red, rest 3 White.
 
-            let out = "";
             const visualMax = 5;
-            const redCount = (count > 5) ? (count - 5) : 0;
+            const redCount = (numericCount > 5) ? (numericCount - 5) : 0;
 
             for (let i = 1; i <= visualMax; i++) {
                 let css = "dot";
 
-                if (count <= 5) {
+                if (numericCount <= 5) {
                     // Standard Case
-                    if (i <= count) css += " filled";
+                    if (i <= numericCount) css += " filled";
                 } else {
                     // Overflow Case (Score 6+)
                     // Logic: We always fill all 5 dots because 6 > 5.
@@ -1078,9 +1126,11 @@
                         css += " filled"; // White
                     }
                 }
-                out += `<span class="${css}"></span>`;
+                const dot = document.createElement('span');
+                dot.className = css;
+                fragment.appendChild(dot);
             }
-            return out;
+            return fragment;
         }
 
         function titleCaseAndClean(str) {
@@ -1093,7 +1143,7 @@
         }
 
         function updateDebugLog(logs) {
-            debugList.innerHTML = '';
+            debugList.replaceChildren();
             if (logs && logs.length > 0) {
                 logs.forEach(log => {
                     const li = document.createElement('li');
@@ -1109,7 +1159,9 @@
                     debugList.appendChild(li);
                 });
             } else {
-                debugList.innerHTML = '<li>No logs generated.</li>';
+                const emptyLog = document.createElement('li');
+                emptyLog.textContent = 'No logs generated.';
+                debugList.appendChild(emptyLog);
             }
         }
 
@@ -1125,7 +1177,7 @@
                     populateSelect(conceptSelect, data.concepts, "Random");
                     populateSelect(clanSelect, data.clans, "Random");
 
-                    generationSelect.innerHTML = `<option value="">Random</option>`;
+                    generationSelect.replaceChildren(createOption('', 'Random'));
                     (data.generations || []).forEach(gen => {
                         const opt = document.createElement("option");
                         opt.value = gen;
@@ -1143,13 +1195,16 @@
         }
 
         function populateSelect(el, items, placeholder) {
-            el.innerHTML = `<option value="">${placeholder}</option>`;
+            el.replaceChildren(createOption('', placeholder));
             (items || []).forEach(item => {
-                const opt = document.createElement("option");
-                opt.value = String(item.id ?? "");
-                opt.textContent = item.name ?? "";
-                el.appendChild(opt);
+                el.appendChild(createOption(item.id ?? '', item.name ?? ''));
             });
+        }
+        function createOption(value, text) {
+            const option = document.createElement('option');
+            option.value = String(value);
+            option.textContent = String(text);
+            return option;
         }
         function populateDemeanorOptions(excludeId = "") {
             const previous = demeanorSelect.value;
