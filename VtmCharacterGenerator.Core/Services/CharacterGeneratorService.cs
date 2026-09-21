@@ -69,8 +69,10 @@ namespace VtmCharacterGenerator.Core.Services
             _backgroundDistributionService.DistributeBackgrounds(character, affinityProfile);
             _virtueDistributionService.DistributeVirtues(character, affinityProfile);
             _disciplineDistributionService.DistributeDisciplines(character, affinityProfile);
-            _freebieSpendingService.DistributeFreebiePoints(character, affinityProfile);
+
             _coreStatsService.CalculateCoreStats(character);
+            _freebieSpendingService.DistributeFreebiePoints(character, affinityProfile);
+
             _lifeCycleService.DetermineLifeCycle(character);
             character.Name = _nameGeneratorService.GenerateName(character, affinityProfile);
             _xpSpendingService.DistributeXp(character, affinityProfile);
