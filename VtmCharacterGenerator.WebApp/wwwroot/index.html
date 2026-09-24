@@ -557,11 +557,18 @@
             Knowledges: ["academics", "computer", "finance", "investigation", "law", "medicine", "occult", "politics", "science", "technology"]
         };
 
+        class RateLimitError extends Error {
+            constructor(retryAfterSeconds) {
+                super(`Too many characters were generated at once. Please wait ${retryAfterSeconds} seconds and try again.`);
+                this.name = 'RateLimitError';
+            }
+        }
+
         // --- EVENT LISTENERS ---
 
         generateButton.addEventListener('click', () => {
             sheetDiv.innerHTML = '<p style="text-align:center; margin-top:2rem;">Invoking the Blood...</p>';
-            fetchAndDisplayCharacter('/api/character/generate');
+            fetchAndDisplayCharacter('/api/character/generate', { method: 'POST' });
         });
 
         createButton.addEventListener('click', () => {
@@ -637,6 +644,12 @@
         function fetchAndDisplayCharacter(url, options = {}) {
             fetch(url, options)
                 .then(res => {
+                    if (res.status === 429) {
+                        const retryAfterHeader = Number.parseInt(res.headers.get('Retry-After') ?? '', 10);
+                        const retryAfterSeconds = Number.isFinite(retryAfterHeader) ? retryAfterHeader : 60;
+                        throw new RateLimitError(retryAfterSeconds);
+                    }
+
                     if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
                     return res.json();
                 })
@@ -644,7 +657,14 @@
                 .catch(err => {
                     console.error("Error fetching character:", err);
                     sheetDiv.classList.add("sheet-active");
-                    sheetDiv.innerHTML = '<p style="color: #ff6b6b; text-align: center;">The Embrace failed. Check console.</p>';
+
+                    const errorMessage = document.createElement('p');
+                    errorMessage.style.color = '#ff6b6b';
+                    errorMessage.style.textAlign = 'center';
+                    errorMessage.textContent = err instanceof RateLimitError
+                        ? err.message
+                        : 'The Embrace failed. Check console.';
+                    sheetDiv.replaceChildren(errorMessage);
                 });
         }
 

@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using VtmCharacterGenerator.Core.Data;
 using VtmCharacterGenerator.Core.Models;
 using VtmCharacterGenerator.Core.Services;
+using VtmCharacterGenerator.WebApp.Infrastructure;
 
 namespace VtmCharacterGenerator.WebApp.Controllers
 {
@@ -18,7 +20,8 @@ namespace VtmCharacterGenerator.WebApp.Controllers
             _dataProvider = dataProvider;
         }
 
-        [HttpGet("generate")]
+        [HttpPost("generate")]
+        [EnableRateLimiting(RateLimitPolicyNames.CharacterGeneration)]
         public ActionResult<Character> GenerateNewCharacter()
         {
             try
@@ -34,6 +37,7 @@ namespace VtmCharacterGenerator.WebApp.Controllers
         }
 
         [HttpPost("create")]
+        [EnableRateLimiting(RateLimitPolicyNames.CharacterGeneration)]
         public ActionResult<Character> CreateCustomCharacter([FromBody] PersonaRequest request)
         {
             try
