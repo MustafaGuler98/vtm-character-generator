@@ -6,7 +6,7 @@ namespace VtmCharacterGenerator.Core.Models
     {
         
         [JsonPropertyName("tag")]
-        public string Tag { get; set; }
+        public string Tag { get; set; } = string.Empty;
 
         // How much this affinity modifies the score (e.g., 5, -3)
         [JsonPropertyName("value")]

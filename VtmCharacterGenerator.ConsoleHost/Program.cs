@@ -13,12 +13,23 @@ Console.WriteLine("--- Elysium Project: Persona Generation Test ---");
 // A more robust way to find the project root directory
 static string GetProjectRoot()
 {
-    string exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-    DirectoryInfo dirInfo = new DirectoryInfo(exePath);
-    while (dirInfo != null && !dirInfo.GetFiles("*.sln").Any())
+    string? exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+    if (exePath is null)
+    {
+        throw new DirectoryNotFoundException("Could not determine the executable directory.");
+    }
+
+    DirectoryInfo? dirInfo = new DirectoryInfo(exePath);
+    while (dirInfo is not null && !dirInfo.GetFiles("*.sln").Any())
     {
         dirInfo = dirInfo.Parent;
     }
+
+    if (dirInfo is null)
+    {
+        throw new DirectoryNotFoundException("Could not locate the solution root containing GameData.");
+    }
+
     return dirInfo.FullName;
 }
 
@@ -43,6 +54,14 @@ try
 
  
     Persona finalPersona = personaService.CompletePersona(inputPersona);
+
+    if (finalPersona.Concept is null ||
+        finalPersona.Clan is null ||
+        finalPersona.Nature is null ||
+        finalPersona.Demeanor is null)
+    {
+        throw new InvalidOperationException("Persona completion did not produce all required fields.");
+    }
 
     
     Console.WriteLine("\n--- FINAL PERSONA GENERATED ---");

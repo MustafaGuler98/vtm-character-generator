@@ -17,7 +17,7 @@ namespace VtmCharacterGenerator.Core.Services
             _affinityProcessor = affinityProcessor;
         }
 
-        public Persona CompletePersona(Persona inputPersona)
+        public Persona CompletePersona(Persona? inputPersona)
         {
             // Shallow copy so we don't mutate caller object
             var finalPersona = new Persona
@@ -33,7 +33,7 @@ namespace VtmCharacterGenerator.Core.Services
             };
 
             // Helper to merge affinity dictionaries into running profile
-            static void MergeInto(Dictionary<string, int> target, Dictionary<string, int> source)
+            static void MergeInto(Dictionary<string, int> target, Dictionary<string, int>? source)
             {
                 if (source == null) return;
                 foreach (var kv in source)

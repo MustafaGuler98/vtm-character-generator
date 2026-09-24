@@ -50,7 +50,7 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
             {
                 string id = disc.Id;
                 int currentRating = character.Disciplines.ContainsKey(id) ? character.Disciplines[id] : 0;
-                bool isClan = character.Clan != null && character.Clan.Disciplines.Contains(id);
+                bool isClan = character.Clan.Disciplines.Contains(id);
 
                 if (currentRating > 0)
                 {
@@ -98,7 +98,7 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
                 return false;
             }
 
-            Discipline selectedDiscipline = null;
+            Discipline? selectedDiscipline;
 
             if (preferUpgrade)
             {
@@ -111,13 +111,15 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
 
             if (selectedDiscipline == null) return false;
 
+            bool isClanDiscipline = character.Clan.Disciplines.Contains(selectedDiscipline.Id);
+
             if (_bloodMagicIds.Contains(selectedDiscipline.Id))
             {
-                return HandleBloodMagic(character, selectedDiscipline.Id, character.Clan.Disciplines.Contains(selectedDiscipline.Id), budget, ref spentXp);
+                return HandleBloodMagic(character, selectedDiscipline.Id, isClanDiscipline, budget, ref spentXp);
             }
             else
             {
-                return HandleStandardDiscipline(character, selectedDiscipline.Id, character.Clan.Disciplines.Contains(selectedDiscipline.Id), budget, ref spentXp);
+                return HandleStandardDiscipline(character, selectedDiscipline.Id, isClanDiscipline, budget, ref spentXp);
             }
         }
 

@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using VtmCharacterGenerator.Core.Data;
 using VtmCharacterGenerator.Core.Models;
 using VtmCharacterGenerator.Core.Services;
+using VtmCharacterGenerator.WebApp.Infrastructure;
 
 namespace VtmCharacterGenerator.WebApp.Controllers
 {
@@ -11,16 +13,15 @@ namespace VtmCharacterGenerator.WebApp.Controllers
     {
         private readonly CharacterGeneratorService _characterGeneratorService;
         private readonly GameDataProvider _dataProvider;
-        private readonly PdfServiceClient _pdfClient;
 
-        public CharacterController(CharacterGeneratorService characterGeneratorService, GameDataProvider dataProvider, PdfServiceClient pdfClient)
+        public CharacterController(CharacterGeneratorService characterGeneratorService, GameDataProvider dataProvider)
         {
             _characterGeneratorService = characterGeneratorService;
             _dataProvider = dataProvider;
-            _pdfClient = pdfClient;
         }
 
-        [HttpGet("generate")]
+        [HttpPost("generate")]
+        [EnableRateLimiting(RateLimitPolicyNames.CharacterGeneration)]
         public ActionResult<Character> GenerateNewCharacter()
         {
             try
@@ -36,6 +37,7 @@ namespace VtmCharacterGenerator.WebApp.Controllers
         }
 
         [HttpPost("create")]
+        [EnableRateLimiting(RateLimitPolicyNames.CharacterGeneration)]
         public ActionResult<Character> CreateCustomCharacter([FromBody] PersonaRequest request)
         {
             try
@@ -88,31 +90,6 @@ namespace VtmCharacterGenerator.WebApp.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
-        [HttpPost("download-pdf")]
-        public async Task<IActionResult> DownloadPdf([FromBody] Character character)
-        {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
-            Console.WriteLine($"[PDF Request] Stream starting for: {character.Name}");
-
-            try
-            {
-                var pdfStream = await _pdfClient.GeneratePdfStreamAsync(character);
-
-                watch.Stop();
-                Console.WriteLine($"[PDF Request] Stream established in {watch.ElapsedMilliseconds}ms. Piping to user...");
-
-                string safeName = character.Name?.Replace(" ", "_") ?? "Character";
-                string fileName = $"{safeName}_Sheet.pdf";
-
-                return File(pdfStream, "application/pdf", fileName);
-            }
-            catch (Exception ex)
-            {
-                watch.Stop();
-                Console.WriteLine($"[PDF Request] FAILED. Error: {ex.Message}");
-                return StatusCode(503, $"PDF service unavailable: {ex.Message}");
-            }
-        }
     }
 
     public class PersonaRequest
@@ -129,9 +106,9 @@ namespace VtmCharacterGenerator.WebApp.Controllers
 
     public class PersonaOptions
     {
-        public List<Concept> Concepts { get; set; }
-        public List<Clan> Clans { get; set; }
-        public List<Nature> Natures { get; set; }
-        public List<int> Generations { get; set; }
+        public List<Concept> Concepts { get; set; } = new();
+        public List<Clan> Clans { get; set; } = new();
+        public List<Nature> Natures { get; set; } = new();
+        public List<int> Generations { get; set; } = new();
     }
 }

@@ -17,7 +17,7 @@ namespace VtmCharacterGenerator.Core.Services
             _affinityProcessor = affinityProcessor;
         }
 
-        public Dictionary<string, int> DistributeAttributes(Dictionary<string, int> affinityProfile, Clan clan = null)
+        public Dictionary<string, int> DistributeAttributes(Dictionary<string, int> affinityProfile, Clan? clan = null)
         {
             var attributes = new Dictionary<string, int>();
             var allAttributes = _dataProvider.AttributeCategories
@@ -46,6 +46,11 @@ namespace VtmCharacterGenerator.Core.Services
             foreach (var points in pointsToDistribute)
             {
                 var chosenCategory = _affinityProcessor.GetWeightedRandom(remainingCategories, affinityProfile);
+                if (chosenCategory is null)
+                {
+                    throw new InvalidOperationException("An attribute category could not be selected.");
+                }
+
                 assignedCategoryPoints[chosenCategory.Name] = points;
                 remainingCategories.Remove(chosenCategory);
             }

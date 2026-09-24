@@ -48,19 +48,28 @@ namespace VtmCharacterGenerator.Core.Services
         public Character GenerateCharacter(Persona inputPersona)
         {
             var finalPersona = _personaService.CompletePersona(inputPersona);
+
+            if (finalPersona.Concept is null ||
+                finalPersona.Clan is null ||
+                finalPersona.Nature is null ||
+                finalPersona.Demeanor is null)
+            {
+                // Character generation cannot continue safely without a complete identity.
+                throw new InvalidOperationException("Persona completion did not produce all required character fields.");
+            }
+
             var affinityProfile = _affinityProcessor.BuildAffinityProfile(finalPersona);
 
             var character = new Character
             {
-
                 Concept = finalPersona.Concept,
                 Clan = finalPersona.Clan,
                 Nature = finalPersona.Nature,
                 Demeanor = finalPersona.Demeanor,
-                Name = finalPersona.Name,
+                Name = finalPersona.Name ?? string.Empty,
                 Generation = finalPersona.Generation,
                 Age = finalPersona.Age,
-                AgeCategory = finalPersona.AgeCategory
+                AgeCategory = finalPersona.AgeCategory ?? string.Empty
             };
 
             // I tried different approach for distributing attributes to see what works best
