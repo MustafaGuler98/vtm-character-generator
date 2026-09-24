@@ -11,13 +11,13 @@ public static class AffinityDistributionTest
 {
     private class TestCase
     {
-        public string Name { get; set; }
-        public string ClanId { get; set; }
-        public string ConceptId { get; set; }
-        public string NatureId { get; set; }
-        public string ExpectedPrimaryCategory { get; set; }  // What we EXPECT to win most
+        public required string Name { get; set; }
+        public required string ClanId { get; set; }
+        public string? ConceptId { get; set; }
+        public string? NatureId { get; set; }
+        public required string ExpectedPrimaryCategory { get; set; }  // What we EXPECT to win most
         public double MinExpectedWinRate { get; set; }      // Minimum acceptable win rate (e.g., 0.50 = 50%)
-        public string Description { get; set; }
+        public required string Description { get; set; }
     }
 
     public static void Run(int iterations = 10000)
@@ -29,9 +29,14 @@ public static class AffinityDistributionTest
         Console.WriteLine("╚════════════════════════════════════════════════════════════════════╝\n");
 
         // Setup
-        string exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        DirectoryInfo dirInfo = new DirectoryInfo(exePath);
-        while (dirInfo != null && !dirInfo.GetFiles("*.sln").Any()) dirInfo = dirInfo.Parent;
+        string? exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        if (exePath is null)
+        {
+            throw new DirectoryNotFoundException("Could not determine the executable directory.");
+        }
+
+        DirectoryInfo? dirInfo = new DirectoryInfo(exePath);
+        while (dirInfo is not null && !dirInfo.GetFiles("*.sln").Any()) dirInfo = dirInfo.Parent;
         string solutionRoot = dirInfo?.FullName ?? ".";
         string gameDataPath = Path.Combine(solutionRoot, "GameData");
 
@@ -344,8 +349,8 @@ public static class AffinityDistributionTest
 
     private class TestResult
     {
-        public Dictionary<string, int> Results { get; set; }
-        public string WinnerCategory { get; set; }
+        public required Dictionary<string, int> Results { get; set; }
+        public required string WinnerCategory { get; set; }
         public double WinRate { get; set; }
     }
 

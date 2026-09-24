@@ -73,6 +73,7 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
             if (selectedCategoryItem == null) return false;
 
             var selectedCategory = _dataProvider.AttributeCategories.FirstOrDefault(c => c.Id == selectedCategoryItem.Id);
+            if (selectedCategory is null) return false;
 
             var validAttributes = new List<VtMAttribute>();
 

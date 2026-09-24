@@ -14,10 +14,16 @@ builder.Services.AddSingleton<GameDataProvider>(sp =>
     // Most reliable way to find the solution root, since i use this project in both console and web app formats
 
     string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-    DirectoryInfo dirInfo = new DirectoryInfo(currentDirectory);
-    while (dirInfo != null && !dirInfo.GetFiles("*.sln").Any())
+    DirectoryInfo? dirInfo = new DirectoryInfo(currentDirectory);
+    while (dirInfo is not null && !dirInfo.GetFiles("*.sln").Any())
     {
         dirInfo = dirInfo.Parent;
+    }
+
+    if (dirInfo is null)
+    {
+        // Failing here keeps a missing deployment asset from surfacing later as an unrelated null error.
+        throw new DirectoryNotFoundException("Could not locate the solution root containing GameData.");
     }
 
     string solutionRoot = dirInfo.FullName;

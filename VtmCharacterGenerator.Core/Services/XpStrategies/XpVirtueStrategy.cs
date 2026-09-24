@@ -74,7 +74,7 @@ namespace VtmCharacterGenerator.Core.Services.XpStrategies
                 return false;
             }
             int roll = _random.Next(0, totalWeight);
-            Virtue selectedVirtue = null;
+            Virtue? selectedVirtue = null;
 
             foreach (var candidate in candidates)
             {

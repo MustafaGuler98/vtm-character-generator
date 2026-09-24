@@ -32,7 +32,7 @@ namespace VtmCharacterGenerator.Core.Services
             return profile;
         }
 
-        public void ProcessAffinities(Dictionary<string, int> profile, List<Affinity> affinities)
+        public void ProcessAffinities(Dictionary<string, int> profile, List<Affinity>? affinities)
         {
             if (affinities == null) return;
 
@@ -49,7 +49,8 @@ namespace VtmCharacterGenerator.Core.Services
         }
 
       
-        public T GetWeightedRandom<T>(List<T> items, Dictionary<string, int> affinityProfile) where T : IHasTags
+        public T? GetWeightedRandom<T>(List<T>? items, Dictionary<string, int>? affinityProfile)
+            where T : class, IHasTags
         {
             if (items == null || !items.Any()) return default;
 

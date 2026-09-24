@@ -39,6 +39,11 @@ namespace VtmCharacterGenerator.Core.Services
                     .ToList();
 
                 var chosenCategory = _affinityProcessor.GetWeightedRandom(weightedCategories, affinityProfile);
+                if (chosenCategory is null)
+                {
+                    throw new InvalidOperationException("An ability category could not be selected.");
+                }
+
                 categoryScores[chosenCategory.Id] = pointValue;
             }
 
@@ -79,8 +84,8 @@ namespace VtmCharacterGenerator.Core.Services
     // Helper class to make categories compatible with GetWeightedRandom<T>
     internal class TaggableItem : IHasTags
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public List<string> Tags { get; set; }
+        public string Id { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public List<string> Tags { get; set; } = new();
     }
 }

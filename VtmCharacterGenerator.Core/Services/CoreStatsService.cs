@@ -17,7 +17,7 @@ namespace VtmCharacterGenerator.Core.Services
 
         public void CalculateCoreStats(Character character)
         {
-            GenerationData chosenGenerationData = null;
+            GenerationData? chosenGenerationData = null;
 
             if (character.Generation.HasValue)
             {
@@ -54,7 +54,7 @@ namespace VtmCharacterGenerator.Core.Services
             character.Willpower = courage;
         }
 
-        private GenerationData SelectWeightedGeneration()
+        private GenerationData? SelectWeightedGeneration()
         {
             if (_dataProvider.Generations == null || !_dataProvider.Generations.Any())
             {

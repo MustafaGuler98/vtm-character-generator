@@ -31,11 +31,11 @@ namespace VtmCharacterGenerator.Core.Services
             string nativeEra = DetermineEraByAge(character.Age ?? 0);
             string targetEra = SelectTargetEra(nativeEra);
 
-            NamePack selectedFirstNamePack = SelectFirstNamePack(targetEra, affinityProfile);
+            NamePack? selectedFirstNamePack = SelectFirstNamePack(targetEra, affinityProfile);
 
             if (selectedFirstNamePack == null) return "Nameless";
 
-            NamePack selectedLastNamePack = SelectLastNamePack(selectedFirstNamePack, targetEra);
+            NamePack? selectedLastNamePack = SelectLastNamePack(selectedFirstNamePack, targetEra);
 
             string firstName = GetRandomValue(selectedFirstNamePack);
             string lastName = selectedLastNamePack != null ? GetRandomValue(selectedLastNamePack) : "";
@@ -72,7 +72,7 @@ namespace VtmCharacterGenerator.Core.Services
             return nativeEra;
         }
 
-        private NamePack SelectFirstNamePack(string era, Dictionary<string, int> affinityProfile)
+        private NamePack? SelectFirstNamePack(string era, Dictionary<string, int> affinityProfile)
         {
             var candidates = _dataProvider.NamePacks
                 .Where(p => p.Era == era && p.Type == "FirstName")
@@ -114,7 +114,7 @@ namespace VtmCharacterGenerator.Core.Services
             return candidates.Last();
         }
 
-        private NamePack SelectLastNamePack(NamePack firstNamePack, string era)
+        private NamePack? SelectLastNamePack(NamePack firstNamePack, string era)
         {
             int roll = _random.Next(1, 101);
 
@@ -148,7 +148,7 @@ namespace VtmCharacterGenerator.Core.Services
             return null;
         }
 
-        private string GetRandomValue(NamePack pack)
+        private string GetRandomValue(NamePack? pack)
         {
             if (pack == null || !pack.Values.Any()) return "";
             return pack.Values[_random.Next(pack.Values.Count)];

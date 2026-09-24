@@ -106,9 +106,9 @@ namespace VtmCharacterGenerator.WebApp.Controllers
 
     public class PersonaOptions
     {
-        public List<Concept> Concepts { get; set; }
-        public List<Clan> Clans { get; set; }
-        public List<Nature> Natures { get; set; }
-        public List<int> Generations { get; set; }
+        public List<Concept> Concepts { get; set; } = new();
+        public List<Clan> Clans { get; set; } = new();
+        public List<Nature> Natures { get; set; } = new();
+        public List<int> Generations { get; set; } = new();
     }
 }
