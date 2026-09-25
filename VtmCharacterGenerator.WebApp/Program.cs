@@ -99,6 +99,25 @@ builder.Services.AddRateLimiter(options =>
 
 var app = builder.Build();
 
+var legacyHosts = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+{
+    "elysium.mustafaguler.me",
+    "www.elysium.mustafaguler.me"
+};
+
+app.Use(async (context, next) =>
+{
+    if (legacyHosts.Contains(context.Request.Host.Host))
+    {
+        // A 308 redirect preserves POST requests while consolidating every legacy URL under the canonical host.
+        var targetUrl = $"https://elysium.zarcanist.com{context.Request.PathBase}{context.Request.Path}{context.Request.QueryString}";
+        context.Response.Redirect(targetUrl, permanent: true, preserveMethod: true);
+        return;
+    }
+
+    await next();
+});
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

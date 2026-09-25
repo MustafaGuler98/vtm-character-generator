@@ -9,7 +9,7 @@
 Elysium uses a weighted logic system to ensure characters are mechanically valid, thematically consistent, and ready for play. It bridges the gap between randomization and coherent storytelling.
 
 ### 🔗 Live Demo
-Try the generator here: **[elysium.mustafaguler.me](https://elysium.mustafaguler.me)**
+Try the generator here: **[elysium.zarcanist.com](https://elysium.zarcanist.com)**
 
 ## ✨ Key Features
 
